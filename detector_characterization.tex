@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%detector_characterization.tex: Chapter on ground characterization measurements:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Detector Characterization}
+\label{charecterization_chapter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ideal Parameters/Goals {{{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Detector Parameter Goals}
+\label{parameter_goals_section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parameter Measurements {{{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Detector Parameter Measurements}
+\label{parameter_measurements_section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Given the new detector design goals outlined in Section~\ref{sec:fabrication_parameters}, as well as the limited ability to change the detector settings after the payload was launched, it was vital to carefully characterize each detector wafer before considering it for the \ac{EBEX} focal plane. This section provides an overview of the characterization measurements, the sensitivity predictions, and the measured sensitivity of the detectors at float. Additional detail can be found in \cite{aubin_thesis} \cite{MacDermid_thesis} \cite{MacDermid_SPIE2014}.
+
+Of the more than four dozen detector wafers fabricated and characterized, only 14 were able to make the final cut and earn a prized spot in the \ac{EBEX} focal plane for the \ac{EBEX2013} flight. 
+
+The characterization process requires a visual and electrical inspection post-fabrication, post-shipment, and post-handling. 
+Sometimes, for example, the visual inspection reveals incomplete etching evidenced by a column of material from the TES to the silicon. 
+This is noted as a thermal short and such a detector is not biased. 
+The electrical inspection requires measuring the resistance directly across the wafer bond pads or by measuring at the leads on the \ac{LC} boards. 
+The resistance can be be measured by probing directly across the wafer bond pads or it can be measured by probing the leads on the \ac{LC} boards. 
+The first method is done in the clean room and the second method is done after the wafer and LC board have been wirebonded. 
+The resistance reading is dominated by the room temperature resistance of the Niobium leads. 
+The electrical inspection can not identify a short across the \ac{TES} because the typical room temperature of the TES is a few ohms, much less than the tens of kiloohms of the Niobium leads. 
+The electrical inspection does, however, identify which \ac{TES} or leads do not make a complete electrical connection, i.e. are open. 
+Given the visual and electrical inspection, we report a warm yield per wafer. 
+The warm visual and electrical inspection provides an upper limit of the wafer's yield because the open and thermally shorted detectors are guaranteed not to work. 
+See the warm yield column of the non-existent table. 
+Note, only 127 of the 140 bolometers have readout channels. 
+
+For characterization measurements, we mount the wafer, Section~\ref{sec:fabrication_parameters}, couple it to the readout electronics, Section~\ref{sec:readout}, and cool it to sub-Kelvin temperatures, where the exact temperature depends on the testbed. 
+The \ac{EBEX} wafers are cooled down in a dedicated \ac{EBEX} test cryostat at the University of Minnesota or in a test cryostat at McGill University or in \ac{EBEX} itself (made dark). 
+The first test performed cold is called a network analysis. 
+The network analysis sweeps a voltage across the comb in frequency and measures the current response of the circuit. 
+It is a multiplexed RLC circuit with a peak in current at each LC resonant frequency. 
+Around 800~mK, when the Niobium leads and Aluminum wirebonds are superconducting but the TES is still normal, the width of the peak gives the resistance of the TES. 
+
+Each peak is fit individually to a Lorentzian (INCLUDE EQUATION) in order to determine each detector's resonant frequency, which is used to provide the bias signal to the TES. 
+The network analysis comb is also fit to a model (INCLUDE EQUATION) to get the stray resistance and inductance in series with the comb. 
+Upon cooling, the yield sometimes drops, see non-existent table. 
+
+Once the resonant frequencies are determined, the stage is heated so the bolometers are above their critical temperatures. 
+The detectors are then electrically overbiased such that there is enough Joule Power dissipated in the bolometer to keep the resistance normal as the stage is cooled. 
+Once the stage is at its base temperature, we perform IV curves. 
+That is, for each biased channel, we step down the voltage bias (typically in steps of XXX) and measure the current across the bolometer. 
+As the Joule Power decreases, the detector temperature decreases and we call this dropping into the transition. 
+Briefly describe what you're seeing in IV curve, point to references explaining how bolometers work. 
+Describe what we learn from dark IV curves, Psats, thermal conductances. 
+Results. 
+
+We measure the critical temperature of each detector. 
+We place a tiny voltage bias of XX~$\mu V_{rms}$ across the detector such that the Joule heating is negligible but there is still a measurable signal. 
+Then we slowly (less than XX~mK/min) cool and warm the stage and measure the resistance of the detector. 
+One example curve. Including hysteresis. 
+Typical histogram. How much spread is there across a single wafer?
+
+For a select few wafers, the dark noise performance is also measured. 
+When the detectors are overbiased, the phonon and photon noise are negligible because the responsivity is low (HOW LOW??). 
+That is, overbiased, we are measuring the Johnson and readout noise. 
+Plot of measured noise overbiased versus prediction for one comb. (FOR COLD STAGE? FOR WARM STAGE? WHAT'S THE DIFF?)
+What do we learn from this plot? 
+The test cryostats are made to be light-tight, so there is no photon noise. 
+With the detectors in transition, phonon, Johnson, and readout noise are all present. 
+Plot of measured noise versus prediction for one bolometer. (Remake this for 150-01?)
+What do we learn from this plot?
+
+For an even more select few wafers, the detector time constants are measured. 
+There are three IR56 LED mounted to the wafer testing box lid.
+They are positioned such that the entire wafer is illuminated. 
+The intensity of the LEDs are fixed. The chop frequency is increased from XX~Hz to XX~Hz. The detector response in counts is measured. The PSD peak around the chop frequency is fit to a Fejer kernel. 
+Then we fit the PSD peak amplitude as a function of frequency to a ??? (1-pole roll off model...).
+Plot of timestream and PSD. 
+Plot of fejer kernel fit. 
+Plot of amplitude vs frequency. 
+What do we learn about our time constants?
+
+That concludes our dark characterization measurements. 
+ 
+We measure the optical load by differencing the saturation power measured at float and the saturation power measured dark. 
+The dark cryostats typically have a slightly higher base temperature (less than 100~mK) than the \acro{EBEX} base temperature, so the dark saturation powers are adjusted for bath temperature assuming the thermal conductivity follows a power law with a power of n=XX. (look up ns and reference Hannes' thesis)
+(INCLUDE EQUATION FOR HOW P_SAT IS ADJUSTED AND ALSO THERMAL CONDUCTIVITY ASSUMPTION, AND CHECK WHAT DID YOU DO FOR EACH FREQUENCY BAND???)
+Plot of IV dark/light and PV dark/light (use McGill since bath temperature more similar? or just ignore subtlety that they're at different temperatures, so comparing on the same plot is slightly misleading and can't scale whole curve, but rather just last point?)
+150 GHz, 250 GHz, 410 GHz, measured P_optical histograms.
+What have we learned from these measurements?
+
+Using the dark characterization measurements, the measured optical load, the electrical bias parameters, and the dfmux transfer functions, we predict the instrument sensitivity in \acro{NEP}. 
+\acro{NEP} is defined as the level of signal required to produce a signal-to-noise ratio of 1 in a bandwidth of 1~Hz.  
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ground Noise Performance {{{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Ground Noise Performance}
+\label{ground_noise_section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Optical Efficiency {{{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Optical Efficiency}
+\label{optical_efficiency_section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The optical efficiency of the TES bolometers is defined as the ratio of the number of photons absorbed by a detector to the total number of photons incident on the detector (as an equation?). (is it obvious why we care about opt eff?) Maximizing the optical efficiency is important because we want a maximum number of data points (cmb photons) for each moment we observe the sky.  
+In the ideal case, every incident photon is absorbed by the detector. The theoretical best you can achieve, however, is ?? percent. (this is a physical limit? what sets it?)
+
+Also, we have a quarter lambda back short to give us a second chance of absorbing photons. If they pass through unabsorbed, the distance to the reflective metal backshort is 1/4 the light's wavelength, so it'll bounce off and potentially be absorbed by the absorber on the second fly by. 
+
+Where do we get the photons? (Black body definition, design and construction)
+A black body is an object whose surfaces absorb all incident thermal radiation upon them \cite{Eisberg}. Several CMB telescopes have built blackbodies \cite{} to "measure detector sensitivity, to calibrate spectrometers in the laboratory, and as the primary blackbody reference for a photometer used to measure the Cosmic Microwave Background" \cite{Peterson1984a}. We model ours after the blackbody described by Peterson and Richards \cite{Peterson1984a}. Do we mention the COBE FIRAS and Arcade blackbodies we considered? Do we mention we considered the idea of a conductively loaded epoxy (Michele's paper)? 
+We designed the cone to couple the feed horns such that there would be a minimum of 4 bounces for light at the edge of the ray.
+Eccosorb CR-110 were poured into a conical teflon mould (and baked). A copper tab was set halfway into the mould for eventual mounting of a Silicon Diode temperature sensor. 
+The field of view of the detectors needed to be completely filled by the black body. 
+
+How do we measure the incident photons?
+
+$P_{electrical} + \varepsilon*P_{optical} = P_{saturation}$
+
+We get several different $P_{electrical}$ from IV curves (described somewhere else?) at blackbody  temperatures [$T_{1}, T_{2},$ .... ]. To get $P_{optical}$ we calculate theoretical power incident in our band, assuming a perfect black body (pretty good assumption?) and a top hat band pass (we know this isn't true - see Cardiff measurements!). Make some plots of $P_{electrical}$  versus $P_{optical}$ and slope is $\varepsilon$ .
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
+
+
+There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
+The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer. 
+\begin{equation}
+\abs{\frac{R_bolo^2}{(2\Delta \omega L)^2}}
+\end{equation}
+~\citep{Dobbs2011}
+%see page 100 of notebook for calculation
+where for \ac{EBEX} we have inductors $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \omega = 2\pi 60~kHz$. 
+(The lower bias frequencies have this spacing, but when cooled, the lower capacitance values change more and the resonant frequency spacing is larger than predicted.)
+For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%
+
+
