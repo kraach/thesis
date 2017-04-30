@@ -13,7 +13,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
+You need to say \ac{EBEX} and \ac{SQUID} before the table ...
 
 \begin{table}[ht!]
 \begin{center}
@@ -22,10 +22,10 @@
 \hline Total number of bolometers on focal planes & 1120 & 560 & 280 & 1960 \\
 \hline Able to read out with \ac{EBEX} electronics & 992 & 496 & 254 & 1742 \\
 \hline Passed warm electrical \& visual inspections & 908 & 455 & 232 & 1595 \\
-\hline Exclude resistor \& dark \ac{SQUID} channels & 861 & 447 & 213 & 1521 \\
+\hline Resistor \& dark \ac{SQUID} channels excluded & 861 & 447 & 213 & 1521 \\
 \hline Detectors appearing in .8~K network analysis & 805 & 430 & 187 & 1422 \\
-\hline SQUID failures & 773 & 414 & 155 & 1342 \\
-\hline Detectors removed due to poor performance & 676 & 371 & 133 & 1180 \\
+\hline Excluding SQUID failures & 773 & 414 & 155 & 1342 \\
+\hline Poor performing detectors removed & 676 & 371 & 133 & 1180 \\
 \hline Detectors with successful flight IV curves & 504 & 342 & 109 & 955 \\
 % not including eccosorb/dark 492 & 317 & 92 & \
 \hline
@@ -35,11 +35,12 @@
 \label{yield_table}
 \end{table}
 
-
+\TAB\ref{yield_table} provides an accounting of \ac{EBEX} detector loss as a function of observation frequency band, as well as the total sum.
 Each silicon wafer, regardless of observation frequency band, has 140 bolometers. %and one alignment mark for the curious/pedantic
-The 150 and 250~GHz wafers are coupled to \ac{LC} boards around the perimeter of the focal plane. These edge \ac{LC} boards each have 125 readout channels, 124 of which are connected to bolometers.  
-The 410~GHz wafers are in the centers of each focal plane and have central \ac{LC} boards in the space just behind the wafer. The central \ac{LC} boards each have 128 readout channels, 127 of which are connected to bolometers. %(because of the alignment mark). 
-%See the first two rows of \TAB\ref{yield_table} for a breakdown of the number of bolometers and read out channels per \ac{EBEX} frequency band. 
+The 150 and 250~GHz wafers were coupled to \ac{LC} boards around the perimeter of the focal plane. These edge \ac{LC} boards each had 125 readout channels, 124 of which were connected to bolometers.  
+The 410~GHz wafers were in the center of each focal plane and had central \ac{LC} boards in the space just behind the wafer. The central \ac{LC} boards each had 128 readout channels, 127 of which were connected to bolometers. %(because of the alignment mark). 
+At room temperature, the wafers were inspected visually and each bolometer was tested for electrical continuity. 
+
 %
 %The characterization process requires a visual and electrical inspection post-fabrication, post-shipment, and post-handling. 
 %The visual inspection is done under a microscope and, for example, sometimes reveals incomplete etching evidenced by a column of material from the \ac{TES} to the silicon. 
