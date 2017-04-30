@@ -327,6 +327,21 @@ There is a piechart breakdown of each contributor to the predicted \ac{NEP} for 
 The white noise level is measured exactly as is done in the case of overbiased noise, except the timestream has had the \ac{HWP} template subtracted. 
 Fig.~\ref{fig:in_transition_psd} is the square root of the \ac{PSD} of a 172~second chunk of time with the \ac{HWP} template present (red) and the \ac{HWP} template subtracted (yellow) for detector 150-09-XX-XX. 
 The measured white noise level is the square root of the average of the \ac{PSD} between 3.9 and 4.4~Hz, indicated by the short thick black line, and the \ac{NEP} prediction is calculated as described above, indicated by the thin black dashed line. 
+
+For roughly ten minutes after the detectors were tuned for Observation C, the \ac{HWP} was off. 
+We compare the measured white noise level during this time with the \ac{HWP} stationary to the measured white noise level just after this time, with the \ac{HWP} spinning and the template subtracted timestream data, Fig.~\ref{fig:hwp_on_vs_off}. 
+We expected there to be no difference. 
+begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=0.4\columnwidth]{figures/hwp_on_and_off_cutoff_at_300aW.png}
+\includegraphics[width=0.4\columnwidth]{figures/hwp_on_and_off_median_diff_histogram.png}
+\caption{{\it Left:} The median \ac{WNL} measured with the \ac{HWP} on (red) and the median \ac{WNL} measured with the \ac{HWP} off (blue). The error bars are the standard deviation of the measurement over ten minutes with the \ac{HWP} off and twenty minutes with \ac{HWP} on. If there was only one chunk of time meeting criteria to perform a \ac{PSD}, the standard deviation is zero and so there is a line through the center of the data point. {\it Right:} A histogram of the median \ac{WNL} measured with the \ac{HWP} on minus the median \ac{WNL} measured with the \ac{HWP} off.}
+\label{fig:hwp_on_vs_off}
+\end{center}
+\end{figure}
+
+
+
 For those detectors which have all of the dark measurements available, throughout flight the noise is calculated and predicted every 172 seconds, provided none of the bolometer timestream data in that chunk has been flagged as bad. 
 The noise, measured and predicted, as a function of time is shown for 150-09-XX-XX in Fig.~\ref{fig:in_transition_noise_vs_time}. 
 %The median value of the ratio of measured to predicted \ac{NEP} for each detector throughout flight is found. 
