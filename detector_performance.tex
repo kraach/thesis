@@ -228,7 +228,7 @@ Excess overbias noise of roughly the same magnitude was measured when the instru
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=3in]{images/board64_wire2_ch02_1356968507s_overbias}
+\includegraphics[height=3in]{figures/board64_wire2_ch02_1356968507s_overbias}
 \caption{{\it Top:} Raw overbiased bolometer timestream multiplied by the measured transfer function to convert from \ac{DfMUX} demodulated counts to $pA$. {\it Bottom:} The square root of the \ac{PSD} of the timestream above. The measured white noise level, indicated by the short, thick black line, is taken to be the square root of the average value of the \ac{PSD} from 3.9 to 4.4~Hz. This frequency range is chosen to fall in the polarization band, between half-wave plate harmonics. The overbiased noise prediction, the quadrature sum of the Johnson and readout noise, is indicated by the thin dashed black line. }
 \label{fig:one_bolo_overbias_noise}
 \end{center}
@@ -237,7 +237,7 @@ Excess overbias noise of roughly the same magnitude was measured when the instru
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=3in]{images/board64_wire2_ch02_overbias_noise_vs_time}
+\includegraphics[height=3in]{figures/board64_wire2_ch02_overbias_noise_vs_time}
 \caption{{\it Top:} The predicted and measured overbiased noise, Johnson and readout, for bolometer 250-23-09-09 as a function of time. The prediction is the red horizontal dashed line at 16.4~$pA/\sqrt{Hz}$. Each blue dot is a measurement of the white noise level from the \ac{PSD}. {\it Bottom:} A histogram of the ratio of each measurement to prediction in the timestream above. The median value for this bolometer is 1.43.}
 \label{fig:one_bolo_overbias_noise_vs_time}
 \end{center}
@@ -245,7 +245,7 @@ Excess overbias noise of roughly the same magnitude was measured when the instru
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=3in]{images/250-23_overbias_meas_pred_noise_histogram.png}
+\includegraphics[height=3in]{figures/250-23_overbias_meas_pred_noise_histogram.png}
 \caption{Histogram of the median value of the ratio of measured to predicted noise for each bolometer on wafer~250-23. The median of this histogram 
 %i.e. the median of the medians for wafer~250-23,
 is 1.57, consistent with the Gaussian fit (in red) of $1.46 \pm 0.20$.}
@@ -390,8 +390,8 @@ Our final results reported in \TAB\ref{in_transition_noise_table} are a lower li
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[width=0.4\columnwidth]{images/250-23_calculated_loopgains_histogram.png}
-\includegraphics[width=0.4\columnwidth]{images/250-23_meas_pred_ratios_obsc_calculated_loopgain.png}
+\includegraphics[width=0.4\columnwidth]{figures/250-23_calculated_loopgains_histogram.png}
+\includegraphics[width=0.4\columnwidth]{figures/250-23_meas_pred_ratios_obsc_calculated_loopgain.png}
 \caption{{\it Left:} The calculated loopgains for wafer 250-23 using Joule power measured from flight iv curves, alpha and temperature from dark resistance versus temperature measurements, and thermal conductance from dark iv curves and assuming the power of thermal conductivity is 2. {\it Right:} The median ratio of measured to predicted \ac{NEP} for each detector on wafer 250-23 using the calculated loopgains instead of assuming the detector is deep in its transition and the loopgain is 10000.}
 \label{fig:loopgain_histogram}
 \end{center}
@@ -401,8 +401,8 @@ Our final results reported in \TAB\ref{in_transition_noise_table} are a lower li
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[width=0.69\columnwidth]{images/board69_wire3_ch11_1356987555s_transition}
-\includegraphics[width=0.29\columnwidth]{images/board69_wire3_ch11_1356987555s_aW}
+\includegraphics[width=0.69\columnwidth]{figures/board69_wire3_ch11_1356987555s_transition}
+\includegraphics[width=0.29\columnwidth]{figures/board69_wire3_ch11_1356987555s_aW}
 \caption{\comred{This spectrum is whiter than 68-2-04's was, but now the prediction and measurement almost line up and it's difficult to see the measurement line. Also, this bolo maybe isn't good because it is not dominated by photon noise. (why photon noise so small anyhow?) Does y axis span too many orders of magnitude? since this isn't about template subtraction, should we not even show the asd of the raw timestream? if pie chart is useful, maybe make it a subfigure on the asd? If you do use this guy and pie chart, the word readout needs to move right.}}
 \label{fig:in_transition_psd}
 \end{center}
@@ -410,7 +410,7 @@ Our final results reported in \TAB\ref{in_transition_noise_table} are a lower li
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=3in]{images/board69_wire3_ch11_noise_vs_time}
+\includegraphics[height=3in]{figures/board69_wire3_ch11_noise_vs_time}
 \caption{\comred{This bolo has median 1.05, much closer to median of wafer 150-09 (1.07), so this should address Matt's confusion. it does seem all bolos on this wafer show increase in optical load on 01/03, decrease on 01/04, and decreased optical load later in flight (e.g 01/07 \& 01/08) when we go deeper in transition. do we prefer a linear or log scale for the y axis?}}
 \label{fig:in_transition_noise_vs_time}
 \end{center}
@@ -418,7 +418,7 @@ Our final results reported in \TAB\ref{in_transition_noise_table} are a lower li
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=3in]{images/150-09_NEP_median_meas_pred_distribution}
+\includegraphics[height=3in]{figures/150-09_NEP_median_meas_pred_distribution}
 \caption{\comred{do you want to keep fit on plot? number of channels and greater than text printed on plot should just be deleted (or can go in caption if need be). Maybe pinkish median line is not a good color for black and white?}}
 \label{fig:150-09_median_histogram}
 \end{center}
@@ -451,7 +451,7 @@ Our final results reported in \TAB\ref{in_transition_noise_table} are a lower li
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=3in]{images/ebex_noise_level_predictions_barchart_per_wafer}
+\includegraphics[height=3in]{figures/ebex_noise_level_predictions_barchart_per_wafer}
 \caption{The average \ac{NEP} prediction for each flight wafer. The dark blue bars are the expected noise given the measured detector parameters and the preflight radiative load prediction for each frequency band, the turquoise bars are the additional \ac{NEP} given the radiative measured load at float, and the orange bars are the additional \ac{NEP} from assuming the excess noise measured overbiased is still a constant factor when the detectors are in the transition. The error bars on the blue are the standard deviation of the prediction due to the variation in measured detector parameters, on the turquoise and gold the standard deviation increases due variation in measured radiative loads. \comred{remove std bars ??}}
 \label{fig:nep_prediction_barchart}
 \end{center}
