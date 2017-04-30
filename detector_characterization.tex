@@ -125,7 +125,7 @@ Around 800~mK, when the niobium leads and aluminum wirebonds are superconducting
 \begin{figure}[htbp]
 \begin{center}
 \epsscale{1.0}
-\plottwo{images/detectors_and_readout/netanal_b16_SqCh1_5K_20111005_all.png}{images/detectors_and_readout/netanal_zoom_b16_SqCh1_5K_20111005.png}
+\plottwo{figures/detectors_and_readout/netanal_b16_SqCh1_5K_20111005_all.png}{figures/detectors_and_readout/netanal_zoom_b16_SqCh1_5K_20111005.png}
 \caption{Left: an example network analysis taken during testing.
 Right: a zoom on one peak (black dots) with the fitted response (red) and the optimal bias frequency (green star) minimizing crosstalk.}
 \label{fig:network_analysis}
@@ -165,11 +165,11 @@ The consequence of undershooting the normal resistance, as is the case for many 
 \begin{figure}[ht!]
 \centering
 \subfigure[150 GHz]
-{\includegraphics[width=0.31\textwidth]{./images/150_rn_hist}\label{subfig:150 GHz rns}}
+{\includegraphics[width=0.31\textwidth]{./figures/150_rn_hist}\label{subfig:150 GHz rns}}
 \subfigure[250 GHz]
-{\includegraphics[width=0.31\textwidth]{./images/250_rn_hist}\label{subfig:250 GHz rns}}
+{\includegraphics[width=0.31\textwidth]{./figures/250_rn_hist}\label{subfig:250 GHz rns}}
 \subfigure[410 GHz]
-{\includegraphics[width=0.31\textwidth]{./images/410_rn_hist}\label{410 GHz rns}}
+{\includegraphics[width=0.31\textwidth]{./figures/410_rn_hist}\label{410 GHz rns}}
 \caption{\textbf{From Left to Right:} Histogram of the measured normal resistance, $R_{normal}$, values for the 150, 250, and 410~GHz band \ac{EBEX} detectors operated during the \ac{EBEX2013} ballon flight. The design target for each frequency band, 1.5~$\Omega$, is the vertical red line and the median measured normal resistance is the vertical gold line.}
 \label{fig:rn_histograms}
 \end{figure}
@@ -190,7 +190,7 @@ An example of the IV, PV, RV curves is shown in Fig.~\ref{fig:bolo_iv_curve}, wh
 \begin{figure}[htbp]
 \begin{center}
 \epsscale{0.8}
-\plotone{images/detectors_and_readout/IV_curve} 
+\plotone{figures/detectors_and_readout/IV_curve} 
 \caption{The current (top panel), power (middle panel) and resistance (bottom panel) of a bolometer channel versus the electrical bias on the detector. The bolometer can be seen to drop into transition with a saturation power of about 9~pW. \acomment{Will likely want to replace this with non-scaled version}  \comgreen{Franky has the data and the code to produce this plot.} \comred{what does non-scaled version mean? do we want r vs v since we don't use or talk about it? or should we point out more explicitly this is how the fraction of Rn is determined??}}
 \label{fig:bolo_iv_curve}
 \end{center}
@@ -233,7 +233,7 @@ The hysteresis between the critical temperature measured cooling and warming is 
 \begin{figure}[htbp]
 \begin{center}
 \epsscale{0.6}
-\plotone{images/detectors_and_readout/410-18-03-03_tc}
+\plotone{figures/detectors_and_readout/410-18-03-03_tc}
 \caption{The critical temperature of bolometer 410-18-03-03 is 450~mK.  The temperature as a function of time (top panel), resistance as a function of time (middle panel) and temperature as a function of resistance (bottom panel) curves used to determine the critical temperature are shown. \comred{bottom panel has axis labels switched! where is the data/code to reproduce this plot?}
 }
 \label{fig:tc_measurement}
@@ -250,11 +250,11 @@ The consequence of undershooting the critical temperature, as for roughly half o
 \begin{figure}[ht!]
 \centering
 \subfigure[150 GHz]
-{\includegraphics[width=0.31\textwidth]{./images/150_tc_hist}\label{subfig:150 GHz tcs}}
+{\includegraphics[width=0.31\textwidth]{./figures/150_tc_hist}\label{subfig:150 GHz tcs}}
 \subfigure[250 GHz]
-{\includegraphics[width=0.31\textwidth]{./images/250_tc_hist}\label{subfig:250 GHz tcs}}
+{\includegraphics[width=0.31\textwidth]{./figures/250_tc_hist}\label{subfig:250 GHz tcs}}
 \subfigure[410 GHz]
-{\includegraphics[width=0.31\textwidth]{./images/410_tc_hist}\label{410 GHz tcs}}
+{\includegraphics[width=0.31\textwidth]{./figures/410_tc_hist}\label{410 GHz tcs}}
 \caption{\textbf{From Left to Right:} Histogram of the measured critical temperature, $T_{critical}$, values for the 150, 250, and 410~GHz band \ac{EBEX} detectors operated during the \ac{EBEX2013} ballon flight. The design target for each frequency band, 0.44~K, is the vertical red line and the median measured critical temperature is the vertical gold line. \comred{was it one of the 250s that had no tc measurements and so we used the average/median value of 490? and so there are too many detectors in the 250 histogram?}}
 \label{fig:tc_histograms}
 \end{figure}
@@ -274,11 +274,11 @@ The goal was thus to err on the higher side of the target.
 \begin{figure}[ht!]
 \centering
 \subfigure[150 GHz]
-{\includegraphics[width=0.31\textwidth]{./images/150_g_bar_hist}\label{subfig:150 GHz Gs}}
+{\includegraphics[width=0.31\textwidth]{./figures/150_g_bar_hist}\label{subfig:150 GHz Gs}}
 \subfigure[250 GHz]
-{\includegraphics[width=0.31\textwidth]{./images/250_g_bar_hist}\label{subfig:250 GHz Gs}}
+{\includegraphics[width=0.31\textwidth]{./figures/250_g_bar_hist}\label{subfig:250 GHz Gs}}
 \subfigure[410 GHz]
-{\includegraphics[width=0.31\textwidth]{./images/410_g_bar_hist}\label{410 GHz Gs}}
+{\includegraphics[width=0.31\textwidth]{./figures/410_g_bar_hist}\label{410 GHz Gs}}
 \caption{\textbf{From Left to Right:} Histogram of the measured average thermal conductance, $\overline{G}$, values for the 150, 250, and 410~GHz band \ac{EBEX} detectors operated during the \ac{EBEX2013} ballon flight. The design target for each frequency band is the vertical red line and the median measured average thermal conductance is the vertical gold line. \comred{ben's (or who made them?) 410 histogram had a much prettier distribution/cutoff... are we using different data somehow?? since 410-18 didn't actually work during flight, should I exclude those guys?}}
 \label{fig:G_Histograms}
 \end{figure}
@@ -386,7 +386,7 @@ We get several different $P_{electrical}$ from IV curves (described somewhere el
 %%\begin{figure}[htbp]
 %%\begin{center}
 %%\epsscale{1.0}
-%%\plottwo{images/detectors_and_readout/PV_250-23-09-07.png}{images/detectors_and_readout/load_tuning1.png}
+%%\plottwo{figures/detectors_and_readout/PV_250-23-09-07.png}{figures/detectors_and_readout/load_tuning1.png}
 %%\caption{Right : the power as a function of the voltage bias as detector 250-23-09-07 is dropped in its superconducting transition in a dark environment (red) and at float (blue).
 %%\comgreen{The red curve does not match the dark power in the leap/resources.  Get a better looking bolo.}
 %%Left : the distribution of measured optical load at float (blue) per frequency band.
@@ -399,7 +399,7 @@ We get several different $P_{electrical}$ from IV curves (described somewhere el
 %
 %%\begin{figure}[ht!]
 %%\begin{center}
-%%\includegraphics[height=1.7in]{images/board64_wire3_channel6_iv_curve}
+%%\includegraphics[height=1.7in]{figures/board64_wire3_channel6_iv_curve}
 %%\caption{{\it Left:} Current through bolometer versus voltage bias. {\it Middle:} Electrical power dissipated in bolometer versus voltage bias. {\it Right:} Resistance of bolometer versus voltage bias.} \comred{Dark/light iv plots: this bolo tested in ETC, use McGill instead since bath temperature more similar? or just ignore subtlety that they're at different temperatures, so comparing on the same plot is slightly misleading and can't scale whole curve, but rather just last point? REMOVE title? REMOVE fits to iv? left-most/bottom-most axis numbers overlap. Legend in each plot with dark/light labels?}
 %%\label{fig: iv dark and light}
 %%\end{center}
@@ -408,7 +408,7 @@ We get several different $P_{electrical}$ from IV curves (described somewhere el
 %\begin{figure}[htbp]
 %\begin{center}
 %\epsscale{1.0}
-%\includegraphics[height=1.7in]{images/board64_wire2_ch09_250-23-06-11_pv_curve}
+%\includegraphics[height=1.7in]{figures/board64_wire2_ch09_250-23-06-11_pv_curve}
 %\caption{The electrical power dissipated in the \ac{TES} as a function of the voltage bias for detector 250-23-06-11. As the voltage bias is decreased, the \ac{TES} temperature decreases. Once the \ac{TES} reaches its critical transition temperature, negative electrothermal feedback keeps the power dissipated constant. The blue curve is performed in a dark test cryostat at a bath temperature of $\sim$320~mK, and the red curve is performed in \ac{EBEX} at float with a bath temperature of $\sim$225~mK. The difference between the electrical power measured dark, corrected to the \ac{EBEX} bath temperature, and the electrical power measured at float is the measured radiative load.}
 %\label{fig:dark_light_pv}
 %\end{center}
@@ -418,9 +418,9 @@ We get several different $P_{electrical}$ from IV curves (described somewhere el
 %\begin{figure}[ht!]
 %\begin{center}
 %\begin{tabular}{cc}
-%\includegraphics[width=0.33\columnwidth]{images/ldb_optical_load_150s}
-%\includegraphics[width=0.33\columnwidth]{images/ldb_optical_load_250s}
-%\includegraphics[width=0.33\columnwidth]{images/ldb_optical_load_410s}
+%\includegraphics[width=0.33\columnwidth]{figures/ldb_optical_load_150s}
+%\includegraphics[width=0.33\columnwidth]{figures/ldb_optical_load_250s}
+%\includegraphics[width=0.33\columnwidth]{figures/ldb_optical_load_410s}
 %\end{tabular}
 %\caption{Histograms of the measured radiative load from the beginning of flight for the 150~GHz band detectors ({\it left}), the 250~GHz band detectors ({\it middle}), and the 410~GHz band detectors ({\it right}). These are stacked histograms where each wafer is labelled with a different color. Each histogram is fit to a Gaussian distribution, red line. The average value and standard deviation from the fit are reported in the legend. The radiative load predicted pre-flight, assuming detector absorption efficiencies of 0.6, 0.5, and 0.4 for the 150, 250, and 410~GHz bands respectively, is indicated for each frequency band by a vertical black line.} \comred{clean up plots.} %some thoughts: 250~GHz plot needs to be same size as others, move legend to upper right to match? Y axis needs labelling. For 150~GHz, make pre-flight prediction two lines like others and eliminate parentheses. 410~GHz needs y axis label. All, put units on fit? Caption and text needs some words about $\epsilon$ and transmission/reflection/emission assumptions. Need larger axis numbers.}
 %\label{fig:radiative_load_histograms}
