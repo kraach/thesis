@@ -35,25 +35,25 @@ You need to say \ac{EBEX} and \ac{SQUID} before the table ...
 \label{yield_table}
 \end{table}
 
-\TAB\ref{yield_table} provides an accounting of \ac{EBEX} detector loss as a function of observation frequency band, as well as the total sum.
-Each silicon wafer, regardless of observation frequency band, has 140 bolometers. %and one alignment mark for the curious/pedantic
+\TAB\ref{yield_table} provides an accounting of \ac{EBEX} detector loss as a function of observation frequency band, as well as the total sum for the experiment.
+Each silicon wafer, regardless of observation frequency band, had 140 bolometers. %and one alignment mark for the curious/pedantic
 The 150 and 250~GHz wafers were coupled to \ac{LC} boards around the perimeter of the focal plane. These edge \ac{LC} boards each had 125 readout channels, 124 of which were connected to bolometers.  
 The 410~GHz wafers were in the center of each focal plane and had central \ac{LC} boards in the space just behind the wafer. The central \ac{LC} boards each had 128 readout channels, 127 of which were connected to bolometers. %(because of the alignment mark). 
-At room temperature, the wafers were inspected visually and each bolometer was tested for electrical continuity. 
+The first two rows of the table give the total number of bolometers flown and the total number of bolometers the electronics were capable of reading out. 
 
-%
-%The characterization process requires a visual and electrical inspection post-fabrication, post-shipment, and post-handling. 
-%The visual inspection is done under a microscope and, for example, sometimes reveals incomplete etching evidenced by a column of material from the \ac{TES} to the silicon. 
-%This is noted as a thermal short and such a detector will not be electrically biased. 
-%The electrical inspection requires measuring the resistance by either probing directly across the wafer bond pads or by probing the leads on the \ac{LC} boards. 
-%The first method is done in the fabrication clean room and the second method is done after the wafer has been shipped, mounted, and wirebonded to its \ac{LC} board. 
-%The resistance reading is dominated by the room temperature resistance of the niobium leads. 
-%The electrical inspection can not identify a short across the \ac{TES} because the typical room temperature resistance of the \ac{TES} is a few ohms, much less than the tens of kiloohms of the niobium leads. 
-%The electrical inspection does, however, identify which \ac{TES} or leads do not make a complete electrical connection, i.e. are open. 
-%Given the visual and electrical inspection, we report a warm yield per wafer, see \TAB\ref{yield_table}, row 3. 
-%The warm visual and electrical inspection provides an upper limit of the wafer's yield because the open and thermally shorted detectors are guaranteed not to work. 
-%
-%For flight, each wafer had two bolometers replaced by 1~ohm resistors for monitoring read out electronic noise up to the \ac{LC} board, one channel at a low bias frequency and the other channel at a high bias frequency. Three \ac{SQUID}s were not attached to bolometer combs due to opens in the microstrips. These combs were modified to monitor read out electronic noise up to the \ac{SQUID}. See \TAB\ref{yield_table}, row 4. 
+At room temperature, the wafers were inspected visually and each bolometer was tested for electrical continuity. 
+The visual inspection was done under a microscope and, for example, sometimes revealed incomplete etching evidenced by a column of material from the \ac{TES} to the silicon. 
+This was noted as a thermal short and such a detector was not electrically biased. 
+For the electrical inspection, we measured the resistance by either probing directly across the wafer bond pads or by probing the leads on the \ac{LC} boards. 
+The first method was done in the fabrication clean room and the second method was done after the wafer had been shipped, mounted, and wirebonded to its \ac{LC} board. 
+The resistance reading was dominated by the room temperature resistance of the niobium leads. 
+The electrical inspection could not identify a short across the \ac{TES} because the typical room temperature resistance of the \ac{TES} was a few ohms, much less than the tens of kiloohms of the niobium leads. 
+The electrical inspection did, however, identify which \ac{TES} or leads did not make a complete electrical connection, i.e. were open. 
+The warm visual and electrical inspection provided an upper limit of the wafer's yield because the open and thermally shorted detectors were guaranteed not to work, see the third row of \TAB\ref{yield_table}. 
+
+For flight, each wafer had two bolometers replaced by 1~ohm resistors for monitoring read out electronic noise up to the \ac{LC} board, one channel at a low bias frequency and the other channel at a high bias frequency. 
+Three \ac{SQUID}s were not attached to bolometer combs due to opens in the microstrips. These combs were modified to monitor read out electronic noise up to the \ac{SQUID}. See \TAB\ref{yield_table}, row 4. 
+
 %
 %Upon cooling the wafer, there are wired detector channels with a reasonable room temperature resistance, yet they do not appear in the network analysis, see \TAB\ref{yield_table}, row 5. Five \ac{SQUID}s failed to operate during flight, see \TAB\ref{yield_table}, row 6 for the yield after the \ac{SQUID} failures. 
 %Once a wafer has been characterized in a dark cryostat, the detectors which degrade the noise performance of their comb are identified and their wirebonds are removed, see \TAB\ref{yield_table}, row 7. 
