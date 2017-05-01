@@ -68,39 +68,37 @@ The losses between row 7 and row 8 were due to detectors being saturated or fail
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Loop Gain Calculation {{{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Detector Loop Gain}
-%\label{sec:loop_gain}
+\section{Detector Loop Gain}
+\label{sec:loop_gain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%loop gain blah blah blah
-%
-%\begin{figure}[htbp]
-%\begin{center}
-%\includegraphics[width=1.0 \textwidth]{figures/loopgain_flowchart.pdf}
-%\caption{Loop gain calculation flow chart}
-%\label{fig:loopgain_flow}
-%\end{center}
-%\end{figure}
-%
-%The slope of the Resistance vs Temperature curve for 410-18 between .550 and .800~K was $0.29\pm0.05 \Omega/K$. 
-%
-%\begin{figure}[htbp]
-%\begin{center}
-%\includegraphics[width=0.5 \textwidth]{figures/250-23_loopgains_calculated_tuning3.png}
-%\caption{Loop gains calculated for 250-23 for tuning3.}
-%\label{fig:loopgain_calc_hist}
-%\end{center}
-%\end{figure}
-%
-%\begin{figure}[htbp]
-%\begin{center}
-%\includegraphics[width=0.5 \textwidth]{figures/250-23_loopgains_from_iv_tuning3.png}
-%\caption{Loop gains estimated from each 250-23 bolometer's flight IV curve for tuning3.}
-%\label{fig:loopgain_from_iv_hist}
-%\end{center}
-%\end{figure}
-%
-%
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=1.0 \textwidth]{figures/loopgain_flowchart.pdf}
+\caption{Loop gain calculation flow chart}
+\label{fig:loopgain_flow}
+\end{center}
+\end{figure}
+
+The slope of the Resistance vs Temperature curve for 410-18 between .550 and .800~K was $0.29\pm0.05 \Omega/K$. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.5 \textwidth]{figures/250-23_loopgains_calculated_tuning3.png}
+\caption{Loop gains calculated for 250-23 for tuning3.}
+\label{fig:loopgain_calc_hist}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.5 \textwidth]{figures/250-23_loopgains_from_iv_tuning3.png}
+\caption{Loop gains estimated from each 250-23 bolometer's flight IV curve for tuning3.}
+\label{fig:loopgain_from_iv_hist}
+\end{center}
+\end{figure}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 %
 %
@@ -108,79 +106,82 @@ The losses between row 7 and row 8 were due to detectors being saturated or fail
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Detector Sensitivity {{{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Detector Sensitivity}
-%\label{sensitivity}
+\section{Detector Sensitivity}
+\label{sensitivity}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%There are four units we use when measuring the detector noise equivalent power: ADC counts, Amps, Watts at the detector, and Watts on the sky. The total detector noise is recorded in ADC counts by the DfMUX boards. The predictions for the contributions of the current noise terms (Johnson and Readout) are naturally in units of Amps and the predictions for the contributions of the power noise terms (photon and phonon) are naturally in units of Watts at the detector. We also use each detector's calibration map of RCW38 to get a conversion from ADC counts to power on the sky in Watts.
-%
-%\begin{longtable}{| l | l | l |}
-%\caption{Noise Equivalent Power, Unit Conversions} \label{NEP_table} \\
-%  \hline
-%  Measured Noise & Photon and Phonon Noise & Johnson and Readout Noise \\ \hline
-%  $\big( \frac{\textbf{cts}^2}{\textbf{Hz}} \big)$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( S_I \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 $ \\ \hline
-%  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 $ & $\big( \frac{W^2}{Hz} \big) \times \big( S_I \big) ^2$ & $\big( \frac{\textbf{A}^2}{\textbf{Hz}} \big)$ \\ \hline
-%  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 \times \big( \frac{1}{S_I} \big) ^2$ & $\big( \frac{\textbf{W}^2}{\textbf{Hz}} \big)$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{1}{S_I} \big) ^2$ \\ \hline
-%  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{W_{sky}}{\textbf{cts}} \big) ^2$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{1}{\varepsilon} \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( \frac{W_{sky}}{\text{cts}} \big) ^2$ \\ \hline
-%\end{longtable}
-%
-%$\varepsilon$ is the instrument efficiency.
-%\be
-%\varepsilon = \frac{\text{power absorbed by detector}}{\text{incident sky power}}
-%\label{eq:eff_ratio}
-%\ee
-%
-%Responsivity is
-%\be
-%S_I = \frac{-1}{V_{bias}} * \frac{\mathscr{L}}{\mathscr{L} + 1} * \frac{1}{1 + i\omega\tau}
-%\label{eq:current_responsivity}
-%\ee
-%
+There are four units we use when measuring the detector noise equivalent power: ADC counts, Amps, Watts at the detector, and Watts on the sky. 
+The total detector noise is recorded in ADC counts by the DfMUX boards. 
+The predictions for the contributions of the current noise terms (Johnson and Readout) are naturally in units of Amps and the predictions for the contributions of the power noise terms (photon and phonon) are naturally in units of Watts at the detector. 
+We also use each detector's calibration map of RCW38 to get a conversion from ADC counts to power on the sky in Watts.
+
+\begin{longtable}{| l | l | l |}
+\caption{Noise Equivalent Power, Unit Conversions} \label{NEP_table} \\
+  \hline
+  Measured Noise & Photon and Phonon Noise & Johnson and Readout Noise \\ \hline
+  $\big( \frac{\textbf{cts}^2}{\textbf{Hz}} \big)$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( S_I \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 $ \\ \hline
+  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 $ & $\big( \frac{W^2}{Hz} \big) \times \big( S_I \big) ^2$ & $\big( \frac{\textbf{A}^2}{\textbf{Hz}} \big)$ \\ \hline
+  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 \times \big( \frac{1}{S_I} \big) ^2$ & $\big( \frac{\textbf{W}^2}{\textbf{Hz}} \big)$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{1}{S_I} \big) ^2$ \\ \hline
+  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{W_{sky}}{\textbf{cts}} \big) ^2$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{1}{\varepsilon} \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( \frac{W_{sky}}{\text{cts}} \big) ^2$ \\ \hline
+\end{longtable}
+
+$\varepsilon$ is the end-to-end instrument efficiency.
+\be
+\varepsilon = \frac{\text{power absorbed by detector}}{\text{incident sky power}}
+\label{eq:eff_ratio}
+\ee
+
+Responsivity is
+\be
+S_I = \frac{-1}{V_{bias}} * \frac{\mathscr{L}}{\mathscr{L} + 1} * \frac{1}{1 + i\omega\tau}
+\label{eq:current_responsivity}
+\ee
+
 %In the normal region of the resistance versus temperature curve, \ac{EBEX} wafer 410-18 detectors have an average slope $dR/dT$ of $0.29\pm0.05 \Omega/K$. 
 %At the transition temperature, the average slope of the curve is found to be XXX $\Omega/K$, a factor of XXX greater. 
 %The loopgain is proportional to $dR/dT$ and so it is a factor of $\sim XXX$ smaller when the detector is overbiased. 
 %The factor $\mathcal{L}/(\mathcal{L}+1)$ is XXX when the detector is normal versus XXX when the detector is overbiased. 
 %The dominant noise contributions are then from the Johnson and readout noise. 
-%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Flight Noise Performance {{{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Flight Noise Performance}
-%\label{flight_noise_performance}
+\section{Flight Noise Performance}
+\label{flight_noise_performance}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%The following analysis looks at the 941 bolometers wired to \ac{BRO}s 2, 3, and 4. 
-%With the exception of the very first time the bolometers were dropped into their transitions at float and the subsequent half hour of observation, \ac{BRO}1 was turned off in order to conserve bolometer power. \ac{BRO}1 also happened to consist of wafers which were largely saturated at float. 
-%Of the 941 bolometers included, 303 of them have zero valid samples throughout flight. 
-%An additional 92 bolometers have no 172~second chunks without flags. 
-%That should leave us with 546 detectors with some good data. 
-%There are, however, only 398 detectors reported in the analysis. 
-%We have 148 unaccounted for detector losses. 
-%
-%\subsection{Noise Performance}
-%\label{sec:noise_performance}
-%
+
+The following analysis looks at the 941 bolometers wired to \ac{BRO}s 2, 3, and 4. 
+With the exception of the very first time the bolometers were dropped into their transitions at float and the subsequent half hour of observation, \ac{BRO}1 was turned off in order to conserve bolometer power. \ac{BRO}1 also happened to consist of wafers which were largely saturated at float. 
+Of the 941 bolometers included, 303 of them have zero valid samples throughout flight. 
+An additional 92 bolometers have no 172~second chunks without flags. 
+That should leave us with 546 detectors with some good data. 
+There are, however, only 398 detectors reported in the analysis. 
+We have 148 unaccounted for detector losses. 
+
+\subsection{Noise Performance}
+\label{sec:noise_performance}
+
 %% make more unified so don't need these subsubsub sections 
 %%\subsubsubsection{Detector Noise Equivalent Power Predictions}
 %%\label{sec:nep}
-%
-%The sensitivity of the instrument is quantified by the \ac{NEP}. 
-%We report the \ac{EBEX} noise performance by comparing the expected \ac{NEP} to the measured \ac{NEP} over several hours of the \ac{EBEX2013} flight for a subset of detectors which have no data flagged as bad. 
-%\ac{NEP} is defined as the absorbed power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz. 
-%% (Sometimes NEP is instead defined as the \textit{incident} power required to produce a signal-to-noise ratio of 1 in an electrical bandwidth of 1~Hz, \cite{}.)
-%Using the dark characterization measurements (Section~\ref{sec:dark_measurements}), the measured radiative load (Section~\ref{sec:optical_load}), the electrical bias parameters, and the \ac{DfMUX} transfer functions, we predict the instrument sensitivity in \ac{NEP}. 
-%The predicted detector \ac{NEP}, $N$, is given by 
-%\begin{equation}
-%N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{readout}^2 )
-%\end{equation}
-%\begin{equation}
-%= 2h\nu P_{rad} + \xi \frac{P_{rad}^2}{\Delta \nu} + \gamma 4k_{B} T^2 G + \frac{1}{S_I^2} (\frac{4k_BT}{R} + N_{readout}^2 )
-%\end{equation}
-%where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance~\citep{mather_appliedoptics_1982}. 
-%%\comred{figure out how to properly add Mather 1982 applied optics bolometer noise paper to ebex paper 2 bibfile and reference. add P.~L. Richards Journal of Applied Physics 1994 to bibliography and reference \ac{NEP} wait. why also this one? what do they say about NEP that mather doesn't and we do? since all of these terms have been talked about before, just referencing is sufficient? i.e. don't need to explain each? we need to explain and/or reference why dfmux puts a $\sqrt{2}$ in the responsivity.}
+
+The sensitivity of the instrument is quantified by the \ac{NEP}. 
+We report the \ac{EBEX} noise performance by comparing the expected \ac{NEP} to the measured \ac{NEP} over several hours of the \ac{EBEX} flight for a subset of detectors which have no data flagged as bad. 
+\ac{NEP} is defined as the absorbed power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz. 
+% (Sometimes NEP is instead defined as the \textit{incident} power required to produce a signal-to-noise ratio of 1 in an electrical bandwidth of 1~Hz, \cite{}.)
+Using the dark characterization measurements, the measured radiative load, the electrical bias parameters, and the \ac{DfMUX} transfer functions, we predict the instrument sensitivity in \ac{NEP}. 
+The predicted detector \ac{NEP}, $N$, is given by 
+\begin{equation}
+N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{readout}^2 )
+\end{equation}
+\begin{equation}
+= 2h\nu P_{rad} + \xi \frac{P_{rad}^2}{\Delta \nu} + \gamma 4k_{B} T^2 G + \frac{1}{S_I^2} (\frac{4k_BT}{R} + N_{readout}^2 )
+\end{equation}
+where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance~\citep{Mather1982a}. 
+%\comred{figure out how to properly add Mather 1982 applied optics bolometer noise paper to ebex paper 2 bibfile and reference. add P.~L. Richards Journal of Applied Physics 1994 to bibliography and reference \ac{NEP} wait. why also this one? what do they say about NEP that mather doesn't and we do? since all of these terms have been talked about before, just referencing is sufficient? i.e. don't need to explain each? we need to explain and/or reference why dfmux puts a $\sqrt{2}$ in the responsivity.}
 %
 %
 %
