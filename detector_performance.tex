@@ -181,7 +181,7 @@ N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{reado
 = 2h\nu P_{rad} + \xi \frac{P_{rad}^2}{\Delta \nu} + \gamma 4k_{B} T^2 G + \frac{1}{S_I^2} (\frac{4k_BT}{R} + N_{readout}^2 )
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance~\citep{Mather1982a}. 
-%\comred{figure out how to properly add Mather 1982 applied optics bolometer noise paper to ebex paper 2 bibfile and reference. add P.~L. Richards Journal of Applied Physics 1994 to bibliography and reference \ac{NEP} wait. why also this one? what do they say about NEP that mather doesn't and we do? since all of these terms have been talked about before, just referencing is sufficient? i.e. don't need to explain each? we need to explain and/or reference why dfmux puts a $\sqrt{2}$ in the responsivity.}
+\comred{figure out how to properly add Mather 1982 applied optics bolometer noise paper to ebex  bibfile and reference.}
 %
 %
 %
@@ -299,7 +299,7 @@ where $h$ is Planck's constant, $\nu$ is the center of the observation frequency
 %S_I = -\frac{dI}{dP} = \frac{-\sqrt{2}}{V_{bias}} * \frac{\mathcal{L}}{\mathcal{L} + 1} * \frac{1}{1 + i\omega\tau}
 %\label{eq:current_responsivity}
 %\end{equation}
-%where $V_{bias}$ is the voltage bias across the bolometer, $\mathcal{L}$ is the bolometer loopgain, $\omega$ is the angular frequency of the signal modulation, and $\tau$ is the bolometer time constant~\citep{aubin_thesis}. 
+%where $V_{bias}$ is the voltage bias across the bolometer, $\mathcal{L}$ is the bolometer loopgain, $\omega$ is the angular frequency of the signal modulation, and $\tau$ is the bolometer time constant~\citep{aubin_thesis}. \comred{we need to explain and/or reference why dfmux puts a $\sqrt{2}$ in the responsivity.}
 %Assuming the loopgain, $\mathcal{L}$, is high and the time constant factor can be neglected, the current responsivity simplifies to $-\sqrt{2}/V_{bias}$, where $V_{bias}$ is calculated from the \ac{DfMUX} board settings and the transfer function from bias amplitude to voltage across the \ac{TES}. 
 %This analysis assumes the loopgain for each detector is high and we address this assumption in Section XXX. 
 %
