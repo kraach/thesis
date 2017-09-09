@@ -27,34 +27,20 @@
 
 
 
-Given the new detector design goals outlined in Section~\ref{sec:fabrication_parameters}, as well as the limited ability to change the detector settings after the payload was launched, it was vital to carefully characterize each detector wafer before considering it for the \ac{EBEX} focal plane. This section provides an overview of the characterization measurements, the sensitivity predictions, and the measured sensitivity of the detectors at float. Additional detail can be found in \cite{aubin_thesis} \cite{MacDermid_thesis} \cite{MacDermid_SPIE2014}.
-
+Given the detector design goals outlined in Section~\ref{sec:fabrication_parameters}, as well as the limited ability to change the detector settings after the payload was launched, it was vital to carefully characterize each detector wafer before considering it for the \ac{EBEX} focal plane. 
+%This section provides an overview of the characterization measurements, the sensitivity predictions, and the measured sensitivity of the detectors at float. Additional detail can be found in \cite{aubin_thesis} \cite{MacDermid_thesis} \cite{MacDermid_SPIE2014}.
 Of the more than four dozen detector wafers fabricated and characterized, only 14 were able to make the final cut and earn a prized spot in the \ac{EBEX} focal plane for the \ac{EBEX2013} flight. 
 
-The characterization process requires a visual and electrical inspection post-fabrication, post-shipment, and post-handling. 
-Sometimes, for example, the visual inspection reveals incomplete etching evidenced by a column of material from the TES to the silicon. 
-This is noted as a thermal short and such a detector is not biased. 
-The electrical inspection requires measuring the resistance directly across the wafer bond pads or by measuring at the leads on the \ac{LC} boards. 
-The resistance can be be measured by probing directly across the wafer bond pads or it can be measured by probing the leads on the \ac{LC} boards. 
-The first method is done in the clean room and the second method is done after the wafer and LC board have been wirebonded. 
-The resistance reading is dominated by the room temperature resistance of the Niobium leads. 
-The electrical inspection can not identify a short across the \ac{TES} because the typical room temperature of the TES is a few ohms, much less than the tens of kiloohms of the Niobium leads. 
-The electrical inspection does, however, identify which \ac{TES} or leads do not make a complete electrical connection, i.e. are open. 
-Given the visual and electrical inspection, we report a warm yield per wafer. 
-The warm visual and electrical inspection provides an upper limit of the wafer's yield because the open and thermally shorted detectors are guaranteed not to work. 
-See the warm yield column of the non-existent table. 
-Note, only 127 of the 140 bolometers have readout channels. 
+For characterization measurements, we mounted the wafer, Section~\ref{}, coupled it to the readout electronics, Section~\ref{}, and cooled it to sub-Kelvin temperatures, where the exact temperature depended on the testbed. 
+The three testbeds used were: a dedicated \ac{EBEX} test cryostat at the University of Minnesota, a test cryostat at McGill University, and the \ac{EBEX} cryostat itself, made dark. 
 
-For characterization measurements, we mount the wafer, Section~\ref{sec:fabrication_parameters}, couple it to the readout electronics, Section~\ref{sec:readout}, and cool it to sub-Kelvin temperatures, where the exact temperature depends on the testbed. 
-The \ac{EBEX} wafers are cooled down in a dedicated \ac{EBEX} test cryostat at the University of Minnesota or in a test cryostat at McGill University or in \ac{EBEX} itself (made dark). 
-The first test performed cold is called a network analysis. 
-The network analysis sweeps a voltage across the comb in frequency and measures the current response of the circuit. 
-It is a multiplexed RLC circuit with a peak in current at each LC resonant frequency. 
-Around 800~mK, when the Niobium leads and Aluminum wirebonds are superconducting but the TES is still normal, the width of the peak gives the resistance of the TES. 
+Figure~\ref{} is a network analysis for a single comb of 16 detectors. 
+The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit. 
+The multiplexed RLC circuit peaked in current at each LC resonant frequency. 
+Around 800~mK, when the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
 
 Each peak is fit individually to a Lorentzian (INCLUDE EQUATION) in order to determine each detector's resonant frequency, which is used to provide the bias signal to the TES. 
 The network analysis comb is also fit to a model (INCLUDE EQUATION) to get the stray resistance and inductance in series with the comb. 
-Upon cooling, the yield sometimes drops, see non-existent table. 
 
 Once the resonant frequencies are determined, the stage is heated so the bolometers are above their critical temperatures. 
 The detectors are then electrically overbiased such that there is enough Joule Power dissipated in the bolometer to keep the resistance normal as the stage is cooled. 
