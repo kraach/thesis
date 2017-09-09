@@ -1,0 +1,67 @@
+%\documentclass[11pt]{amsart}
+\usepackage[nolist]{acronym}
+\usepackage[margin=0.75in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{amssymb}
+\usepackage{xcolor}
+%\usepackage{wrapfig}
+%include textsubscript
+\usepackage{fixltx2e}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{tikz}
+%% KMD - Use subfiles to construct from pieces
+\usepackage{subfiles}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{calrsfs}
+\usepackage{morefloats}
+
+
+%% Modulate margins and columns
+\setlength{\columnsep}{0.5in}
+
+\usetikzlibrary{calc,fit,shadows}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+%---- Some useful extras ----
+\newcommand{\lCDM}{$\Lambda$-CDM}
+\newcommand{\C}[0]{\ensuremath{^{\circ}}C}
+\newcommand{\uK}[0]{\ensuremath{\mu}K}
+\newcommand{\degree}[0]{\ensuremath{^{o}\:}}
+\newcommand{\degreepersecond}[0]{\ensuremath{^{o}/s\:}}
+\newcommand{\am}[0]{\ensuremath{'}}
+\newcommand{\as}[0]{\ensuremath{''\:}}
+\newcommand{\heeight}[0]{$^{4}$He/$^{4}$He}
+\newcommand{\heten}[0]{$^{4}$He/$^{3}$He/$^{3}$He}
+\newcommand{\ahwp}{AHWP}
+\newcommand{\planck}{{\it Planck}}
+%\newcommand{\micron}{$\mu$m}
+
+\newcommand{\PinBRC}{593}
+\newcommand{\PoutBRC}{723}
+\newcommand{\PperDfMUX}{21}
+\newcommand{\PperPcrate}{296}
+\newcommand{\PperCh}{0.33}
+
+%Revision commands
+\newcommand{\revOne}[1]{\textcolor{red}{#1}}
+\newcommand{\revOneOmit}[1]{\textcolor{red}{\sout{#1}}}
+\newcommand{\acomment}[1]{\textcolor{blue}{#1}} %Comment was taken by aastex.cls - not sure why?
+\newcommand{\comgreen}[1]{\textcolor{green}{#1}}
+\newcommand{\comred}[1]{\textcolor{red}{#1}}
+\newcommand{\comblue}[1]{\textcolor{blue}{#1}}
+\newcommand{\footred}[1]{\footnote{\textcolor{red}{#1}}}
+
+%From telescope_and_optics
+\newcommand{\FIG}{Figure }
+\newcommand{\TAB}{Table }
+%\newcommand\textsubscript[1]{\ensuremath{_{\mbox{\fontsize\sf@size\z@#1}}}}
+% For Custom Table
+\newcommand{\customcell}[4]{\multicolumn{#1}{c}{\multirow{#2}{*}{\parbox{#3}{\centering #4}}}}
+% For not breaking lines with long acronyms
+\setlength\emergencystretch{1.5em}
+

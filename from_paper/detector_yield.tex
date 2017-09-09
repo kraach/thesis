@@ -1,0 +1,66 @@
+\documentclass[../EBEXPaper2.tex]{subfiles}
+\begin{document}
+%------------------------------------------------- 
+\subsubsection{Detector Yield}
+\label{sec:yield}
+
+\comred{Does this section even belong in this paper at all??}
+
+
+\begin{table}[ht!]
+\begin{center}
+\begin{tabular}{l|c|c|c|c}
+  & 150~GHz & 250~GHz & 410~GHz & Total \\
+\hline 1. Total number of bolometers on focal planes & 1120 & 560 & 280 & 1960 \\
+\hline 2. Able to read out with \ac{EBEX} electronics & 992 & 496 & 254 & 1742 \\
+\hline 3. Passed warm electrical \& visual inspections & 908 & 455 & 232 & 1595 \\
+\hline 4. Exclude resistor \& dark \ac{SQUID} channels & 861 & 447 & 213 & 1521 \\
+\hline 5. Detectors appearing in .8~K network analysis & 805 & 430 & 187 & 1422 \\
+\hline 6. \ac{SQUID} failures & 773 & 414 & 155 & 1342 \\
+\hline 7. Detectors removed due to poor performance & 676 & 371 & 133 & 1180 \\
+\hline 8. Detectors with successful flight IV curves & 504 & 342 & 109 & 955 \\
+% not including eccosorb/dark 492 & 317 & 92 & \
+\hline
+\end{tabular}
+\end{center}
+\caption{The detector yield broken down by observation frequency band, 150, 250, and 410~GHz, as well as the total number of detectors. Each row of the table accounts for detector loss.}
+\label{yield_table}
+\end{table}%
+
+
+%\comred{Do we even want to include any words/tables on detector yield? If we do, there is too much casual language and too many parentheses in text below. Also, how is one supposed to refer to lines of a table?}
+
+Each silicon wafer, regardless of observation frequency band, has 140 bolometers. % plus one alignment mark for the curious/pedantic
+The 150 and 250~GHz wafers are coupled to \ac{LC} boards around the edges of the focal plane. These edge \ac{LC} boards each have 125 readout channels, 124 of which are connected to bolometers. %(because of the alignment mark). 
+The 410~GHz wafers are coupled to \ac{LC} boards in the center of the focal planes. The central \ac{LC} boards each have 128 readout channels, 127 of which are connected to bolometers. %(because of the alignment mark). 
+See the first two rows of \TAB\ref{yield_table} for a breakdown of the number of bolometers and read out channels per \ac{EBEX} frequency band. 
+
+The characterization process requires a visual and electrical inspection post-fabrication, post-shipment, and post-handling. 
+The visual inspection is done under a microscope and, for example, sometimes reveals incomplete etching evidenced by a column of material from the \ac{TES} to the silicon. 
+This is noted as a thermal short and such a detector will not be electrically biased. 
+The electrical inspection requires measuring the resistance by either probing directly across the wafer bond pads or by probing the leads on the \ac{LC} boards. 
+The first method is done in the fabrication clean room and the second method is done after the wafer has been shipped, mounted, and wirebonded to its \ac{LC} board. 
+The resistance reading is dominated by the room temperature resistance of the niobium leads. 
+The electrical inspection can not identify a short across the \ac{TES} because the typical room temperature resistance of the \ac{TES} is a few ohms, much less than the tens of kiloohms of the niobium leads. 
+The electrical inspection does, however, identify which \ac{TES} or leads do not make a complete electrical connection, i.e. are open. 
+Given the visual and electrical inspection, we report a warm yield per wafer, see \TAB\ref{yield_table}, row 3. 
+The warm visual and electrical inspection provides an upper limit of the wafer's yield because the open and thermally shorted detectors are guaranteed not to work. 
+
+For flight, each wafer had two bolometers replaced by 1~ohm resistors for monitoring read out electronic noise up to the \ac{LC} board, one channel at a low bias frequency and the other channel at a high bias frequency. Three \ac{SQUID}s were not attached to bolometer combs due to opens in the microstrips. These combs were modified to monitor read out electronic noise up to the \ac{SQUID}. See \TAB\ref{yield_table}, row 4. 
+
+Upon cooling the wafer, there are wired detector channels with a reasonable room temperature resistance, yet they do not appear in the network analysis, see \TAB\ref{yield_table}, row 5. Five \ac{SQUID}s failed to operate during flight, see \TAB\ref{yield_table}, row 6 for the yield after the \ac{SQUID} failures. 
+Once a wafer has been characterized in a dark cryostat, the detectors which degrade the noise performance of their comb are identified and their wirebonds are removed, see \TAB\ref{yield_table}, row 7. 
+%Occasionally, upon cooling a wafer a second time, additional detectors go missing from the network analysis. (And some detectors re-appear ... presumably due to poor quality wirebond connections.) See \TAB\ref{yield_table}, line "Survived \ac{EBEX} cooldown and plucking." \comred{remove word plucking and remove bad actor, replace with more clear description. no need to mention reappearances since they seldom happen and we only have conjectures as to why?}
+Finally, at float altitude, IV curves are performed and the total number of successful curves is reported in \TAB\ref{yield_table}, line 8. The losses between row 7 and row 8 are due to detectors being saturated or failing to transition. %(though typically they also failed to turn around during the characterization measurements, the loss isn't counted until flight because there was some hope they might work) or the IV curve exhibiting strange behaviour (e.g. a jump in the current reading). \comred{ben showed pv curve, but not iv curve. maybe just call it a pv curve and refer to detector fab section? NO. with reorganization, first mention of iv/pv curve comes after this table ??}
+
+% or, much more succintly! 
+%The first step for each wafer characterization was the electrical and visual inspection which immediately followed fabrication.
+%Any bolometers with obvious issues, such as shorts, were not electrically connected to the readout to avoid degrading the noise performance of this multiplexed module.
+%This also acted as the first, and most coarse, yield measurement of the wafer.
+%Bolometers that passed this initial inspection were wirebonded to an \ac{LC} board and installed into a test cryostat as described in Section~\ref{sec:detector_readout}. 
+
+
+
+%------------------------------------------------
+%\include{DetectorReadoutBibliography}
+\end{document}
