@@ -1,0 +1,50 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% thesis.tex: Primary TeX control file for thesis.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt, oneside]{mnthesis}
+\usepackage{epsfig,epic,eepic,units}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage{mathrsfs}
+\usepackage{multirow}
+\usepackage{bigstrut}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{subfiles}
+%% Packages BS added to his, may be useful?
+%\usepackage{float}
+\usepackage{amsmath}
+%\usepackage{graphics}
+%\usepackage{multirow}
+%\usepackage{subfigure}
+%"include textsubscript" trying to eliminate errors with underscores
+\usepackage{fixltx2e}
+\usepackage{float}
+\usepackage{tikz}
+%be able to use \citep and \citet
+\usepackage{natbib}
+\usepackage[nolist]{acronym}
+
+\input{acronyms}
+\input{my_definitions}
+
+
+\linespread{1.3}
+\begin{document}
+\bibliographystyle{hunsrt} % style of bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{title}
+
+%Conclusion
+\include{conclusion}
+
+
+
+Test.
+
+% End the Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
