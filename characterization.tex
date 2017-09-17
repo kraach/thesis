@@ -34,6 +34,25 @@ The network analysis comb is also fit to a model (INCLUDE EQUATION) to get the s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Optical Efficiency {{{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Optical Efficiency}
+\label{sec:optical_efficiency}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/darkdetectoreffs}
+\caption{The dark detectors also observed a decrease in electrical power needed to keep the detector in the transition as the black body temperature was turned up. The slope of this line gives the "efficiency" of the dark detectors. Some measure of the level of optical cross talk?
+\label{fig:dark_optical_efficiencies} }
+\end{center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dark Noise Performance {{{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dark Noise Performance}
@@ -44,20 +63,34 @@ The network analysis comb is also fit to a model (INCLUDE EQUATION) to get the s
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/electronic_noise_sq1_sq7}
-\caption{Electronic noise in ETC. Units of $nV/\sqrt{Hz}$. This is probing the system from point A to point B. It includes the noise of ... .
+\caption{Electronic noise of warm electronics in \ac{ETC}. Units of $nV/\sqrt{Hz}$. This is probing the system from point A to point B. It includes the noise of ... .
 \label{fig:dark_electronic_noise} }
 \end{center}
 \end{figure}
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=2.5in]{figures/Nb01_squid7_etau_morepts.png}
+\includegraphics[height=2.5in]{figures/Nb01_squid7_etau_morepts}
 \caption{Electrothermal time constants of two bolometers on 150-01. What does the fit to this data give? This is the time constant between the TES and the web? As expected, the for the web to thermalize is much faster than the optical time constant (time for light to couple to the web). 
 \label{fig:electrothermal_tau} }
 \end{center}
 \end{figure}
 
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/squid7_transimp}
+\caption{\ac{SQUID} voltage versus current/flux curve. Operating regime is highlighted. Transimpedance, $dV/d\phi$ is the slope of the line.
+\label{fig:squid_transimpedance} }
+\end{center}
+\end{figure}
 
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/squidnoise_temp}
+\caption{\ac{SQUID} noise in \ac{ETC} as function of demodulation frequency. At detector demodulation frequencies, the Johnson noise term of the bolometer roughly doubles the noise.
+\label{fig:dark_squid_noise} }
+\end{center}
+\end{figure}
 
 
 
