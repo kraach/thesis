@@ -33,6 +33,46 @@ The current peak is modeled as a Lorentzian, .
 Each peak is fit individually to a Lorentzian (INCLUDE EQUATION) in order to determine each detector's resonant frequency, which is used to provide the bias signal to the TES. 
 The network analysis comb is also fit to a model (INCLUDE EQUATION) to get the stray resistance and inductance in series with the comb. 
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.31\textwidth]{figures/150_rn_hist.png}
+\includegraphics[width=0.31\textwidth]{figures250_rn_hist.png}
+\includegraphics[width=0.31\textwidth]{figures/410_rn_hist.png}
+\caption{Histogram of measured normal resistances $R_{n}$ for each of the frequency bands, including the median (vertical cyan)  
+and design (\comgreen{vertical gold dashed}) values.
+}
+\label{fig:rn_histograms}
+\end{figure}
+
+%\subsection{Critical Temperatures}
+%TOWARDS CRITICAL TEMPERATURES
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.31\textwidth]{figures/150_tc_hist.png}
+\includegraphics[width=0.31\textwidth]{figures/250_tc_hist.png}
+\includegraphics[width=0.31\textwidth]{figures/410_tc_hist.png}
+\caption{Histogram of measured critical temperature values for the detectors in each frequency band including the median (vertical cyan) and design (vertical gold dashed) values. 
+\label{fig:tc_histograms} }
+\end{figure}
+
+%\subsection{Thermal Conductances}
+%TOWARDS THERMAL CONDUCTANCES 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.31\columnwidth]{figures/150_g_bar_hist.png}
+\includegraphics[width=0.31\columnwidth]{figures/250_g_bar_hist.png}
+\includegraphics[width=0.31\columnwidth]{figures/410_g_bar_hist.png}
+\caption{Histograms of the measured average thermal conductance values for the three frequency bands including the 
+median (vertical cyan) and design (vertical gold dashed) values. 
+We piled measurements of  $\overline{G}$ exceeding 150~pW/K into the last histogram bin.
+%\comred{these histograms have values in excess of 150 pW/K piled in the last bin, but other histograms (throughout paper) don't do this. Should I re-make without piling?}
+}
+\label{fig:G_Histograms} 
+\end{figure}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
