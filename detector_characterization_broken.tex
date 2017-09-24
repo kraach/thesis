@@ -27,20 +27,20 @@
 
 
 
-Given the detector design goals outlined in Section~\ref{}, as well as the limited ability to change the detector settings after the payload was launched, it was vital to carefully characterize each detector wafer before considering it for the \ac{EBEX} focal plane. 
-%This section provides an overview of the characterization measurements, the sensitivity predictions, and the measured sensitivity of the detectors at float. Additional detail can be found in \cite{aubin_thesis} \cite{MacDermid_thesis} \cite{MacDermid_SPIE2014}.
-Of the more than four dozen detector wafers fabricated and characterized, only 14 were able to make the final cut and earn a prized spot in the \ac{EBEX} focal plane for the \ac{EBEX2013} flight. 
-
-For characterization measurements, we mounted the wafer, Section~\ref{}, coupled it to the readout electronics, Section~\ref{}, and cooled it to sub-Kelvin temperatures, where the exact temperature depended on the testbed. 
-The three testbeds used were: a dedicated \ac{EBEX} test cryostat at the University of Minnesota, a test cryostat at McGill University, and the \ac{EBEX} cryostat itself, made dark. 
-
-Figure~\ref{} is a network analysis for a single comb of 16 detectors. 
-The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit. 
-The multiplexed RLC circuit peaked in current at each LC resonant frequency. 
-Around 800~mK, when the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
-
-Each peak is fit individually to a Lorentzian (INCLUDE EQUATION) in order to determine each detector's resonant frequency, which is used to provide the bias signal to the TES. 
-The network analysis comb is also fit to a model (INCLUDE EQUATION) to get the stray resistance and inductance in series with the comb. 
+%Given the detector design goals outlined in Section~\ref{}, as well as the limited ability to change the detector settings after the payload was launched, it was vital to carefully characterize each detector wafer before considering it for the \ac{EBEX} focal plane. 
+%%This section provides an overview of the characterization measurements, the sensitivity predictions, and the measured sensitivity of the detectors at float. Additional detail can be found in \cite{aubin_thesis} \cite{MacDermid_thesis} \cite{MacDermid_SPIE2014}.
+%Of the more than four dozen detector wafers fabricated and characterized, only 14 were able to make the final cut and earn a prized spot in the \ac{EBEX} focal plane for the \ac{EBEX2013} flight. 
+%
+%For characterization measurements, we mounted the wafer, Section~\ref{}, coupled it to the readout electronics, Section~\ref{}, and cooled it to sub-Kelvin temperatures, where the exact temperature depended on the testbed. 
+%The three testbeds used were: a dedicated \ac{EBEX} test cryostat at the University of Minnesota, a test cryostat at McGill University, and the \ac{EBEX} cryostat itself, made dark. 
+%
+%Figure~\ref{} is a network analysis for a single comb of 16 detectors. 
+%The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit. 
+%The multiplexed RLC circuit peaked in current at each LC resonant frequency. 
+%Around 800~mK, when the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
+%
+%Each peak is fit individually to a Lorentzian (INCLUDE EQUATION) in order to determine each detector's resonant frequency, which is used to provide the bias signal to the TES. 
+%The network analysis comb is also fit to a model (INCLUDE EQUATION) to get the stray resistance and inductance in series with the comb. 
 
 Once the resonant frequencies are determined, the stage is heated so the bolometers are above their critical temperatures. 
 The detectors are then electrically overbiased such that there is enough Joule Power dissipated in the bolometer to keep the resistance normal as the stage is cooled. 
@@ -98,14 +98,14 @@ Using the dark characterization measurements, the measured optical load, the ele
 %The \ac{LC} board was connected to a test \ac{SQUID} board through the custom superconducting stripline described in section \ref{sec:wiring_and_RF}. The \ac{SQUID} board was mounted at the 4~K stage of a three stage either liquid helium or pulsed tube cooled test cryostat.  
 %The wafer and \ac{LC} board were cooled to 250~mK by a combination of an either liquid helium or a pulse tube cooler and a three stage \heten{} sorption fridge similar to the one described in section \ref{cryogenics_and_refrigerators}.%The \ac{SQUID} board is cooled to between 4 and 5~K by the liquid helium or pulse tube cooler alone. 
 
-For the detector dark characterization measurements, we mount the silicon device wafer, Section~\ref{sec:focal_plane_layout}, couple it to the readout electronics, Section~\ref{sec:detector_readout}, and cool it to 250-320~mK, where the exact temperature depends on the testbed. 
-The measurements take place in a test cryostat or in the \ac{EBEX} cryostat itself, closed to light for characterization runs. %too specific? just say in a cryostat dedicating to testing or ebex itself?
+%For the detector dark characterization measurements, we mount the silicon device wafer, Section~\ref{sec:focal_plane_layout}, couple it to the readout electronics, Section~\ref{sec:detector_readout}, and cool it to 250-320~mK, where the exact temperature depends on the testbed. 
+%The measurements take place in a test cryostat or in the \ac{EBEX} cryostat itself, closed to light for characterization runs. %too specific? just say in a cryostat dedicating to testing or ebex itself?
 
-The first test performed cold is called a network analysis. 
-The network analysis sweeps a voltage across the comb in frequency and measures the current response of the circuit. 
-It is a multiplexed RLC circuit with a peak in current at each LC resonant frequency, Fig.~\ref{fig:network_analysis}. 
-Around 800~mK, when the niobium leads and aluminum wirebonds are superconducting but the TES is still normal, fitting the peak to a model of the multiplexed circuit gives the resonant frequencies as well as the normal resistances of the TES \citep{MacDermid_thesis}. 
-%\comred{be more specific about 'the width of the peak gives.' mention this measurement ($\times$ requested fraction of $R_n$) will go into the Johnson noise?}
+%The first test performed cold is called a network analysis. 
+%The network analysis sweeps a voltage across the comb in frequency and measures the current response of the circuit. 
+%It is a multiplexed RLC circuit with a peak in current at each LC resonant frequency, Fig.~\ref{fig:network_analysis}. 
+%Around 800~mK, when the niobium leads and aluminum wirebonds are superconducting but the TES is still normal, fitting the peak to a model of the multiplexed circuit gives the resonant frequencies as well as the normal resistances of the TES \citep{MacDermid_thesis}. 
+%%\comred{be more specific about 'the width of the peak gives.' mention this measurement ($\times$ requested fraction of $R_n$) will go into the Johnson noise?}
 
 
 \begin{figure}[htbp]
@@ -135,15 +135,15 @@ Right: a zoom on one peak (black dots) with the fitted response (red) and the op
 %This ensures that the carrier frequency is selected to maximize current through this branch, not through the circuit as a whole, as the latter would increase crosstalk.
 
 
-Histograms summarizing the measured normal resistance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:rn_histograms}. 
-The target normal resistance for all bands is 1.5~$\Omega$ in order to ensure the detector remains in the stable regime where the detector electrical bandwidth, determined in part by the resistance, appropriately exceeds the \ac{TES} thermal bandwidth. 
-%Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
-We find the median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands to be 1.9, 1.5, and 1.0~$\Omega$ respectively. 
-The consequences of overshooting this value, as is the case for many of the 150~GHz detectors, are an increase in the detector voltage bias leakage, which is proportional to $R^2$ \citep{dobbs_revSciInst_2012}, and a decrease in the loopgain, which is inversely proportional to R. 
-% if R is higher, then johnson current noise is decreased since it goes like 1/sqrt(R)
-% if R is higher, then stability requirement has R/(2*pi*L) > 5.8/tau_tes is more satisfied
-For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%, and a loopgain decrease of 30\%. 
-The consequence of undershooting the normal resistance, as is the case for many of the detectors on wafer 410-28, is an increase in the Johnson current noise. The Johnson noise is proportional to $1/\sqrt{R}$, so that noise term increases by 20\% given a value of 1.0~$\Omega$ instead of 1.5~$\Omega$.
+%Histograms summarizing the measured normal resistance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:rn_histograms}. 
+%The target normal resistance for all bands is 1.5~$\Omega$ in order to ensure the detector remains in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeds the \ac{TES} thermal bandwidth by at least XXX. 
+%%Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
+%We find the median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands to be 1.9, 1.5, and 1.0~$\Omega$ respectively. 
+%The consequences of overshooting this value, as is the case for many of the 150~GHz detectors, are an increase in the detector voltage bias leakage, which is proportional to $R^2$ \citep{dobbs_revSciInst_2012}, and a decrease in the loopgain, which is inversely proportional to R. 
+%% if R is higher, then johnson current noise is decreased since it goes like 1/sqrt(R)
+%% if R is higher, then stability requirement has R/(2*pi*L) > 5.8/tau_tes is more satisfied
+%For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%, and a loopgain decrease of 30\%. 
+%The consequence of undershooting the normal resistance, as is the case for many of the detectors on wafer 410-28, is an increase in the Johnson current noise. The Johnson noise is proportional to $1/\sqrt{R}$, so that noise term increases by 20\% given a value of 1.0~$\Omega$ instead of 1.5~$\Omega$.
 
 %\comred{Assume detector optimization explains what about the electronics set our target to be 1.5~$\Omega$? Ben says "The requirement is really ~1.25 because what actually matters is Rtes in transition for the L/R requirement.  So depending on how deep we get in to the transition we could start anywhere just above 1.2 Ohms to operate at 0.88 to 1.0 Ohms." BUT. When determining which Rfrac to tune to, we didn't do this calculation. Rather, we noted, in general, below 80\% $R_{start}$, we had (not well understood) excess noise and so opted to go to 85\%. What I'm trying to say is, in practice, the operating fracRn value was not chosen carefully on a bolo by bolo basis or even a wafer by wafer basis to achieve a specific L/R. Explain the consequence of having a higher or lower normal resistance, e.g. 150s and one of the 410s (was it the 410 that operated or the 410 that was saturated?)? Ben says "Increased johnson noise and possibly bolo stability.  However, I'm not sure if either of these effects were detected in the wafers in test cryostats, Palestine, or flight."}
 
