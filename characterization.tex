@@ -58,6 +58,7 @@ Note, the center of the current peak and the optimal frequency bias are not perf
 Histograms summarizing the measured normal resistance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:rn_histograms}. 
 %Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
 The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands was 1.9, 1.5, and 1.0~$\Omega$ respectively. 
+FROM THE PAPER.
 The 150 and 410~GHz bimodal distributions were due to detector parameters being closely grouped within a single fabrication run, but varying between fabrication runs. 
 The measured value of $R_{n}$ for the 250~GHz band closely matched the design (see 
 Table~\ref{tab:Design_Params}). 
@@ -65,6 +66,17 @@ For the other two frequency bands, one mode of the distribution closely matched 
 The 150~GHz detectors with a measured $R_{n}$ of 2~$\Omega$, instead of the nominal 1.5~$\Omega$, were calculated to have increased electrical cross-talk from a value of 0.5\% to 0.9\% and decreased loopgain by 30\%. 
 The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the design value, were calculated to have increased Johnson noise by 20\% relative to the nominal expected value of 4.0 pA$/\sqrt{\mathrm{Hz}}$ (9.4~aW$/\sqrt{\mathrm{Hz}}$); see Equation~\ref{eqn:noisebudget}.
 
+DO YOU WANT TO INCLUDE MORE DETAILS ABOUT THE CROSS-TALK CALCULATION? PROBABLY? 
+There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
+The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer. 
+\begin{equation}
+\abs{\frac{R_bolo^2}{(2\Delta \omega L)^2}}
+\end{equation}
+~\citep{Dobbs2011}
+%see page 100 of notebook for calculation
+where for \ac{EBEX} we have inductors $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \omega = 2\pi 60~kHz$. 
+(The lower bias frequencies have this spacing, but when cooled, the lower capacitance values change more and the resonant frequency spacing is larger than predicted.)
+For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%
 
 %The consequences of overshooting this value, as is the case for many of the 150~GHz detectors, are an increase in the detector voltage bias leakage, which is proportional to $R^2$ \citep{dobbs_revSciInst_2012}, and a decrease in the loopgain, which is inversely proportional to R. 
 %% if R is higher, then johnson current noise is decreased since it goes like 1/sqrt(R)
@@ -94,6 +106,47 @@ and design (vertical gold dashed) values.
 %TOWARDS CRITICAL TEMPERATURES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+(HAVE WE MOTIVATED ELSEWHERE WHY WE CARE ABOUT VALUE OF $T_{C}$?) 
+For the measurement of the critical temperature, we placed a voltage bias of 5~$nV_{rms}$ across the detector such that the Joule heating was negligible ($\frac{V^2}{R} = 1.5~fW$) but there was still a measurable current signal. 
+Then we slowly, usually less than 3~mK/min, both cooled and warmed the detectors through their transitions while measuring the current through the detector. 
+We converted to resistance using Ohm's law, $R=V_{bias}/I_{measured}$.
+Note, this resistance does not agree with the resistance measured via the network analyses or via the IV curves. Any ideas why?
+
+Fig.~\ref{fig:tc_measurement} is an example of a critical temperature measurement for one detector. 
+The top panel shows the detector temperature as a function of time. %no need to point out there is hysteresis inherent in this measurement because the temperature sensor is on the invar, not on the wafer? 
+The bottom two panels show the bolometer resistance as a function of time and temperature. 
+The hysteresis between the critical temperature measured cooling and warming is generally less than 5~mK, sufficiently accurate for characterization.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[height=2.5in]{figures/G18_bolo10-03_RvsT_oral}
+\caption{FIND/MAKE THIS FIGURE: WANT WARMING AND COOLING IN ETC. BE CLEAR ABOUT HYSTERESIS FROM WARMING AND COOLING. NOTE LAG DUE TO TEMPERATURE SENSOR BEING MOUNTED TO INVAR INSTEAD OF TES.
+\label{fig:tc_measurement} }
+\end{center}
+\end{figure} 
+
+Histograms summarizing the measured critical temperatures for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:tc_histograms}. 
+The target critical temperature for each band is 0.44~K, a value which optimizes the phonon noise term given the \ac{EBEX} bath temperature. %or refer to Section~\ref{sec:detector_optimization} for the motivation ??
+We find the median critical temperature for the 150, 250, and 410 GHz bands to be 0.45, 0.49, and 0.51~K respectively.  
+The consequence of overshooting the critical temperature, as for some of the detectors in each of the frequency bands, is an increase in the Johnson noise, proportional to $\sqrt{T}$, and an increase in the phonon noise, proportional to $T$. 
+The consequence of undershooting the critical temperature, as for roughly half of the 150~GHz detectors, is potentially not being able to drop the detector into the transition because the critical temperature is too close to the bath temperature. % is this actually why we didn't want to go too low?
+%\comred{what's the consequence of the wide spread in Tc for the 150s? how concerned are we about the level of spread we fabricated?}
+
+FROM THE PAPER.
+For the measurement of the critical temperature $T_{c}$ we biased the detectors with 5~nV such that the Joule heating of 1.5~fW was 
+small and the bath temperature was a good proxy for the bolometer's temperature. For the same reason, the measurement was 
+done in dark conditions. We slowly changed the detectors' temperature while monitoring their current. 
+At the critical temperature the current showed a steep transition.
+Figure~\ref{fig:tc_histograms} shows histograms summarizing the measured critical temperatures. There 
+was a $\sim$20\% wafer-to-wafer spread in the measured $T_{c}$ with the medians for the three bands within 
+16\% of the target value of 0.44~K. 
+The 150~GHz detectors have the widest spread of measured $T_{c}$. The effect of this spread is to increase Johnson (phonon) 
+noise when $T_{c}$ is above (below) the design value. 
+At the high (low) edge of the distribution with $T_{c}$~=~0.54~K (0.36~K), there was an 11\% (5\%) increase in the calculated Johnson (phonon) noise 
+relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\sqrt{\mathrm{Hz}}$). 
+
+
+
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.31\textwidth]{figures/150_tc_hist.png}
@@ -109,6 +162,41 @@ and design (vertical gold dashed) values.
 %TOWARDS THERMAL CONDUCTANCES 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Once the resonant frequencies are determined from the network analysis fits, the stage is heated so the bolometers are above their critical temperatures. 
+The bolometers are then electrically overbiased such that there is enough Joule Power dissipated in the \ac{TES} to keep its resistance normal as the stage is cooled. 
+Once the stage is at its base temperature, we measure the bolometer saturation powers. 
+The saturation power is an important indicator of bolometer sensitivity on the sky because the sensitivity of the bolometer increases with lower saturation power, but the bolometer loses nearly all sensitivity if it saturates, i.e. its saturation power is less than the optical load during observations. 
+%measure the average thermal conductances, $\overline{G}$, via performing IV curves. 
+In order to measure the saturation power, we perform IV curves. 
+That is, for each biased channel, we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
+%As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
+Each channel is dropped until it reaches a fixed fraction of its original resistance, typically 85\%.
+In the case of a well-behaved bolometer with small stray impedance, electro-thermal feedback causes the power at the bolometer to remain fixed once the bolometer is sufficiently far into transition \cite{lanting_thesis}.
+Each bolometer wafer is enclosed in a light-tight box for these tests, so the total electrical power supplied is equivalent to the saturation power. 
+An example of the IV, PV, RV curves is shown in Fig.~\ref{fig:bolo_iv_curve}, where the saturation power is the horizontal section of the PV curve.
+
+Once we have measured the saturation powers and critical temperatures, then we can find the average thermal conductance of each detector via $\overline{G} = P_{sat}/\Delta T$, where $\Delta T$ is the difference between the critical and bath temperatures, $T_{critical} - T_{bath}$. 
+We need the thermal conductances in addition to the saturation powers in order to predict the phonon noise contribution. 
+Histograms summarizing the measured average thermal conductance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:G_Histograms}, where we find the median average thermal conductance, $\overline{G}$, for the 150, 250, and 410 GHz bands to be 36, 51, and 69~pW/K respectively. 
+The target values for the average thermal conductances are set by the radiative loading in the balloon environment, Section~\ref{sec:detector_optimization}, and are 30, 40, and 50~$pW/K$ for the 150, 250, and 410~GHz bands respectively. 
+Overshooting the average thermal conductance means an increase in the phonon noise, proportional to $\sqrt{G}$. 
+The consequence of undershooting the thermal conductance is exactly as it is for undershooting the saturation power. 
+That is, we risk saturation of the detector if there is not enough thermal conductance along the weak link to dump the incident power on the bolometer at float to the bath. 
+The goal was thus to err on the higher side of the target. 
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+\epsscale{0.8}
+\plotone{figures/detectors_and_readout/IV_curve} 
+\caption{The current (top panel), power (middle panel) and resistance (bottom panel) of a bolometer channel versus the electrical bias on the detector. The bolometer can be seen to drop into transition with a saturation power of about 9~pW. \acomment{Will likely want to replace this with non-scaled version}  \comgreen{Franky has the data and the code to produce this plot.} \comred{what does non-scaled version mean? do we want r vs v since we don't use or talk about it? or should we point out more explicitly this is how the fraction of Rn is determined??}}
+\label{fig:bolo_iv_curve}
+\end{center}
+\end{figure}
+
+
+
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=0.31\columnwidth]{figures/150_g_bar_hist.png}
@@ -120,6 +208,46 @@ We piled measurements of  $\overline{G}$ exceeding 150~pW/K into the last histog
 }
 \label{fig:G_Histograms} 
 \end{figure}
+
+
+FROM THE PAPER
+We determine the average thermal conductance of the bolometers using the relation
+\begin{equation}
+ \overline{G}(T_{0}) = P_{sat}(T_0)/ (T_{c} - T_{0}),
+\label{eqn:gbar}
+\end{equation}
+where $P_{sat}$ is the total power deposited in the detector, which is the power necessary to operate the \ac{TES} in the regime of strong electrothermal feedback in which the total power absorbed is constant.
+This power is commonly called the `saturation power' and it depends on the temperature of the bath
+\begin{equation}
+P_{sat}(T_{0}) = P_{e} (T_{0}) + P_{abs}. 
+\label{eqn:boloPowerFlow}
+\end{equation}
+Here $P_{e}$ is the electrical power absorbed in Joule heating and $P_{abs}$ is the radiative power absorbed.
+In dark conditions we assume that $P_{abs}$~=~0, and so $P_{sat}(T_{0})$~=~$P_{e,d}(T_{0})$ is 
+therefore a measurable quantity; we added the subscript $_{d}$ to $P_{e,d}$ to highlight that this is the electrical 
+power measured in dark conditions. 
+
+FROM THE PAPER
+Histograms summarizing the measured average thermal conductance values for the three \ac{EBEX} frequency bands are shown in 
+Figure~\ref{fig:G_Histograms}. The values of  $\overline{G}$ are given for the \ac{EBEX} bath temperature, $T_{0}$~=~0.25~K.
+The measurements were conducted in three different cryostats, each operating at 
+a different bath temperature $T_{0'}$. We corrected the measured values $\overline{G}(T_{0'})$ to $\overline{G}(T_{0})$ using 
+the scaling
+\begin{equation}
+P_{sat}(T_0) = \left( \frac{T^{n+1}-T_0^{n+1}}{T^{n+1}-T_{0'}^{n+1}} \right) P_{sat}(T_{0'}),
+\label{eqn:ScalePsat}
+\end{equation}
+which assumes that the thermal conductivity follows a power law $\kappa$~=~$\kappa_{0} T^{n}$; see Section~\ref{sec:optical_time_constant}. 
+
+FROM THE PAPER
+The design and median of measured values for the average thermal conductances are given in Table~\ref{tab:Design_Params}. While the 
+measured medians are up to 40\% larger than the design values, the spread in the measurements is even larger. This spread is 
+a consequence of variance between wafers and is also apparent in the measurements of $T_{c}$. 
+Higher thermal conductance increases phonon noise. For example, for a median 410~GHz detector, phonon noise increased by 
+% for histograms using only flight bolos, median was 69
+%17\% relative to the nominal value of 26~$aW/\sqrt{Hz}$.
+% for histograms using all ground characterization data, median is 63. so percent decreased. 
+12\% relative to the nominal value of 26~$aW/\sqrt{\mathrm{Hz}}$. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
