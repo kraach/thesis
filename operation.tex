@@ -159,6 +159,74 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 \end{center}
 \end{figure}
 
+\begin{figure}[ht!]
+  \begin{center}
+    \includegraphics[width=0.29\columnwidth]{figures/150_average_noise_contribution_pie_chart.png}
+    \includegraphics[width=0.29\columnwidth]{figures/250_average_noise_contribution_pie_chart.png}
+    \includegraphics[width=0.29\columnwidth]{figures/410_average_noise_contribution_pie_chart.png}
+    \includegraphics[width=0.1\columnwidth]{figures/piechart_legend.png}
+    \caption{Individual components of the \ac{NEP} prediction in aW$^{2}$/Hz per band.
+      The readout and Johnson \ac{NEP} terms include the excess factors measured with the resistors alone and with the bolometers biased above their superconducting transition.
+      % We hypothesize that the excess readout noise is due to electromagnetic pickup.
+      \label{fig:in_transition_pie} }
+  \end{center}
+\end{figure}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/board68_wire2_ch04_1356979731s_transition.png}
+\caption{In transition noise with the \ac{HWP} template present (red) and subtracted (gold).
+\label{fig:one_bolo_overbias_noise} }
+\end{center}
+\end{figure}
+
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/board68_wire2_ch06_transition.png}
+\includegraphics[height=2.5in]{figures/in_transition_histogram.png}
+\caption{Left top: in-transition measured (blue dots) and predicted corrected for excess noise above the transition (red crosses) \ac{NEP} for one 150~GHz detector 
+throughout flight. Gaps indicate times that data is absent or rejected. 
+Left bottom: distribution 
+of measured-to-predicted ratio for this detector throughout flight, and the median (vertical cyan) ratio of 1.1.
+Right: the distribution of the median ratio of measured to predicted in-transition noise corrected for excess noise above the transition throughout flight for all bolometers.
+The median ratio (vertical cyan) is 1.2. 
+\label{fig:in_transition_noise} }
+\end{center}
+\end{figure}
+
+
+
+\begin{table}[ht!]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline  Wafer & Predicted NEP [aW/$\sqrt{\mathrm{Hz}}$] & Measured/Predicted NEP \\
+\hline 150-09 & 68 & 1.1 \\
+\hline 150-14 & 45 & 0.8 \\
+\hline 150-15 & 47 & 1.2 \\
+%\hline 150-20 & n/a \\
+%\hline 150-24 & n/a \\
+\hline 150-39 & 77 & 1.1 \\
+\hline 150-43 & 56 & 1.1 \\
+\hline 150-47 & 59 & 1.4 \\
+\hline 250-23 & 80 & 1.1 \\
+\hline 250-24 & 76 & 1.4 \\
+%\hline 250-25 & n/a \\
+\hline 250-29 & 93 & 1.5 \\
+%\hline 410-18 & n/a \\
+\hline 
+410-28 & 110 & 1.6 \\
+\hline
+All Detectors &  & 1.2 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{The median predicted \ac{NEP} and measured-to-predicted ratio corrected for excess noise above the superconducting transition for each wafer and combined for 
+all detectors.
+}
+\label{tab:in_transition_noise_table}
+\end{table}
+
 
 
 
