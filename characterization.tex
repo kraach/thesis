@@ -70,7 +70,7 @@ DO YOU WANT TO INCLUDE MORE DETAILS ABOUT THE CROSS-TALK CALCULATION? PROBABLY?
 There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
 The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer. 
 \begin{equation}
-\abs{\frac{R_bolo^2}{(2\Delta \omega L)^2}}
+\frac{R_{bolo}^2}{(2\Delta \omega L)^2}
 \end{equation}
 ~\citep{Dobbs2011}
 %see page 100 of notebook for calculation
@@ -188,10 +188,9 @@ The goal was thus to err on the higher side of the target.
 
 \begin{figure}[htbp]
 \begin{center}
-\epsscale{0.8}
-\plotone{figures/detectors_and_readout/IV_curve} 
-\caption{The current (top panel), power (middle panel) and resistance (bottom panel) of a bolometer channel versus the electrical bias on the detector. The bolometer can be seen to drop into transition with a saturation power of about 9~pW. \acomment{Will likely want to replace this with non-scaled version}  \comgreen{Franky has the data and the code to produce this plot.} \comred{what does non-scaled version mean? do we want r vs v since we don't use or talk about it? or should we point out more explicitly this is how the fraction of Rn is determined??}}
-\label{fig:bolo_iv_curve}
+\includegraphics[height=2.5in]{figures/IV_curve.png} 
+\caption{THIS PLOT NEEDS TO BE REPLACED WITH ONE OF YOURS. The current (top panel), power (middle panel) and resistance (bottom panel) of a bolometer channel versus the electrical bias on the detector. The bolometer can be seen to drop into transition with a saturation power of about 9~pW. 
+\label{fig:bolo_iv_curve} }
 \end{center}
 \end{figure}
 
