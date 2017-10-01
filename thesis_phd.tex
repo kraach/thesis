@@ -1,11 +1,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % thesis.tex: Primary TeX control file for thesis.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[11pt, oneside]{mnthesis}
-\usepackage{epsfig,epic,eepic,units}
-\usepackage{hyperref}
-\usepackage{url}
+%def'n of xfloat keeps conflicting with other packages :(
+% save a copy of the kernel's \@xfloat
+\makeatletter\let\latex@xfloat\@xfloat\makeatother
+
+% load the mnthesis class
+\documentclass[11pt,oneside]{mnthesis}
+
+% fix floats to use single spacing
+\usepackage{etoolbox}
+\makeatletter
+\let\@xfloat\latex@xfloat
+\apptocmd{\@xfloat}{\linespread{1}\normalsize}{}{}
+\makeatother
+
+\usepackage{color}
 \usepackage{longtable}
+\usepackage{url}
 \usepackage{mathrsfs}
 \usepackage{multirow}
 \usepackage{bigstrut}
@@ -27,6 +39,9 @@
 %be able to use \citep and \citet
 \usepackage{natbib}
 \usepackage[nolist]{acronym}
+%internet told me to put this last
+\usepackage{hyperref}
+
 
 \input{acronyms}
 \input{my_definitions}
