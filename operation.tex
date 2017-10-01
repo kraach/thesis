@@ -92,6 +92,8 @@ for the 150, 250, and 410~GHz, respectively.
 The measured radiative loads were Gaussian-shaped distributions. 
 The Gaussian fits, of $3.6\pm 1.0, \, 5.3\pm 1.8$, and $4.9 \pm 1.4$~pW, agreed closely with the  medians and standard deviations of the distributions, $3.6\pm 1.5, \, 5.3\pm 1.8$, and $5.0 \pm 1.4$~pW, 
 for the 150, 250, and 410~GHz, respectively. 
+The were 37, 9, and 0 detectors at 150, 250, and 410~GHz with negative measured loads. 
+These non-physical measurements were not included in the radiative load distributions. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
@@ -114,16 +116,6 @@ To convert to units of power on the sky, we can either use each detector's calib
 \label{eq:eff_ratio}
 \ee
 \TAB\ref{psd_table} provides the conversion applied to each noise term in order to report in the units of the leftmost column. 
-
-%\begin{longtable}{| l | l | l |}
-%\caption{Noise Equivalent Power, Unit Conversions} \label{NEP_table} \\
-%  \hline
-%  Timestream & Photon and Phonon & Johnson and Readout \\ \hline
-%  $\big( \frac{\textbf{cts}^2}{\textbf{Hz}} \big)$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( S_I \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 $ \\ \hline
-%  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 $ & $\big( \frac{W^2}{Hz} \big) \times \big( S_I \big) ^2$ & $\big( \frac{\textbf{A}^2}{\textbf{Hz}} \big)$ \\ \hline
-%  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 \times \big( \frac{1}{S_I} \big) ^2$ & $\big( \frac{\textbf{W}^2}{\textbf{Hz}} \big)$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{1}{S_I} \big) ^2$ \\ \hline
-%  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{W_{sky}}{\textbf{cts}} \big) ^2$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{1}{\varepsilon} \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( \frac{W_{sky}}{\text{cts}} \big) ^2$ \\ \hline
-%\end{longtable}
 
 \begin{table}[ht!]
 \begin{center}
