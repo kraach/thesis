@@ -83,13 +83,15 @@ The losses between row 7 and row 8 were due to detectors being saturated or fail
 \includegraphics[width=0.32\columnwidth]{figures/ep2_410_radiative_load_hist}
 %\end{tabular}
 \caption{Histograms of the measured radiative load from the first detector tuning at float. The different colors represent 
-different wafers.  The medians and standard deviations of the distributions are $3.6\pm 1.5, \, 5.3\pm 1.8$, and $5.0 \pm 1.4$~pW,
-%gaussian fits were $3.6\pm 1.0, \, 5.3\pm 1.8$, and $4.9 \pm 1.4$~pW, - wow these agreed closely!
+different wafers.  The medians and standard deviations of the distributions are $3.6\pm 1.5, \, 5.3\pm 1.8$, and $5.0 \pm 1.4$~pW, 
 for the 150, 250, and 410~GHz, respectively. 
 \label{fig:radiative_load_histograms} }
 \end{center}
 \end{figure}
 
+The measured radiative loads were Gaussian-shaped distributions. 
+The Gaussian fits, of $3.6\pm 1.0, \, 5.3\pm 1.8$, and $4.9 \pm 1.4$~pW, agreed closely with the  medians and standard deviations of the distributions, $3.6\pm 1.5, \, 5.3\pm 1.8$, and $5.0 \pm 1.4$~pW, 
+for the 150, 250, and 410~GHz, respectively. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
@@ -102,9 +104,10 @@ for the 150, 250, and 410~GHz, respectively.
 \label{sec:flight_noise_performance}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-There are four units we use when measuring the detector noise equivalent power: \ac{ADC} counts, Amps, Watts at the detector, and Watts on the sky. 
-The total detector noise is recorded in \ac{ADC} counts by the \ac{DfMUX} boards. 
-The predictions for the contributions of the current noise terms (Johnson and readout) are naturally in units of Amps and the predictions for the contributions of the power noise terms (photon and phonon) are naturally in units of Watts at the detector. 
+There are four units we use when measuring the detector \ac{NEP}: \ac{DfMUX} \ac{ADC} counts, Amps, Watts at the detector, and Watts on the sky. 
+The raw timestreams from the \ac{DfMUX} boards are recorded in \ac{ADC} counts. 
+The predictions for the current noise terms of the \ac{NEP}, Johnson and readout, are naturally in units of Amps.
+The predictions for the power noise terms of the \ac{NEP}, photon and phonon, are naturally in units of Watts at the detector. 
 We also use each detector's calibration map of RCW38 to get a conversion from \ac{ADC} counts to power on the sky in Watts.
 
 \begin{longtable}{| l | l | l |}
