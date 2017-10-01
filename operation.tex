@@ -104,27 +104,44 @@ for the 150, 250, and 410~GHz, respectively.
 \label{sec:flight_noise_performance}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-There are four units we use when measuring the detector \ac{NEP}: \ac{DfMUX} \ac{ADC} counts, Amps, Watts at the detector, and Watts on the sky. 
+There are four units we use when measuring the detector \ac{PSD}: \ac{DfMUX} \ac{ADC} counts, Amps, Watts at the detector, and Watts on the sky. 
 The raw timestreams from the \ac{DfMUX} boards are recorded in \ac{ADC} counts. 
 The predictions for the current noise terms of the \ac{NEP}, Johnson and readout, are naturally in units of Amps.
 The predictions for the power noise terms of the \ac{NEP}, photon and phonon, are naturally in units of Watts at the detector. 
-We also use each detector's calibration map of RCW38 to get a conversion from \ac{ADC} counts to power on the sky in Watts.
-
-\begin{longtable}{| l | l | l |}
-\caption{Noise Equivalent Power, Unit Conversions} \label{NEP_table} \\
-  \hline
-  Timestream & Photon and Phonon & Johnson and Readout \\ \hline
-  $\big( \frac{\textbf{cts}^2}{\textbf{Hz}} \big)$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( S_I \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 $ \\ \hline
-  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 $ & $\big( \frac{W^2}{Hz} \big) \times \big( S_I \big) ^2$ & $\big( \frac{\textbf{A}^2}{\textbf{Hz}} \big)$ \\ \hline
-  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 \times \big( \frac{1}{S_I} \big) ^2$ & $\big( \frac{\textbf{W}^2}{\textbf{Hz}} \big)$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{1}{S_I} \big) ^2$ \\ \hline
-  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{W_{sky}}{\textbf{cts}} \big) ^2$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{1}{\varepsilon} \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( \frac{W_{sky}}{\text{cts}} \big) ^2$ \\ \hline
-\end{longtable}
-
-$\varepsilon$ is the end-to-end instrument efficiency.
+To convert to units of power on the sky, we can either use each detector's calibration map of RCW38 or the measured end-to-end instrument efficiency, 
 \be
 \varepsilon = \frac{\text{power absorbed by detector}}{\text{incident sky power}}
 \label{eq:eff_ratio}
 \ee
+\TAB\ref{psd_table} provides the conversion applied to each noise term in order to report in the units of the leftmost column. 
+
+%\begin{longtable}{| l | l | l |}
+%\caption{Noise Equivalent Power, Unit Conversions} \label{NEP_table} \\
+%  \hline
+%  Timestream & Photon and Phonon & Johnson and Readout \\ \hline
+%  $\big( \frac{\textbf{cts}^2}{\textbf{Hz}} \big)$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( S_I \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 $ \\ \hline
+%  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 $ & $\big( \frac{W^2}{Hz} \big) \times \big( S_I \big) ^2$ & $\big( \frac{\textbf{A}^2}{\textbf{Hz}} \big)$ \\ \hline
+%  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{A_{sq}}{\text{cts}} \big) ^2 \times \big( \frac{1}{S_I} \big) ^2$ & $\big( \frac{\textbf{W}^2}{\textbf{Hz}} \big)$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{1}{S_I} \big) ^2$ \\ \hline
+%  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \times \big( \frac{W_{sky}}{\textbf{cts}} \big) ^2$ & $\big( \frac{W^2}{Hz} \big) \times \big( \frac{1}{\varepsilon} \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \times \big( \frac{\text{cts}}{A_{sq}} \big) ^2 \times \big( \frac{W_{sky}}{\text{cts}} \big) ^2$ \\ \hline
+%\end{longtable}
+
+\begin{table}[ht!]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline Units & Timestream & Photon and Phonon & Johnson and Readout \\ 
+\hline ct & $\big( \frac{\textbf{ct}^2}{\textbf{Hz}} \big)$ & $\big( \frac{W^2}{Hz} \big)   \big( S_I \big) ^2 \big( \frac{\text{ct}}{A} \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \big( \frac{\text{ct}}{A} \big) ^2 $ \\ 
+\hline A & $\big( \frac{\text{ct}^2}{\text{Hz}} \big) \big( \frac{A}{\text{ct}} \big) ^2 $ & $\big( \frac{W^2}{Hz} \big) \big( S_I \big) ^2$ & $\big( \frac{\textbf{A}^2}{\textbf{Hz}} \big)$ \\ 
+\hline $W_{bolo}$ & $\big( \frac{\text{ct}^2}{\text{Hz}} \big) \big( \frac{A}{\text{ct}} \big) ^2 \big( \frac{1}{S_I} \big) ^2$ & $\big( \frac{\textbf{W}^2}{\textbf{Hz}} \big)$ & $\big( \frac{A^2}{Hz} \big) \big( \frac{1}{S_I} \big) ^2$ \\ 
+\hline $W_{sky}$ &  $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \big( \frac{W_{sky}}{\text{ct}} \big) ^2$ & $\big( \frac{W^2}{Hz} \big) \big( S_I \big) ^2 \big( \frac{\text{ct}}{\text{A}} \big) ^2 \big( \frac{W_{sky}}{\text{ct}} \big) ^2$ & $\big( \frac{A^2}{Hz} \big) \big( \frac{\text{ct}}{A} \big) ^2 \big( \frac{W_{sky}}{\text{ct}} \big) ^2$ \\ 
+\hline $W_{sky}$ & $\big( \frac{\text{cts}^2}{\text{Hz}} \big) \big( \frac{A}{\text{ct}} \big) ^2 \big( \frac{1}{S_I} \big) ^2 \big( \frac{1}{\varepsilon} \big) ^2$ & $\big( \frac{W^2}{Hz} \big)  \big( \frac{1}{\varepsilon} \big) ^2$ &  $\big( \frac{A^2}{Hz} \big) \big( \frac{1}{S_I} \big) ^2 \big( \frac{1}{\varepsilon} \big) ^2 $ \\
+\hline
+\end{tabular}
+\end{center}
+%\caption{\ac{PSD} Unit Conversions. The detector timestream is recorded in units of \ac{DfMUX} \ac{ADC} counts, and so the \ac{PSD} is in units of $\frac{\text{cts}^2}{\text{Hz}$. The power terms, photon and phonon noise, are in units of Watts at the detector, and so the \ac{PSD} is in units of $\frac{W^2}{Hz}$, where $W$ means Watts at the detector.  } 
+\label{psd_table}
+\end{table}
+
+
 
 Responsivity is
 \be
