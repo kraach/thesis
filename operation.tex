@@ -36,26 +36,27 @@ You need to say \ac{EBEX} and \ac{SQUID} before the table ...
 
 \TAB\ref{yield_table} provides an accounting of \ac{EBEX} detector yield as a function of observation frequency band, as well as the total for the experiment.
 Each silicon wafer, regardless of observation frequency band, had 140 bolometers and one fabrication alignment mark. %for the curious/pedantic
-The 150 and 250~GHz wafers were coupled to \ac{LC} boards around the perimeter of the focal plane. These edge \ac{LC} boards each had 125 readout channels, 124 of which were connected to bolometers.  
-The 410~GHz wafers were in the center of each focal plane and had central \ac{LC} boards in the space just behind the wafer. The central \ac{LC} boards each had 128 readout channels, 127 of which were connected to bolometers. %(because of the alignment mark). 
-The first two rows of the table give the total number of bolometers flown and the total number of bolometers the electronics were capable of reading out. 
+The 150 and 250~GHz wafers were coupled to \ac{LC} boards around the perimeter of the focal plane. These edge \ac{LC} boards each had 125 readout channels. Because of the alignment mark replacing one bolometer, 124 readout channels were connected to bolometers.  
+The 410~GHz wafers were in the center of each focal plane and had central \ac{LC} boards offset from the focal plane, in the space just behind the wafer. The central \ac{LC} boards each had 128 readout channels. Again, because of the alignment mark, 127 readout channels were connected to bolometers. %(because of the alignment mark). 
+The first two rows of \TAB\ref{yield_table} give the total number of bolometers flown and the total number of bolometers the electronics were capable of reading out. 
 
 At room temperature, the wafers were inspected visually and each bolometer was tested for electrical continuity. 
-The visual inspection was done under a microscope and, for example, sometimes revealed incomplete etching evidenced by a column of material from the \ac{TES} to the silicon. 
+The visual inspection was done under a microscope and, for example, sometimes revealed incomplete etching evidenced by a column of silicon from the spiderweb to the silicon backing wafer. 
 This was noted as a thermal short and such a detector was not electrically biased. 
 For the electrical inspection, we measured the resistance by either probing directly across the wafer bond pads or by probing the leads on the \ac{LC} boards. 
 The first method was done in the fabrication clean room and the second method was done after the wafer had been shipped, mounted, and wirebonded to its \ac{LC} board. 
 The resistance reading was dominated by the room temperature resistance of the niobium leads. 
 The electrical inspection could not identify a short across the \ac{TES} because the typical room temperature resistance of the \ac{TES} was a few ohms, much less than the tens of kiloohms of the niobium leads. 
 The electrical inspection did, however, identify which \ac{TES} or leads did not make a complete electrical connection, i.e. were open. 
-The warm visual and electrical inspection provided an upper limit of the wafer's yield because the open and thermally shorted detectors were guaranteed not to work, see the third row of \TAB\ref{yield_table}. 
+The warm visual and electrical inspection provided an upper limit of the wafer's yield because the open and thermally shorted detectors were guaranteed not to work, third row of \TAB\ref{yield_table}. 
 
-For flight, each wafer had two bolometers replaced by 1~ohm resistors for monitoring read out electronic noise up to the \ac{LC} board, one channel at a low bias frequency and the other channel at a high bias frequency. 
-Three \ac{SQUID}s were not attached to bolometer combs due to opens in the microstrips. These combs were modified to monitor read out electronic noise up to the \ac{SQUID}. See \TAB\ref{yield_table} row 4. 
+For flight, each wafer had two bolometers replaced by one ohm resistors near the \ac{LC} board bond pads. 
+These two channels were dedicated to monitoring read out electronic noise up to the \ac{LC} board, one channel at a low bias frequency and the other channel at a high bias frequency. 
+Three \ac{SQUID}s were not attached to bolometer combs due to opens in the microstrips. These combs were modified to monitor read out electronic noise up to the \ac{SQUID}, \TAB\ref{yield_table} row 4. 
 
-Upon cooling the wafer, there were wired detector channels that showed a reasonable room temperature resistance but did not appear in the network analysis, see \TAB\ref{yield_table} row 5. 
-Five \ac{SQUID}s failed to operate during flight, see \TAB\ref{yield_table} row 6 for the yield after the \ac{SQUID} failures. 
-Once a wafer was characterized in a dark cryostat, the detectors which degraded the noise performance of their entire comb were identified and their wirebonds were removed, see \TAB\ref{yield_table}, row 7. 
+Upon cooling the wafer, there were wired detector channels which had shown a reasonable room temperature resistance but did not appear in the network analysis, \TAB\ref{yield_table} row 5. 
+Five \ac{SQUID}s failed to operate during flight, \TAB\ref{yield_table} row 6. 
+Once a wafer was characterized in a dark cryostat, the detectors which degraded the noise performance of their entire comb were identified and their wirebonds were removed, \TAB\ref{yield_table}, row 7. 
 %%Occasionally, upon cooling a wafer a second time, additional detectors go missing from the network analysis. (And some detectors re-appear ... presumably due to poor quality wirebond connections.) See \TAB\ref{yield_table}, line "Survived \ac{EBEX} cooldown and plucking." \comred{remove word plucking and remove bad actor, replace with more clear description. no need to mention reappearances since they seldom happen and we only have conjectures as to why?}
 
 After \ac{EBEX} was launched and reached its float altitude, IV curves were performed and the total number of successful curves is reported in \TAB\ref{yield_table}, line 8. 
@@ -76,13 +77,22 @@ The losses between row 7 and row 8 were due to detectors being saturated or fail
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 From the dark IV curve measurements described in Section~\ref{sec:thermal_conductance}, the power required to hold the detector in the constant electro-thermal feedback regime is determined.
-\textcolor{red}{Need to go write the thermal conductance measurement section.} 
-At float, IV curves were performed once we reached float altitude and opened the double window and then again after each fridge cycle. 
+\textcolor{red}{Need to go write the thermal conductance measurement section. (Be sure you explain how we get from IV to PV.)} 
+Once \ac{EBEX} reached float altitude and the thick cryostat window was rolled back, IV curves were performed. 
+\textcolor{red}{Is it worth mentioning anywhere that we also did IV curves as a function of elevation and also after each fridge cycle?}
 From these IV curves we measured the power required at float (with radiative load present) to hold the detector in the constant electro-thermal feedback regime. 
 \textcolor{red}{Do you want to say anything about how and why we dropped to 85\%? Can you make a quantitative statement about the level of uncertainty or systematic this introduces in $P_{sat}^{light}$}
-The difference in the two powers measured, dark and light, gives each detector's measured radiative load, Figure~\ref{fig:dark_light_iv_curves}. 
-\textcolor{red}{Include a figure of a flight and dark IV curve.}
+The difference in the two powers measured, in the dark cryostat and open to light at float, gives each detector's measured radiative load, Figure~\ref{fig:dark_light_iv_curves}. 
 Figure~\ref{fig:radiative_load_histograms} has the distributions of the measured radiative loads from the first set of IV curves performed at float, broken down by frequency band. 
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/board70_wire3_ch02_light_dark_pv_curves.png}
+\caption{Power as a function of bias voltage for a detector from wafer 150-43, dark in \textcolor{red}{a test cryostat} (blue) and at float (red). The measured radiative load was \textcolor{red}{XXX~pW}.
+\textcolor{red}{Is this the bolometer you want to showcase? (the same one used in EP2.)}
+\label{fig:dark_light_iv_curves} }
+\end{center}
+\end{figure}
 
 \begin{figure}[ht!]
 \begin{center}
