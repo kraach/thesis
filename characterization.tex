@@ -166,32 +166,43 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 
 \textcolor{red}{will you have already discussed \ac{NEP}? Yes. In 2.1. Bolometer Theory. in particular, phonon noise. for now point to eqtn in measured noise section.}
 
+\textcolor{red}{you need to be clear that you are using noise and \ac{NEP} interchangeably.}
+
 \textcolor{red}{Address: Why do we need to know the thermal conductance? i.e. Why do we care? When we talked about targets, we already should have talked about including a safety factor? And what set that target? maybe all of these words need to be moved to the bolometer theory section?}
 % too vague. The thermal conductance of the thermal link from the TES to the bath governs the bolometer sensitivity. 
-We need to know the thermal conductance, $G$, of the thermal link from the TES to the bath in order to accurately predict sensitivity. 
+
+We need to know the thermal conductance, $G$, of the thermal link from the TES to the bath in order to accurately predict the detector sensitivity. 
 The phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:nep}. 
-We want to minimize $G$ such that we minimize our noise. 
+We want to minimize $G$ so that we minimize the contribution of the phonon noise to the total. 
 This value, however, needs to be sufficiently high to allow for radiative load fluctuations.
-When we set our target $G$, we included a safety factor of 2.5 times the expected load from the \ac{CMB}. 
+When we set our target $G$, we included a safety factor of 2.5 times the expected load from the \ac{CMB} in case of excess load or fluctuations or other shit. 
 
 \textcolor{red}{How do we measure the thermal conductance? (Be sure you explain how we get from IV to PV and how we extract $P_{electrical}$ and how wrong we might be about this number.)}
 
-\textcolor{red}{Discuss results. What are the major uncertainties in this measurement? Talk about how deep you drop and how you define depth in transition. (will address noise as function of depth in transition in dark noise section). Talk about dropping one bolometer at a time versus dropping the entire comb? i.e. talk about cross-talk? and how it's more dramatic when overbiased because the signal you're supplying is stronger? What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
+\textcolor{red}{Talk about dropping one bolometer at a time versus dropping the entire comb? i.e. talk about cross-talk? and how it's more dramatic when overbiased because the signal you're supplying is stronger?}
+
+\textcolor{red}{Talk about the stray impedance effect you modeled.}
+
+In order to measure the thermal conductance, we perform IV curves. 
+That is, for each biased channel, we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
+Each channel is dropped in voltage until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original resistance, typically 85\% for the \ac{EBEX2013} flight.
+In the case of a well-behaved bolometer with small stray impedance, electro-thermal feedback causes the power at the bolometer to remain fixed once the bolometer is sufficiently far into transition \cite{lanting_thesis}.
+
+\textcolor{red}{Discuss results. What are the major uncertainties in this measurement? Talk about how deep you drop and how you define depth in transition. (will address noise as function of depth in transition in dark noise section).  What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
 
 \textcolor{red}{What have we learned from the thermal conductance measurements? How did we (attempt to) modify detector fabrication given our measurements?}
 
 
-
+\textcolor{red}{This doesn't matter?}
 Once the resonant frequencies are determined from the network analysis fits, the stage is heated so the bolometers are above their critical temperatures. 
 The bolometers are then electrically overbiased such that there is enough Joule Power dissipated in the \ac{TES} to keep its resistance normal as the stage is cooled. 
 Once the stage is at its base temperature, we measure the bolometer saturation powers. 
 The saturation power is an important indicator of bolometer sensitivity on the sky because the sensitivity of the bolometer increases with lower saturation power, but the bolometer loses nearly all sensitivity if it saturates, i.e. its saturation power is less than the optical load during observations. 
 %measure the average thermal conductances, $\overline{G}$, via performing IV curves. 
-In order to measure the saturation power, we perform IV curves. 
-That is, for each biased channel, we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
+
+
 %As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
-Each channel is dropped until it reaches a fixed fraction of its original resistance, typically 85\%.
-In the case of a well-behaved bolometer with small stray impedance, electro-thermal feedback causes the power at the bolometer to remain fixed once the bolometer is sufficiently far into transition \cite{lanting_thesis}.
+
 Each bolometer wafer is enclosed in a light-tight box for these tests, so the total electrical power supplied is equivalent to the saturation power. 
 An example of the IV, PV, RV curves is shown in Fig.~\ref{fig:bolo_iv_curve}, where the saturation power is the horizontal section of the PV curve.
 
