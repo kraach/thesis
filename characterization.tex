@@ -164,12 +164,19 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 %TOWARDS THERMAL CONDUCTANCES 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{Address: Why do we need to know the thermal conductance? i.e. Why do we care?}
-The thermal conductance of the thermal link from the TES to the bath governs the bolometer sensitivity. 
+\textcolor{red}{will you have already discussed \ac{NEP}? Yes. In 2.1. Bolometer Theory. in particular, phonon noise. for now point to eqtn in measured noise section.}
+
+\textcolor{red}{Address: Why do we need to know the thermal conductance? i.e. Why do we care? When we talked about targets, we already should have talked about including a safety factor? And what set that target? maybe all of these words need to be moved to the bolometer theory section?}
+% too vague. The thermal conductance of the thermal link from the TES to the bath governs the bolometer sensitivity. 
+We need to know the thermal conductance, $G$, of the thermal link from the TES to the bath in order to accurately predict sensitivity. 
+The phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:nep}. 
+We want to minimize $G$ such that we minimize our noise. 
+This value, however, needs to be sufficiently high to allow for radiative load fluctuations.
+When we set our target $G$, we included a safety factor of 2.5 times the expected load from the \ac{CMB}. 
 
 \textcolor{red}{How do we measure the thermal conductance? (Be sure you explain how we get from IV to PV and how we extract $P_{electrical}$ and how wrong we might be about this number.)}
 
-\textcolor{red}{Discuss results. What are the major uncertainties in this measurement? Talk about how deep you drop and how you define depth in transition. (will address noise as function of depth in transition in dark noise section). Talk about dropping one bolometer at a time versus dropping the entire comb? i.e. talk about cross-talk? and how it's more dramatic when overbiased because the signal you're supplying is stronger? What happened when we measured P_elec in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
+\textcolor{red}{Discuss results. What are the major uncertainties in this measurement? Talk about how deep you drop and how you define depth in transition. (will address noise as function of depth in transition in dark noise section). Talk about dropping one bolometer at a time versus dropping the entire comb? i.e. talk about cross-talk? and how it's more dramatic when overbiased because the signal you're supplying is stronger? What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
 
 \textcolor{red}{What have we learned from the thermal conductance measurements? How did we (attempt to) modify detector fabrication given our measurements?}
 
