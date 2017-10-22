@@ -188,44 +188,42 @@ When we set our target $G$, we included a safety factor of 2.5 times the expecte
 
 \textcolor{red}{In bolometer theory, you need to have already explained electrothermal feedback.}
 
+\textcolor{red}{Discuss results. What are the major uncertainties in this measurement? Talk about how deep you drop and how you define depth in transition. (will address noise as function of depth in transition in dark noise section).}
+
 In order to measure the thermal conductance, we perform IV curves. 
 That is, for each biased channel, we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
 Each channel is dropped in voltage until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original resistance, typically 85\% for the \ac{EBEX2013} flight.
 In the case of a well-behaved bolometer with small stray impedance, electro-thermal feedback causes the power at the bolometer to remain fixed once the bolometer is sufficiently far into transition \cite{lanting_thesis} \textcolor{red}{fix citation}.
+%As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
 
 \textcolor{red}{you need to explain how you get pv and rv from iv without making this sentence too terribly long. also, these words about saturation power are not clear.}
 
 An example of the IV, PV, and RV curves is shown in Fig.~\ref{fig:bolo_iv_curve}, where the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
 Because each bolometer wafer is enclosed in a light-tight box for these tests, the total electrical power measured from the PV curve is often referred to as the saturation power, $P_{sat}$. 
 Though $P_{sat}$ is not independent of the $G$, it can be a useful parameter to think in terms of because the sensitivity of the bolometer increases with lower saturation power (lower $G$), but the bolometer loses nearly all sensitivity if it saturates, i.e. its saturation power is less than the radiative load during observations. 
+The average thermal conductance of the weak link is calculated from the saturation powers and critical temperatures, Section~\ref{sec:critical_temp}, 
+\begin{equation}
+\overline{G} = \frac{P_{sat}}{\Delta T}
+\end{equation}
+where $\Delta T$ is the difference between the critical and bath temperatures, $T_{c} - T_{bath}$. 
 
 
-\textcolor{red}{Discuss results. What are the major uncertainties in this measurement? Talk about how deep you drop and how you define depth in transition. (will address noise as function of depth in transition in dark noise section).  What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
+\textcolor{red}{ What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
 
 \textcolor{red}{What have we learned from the thermal conductance measurements? How did we (attempt to) modify detector fabrication given our measurements?}
 
+\textcolor{red}{You need to say what bath temperature these average thermal conductances are quoted at and how you got them.}
 
-\textcolor{red}{This doesn't matter? You're not giving a play-by-play accounting.}
-Once the resonant frequencies are determined from the network analysis fits, the stage is heated so the bolometers are above their critical temperatures. 
-The bolometers are then electrically overbiased such that there is enough Joule Power dissipated in the \ac{TES} to keep its resistance normal as the stage is cooled. 
-Once the stage is at its base temperature, we measure the bolometer saturation powers. 
+Histograms summarizing the measured average thermal conductance values for the three \ac{EBEX} frequency bands are shown in Figure~\ref{fig:G_Histograms}.
+We found the median average thermal conductance, $\overline{G}$, for the 150, 250, and 410 GHz bands to be 36, 51, and 69~pW/K respectively. 
+The target values for the average thermal conductances were set by the radiative loading in the balloon environment, Section~\ref{sec:detector_optimization}, and were 30, 40, and 50~$pW/K$ for the 150, 250, and 410~GHz bands respectively. 
 
-%measure the average thermal conductances, $\overline{G}$, via performing IV curves. 
-
-
-%As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
-
-
-
-
-Once we have measured the saturation powers and critical temperatures, then we can find the average thermal conductance of each detector via $\overline{G} = P_{sat}/\Delta T$, where $\Delta T$ is the difference between the critical and bath temperatures, $T_{critical} - T_{bath}$. 
-We need the thermal conductances in addition to the saturation powers in order to predict the phonon noise contribution. 
-Histograms summarizing the measured average thermal conductance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:G_Histograms}, where we find the median average thermal conductance, $\overline{G}$, for the 150, 250, and 410 GHz bands to be 36, 51, and 69~pW/K respectively. 
-The target values for the average thermal conductances are set by the radiative loading in the balloon environment, Section~\ref{sec:detector_optimization}, and are 30, 40, and 50~$pW/K$ for the 150, 250, and 410~GHz bands respectively. 
 Overshooting the average thermal conductance means an increase in the phonon noise, proportional to $\sqrt{G}$. 
 The consequence of undershooting the thermal conductance is exactly as it is for undershooting the saturation power. 
 That is, we risk saturation of the detector if there is not enough thermal conductance along the weak link to dump the incident power on the bolometer at float to the bath. 
 The goal was thus to err on the higher side of the target. 
+
+\textcolor{red}{You need to talk about going from average thermal conductance to dynamic thermal conductance ... does that belong here? no, I think it'd be better in bolometer theory or in the measured noise section. and it'll be fine if you also move the top paragraph out.}
 
 
 
@@ -250,6 +248,12 @@ We piled measurements of  $\overline{G}$ exceeding 150~pW/K into the last histog
 }
 \label{fig:G_Histograms} 
 \end{figure}
+
+
+\textcolor{red}{This doesn't matter? You're not giving a play-by-play accounting.}
+Once the resonant frequencies are determined from the network analysis fits, the stage is heated so the bolometers are above their critical temperatures. 
+The bolometers are then electrically overbiased such that there is enough Joule Power dissipated in the \ac{TES} to keep its resistance normal as the stage is cooled. 
+Once the stage is at its base temperature, we measure the bolometer saturation powers. 
 
 
 FROM THE PAPER
