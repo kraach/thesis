@@ -186,7 +186,7 @@ The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NE
 
 \textcolor{red}{Talk about why it's not correct to do the ratio of vbias/imeasured and call that R? what uncertainty does this introduce?}
 
-\textcolor{red}{Talk about the stray impedance effect you modeled.}
+\textcolor{red}{Talk about the stray impedance effect you modeled. also, trevor lanting talked about this? in the case of a well-behaved bolometer with small stray impedance, \cite{lanting_thesis} \textcolor{red}{fix citation}}
 
 \textcolor{red}{In bolometer theory, you need to have already explained electrothermal feedback.}
 
@@ -197,15 +197,26 @@ The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NE
 In practice, we measure the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
 Then we use \textcolor{red}{EquationThatDoesn'tExistYet} to relate $\overline G$ to $G$. 
 For each detector, we perform an IV curve where we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
-Each channel is dropped in voltage until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original resistance, typically 85\% for the \ac{EBEX2013} flight.
-In the case of a well-behaved bolometer with small stray impedance, electro-thermal feedback causes the power at the bolometer to remain fixed once the bolometer is sufficiently far into transition \cite{lanting_thesis} \textcolor{red}{fix citation}.
-%As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
+At each step, the instantaneous resistance, the ratio of the voltage bias to the current measured, is calculated. 
+Each channel is dropped in voltage until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original value.
+In the test cryostats, the fraction was typically 0.7. 
+For \ac{EBEX2013}, the fraction was 0.85 for the majority of flight because the noise performance observed deeper in the transition diverged from the predictions, \textcolor{red}{referenceGroundNoiseResults}.
+
 
 \textcolor{red}{you need to explain how you get pv and rv from iv without making this sentence too terribly long. also, these words about saturation power are not clear.}
 
-An example of the IV, PV, and RV curves is shown in Fig.~\ref{fig:bolo_iv_curve}, where the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
+Example IV and PV curves from one detector on wafer 150-01 are shown in Figure~\ref{fig:bolo_iv_curve}.
+Above the superconducting transition, at higher voltage biases, the detector is normal.
+In this region, the AlTi bilayer of the \ac{TES} is normal and the current is proportional to $1 / R$. 
+Fitting the normal region for this detector gives a resistance of 2.9 $\Omega$. 
+As the bilayer begins to superconduct, the resistance drops and we see the current measured turn around with a characteristic smooth checkmark shape. 
+Once the bolometer is sufficiently far into the superconducting transition, electro-thermal feedback causes the power dissipated in the bolometer to remain fixed, \textcolor{red}{referenceSectionOnBolometerTheory}.
+When we plot the power dissipated in the bolometer ($I \times V$), the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
+
+%As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
+
 Because each bolometer wafer is enclosed in a light-tight box for these tests, the total electrical power measured from the PV curve is often referred to as the saturation power, $P_{sat}$. 
-Though $P_{sat}$ is not independent of the $G$, it can be a useful parameter to think in terms of because the sensitivity of the bolometer increases with lower saturation power (lower $G$), but the bolometer loses nearly all sensitivity if it saturates, i.e. its saturation power is less than the radiative load during observations. 
+Though $P_{sat}$ is not independent of  $G$, it can be a useful parameter to think in terms of because the sensitivity of the bolometer increases with lower saturation power (lower $G$), but the bolometer loses nearly all sensitivity if it saturates, i.e. its saturation power is less than the radiative load during observations. 
 The average thermal conductance of the weak link is calculated from the saturation powers and critical temperatures, Section~\ref{sec:critical_temp}, 
 \begin{equation}
 \overline{G} = \frac{P_{sat}}{\Delta T}
