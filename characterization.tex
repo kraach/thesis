@@ -171,11 +171,13 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 \textcolor{red}{Address: Why do we need to know the thermal conductance? i.e. Why do we care? When we talked about targets, we already should have talked about including a safety factor? And what set that target? maybe all of these words need to be moved to the bolometer theory section?}
 % too vague. The thermal conductance of the thermal link from the TES to the bath governs the bolometer sensitivity. 
 
-We need to know the thermal conductance, $G$, of the thermal link from the TES to the bath in order to accurately predict the detector sensitivity. 
-The phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:nep}. 
-We want to minimize $G$ so that we minimize the contribution of the phonon noise to the total. 
-This value, however, needs to be sufficiently high to allow for radiative load fluctuations.
-When we set our target $G$, we included a safety factor of 2.5 times the expected load from the \ac{CMB} in case of excess load or fluctuations or other shit. 
+\textcolor{red}{Doesn't it make sense to expand on the sources of radiative load? and instead of saying expected load, say exactly what the expected load was?}
+
+The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath, \textcolor{red}{FigureFromBoloTheoryThatDoesn'tExistYet}.
+In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:nep}. 
+We want to minimize $G$ so that we minimize the detector \ac{NEP}. 
+This value of $G$, however, needs to be sufficiently high to allow for the detectors to operate in the presence of the expected radiative load as well as any fluctuations in load, \textcolor{red}{referenceSectionAboutTargets}. 
+The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NEP} for each detector and also determine if there will be sufficient dynamic range to operate the detectors under the expected loading conditions. 
 
 
 \textcolor{red}{How do we measure the thermal conductance? (Be sure you explain how we get from IV to PV and how we extract $P_{electrical}$ and how wrong we might be about this number.)}
@@ -192,8 +194,9 @@ When we set our target $G$, we included a safety factor of 2.5 times the expecte
 
 \textcolor{red}{Do you want to include double transition iv curve? e.g. /data/ebex3/systems/nigel/data/2010/nigel.backup.data/07/30/boloIV.340mK/plots/250-01-02.IV.201007301208.png}
 
-In order to measure the thermal conductance, we perform IV curves. 
-That is, for each biased channel, we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
+In practice, we measure the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
+Then we use \textcolor{red}{EquationThatDoesn'tExistYet} to relate $\overline G$ to $G$. 
+For each detector, we perform an IV curve where we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
 Each channel is dropped in voltage until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original resistance, typically 85\% for the \ac{EBEX2013} flight.
 In the case of a well-behaved bolometer with small stray impedance, electro-thermal feedback causes the power at the bolometer to remain fixed once the bolometer is sufficiently far into transition \cite{lanting_thesis} \textcolor{red}{fix citation}.
 %As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
@@ -255,9 +258,9 @@ The bolometer is said to be at turnaround when the slope of the IV curve is zero
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.31\columnwidth]{figures/150_g_bar_hist.png}
-\includegraphics[width=0.31\columnwidth]{figures/250_g_bar_hist.png}
-\includegraphics[width=0.31\columnwidth]{figures/410_g_bar_hist.png}
+\includegraphics[width=0.32\columnwidth]{figures/150_g_bar_hist.png}
+\includegraphics[width=0.32\columnwidth]{figures/250_g_bar_hist.png}
+\includegraphics[width=0.32\columnwidth]{figures/410_g_bar_hist.png}
 \caption{Histograms of the measured average thermal conductance values for the three frequency bands including the 
 median (vertical cyan) and design (vertical gold dashed) values. 
 We piled measurements of  $\overline{G}$ exceeding 150~pW/K into the last histogram bin.
