@@ -196,8 +196,8 @@ The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NE
 
 In practice, we measure the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
 Then, knowing the bath temperature, the bolometer temperature, and the power of thermal conductivity, we use \textcolor{red}{EquationThatDoesn'tExistYet} to relate our measurement $\overline G$ to $G$. 
-\textcolor{red}{some words about how get $\overline G$ from iv curve, i.e. it's not clear why you start talking about iv curves}
-For each detector, we perform an IV curve where we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
+In order to measure $\overline G$ we perform an IV curve for each bolometer.
+That is, we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
 At each step, the instantaneous resistance, the ratio of the voltage bias to the current measured, is calculated. 
 The bias voltage of each bolometer is dropped until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original value.
 In the test cryostats, the fraction was typically 0.7. 
@@ -205,21 +205,23 @@ For \ac{EBEX2013}, the fraction was 0.85 for the majority of flight.
 The value used in flight was higher than the nominal lab value because in the test cryostats the bolometer noise performance deeper in the transition diverged from the predictions, \textcolor{red}{referenceGroundNoiseResults}.
 
 
-\textcolor{red}{you need to explain how you get pv and rv from iv without making this sentence too terribly long. also, these words about saturation power are not clear.}
+\textcolor{red}{are you going to comment on how the resistance measured for this bolo (2.9 $\Omega$) compares to the resistance measured via the network analysis? put that information in a loopgain section instead?.}
+
+\textcolor{red}{are you going to comment on WHY the fit gives a non-zero current offset?}
 
 Example IV and PV curves from one detector on wafer 150-01 are shown in Figure~\ref{fig:bolo_iv_curve}.
-Above the superconducting transition, at higher voltage biases, the detector is normal.
-In this region, the AlTi bilayer of the \ac{TES} is normal and the current is proportional to $1 / R$. 
-Fitting the normal region for this detector gives a resistance of 2.9 $\Omega$. 
+Above the superconducting transition, at higher voltage biases, the AlTi bilayer of the \ac{TES} is normal and so the current is proportional to $1 / R$. 
+Fitting the normal region for this particular detector gives a resistance of 2.9 $\Omega$. 
 As the bilayer begins to superconduct, the resistance drops and we see the current measured turn around with a characteristic smooth checkmark shape. 
 Once the bolometer is sufficiently far into the superconducting transition, electro-thermal feedback causes the power dissipated in the bolometer to remain fixed, \textcolor{red}{referenceSectionOnBolometerTheory}.
 When we plot the power dissipated in the bolometer ($I \times V$), the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
 
 %As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
 
-Because each bolometer wafer is enclosed in a light-tight box for these tests, the total electrical power measured from the PV curve is often referred to as the saturation power, $P_{sat}$. 
-Though $P_{sat}$ is not independent of  $G$, it can be a useful parameter to think in terms of because the sensitivity of the bolometer increases with lower saturation power (lower $G$), but the bolometer loses nearly all sensitivity if it saturates, i.e. its saturation power is less than the radiative load during observations. 
-The average thermal conductance of the weak link is calculated from the saturation powers and critical temperatures, Section~\ref{sec:critical_temp}, 
+Because each bolometer wafer is enclosed in a light-tight box for the dark characterization tests, the total electrical power measured from the PV curve is often referred to as the saturation power, $P_{sat}$. 
+Though $P_{sat}$ is just $G$ with the bath and bolometer temperatures folded in, it can be a useful parameter to think in terms of because the bolometer loses nearly all sensitivity if it saturates, i.e. its saturation power is less than the radiative load during observations. 
+%the sensitivity of the bolometer increases with lower saturation power (lower $G$), but 
+The average thermal conductance of the weak link is calculated from the saturation powers, measured from the PV curves, and critical temperatures, Section~\ref{sec:critical_temp}, 
 \begin{equation}
 \overline{G} = \frac{P_{sat}}{\Delta T}
 \end{equation}
