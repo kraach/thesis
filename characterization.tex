@@ -176,7 +176,7 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath, \textcolor{red}{FigureFromBoloTheoryThatDoesn'tExistYet}.
 In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:nep}. 
 We want to minimize $G$ so that we minimize the detector \ac{NEP}. 
-This value of $G$, however, needs to be sufficiently high to allow for the detectors to operate in the presence of the expected radiative load as well as any fluctuations in load, \textcolor{red}{referenceSectionAboutTargets}. 
+This value of $G$, however, needs to be sufficiently high to allow for the detectors to operate in the presence of the radiative load at float as well as any fluctuations in load, \textcolor{red}{referenceSectionAboutTargets}. 
 The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NEP} for each detector and also determine if there will be sufficient dynamic range to operate the detectors under the expected loading conditions. 
 
 
@@ -195,8 +195,8 @@ The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NE
 \textcolor{red}{Do you want to include double transition iv curve? e.g. /data/ebex3/systems/nigel/data/2010/nigel.backup.data/07/30/boloIV.340mK/plots/250-01-02.IV.201007301208.png}
 
 In practice, we measure the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
-Then we use \textcolor{red}{EquationThatDoesn'tExistYet} to relate $\overline G$ to $G$. 
-For each detector, we perform an IV curve where we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
+Then, knowing the bath temperature, the bolometer temperature, and the power of thermal conductivity, we use \textcolor{red}{EquationThatDoesn'tExistYet} to relate our measurement $\overline G$ to $G$. 
+To get $\overline G$ for each detector, we perform an IV curve where we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
 At each step, the instantaneous resistance, the ratio of the voltage bias to the current measured, is calculated. 
 Each channel is dropped in voltage until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original value.
 In the test cryostats, the fraction was typically 0.7. 
