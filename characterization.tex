@@ -173,12 +173,11 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 
 \textcolor{red}{Doesn't it make sense to expand on the sources of radiative load? and instead of saying expected load, say exactly what the expected load was?}
 
-The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath, \textcolor{red}{FigureFromBoloTheoryThatDoesn'tExistYet}.
-In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:nep}. 
-We want to minimize $G$ so that we minimize the detector \ac{NEP}. 
-This value of $G$, however, needs to be sufficiently high to allow for the detectors to operate in the presence of the radiative load at float as well as any fluctuations in load, \textcolor{red}{referenceSectionAboutTargets}. 
-The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NEP} for each detector and also determine if there will be sufficient dynamic range to operate the detectors under the expected loading conditions. 
+\textcolor{red}{ What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
 
+\textcolor{red}{What have we learned from the thermal conductance measurements? How did we (attempt to) modify detector fabrication given our measurements?}
+
+\textcolor{red}{You need to say what bath temperature these average thermal conductances are quoted at and how you got them.}
 
 \textcolor{red}{How do we measure the thermal conductance? (Be sure you explain how we get from IV to PV and how we extract $P_{electrical}$ and how wrong we might be about this number.)}
 
@@ -194,20 +193,32 @@ The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NE
 
 \textcolor{red}{Do you want to include double transition iv curve? e.g. /data/ebex3/systems/nigel/data/2010/nigel.backup.data/07/30/boloIV.340mK/plots/250-01-02.IV.201007301208.png}
 
-In practice, we measure the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
-Then, knowing the bath temperature, the bolometer temperature, and the power of thermal conductivity, we use \textcolor{red}{EquationThatDoesn'tExistYet} to relate our measurement $\overline G$ to $G$. 
-In order to measure $\overline G$ we perform an IV curve for each bolometer.
-That is, we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
-At each step, the instantaneous resistance, the ratio of the voltage bias to the current measured, is calculated. 
-The bias voltage of each bolometer is dropped until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original value.
-In the test cryostats, the fraction was typically 0.7. 
-For \ac{EBEX2013}, the fraction was 0.85 for the majority of flight.
-The value used in flight was higher than the nominal lab value because in the test cryostats the bolometer noise performance deeper in the transition diverged from the predictions, \textcolor{red}{referenceGroundNoiseResults}.
-
 
 \textcolor{red}{are you going to comment on how the resistance measured for this bolo (2.9 $\Omega$) compares to the resistance measured via the network analysis? put that information in a loopgain section instead?.}
 
 \textcolor{red}{are you going to comment on WHY the fit gives a non-zero current offset?}
+
+\textcolor{red}{You need to talk about going from average thermal conductance to dynamic thermal conductance ... does that belong here? no, I think it'd be better in bolometer theory or in the measured noise section. and it'll be fine if you also move the top paragraph out.}
+
+ \textcolor{red}{I wish you could find or rewrite the code to make the bolo.iv.curve figures - the pW are in square brackets and all the others in parenthesis. and the axis labels are smaller than I want them to be.}
+
+
+The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath, \textcolor{red}{FigureFromBoloTheoryThatDoesn'tExistYet}.
+In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:nep}. 
+We want to minimize $G$ so that we minimize the detector \ac{NEP} and thus maximize the detector sensitivity. 
+This value of $G$, however, needs to be sufficiently high to allow for the detectors to operate in the presence of the radiative load at float, \textcolor{red}{referenceSectionAboutTargets}. 
+%as well as any fluctuations in load %fluctuations are a problem for ground-based expt's, not us
+The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NEP} for each detector and also determine if there will be sufficient dynamic range to operate the detectors under the expected loading conditions. 
+
+In practice, we measure the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
+Then, knowing the bath temperature, the bolometer temperature, and the power of thermal conductivity, we use \textcolor{red}{EquationThatDoesn'tExistYet} to relate our measurement of $\overline G$ to $G$. 
+In order to measure $\overline G$, we performed an IV curve for each bolometer.
+That is, we stepped down the voltage bias, typically in steps of 0.05~$\mu V$, and measured the current through the bolometer. 
+At each step, the instantaneous resistance, the ratio of the voltage bias to the current measured, was calculated. 
+The bias voltage of each bolometer was dropped until the ratio of the voltage bias to the current measured reached a fixed fraction of its original value.
+In the test cryostats, the fraction was typically 0.7. 
+For \ac{EBEX2013}, the fraction was 0.85 for the majority of flight.
+The value used in flight was higher than the nominal lab value because in the test cryostats the bolometer noise performance deeper in the transition diverged from the predictions, \textcolor{red}{referenceGroundNoiseResults}.
 
 Example IV and PV curves from one detector on wafer 150-01 are shown in Figure~\ref{fig:bolo_iv_curve}.
 Above the superconducting transition, at higher voltage biases, the AlTi bilayer of the \ac{TES} is normal and so the current is proportional to $1 / R$. 
@@ -221,39 +232,21 @@ When we plot the power dissipated in the bolometer ($I \times V$), the electrica
 Because each bolometer wafer is enclosed in a light-tight box for the dark characterization tests, the total electrical power measured from the PV curve is often referred to as the saturation power, $P_{sat}$. 
 Though $P_{sat}$ is just $G$ with the bath and bolometer temperatures folded in, it can be a useful parameter to think in terms of because the bolometer loses nearly all sensitivity if it saturates, i.e. its saturation power is less than the radiative load during observations. 
 %the sensitivity of the bolometer increases with lower saturation power (lower $G$), but 
-The average thermal conductance of the weak link is calculated from the saturation powers, measured from the PV curves, and critical temperatures, Section~\ref{sec:critical_temp}, 
+
+The average thermal conductance of the weak link is calculated from the saturation power, measured from the PV curve, and the critical temperature, Section~\ref{sec:critical_temp}, 
 \begin{equation}
 \overline{G} = \frac{P_{sat}}{\Delta T}
 \end{equation}
 where $\Delta T$ is the difference between the critical and bath temperatures, $T_{c} - T_{bath}$. 
-
-
-\textcolor{red}{ What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
-
-\textcolor{red}{What have we learned from the thermal conductance measurements? How did we (attempt to) modify detector fabrication given our measurements?}
-
-\textcolor{red}{You need to say what bath temperature these average thermal conductances are quoted at and how you got them.}
-
 Histograms summarizing the measured average thermal conductance values for the three \ac{EBEX} frequency bands are shown in Figure~\ref{fig:G_Histograms}.
 We found the median average thermal conductance, $\overline{G}$, for the 150, 250, and 410 GHz bands to be 36, 51, and 69~pW/K respectively. 
 The target values for the average thermal conductances were set by the radiative loading in the balloon environment, Section~\ref{sec:detector_optimization}, and were 30, 40, and 50~$pW/K$ for the 150, 250, and 410~GHz bands respectively. 
-
-Overshooting the average thermal conductance means an increase in the phonon noise, proportional to $\sqrt{G}$. 
-The consequence of undershooting the thermal conductance is exactly as it is for undershooting the saturation power. 
-That is, we risk saturation of the detector if there is not enough thermal conductance along the weak link to dump the incident power on the bolometer at float to the bath. 
-The goal was thus to err on the higher side of the target. 
-
-\textcolor{red}{You need to talk about going from average thermal conductance to dynamic thermal conductance ... does that belong here? no, I think it'd be better in bolometer theory or in the measured noise section. and it'll be fine if you also move the top paragraph out.}
-
-
-
-The bolometer is said to be at turnaround when the slope of the IV curve is zero. The power at turnaround is 2.1~pW. If the the slope of the PV curve becomes zero deep in the transition, then that value it levels off at is often called the saturation power. We approximate the saturation power as the last point in the detector's PV curve, 1.9~pW. 
-
+The goal was to err on the higher side of the target and take the hit in phonon noise rather than risk rendering the detectors inoperable because of too little thermal conductance for the radiative load. 
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.99\columnwidth]{figures/IV_201007301208.png} 
-\caption{Left: The current through the \ac{SQUID} as function of the voltage bias across the bolometer. Right: The electrical power dissipated in the bolometer ($I / V$) as a function of the voltage bias across the bolometer. \textcolor{red}{I wish you could find or rewrite the code to make these figures - the pW are in square brackets and all the others in parenthesis. and the axis labels are smaller than I want them to be.}
+\caption{Left: The current through the \ac{SQUID} as function of the voltage bias across the bolometer. Right: The electrical power dissipated in the bolometer ($I / V$) as a function of the voltage bias across the bolometer.
 \label{fig:bolo_iv_curve} }
 \end{center}
 \end{figure}
