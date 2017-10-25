@@ -205,10 +205,12 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 
 \textcolor{red}{Use this R vs V curve to help explain how deep in the transition the detectors are dropped. point out why it isn't the greatest way. Also, point out that R at high values of $V_{bias}$ still has some slope (how much slope?), so it's not obvious where to define $R_{normal}$. }
 
-The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath, \textcolor{red}{FigureFromBoloTheoryThatDoesn'tExistYet}.
+\textcolor{red}{You need to comment on the $\overline{G}$ distribution shapes and consequences of overshooting, e.g. for 410~GHz.}
+
+The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath. %, Figure~\ref{fig:bolometer_cartoon}.
 In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:nep}. 
 We want to minimize $G$ so that we minimize the detector \ac{NEP} and thus maximize the detector sensitivity. 
-This value of $G$, however, needs to be sufficiently high to allow for the detectors to operate in the presence of the radiative load at float, \textcolor{red}{referenceSectionAboutTargets}. 
+This value of $G$, however, needs to be sufficiently high to allow for the detectors to operate in the presence of the radiative load at float, Section~\ref{sec:detector_design}. 
 %as well as any fluctuations in load %fluctuations are a problem for ground-based expt's, not us
 The dark test cryostat measurements of $G$ allowed us to predict the phonon \ac{NEP} for each detector and also determine if there would be sufficient dynamic range to operate the detectors under the expected loading conditions. 
 
@@ -220,7 +222,7 @@ At each step, the instantaneous resistance, the ratio of the voltage bias to the
 The bias voltage of each bolometer was dropped until the ratio of the voltage bias to the current measured reached a fixed fraction of its original value.
 In the test cryostats, the fraction was typically 0.7. 
 For \ac{EBEX2013}, the fraction was 0.85 for the majority of flight.
-The value used in flight was higher than the nominal lab value because in the test cryostats the bolometer noise performance deeper in the transition diverged from the predictions, \textcolor{red}{referenceGroundNoiseResults}.
+The value used in flight was higher than the nominal lab value because in the test cryostats the bolometer noise performance deeper in the transition diverged from the predictions, Section~\ref{sec:dark_noise}. 
 %Note, in Figure~\ref{fig:bolo_rv_curve}, in the over-biased, normal region, the resistance of the bolometer has a non-zero slope. 
 
 \begin{figure}[htbp]
@@ -257,9 +259,8 @@ Though $P_{sat}$ is just $G$ with the bath and bolometer temperatures folded in,
 
 The average thermal conductance of the weak link was calculated from the saturation power, measured from the PV curve, and the critical temperature, Section~\ref{sec:critical_temp}, 
 \begin{equation}
-\overline{G} = \frac{P_{sat}}{\Delta T}
+\overline{G}(T_{bath}) = \frac{P_{sat}(T_{bath})}{T_{c} - T_{bath}}
 \end{equation}
-where $\Delta T$ is the difference between the critical and bath temperatures, $T_{c} - T_{bath}$. 
 Histograms summarizing the measured average thermal conductance values for the three \ac{EBEX} frequency bands are shown in Figure~\ref{fig:G_Histograms}.
 We found the median average thermal conductance, $\overline{G}$, for the 150, 250, and 410 GHz bands to be 36, 51, and 69~pW/K respectively. 
 The target values for the average thermal conductances were set by the radiative loading in the balloon environment, Section~\ref{sec:detector_optimization}, and were 30, 40, and 50~$pW/K$ for the 150, 250, and 410~GHz bands respectively. 
@@ -363,7 +364,7 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 % Dark Noise Performance {{{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Dark Noise Performance}
-\label{sec:dark_nosie}
+\label{sec:dark_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
