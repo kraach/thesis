@@ -196,11 +196,13 @@ The dark test cryostat measurements of $G$ allow us to predict the phonon \ac{NE
 
 In practice, we measure the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
 Then, knowing the bath temperature, the bolometer temperature, and the power of thermal conductivity, we use \textcolor{red}{EquationThatDoesn'tExistYet} to relate our measurement $\overline G$ to $G$. 
-To get $\overline G$ for each detector, we perform an IV curve where we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
+\textcolor{red}{some words about how get $\overline G$ from iv curve, i.e. it's not clear why you start talking about iv curves}
+For each detector, we perform an IV curve where we step down the voltage bias, typically in steps of 0.05~$\mu V$, and measure the current through the bolometer. 
 At each step, the instantaneous resistance, the ratio of the voltage bias to the current measured, is calculated. 
-Each channel is dropped in voltage until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original value.
+The bias voltage of each bolometer is dropped until the ratio of the voltage bias to the current measured reaches a fixed fraction of its original value.
 In the test cryostats, the fraction was typically 0.7. 
-For \ac{EBEX2013}, the fraction was 0.85 for the majority of flight because the noise performance observed deeper in the transition diverged from the predictions, \textcolor{red}{referenceGroundNoiseResults}.
+For \ac{EBEX2013}, the fraction was 0.85 for the majority of flight.
+The value used in flight was higher than the nominal lab value because in the test cryostats the bolometer noise performance deeper in the transition diverged from the predictions, \textcolor{red}{referenceGroundNoiseResults}.
 
 
 \textcolor{red}{you need to explain how you get pv and rv from iv without making this sentence too terribly long. also, these words about saturation power are not clear.}
