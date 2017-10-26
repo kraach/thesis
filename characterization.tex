@@ -29,17 +29,24 @@ We measured detector parameters with the goals of controlling fabrication and pr
 %TOWARDS NORMAL RESISTANCES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\textcolor{red}{If you are going to insist on referring to wafers by their names, you need to explain what the name means.}
+
+\textcolor{red}{Are you going to include a zoom of one of the peaks. You would do this so you can show how (well) it fits to a Lorentzian and also to point out where you set the carrier frequency. do these plots already exist? hmmm. that must have been later in life when we saved the zooms of the fits?}
+
+\textcolor{red}{If you have time, it sure would be nice to go back and make those axes (the labels and the numbers) large enough to read. also, do in kHz. and use fewer words (more readable).}
+
+\textcolor{red}{I want you to mention how you determined the lower and upper bounds of the bias frequencies. And how you set the spacing. And, in practice, how you matched the frequencies you found with the frequencies \textit{expected}}
+
+
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.48\textwidth]{figures/netanal_b16_SqCh1_5K_20111005_all.png}
-\includegraphics[width=0.48\textwidth]{figures/netanal_zoom_b16_SqCh1_5K_20111005.png}
-\caption{PUT YOUR OWN FIGURE HERE. Left: an example network analysis taken during testing.
-Right: a zoom on one peak (black dots) with the fitted response (red) and the optimal bias frequency (green star) minimizing crosstalk.}
-\label{fig:network_analysis}
+\includegraphics[width=0.98\textwidth]{figures/150-17_SqCh3_netanal_600mK.png}
+\caption{A network analysis from wafer 150-17.
+\label{fig:network_analysis} }
 \end{center}
 \end{figure}
 
-Figure~\ref{fig:network_analysis} is a network analysis for a single comb of 16 detectors. 
+Figure~\ref{fig:network_analysis} is a network analysis for a single comb of 15 detectors. 
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit. 
 At each LC resonant frequency, the multiplexed RLC circuit peaked in current. 
 Around 800~mK, when the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
@@ -55,7 +62,15 @@ In addition to providing the resonant frequencies, the fit to this model gave th
 Typical stray resistance was about XXX $\Omega$ and typical stray inductance was XXX $uH$.
 Note, the center of the current peak and the optimal frequency bias are not perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray resistance and inductance).
 
-INCLUDE: STRAY INDUCTANCE FROM IV CURVE WITH LATCHED BOLOMETER
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[height=2in]{figures/netanal_zoom.png}
+\caption{The fit of network analysis peak (blue solid) and the optimal bias frequency determined (green dot).
+\label{fig:network_analysis} }
+\end{center}
+\end{figure}
+
+\textcolor{red}{Include: Stray impedance measured from an iv curve of a latched/superconducting bolometer.}
 
 Histograms summarizing the measured normal resistance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:rn_histograms}. 
 %Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
@@ -240,7 +255,7 @@ Example IV and PV curves from one detector on wafer 150-01 are shown in Figure~\
 Above the superconducting transition, at higher voltage biases, the AlTi bilayer of the \ac{TES} was normal and so the current was proportional to $1 / R$. 
 Fitting the normal region for this particular detector gave a resistance of 2.9 $\Omega$. 
 As the bilayer began to superconduct, the resistance dropped and the current measured turned around with a characteristic smooth checkmark shape. 
-Once the bolometer was sufficiently far into the superconducting transition, electro-thermal feedback caused the power dissipated in the bolometer to remain fixed, \textcolor{red}{referenceSectionOnBolometerTheory}.
+Once the bolometer was sufficiently far into the superconducting transition, electro-thermal feedback caused the power dissipated in the bolometer to remain fixed, Section~\ref{sec:tes_bolometer}.
 When we plot the power dissipated in the bolometer ($I \times V$), the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
 
 \begin{figure}[htbp]
