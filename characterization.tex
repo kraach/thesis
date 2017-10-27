@@ -406,19 +406,21 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 
 \textcolor{red}{before you dive in to plots where you have the white noise level/asd plotted on the y-axis, you need to describe how you obtained those data points!}
 
+\textcolor{red}{Can you please be more specific about exactly which electronic components are included in this measurement?}
+
 With the \ac{SQUID}s off, we measured the open loop noise.
 %(no current bias, no flux bias, and no voltage offset) % no need to define off ... also, that's the voltage offset of ... the firs stage amplifier???
 This was a measure of the noise of the warm electronics up to the \ac{SQUID} controller first stage amplifier. 
 The theoretical transfer function was 0.774 nV to 1 \ac{ADC} count. 
 The measured transfer function was 1.13 times the theoretical, i.e. 0.88 nV/count. 
 Figure~\ref{fig:dark_electronic_noise} is the measured noise for two \ac{SQUID}s in \ac{ETC} as a function of the demodulation frequency. 
-The total noise prediction was $1.33~nV/\sqrt{Hz}$, where the main contributors were the first stage amplifier of the \ac{SQUID} controller board, $\sqrt{2}(0.85~nV/\sqrt{Hz})$, and the $20~\Omega$ resistor Johnson noise, $\sqrt{2}(0.57~nV/\sqrt{Hz})$. 
-The measurement agrees with the prediction at low frequencies and then the signal rolls off because the first stage amplifier is being operated in the open-loop regime.  
+The total noise prediction was $1.33~nV/\sqrt{Hz}$, where the largest contributors were the first stage amplifier of the \ac{SQUID} controller board, $0.85~nV/\sqrt{Hz}$, and the $20~\Omega$ resistor Johnson noise, $0.57~nV/\sqrt{Hz}$. 
+The measurement agrees with the prediction at low frequencies and then the signal rolls off, with a -3dB point around 1~MHz, because the first stage amplifier is being operated in the open-loop regime.  
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=2.5in]{figures/electronic_noise_sq1_sq7}
-\caption{Electronic noise of warm electronics in \ac{ETC}. Units of $nV/\sqrt{Hz}$. This is probing the system from point A to point B. It includes the noise of ... .
+\includegraphics[height=2.5in]{figures/warm_electronic_noise.png}
+\caption{Measured noise of the warm electronics in \ac{ETC} up to the first stage amplifier on the \ac{SQUID} controller board. The open loop noise at low frequencies was predicted to be 1.33~$nV/\sqrt{Hz}$ and to roll off with a -3dB point around 1~MHz. 
 \label{fig:dark_electronic_noise} }
 \end{center}
 \end{figure}
