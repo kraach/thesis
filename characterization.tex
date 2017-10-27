@@ -390,6 +390,30 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 \label{sec:dark_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\textcolor{red}{can you draw a circuit diagram of the warm electronic noise you're measuring?}
+
+\textcolor{red}{Which electronic component is responsible for the roll off? It is the squid controller first stage amplifier. Can you get the specs to determine what roll off we expected? Can't find on wiki. Ask Franky. Then, answer, is it consistent with what we measured?}
+
+\textcolor{red}{do you understand why we don't have this roll off when it's operating under normal conditions and why we DO have this roll off when it's open loop?}
+
+\textcolor{red}{Is this $V_{rms}$ or $V_{p}$ ?}
+
+\textcolor{red}{As you talk about noise, you need to be clear somewhere that you're using NEP and noise and ASD and PSD interchangeably. OR. don't use them interchangeably!}
+
+\textcolor{red}{Are you sure you have the contribution calculations correct? What are those $\sqrt{2}$s coming from??}
+
+\textcolor{red}{If you're going to mention the 20 ohm resistor noise as a main contributor, you need to be able to point to where this is. perhaps say it in words and refer to Franky's thesis??}
+
+\textcolor{red}{before you dive in to plots where you have the white noise level/asd plotted on the y-axis, you need to describe how you obtained those data points!}
+
+With the \ac{SQUID}s off, we measured the open loop noise.
+%(no current bias, no flux bias, and no voltage offset) % no need to define off ... also, that's the voltage offset of ... the firs stage amplifier???
+This was a measure of the noise of the warm electronics up to the \ac{SQUID} controller first stage amplifier. 
+The theoretical transfer function was 0.774 nV to 1 \ac{ADC} count. 
+The measured transfer function was 1.13 times the theoretical, i.e. 0.88 nV/count. 
+Figure~\ref{fig:dark_electronic_noise} is the measured noise for two \ac{SQUID}s in \ac{ETC} as a function of the demodulation frequency. 
+The total noise prediction was $1.33~nV/\sqrt{Hz}$, where the main contributors were the first stage amplifier of the \ac{SQUID} controller board, $\sqrt{2}(0.85~nV/\sqrt{Hz})$, and the $20~\Omega$ resistor Johnson noise, $\sqrt{2}(0.57~nV/\sqrt{Hz})$. 
+The measurement agrees with the prediction at low frequencies and then the signal rolls off because the first stage amplifier is being operated in the open-loop regime.  
 
 \begin{figure}[ht!]
 \begin{center}
