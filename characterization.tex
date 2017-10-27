@@ -382,6 +382,25 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Time Constants}
+\label{sec:time_constants}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textcolor{red}{Does this section get to make it in? We have electrothermal taus and IR taus ... Karl's fits were much more sophisticated. Can I include my stupid "fits"?}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/Nb01_squid7_etau_morepts}
+\caption{Electrothermal time constants of two bolometers on 150-01. What does the fit to this data give? This is the time constant between the TES and the web? As expected, the for the web to thermalize is much faster than the optical time constant (time for light to couple to the web). 
+\label{fig:electrothermal_tau} }
+\end{center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dark Noise Performance {{{
@@ -411,8 +430,8 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 With the \ac{SQUID}s off, we measured the open loop noise.
 %(no current bias, no flux bias, and no voltage offset) % no need to define off ... also, that's the voltage offset of ... the firs stage amplifier???
 This was a measure of the noise of the warm electronics up to the \ac{SQUID} controller first stage amplifier. 
-The theoretical transfer function was 0.774 nV to 1 \ac{ADC} count. 
-The measured transfer function was 1.13 times the theoretical, i.e. 0.88 nV/count. 
+The theoretical open loop transfer function was 0.774 nV to 1 \ac{ADC} count. 
+The measured transfer function was a factor of 1.13 greater than the theoretical. 
 Figure~\ref{fig:dark_electronic_noise} is the measured noise for two \ac{SQUID}s in \ac{ETC} as a function of the demodulation frequency. 
 The total noise prediction was $1.33~nV/\sqrt{Hz}$, where the largest contributors were the first stage amplifier of the \ac{SQUID} controller board, $0.85~nV/\sqrt{Hz}$, and the $20~\Omega$ resistor Johnson noise, $0.57~nV/\sqrt{Hz}$. 
 The measurement agrees with the prediction at low frequencies and then the signal rolls off, with a -3dB point around 1~MHz, because the first stage amplifier is being operated in the open-loop regime.  
@@ -425,18 +444,16 @@ The measurement agrees with the prediction at low frequencies and then the signa
 \end{center}
 \end{figure}
 
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[height=2.5in]{figures/Nb01_squid7_etau_morepts}
-\caption{Electrothermal time constants of two bolometers on 150-01. What does the fit to this data give? This is the time constant between the TES and the web? As expected, the for the web to thermalize is much faster than the optical time constant (time for light to couple to the web). 
-\label{fig:electrothermal_tau} }
-\end{center}
-\end{figure}
+\textcolor{red}{You need to motivate why we care about squid transimpedance.}
+
+\textcolor{red}{some assumptions go into this, e.g. mutual inductance of squids, some geometry? ... you need to know what these assumptions are and you might as well write them down for posterity. this will tell you how we got from the slope (-7.48) to some number (500ish probably) with meaningful units.}
+
+The noise predictions require a measure of the \ac{SQUID} transimpedance, $dV/d\phi$, the slope of the linear regime of the $V-\phi$ curve where we bias the squid, Figure~\ref{fig:squid_transimpedance}. 
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/squid7_transimp}
-\caption{\ac{SQUID} voltage versus current/flux curve. Operating regime is highlighted. Transimpedance, $dV/d\phi$ is the slope of the line.
+\caption{\ac{SQUID} voltage versus current curve. The operating regime is highlighted and fit to get the \ac{SQUID} transimpedance, $dV/d\phi$.
 \label{fig:squid_transimpedance} }
 \end{center}
 \end{figure}
