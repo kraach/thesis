@@ -446,19 +446,18 @@ The measurement agrees with the prediction at low frequencies and then the signa
 
 \textcolor{red}{You need to motivate why we care about squid transimpedance.}
 
-\textcolor{red}{some assumptions go into this, e.g. mutual inductance of squids, some geometry? ... you need to know what these assumptions are and you might as well write them down for posterity. this will tell you how we got from the slope (-7.48) to some number (500ish probably) with meaningful units. That is, you need to get from voltage at the DAC to current through the squid coil to flux threading the squid.}
+\textcolor{red}{You have to get your units straight! some assumptions go into this, e.g. mutual inductance of squids, some geometry? ... you need to know what these assumptions are and you might as well write them down for posterity. this will tell you how we got from the slope (-7.48) to some number (500ish probably) with meaningful units. That is, you need to get from voltage at the DAC to current through the squid coil to flux threading the squid.}
 
-The noise predictions require a measure of the \ac{SQUID} transimpedance, $dV/d\phi$, the slope of the linear regime of the $V-\phi$ curve where we bias the squid, Figure~\ref{fig:squid_transimpedance}. 
+The noise predictions require a measure of the \ac{SQUID} transimpedance, $dV/dI$, the slope of the linear regime of the $V-\phi$ curve where we bias the squid, Figure~\ref{fig:squid_transimpedance}. 
+The fit to the line in the region where this \ac{SQUID} is biased gives a transimpedance of $dV/dI=375~\Omega$. 
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=2.5in]{figures/vphi.png}
-\caption{\ac{SQUID} voltage versus flux curve. The operating regime is highlighted (red) and fit to a line (orange) to get the \ac{SQUID} transimpedance, $dV/d\phi$.
+\includegraphics[height=2.5in]{figures/vphi_physical.png}
+\caption{\ac{SQUID} voltage versus flux curve. The operating regime is highlighted (red) and fit to a line (orange) to get the \ac{SQUID} transimpedance.
 \label{fig:squid_transimpedance} }
 \end{center}
 \end{figure}
-
-[-7.48092816  2.54458819]
 
 
 \begin{figure}[ht!]
