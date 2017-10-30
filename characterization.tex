@@ -434,15 +434,18 @@ That is, we measured the warm electronic noise open loop (with the squids off), 
 
 \textcolor{red}{Is there an apparent paradox here? You are measuring the warm electronic noise with the squids off, open loop. and you say the largest contributors are the 1st stage amplifier and the 20 ohm resistor. AND, you say those two noise contributions are the only reason you need the squid transimpedance. you're missing a key connection... when you close the feedback loop, then dv/di matters??? and when it's open, the noise prediction changes??}
 
+\textcolor{red}{It's confusing to say the squids are off and then to say you've measured the noise for two squids ... word this better if you have time!}
+
+
 With the \ac{SQUID}s off, we measured the open loop noise.
 %(no current bias, no flux bias, and no voltage offset) % no need to define off ... also, that's the voltage offset of ... the firs stage amplifier???
 This was a measure of the noise of the warm electronics up to the \ac{SQUID} controller first stage amplifier. 
 The theoretical open loop transfer function was 0.774 nV to 1 \ac{ADC} count. 
 The measured transfer function was a factor of 1.13 greater than the theoretical. 
-Figure~\ref{fig:dark_electronic_noise} is the measured noise for two \ac{SQUID}s in \ac{ETC} as a function of the demodulation frequency. 
+Figure~\ref{fig:dark_electronic_noise} is the measured open loop warm electronics noise for two \ac{SQUID}s in \ac{ETC} as a function of the demodulation frequency. 
 The total noise prediction was $1.33~nV/\sqrt{Hz}$, determined from the electronic specifications~\ref{frankys_thesis}. 
 The largest contributors were the first stage amplifier of the \ac{SQUID} controller board, $0.85~nV/\sqrt{Hz}$, and the $20~\Omega$ \ac{SQUID} controller board resistor Johnson noise, $0.57~nV/\sqrt{Hz}$. 
-The measurement agrees with the prediction at low frequencies and then the signal rolls off, with a -3dB point around 1~MHz, because the first stage amplifier is being operated in the open-loop regime.  
+The measurement agrees with the prediction at low frequencies and then the signal rolls off, with a -3dB point around 1~MHz, because the first stage amplifier is being operated in the open-loop regime~\ref{data_sheet?}.  
 
 \begin{figure}[ht!]
 \begin{center}
@@ -455,9 +458,14 @@ The measurement agrees with the prediction at low frequencies and then the signa
 
 \textcolor{red}{Are you at all interested in recording, for posterity's sake?, how you converted from $V_{DAC}$ to physical units?? i.e. for the \ac{ETC} \ac{SQUID} controller board, $1 V_{DAC} = 1 mV$ and $1 V_{DAC} = 20 \mu A$ and mention mutual inductance $\phi_{0}/26 \mu A$?}
 
-\textcolor{red}{do you want to mention what transimpedances we measured with the ebex squids? do you want to say HOW the value of $Z_{t} = dV/dI$ affects the noise predictions for those two components?}
+\textcolor{red}{do you want to mention what transimpedances we measured with the ebex squids?}
 
-With the \ac{SQUID}s on, the electronic noise predictions, specifically the noise due to the first stage amplifier and the 20~$\Omega$ resistor on the \ac{SQUID} controller board, required a measure of the \ac{SQUID} transimpedance, $dV/dI$. 
+\textcolor{red}{ do you want to say HOW the value of $Z_{t} = dV/dI$ affects the noise predictions for the first stage amp and the 20ohm R?}
+
+\textcolor{red}{Is it worth the time to figure out why two of the electronic noise components are converted to current via $Z_{t}$ and the others use the squid flux-locked loop gain transfer function? I want to know! But is it worth it to answer that questions right now??}
+
+With the \ac{SQUID}s on and their feedback loops closed, the electronic noise predictions were referred to current noise at the \ac{SQUID} input coil.
+We measured the \ac{SQUID} transimpedance, $dV/dI$, as well as estimated the \ac{SQUID} flux-locked loop gain to make those references. 
 We measured $dV/dI$ from the slope of the linear regime of the $V-\phi$ curve where we bias the squid, Figure~\ref{fig:squid_transimpedance}. 
 The fit to the line in the region where this particular \ac{SQUID} from \ac{ETC} was biased gives a transimpedance of $dV/dI=375~\Omega$. 
 
