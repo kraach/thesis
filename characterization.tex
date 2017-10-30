@@ -456,15 +456,13 @@ The measurement agrees with the prediction at low frequencies and then the signa
 \end{figure}
 
 
-\textcolor{red}{Are you at all interested in recording, for posterity's sake?, how you converted from $V_{DAC}$ to physical units?? i.e. for the \ac{ETC} \ac{SQUID} controller board, $1 V_{DAC} = 1 mV$ and $1 V_{DAC} = 20 \mu A$ and mention mutual inductance $\phi_{0}/26 \mu A$?}
+\textcolor{red}{Are you at all interested in recording, for posterity's sake?, how you converted from $V_{DAC}$ to physical units in \ac{ETC}?? i.e. for the \ac{ETC} \ac{SQUID} controller board, $1 V_{DAC} = 1 mV$ and $1 V_{DAC} = 20 \mu A$ and mention mutual inductance $\phi_{0}/26 \mu A$?}
 
 \textcolor{red}{do you want to mention what transimpedances we measured with the ebex squids?}
 
 \textcolor{red}{ do you want to say HOW the value of $Z_{t} = dV/dI$ affects the noise predictions for the first stage amp and the 20ohm R?}
 
-\textcolor{red}{Is it worth the time to figure out why two of the electronic noise components are converted to current via $Z_{t}$ and the others use the squid flux-locked loop gain transfer function? I want to know! But is it worth it to answer that questions right now?? Yes. it's integral to the explanation of why we care about $Z_{t}$}
-
-\textcolor{red}{How/why on earth did we estimate $\mathscr{L}_{FLL}$ to be 13? This plot tells us it's a pretty dramatic function of frequency? Is there any reason taking the lower limit would be ok? In EBEX, we used the 5K feedback resistors?}
+\textcolor{red}{How/why on earth did we estimate $\mathscr{L}_{FLL}$ to be 13? How did we even generate the plot of squid 7 loop gain vs demodulation frequency? that plot tells us it's a pretty dramatic function of frequency? Is there any reason taking the lower limit would be ok? In EBEX, we used the 5K feedback resistors?}
 
 With the \ac{SQUID}s on and their feedback loops closed, the warm electronic components' noise predictions were referred to current noise at the \ac{SQUID} input coil.
 The \ac{SQUID} transimpedance, $dV/dI$, was used to reference the noise of the \ac{SQUID} controller first stage amplifier and its gain defining 20~$\Omega$ resistor. 
@@ -489,9 +487,11 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 \end{center}
 \end{figure}
 
+\textcolor{red}{Include squid noise measured in EBEX at float in thesis? Later on in performance section? don't even mention here?
 
-The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
-Demodulating on-resonance gives a measure of the (4~K) bolometer Johnson noise in addition to the \ac{SQUID} noise.  
+%The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
+With the detectors at 4.2~K and without carrier or nuller biases, we measured the noise of the warm electronics and the \ac{SQUID}s as a function of demodulation frequency. 
+Demodulating at the bolometer resonant frequency gives a measure of the 4.2~K bolometer Johnson noise in addition to the electronic and \ac{SQUID} noise.  
 
 
 
