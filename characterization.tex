@@ -464,14 +464,14 @@ The measurement agrees with the prediction at low frequencies and then the signa
 
 \textcolor{red}{Is it worth the time to figure out why two of the electronic noise components are converted to current via $Z_{t}$ and the others use the squid flux-locked loop gain transfer function? I want to know! But is it worth it to answer that questions right now?? Yes. it's integral to the explanation of why we care about $Z_{t}$}
 
-\textcolor{red}{How/why on earth did we estimate $\mathscr{L}_{FLL}$ to be 13?}
+\textcolor{red}{How/why on earth did we estimate $\mathscr{L}_{FLL}$ to be 13? This plot tells us it's a pretty dramatic function of frequency? Is there any reason taking the lower limit would be ok? In EBEX, we used the 5K feedback resistors?}
 
 With the \ac{SQUID}s on and their feedback loops closed, the warm electronic components' noise predictions were referred to current noise at the \ac{SQUID} input coil.
 The \ac{SQUID} transimpedance, $dV/dI$, was used to reference the noise of the \ac{SQUID} controller first stage amplifier and its gain defining 20~$\Omega$ resistor. 
 We measured $dV/dI$ from the slope of the linear regime of the $V-\phi$ curve where we biased the squid, Figure~\ref{fig:squid_transimpedance}. 
 The fit to the line in the region where this particular \ac{SQUID} from \ac{ETC} was biased gives a transimpedance of $dV/dI=375~\Omega$. 
 The \ac{SQUID} flux-locked loop gain transfer function, $|\frac{(1-\mathscr{L}_{FLL})}{\mathscr{L}_{FLL}}|/R_{feedback}$ was used to reference the noise for those components after the first stage amplifier. 
-The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k\Omega$, and the flux-locked loop gain, $\mathscr{L}_{FLL}$, was estimated to be 13. 
+The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k\Omega$, and the flux-locked loop gain, $\mathscr{L}_{FLL}$, was estimated to be 13, Figure~\ref{fig:squid_flux_locked_loopgain}. 
 
 \begin{figure}[ht!]
 \begin{center}
@@ -480,6 +480,15 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 \label{fig:squid_transimpedance} }
 \end{center}
 \end{figure}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/squid7_loopgain.png}
+\caption{We measured the \ac{SQUID} flux-locked loop gain. ???
+\label{fig:squid_flux_locked_loopgain} }
+\end{center}
+\end{figure}
+
 
 The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
 Demodulating on-resonance gives a measure of the (4~K) bolometer Johnson noise in addition to the \ac{SQUID} noise.  
