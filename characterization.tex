@@ -441,7 +441,7 @@ That is, we measured the warm electronic noise open loop (with the squids off), 
 
 With the \ac{SQUID}s off, we measured the open loop noise.
 %(no current bias, no flux bias, and no voltage offset) % no need to define off ... also, that's the voltage offset of ... the firs stage amplifier???
-This was a measure of the noise of the warm electronics up to the \ac{SQUID} controller first stage amplifier. 
+This was a measure of the noise of the warm electronics referred back to the input of the \ac{SQUID} controller first stage amplifier. 
 The theoretical open loop transfer function was 0.774 nV to 1 \ac{ADC} count. 
 The measured transfer function was a factor of 1.13 greater than the theoretical. 
 Figure~\ref{fig:dark_electronic_noise} is the measured open loop warm electronics noise for two \ac{SQUID}s in \ac{ETC} as a function of the demodulation frequency. 
@@ -485,23 +485,38 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/squid7_loopgain.png}
-\caption{We measured the \ac{SQUID} flux-locked loop gain. ???
+\caption{We measured the \ac{SQUID} flux-locked loop gain. we did voltage (?) open loop over voltage (?) at Rfeedback -1. as a function of frequency. ???
 \label{fig:squid_flux_locked_loopgain} }
 \end{center}
 \end{figure}
 
 \textcolor{red}{Include squid noise measured in EBEX at float in thesis? Later on in performance section? don't even mention here?}
+%\textcolor{red}{These predictions are from an era where the squid noise was 2.5 pA/rtHz. Later on in this 150-01 run is where we adjusted the prediction to measure the measurement and found the intrinsic squid noise was more like 4pA/rtHz (though franky used 3.5 pA/rtHz in the analysis code). So. You should: 
+%1. Include the plot of 2.5 and 4.0 pA/rtHz and explain why we changed the intrinsic noise "prediction" to match the measurement. 
+%2. Adjust the predictions of the squid noise to reflect this. Perhaps just remake them? but how do I know what the dfmux board settings were? find the date and hope the settings are there? or calculate the noise with 2.5 and subtract it (in quadrature) and add the noise with 4.0? }
+
+\textcolor{red}{Why is the on resonance noise higher than predicted? Do you want to find and include the 700mK squid noise data to say we don't know what's going on at 4.2~K, but meas/pred agree more at lower temperatures?}
 
 %The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
-With the detectors at a temperature of 4.2~K and without providing carrier or nuller biases, we measured the noise of the warm electronics and the \ac{SQUID}s as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
-Demodulating at the bolometer resonant frequencies gives a measure of the 4.2~K bolometers' Johnson noise in addition to the electronic and \ac{SQUID} noise.  
+With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise of the warm electronics and the \ac{SQUID}s as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
 
+
+Demodulating at the bolometer resonant frequencies gives a measure of the 4.2~K bolometers' Johnson noise in addition to the electronic and \ac{SQUID} noise. 
+This roughly doubles the noise. 
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/adjusting_squid_noise.png}
+\caption{
+\label{fig:squid_flux_locked_loopgain} }
+\end{center}
+\end{figure}
 
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/squid_plus_electronic_noise.png}
-\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as function of demodulation frequency. At bolometer resonant frequencies, the Johnson noise term of the bolometer roughly doubles the noise.
+\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency. Off resonance (o's) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 4.2~K bolometer Johnson noise. 
 \label{fig:dark_squid_noise} }
 \end{center}
 \end{figure}
