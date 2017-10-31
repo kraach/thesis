@@ -436,6 +436,8 @@ That is, we measured the warm electronic noise open loop (with the squids off), 
 
 \textcolor{red}{It's confusing to say the squids are off and then to say you've measured the noise for two squids ... word this better if you have time!}
 
+\textcolor{red}{link to data sheet for texas instruments op amp 847 has open loop gain plot: http://www.ti.com/lit/ds/symlink/opa847.pdf    how do we even reference this??}
+
 
 With the \ac{SQUID}s off, we measured the open loop noise.
 %(no current bias, no flux bias, and no voltage offset) % no need to define off ... also, that's the voltage offset of ... the firs stage amplifier???
@@ -446,6 +448,7 @@ Figure~\ref{fig:dark_electronic_noise} is the measured open loop warm electronic
 The total noise prediction was $1.33~nV/\sqrt{Hz}$, determined from the electronic specifications~\ref{frankys_thesis}. 
 The largest contributors were the first stage amplifier of the \ac{SQUID} controller board, $0.85~nV/\sqrt{Hz}$, and that amplifier's $20~\Omega$ gain defining resistor Johnson noise, $0.57~nV/\sqrt{Hz}$. 
 The measurement agrees with the prediction at low frequencies and then the signal rolls off, with a -3dB point around 1~MHz, because the first stage amplifier is being operated in the open-loop regime~\ref{data_sheet?}.  
+
 
 \begin{figure}[ht!]
 \begin{center}
@@ -487,18 +490,18 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 \end{center}
 \end{figure}
 
-\textcolor{red}{Include squid noise measured in EBEX at float in thesis? Later on in performance section? don't even mention here?
+\textcolor{red}{Include squid noise measured in EBEX at float in thesis? Later on in performance section? don't even mention here?}
 
 %The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
-With the detectors at 4.2~K and without carrier or nuller biases, we measured the noise of the warm electronics and the \ac{SQUID}s as a function of demodulation frequency. 
-Demodulating at the bolometer resonant frequency gives a measure of the 4.2~K bolometer Johnson noise in addition to the electronic and \ac{SQUID} noise.  
+With the detectors at a temperature of 4.2~K and without providing carrier or nuller biases, we measured the noise of the warm electronics and the \ac{SQUID}s as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
+Demodulating at the bolometer resonant frequencies gives a measure of the 4.2~K bolometers' Johnson noise in addition to the electronic and \ac{SQUID} noise.  
 
 
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=2.5in]{figures/squidnoise_temp}
-\caption{\ac{SQUID} noise in \ac{ETC} as function of demodulation frequency. At detector demodulation frequencies, the Johnson noise term of the bolometer roughly doubles the noise.
+\includegraphics[height=2.5in]{figures/squid_plus_electronic_noise.png}
+\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as function of demodulation frequency. At bolometer resonant frequencies, the Johnson noise term of the bolometer roughly doubles the noise.
 \label{fig:dark_squid_noise} }
 \end{center}
 \end{figure}
