@@ -497,30 +497,41 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 
 \textcolor{red}{Why is the on resonance noise higher than predicted? Do you want to find and include the 700mK squid noise data to say we don't know what's going on at 4.2~K, but meas/pred agree more at lower temperatures?}
 
+\textcolor{red}{Is it appropriate to reference the conversation with the nist folks? you don't even remember when it was. should we simply not mention they thought that was reasonable? should we point to the paper where it said 2.5 pA/rtHz and say this was unreasonably low?}
+
 %The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
-With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise of the warm electronics and the \ac{SQUID}s as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
-
-
-Demodulating at the bolometer resonant frequencies gives a measure of the 4.2~K bolometers' Johnson noise in addition to the electronic and \ac{SQUID} noise. 
-This roughly doubles the noise. 
+With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
+Away from the bolometer resonant frequencies, this is a measure of the noise due to the warm electronics and the \ac{SQUID}s, Figure~\ref{fig:adjust_squid}. 
+Since the warm electronic noise agreed with predictions, Figure~\ref{fig:dark_electronic_noise}, the excess noise was assumed to be due to the \ac{SQUID}. 
+The blue line assumed an intrinsic \ac{SQUID} noise of 2.5~$pA/\sqrt{Hz}$, while the orange line assumed 3.5~$pA/\sqrt{Hz}$.
+The \ac{SQUID} manufacturers expected the noise to be at least 3.5~$pA/\sqrt{Hz}$ \ref{conversationwithnist}, so given these measurements, from here on out, we took the \ac{SQUID} noise to be 3.5~$pA/\sqrt{Hz}$.
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/adjusting_squid_noise.png}
-\caption{
-\label{fig:squid_flux_locked_loopgain} }
+\caption{The measured electronic and \ac{SQUID} noise (red and blue dots) as a function of demodulation frequency. The blue line is the noise prediction assuming the intrinsic \ac{SQUID} noise is 2.5~$pA/sqrt{Hz}$ while the orange line is assuming 3.5~$pA/sqrt{Hz}$. There 
+\label{fig:adjust_squid} }
 \end{center}
 \end{figure}
 
+Demodulating at the bolometer resonant frequencies gave a measure of the 4.2~K bolometers' Johnson noise in addition to the electronic and \ac{SQUID} noise. 
+The 4.2~K Johnson noise roughly doubled the noise and did not agree with the predicted Johnson noise. 
+At 700~mK, however, the Johnson noise did agree with the prediction, Figure~\ref{fig:}.
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/squid_plus_electronic_noise.png}
-\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency. Off resonance (o's) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 4.2~K bolometer Johnson noise. 
+\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency at 4.2~K. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 4.2~K bolometer Johnson noise. 
 \label{fig:dark_squid_noise} }
 \end{center}
 \end{figure}
 
-
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/}
+\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency at 700~mK. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 700~mK bolometer Johnson noise. 
+\label{fig:700mK_squid_noise} }
+\end{center}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
