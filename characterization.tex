@@ -499,6 +499,14 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 
 \textcolor{red}{Is it appropriate to reference the conversation with the nist folks? you don't even remember when it was. should we simply not mention they thought that was reasonable? should we point to the paper where it said 2.5 pA/rtHz and say this was unreasonably low?}
 
+\textcolor{red}{how can you say, at 4.2K, the predictions, for reasons we don't understand, seemed to put a lower limit on the measured Johnson noise. ?}
+
+\textcolor{red}{and at 770 mK, we don't understand at all why the higher frequency demodulated noise is too high. What is the point of including the 770mK squid noise graph? That we don't understand what happens when we get cold? are you certain there were no carriers or nullers on for this measurement?}
+
+\textcolor{red}{Are you going to mention 1. that you are including two squids (one and seven) and 2. why you are only including two squids?}
+
+\textcolor{red}{I wanted to put labels indicating the temperature of the two squid noise plots, but I'm having troubles. So. Move on for now.}
+
 %The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
 With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
 Away from the bolometer resonant frequencies, this is a measure of the noise due to the warm electronics and the \ac{SQUID}s, Figure~\ref{fig:adjust_squid}. 
@@ -509,14 +517,18 @@ The \ac{SQUID} manufacturers expected the noise to be at least 3.5~$pA/\sqrt{Hz}
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/adjusting_squid_noise.png}
-\caption{The measured electronic and \ac{SQUID} noise (red and blue dots) as a function of demodulation frequency. The blue line is the noise prediction assuming the intrinsic \ac{SQUID} noise is 2.5~$pA/sqrt{Hz}$ while the orange line is assuming 3.5~$pA/sqrt{Hz}$. There 
+\caption{The measured electronic and \ac{SQUID} noise (red and blue dots) as a function of demodulation frequency. The blue line is the noise prediction assuming the intrinsic \ac{SQUID} noise is 2.5~$pA/sqrt{Hz}$ while the orange line is assuming 3.5~$pA/sqrt{Hz}$.  
 \label{fig:adjust_squid} }
 \end{center}
 \end{figure}
 
-Demodulating at the bolometer resonant frequencies gave a measure of the 4.2~K bolometers' Johnson noise in addition to the electronic and \ac{SQUID} noise. 
-The 4.2~K Johnson noise roughly doubled the noise and did not agree with the predicted Johnson noise. 
-At 770~mK, however, the Johnson noise did agree with the prediction, Figure~\ref{fig:}.
+
+
+Demodulating at the bolometer resonant frequencies gave a measure of the 4.2~K bolometers' Johnson noise in addition to the electronic and \ac{SQUID} noise, Figure~\ref{fig:dark_squid_noise}. 
+The 4.2~K Johnson noise roughly doubled the noise.
+At 770~mK, the low frequency off bolometer resonance noise measured agreed with the prediction but at the higher demodulation frequencies, whether it was on or off resonance, the noise was higher than predicted, Figure~\ref{fig:770mK_squid_noise}. 
+
+
 
 \begin{figure}[ht!]
 \begin{center}
