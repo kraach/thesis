@@ -507,6 +507,8 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 
 \textcolor{red}{I wanted to put labels indicating the temperature of the two squid noise plots, but I'm having troubles. So. Move on for now.}
 
+\textcolor{red}{Do you want to zoom in on the in-transition noise up to, say R=0.6Rinitial? So the information isn't completely washed out by the gigantic noise very deep in the transition? If so, do you want this to be a sub panel of the noise plot? And just delete the legend?}
+
 %The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
 With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
 Away from the bolometer resonant frequencies, this is a measure of the noise due to the warm electronics and the \ac{SQUID}s, Figure~\ref{fig:adjust_squid}. 
@@ -558,5 +560,26 @@ The contribution from the electronics is higher because there are carrier and nu
 \label{fig:770mK_squid_noise} }
 \end{center}
 \end{figure}
+
+
+In order to ensure the system was as clean as possible, only \ac{SQUID}7 was tuned. 
+There were five bolometers on this comb and we left four overbiased for the in-transition noise measurements. 
+Between each measurement, we re-over-biased the bolometer. 
+The prediction assumes the bolometer is deep in the transition. 
+Deep in the transition, the loopgain, $\mathscr{L}$, is high and so responsivity $S_{I} = \frac{\sqrt{2}}{V_{bias}} \frac{\mathscr{L}}{\mathscr{L}+1} \approx \frac{\sqrt{2}}{V_{bias}} $. 
+When the bolometer was not deep in the transition, then $\mathscr{L}$ was not large and so in this case, at high fractions of $R_{initial}$, the phonon noise contribution is over-estimated. 
+If $\mathscr{L} = 1$, as is the case at the turnaround of the IV curve near $R = 0.98 \times R_{initial}$, by making this assumption, we overrestimate the phonon contribution by XXX, which decreases the total noise prediction by XXX. 
+Even at $R = 0.9 \times R_{initial}$, the high loopgain assumption is not enough to explain the factor of two inconsistency between the measurement and the prediction. 
+ 
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=0.48\columnwidth]{figures/b54w2c0_it_noise.png}
+\includegraphics[width=0.48\columnwidth]{figures/b54w2c3_it_noise.png}
+\caption{In-transition noise in \ac{ETC} for 150-01 bolometer 3-01 (left) and bolometer 5-02 (right). The prediction (green line) includes electronic, \ac{SQUID}, Johnson, and phonon noise. The measurements were repeatable across multiple days (blue vs orange dots). The overbias noise, at $R_{initial}$, agreed with predictions, but as the depth in transition increased, the discrepancy between the prediction and measurement increased. 
+\label{fig:etc_it_noise} }
+\end{center}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
