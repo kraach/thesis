@@ -509,6 +509,16 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 
 \textcolor{red}{Do you want to zoom in on the in-transition noise up to, say R=0.6Rinitial? So the information isn't completely washed out by the gigantic noise very deep in the transition? If so, do you want this to be a sub panel of the noise plot? And just delete the legend?}
 
+\textcolor{red}{Re: high noise in ETC for 150-01. You have the data for photon noise if you have a 4K blackbody (1.8 pW) and you could show how the prediction changes if ALL of this power is absorbed by the (dark) detectors. Still doesn't explain excess.}
+
+\textcolor{red}{I want to generate a plot with more data for fracRn between 1 and 0.7 ... Do we have such a thing?}
+
+\textcolor{red}{Do we have other noise data you can put together reasonably efficiently?}
+
+\textcolor{red}{If we want, we can re-make plots of electrothermal time constants. And say they're sufficiently long so the optical time constant can dominate.}
+
+\textcolor{red}{We can show a measure of the flux locked loopgain as a function of demodulation frequency. This informs some electronics noise terms (by Lfll - 1 / Lfll, or something like that).} 
+
 %The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
 With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
 Away from the bolometer resonant frequencies, this is a measure of the noise due to the warm electronics and the \ac{SQUID}s, Figure~\ref{fig:adjust_squid}. 
@@ -531,6 +541,13 @@ The 4.2~K Johnson noise roughly doubled the noise.
 At 770~mK, the low frequency off bolometer resonance noise measured agreed with the prediction but at the higher demodulation frequencies, whether it was on or off resonance, the noise was higher than predicted, Figure~\ref{fig:770mK_squid_noise}. 
 
 
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/b54w2c3_overbias.png}
+\caption{The raw bolometer timestream converted from \ac{ADC} counts to current and the PSD of that timestream for 150-01 bolometer 3-01 noise determination. The timestream was ~3 minutes long. The white noise level was averaged from 0.5 to 5~Hz and for this bolometer had a value of 11.2 pA.
+\label{fig:timestream_and_psd} }
+\end{center}
+\end{figure}
 
 \begin{figure}[ht!]
 \begin{center}
@@ -560,6 +577,7 @@ The contribution from the electronics is higher because there are carrier and nu
 \label{fig:770mK_squid_noise} }
 \end{center}
 \end{figure}
+
 
 
 In order to ensure the system was as clean as possible, only \ac{SQUID}7 was tuned. 
