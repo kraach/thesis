@@ -185,6 +185,10 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 %TOWARDS THERMAL CONDUCTANCES 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\textcolor{red}{Are you going to include the Psat versus Tbath curves, for e.g. 150-02? They fit poorly to  $P = (a/l*kappa_{o})/(n+1)*[T_{c}^{n+1} - T_{o}^{n+1}]$. The fits don't look good on the plots and the uncertainty (presumably a standard deviation) on the fit is larger than the values.}
+
+
+
 \textcolor{red}{will you have already discussed \ac{NEP}? Yes. In 2.1. Bolometer Theory. in particular, phonon noise. for now point to eqtn in measured noise section.}
 
 \textcolor{red}{you need to be clear that you are using noise and \ac{NEP} interchangeably.}
@@ -272,6 +276,28 @@ When we plot the power dissipated in the bolometer ($I \times V$), the electrica
 \end{center}
 \end{figure}
 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[height=2.5in]{figures/150-02_b53w0c0_messingwithX.png} 
+\caption{Simulating stray impedance.
+\label{fig:bolo_iv_curve} }
+\end{center}
+\end{figure}
+
+This is 150-02 b53w0c0 dropped to 60\% $R_{initial}$ using the IV algorithm which nulled at each voltage step and measured the current required to null the detector timestream.
+The green line is the naive calculation of power: P = I*V.
+The other lines include a stray imaginary impedance: $P = I^2*R, R = sqrt[(V/I)^2 - Rx^2]$
+teal has Rx = 0.2
+pink has Rx = 0.3
+blue has Rx = 0.33
+red has Rx = 0.4
+From this data, because we know the power dissipated in the bolometer deep in the transition is constant, we would conclude Rx ~ 0.3j ohms.
+This corresponds to a stray inductance of Lx ~ 110 nH. (used ZL = i*omega*L, and $\nu_{res} \approx 430~kHz$)
+For b53w0c0 at 60\% in the transition, Rbolo ~ 1.0 ohms. (calculated letting Rx = 0.3)
+The responsivity factor $sqrt[(1+eta^2)]/(1-eta^2) ~ 1.15$.
+A 15\% increase in the responsivity is not enough to explain the factor of 2.5 between the measured and predicted noise for b53w0c0 at 60\% in the transition.
+
+
 %As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
 
 Because each bolometer wafer is enclosed in a light-tight box for the dark characterization tests, there is negligible radiative power and so the total electrical power measured from the PV curve is the total power dissipated in the detector. 
@@ -349,15 +375,17 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 12\% relative to the nominal value of 26~$aW/\sqrt{\mathrm{Hz}}$. 
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Optical Efficiency}
 \label{sec:optical_efficiency}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/blackbody_design2}
-\caption{Eccosorb blackbody design. 
+\caption{Eccosorb blackbody design. \textcolor{red}{This image needs to be modified to be more professional. But I can't get gimp to work anymore. So. Figure out something else. Or delete the image?}
 \label{fig:blackbody_design} }
 \end{center}
 \end{figure}
@@ -601,7 +629,7 @@ Even at $R = 0.9 \times R_{initial}$, the high loopgain assumption is not enough
 
 The data (blue dot) and prediction (green dot) at $1.0 \times R_{initial}$, i.e. overbiased, agree. 
 Note, overbiased, we assume there is no phonon noise contribution. 
-Between 0.9 and 0.6 $R_{initial}$, we assume the loopgain is large and so there is not modification to the current responsivity, $S_{I}$, for converting the phonon noise from power at the bolometer to current through the \ac{SQUID}.
+Between 0.9 and 0.6 $R_{initial}$, the prediction (green line) assumes the loopgain is large and so there is not modification to the current responsivity, $S_{I}$, for converting the phonon noise from power at the bolometer to current through the \ac{SQUID}.
 This assumption is more true at 0.6 and less true at 0.9. 
 The measurement at $0.9 \times R_{initial}$ is less than 5\% above the prediction, which includes \ac{SQUID}, electronic, Johnson, and phonon noise. 
 At $0.8 \times R_{initial}$, however, the measurement exceeds the prediction by 40\%. 
