@@ -280,7 +280,7 @@ When we plot the power dissipated in the bolometer ($I \times V$), the electrica
 \begin{center}
 \includegraphics[width=0.99\columnwidth]{figures/b53w0c0_IV_201011080952.png} 
 \caption{Consider using this bolo's iv curve instead because it was dropped deeper in the transition.
-\label{fig:bolo_iv_curve} }
+\label{fig:other_bolo_iv_curve} }
 \end{center}
 \end{figure}
 
@@ -289,7 +289,7 @@ When we plot the power dissipated in the bolometer ($I \times V$), the electrica
 \begin{center}
 \includegraphics[height=2.5in]{figures/150-02_b53w0c0_messingwithX.png} 
 \caption{Simulating stray impedance.
-\label{fig:bolo_iv_curve} }
+\label{fig:stray_impedance_curve} }
 \end{center}
 \end{figure}
 
@@ -305,6 +305,14 @@ This corresponds to a stray inductance of Lx ~ 110 nH. (used ZL = i*omega*L, and
 For b53w0c0 at 60\% in the transition, Rbolo ~ 1.0 ohms. (calculated letting Rx = 0.3)
 The responsivity factor $sqrt[(1+eta^2)]/(1-eta^2) ~ 1.15$.
 A 15\% increase in the responsivity is not enough to explain the factor of 2.5 between the measured and predicted noise for b53w0c0 at 60\% in the transition.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[height=2.5in]{figures/b53w0c0_IV_latched.png} 
+\caption{Measure resistance while bolometer is superconducting to get stray impedance. This channel has $R_{x} = 0.08 \Omega$ and we typically find $R_{x} \sim 0.1 \Omega$. Is this even a legitimate method??? Are you measuring $R_{x}$? $Z_{x}$? Nothing of the sort?
+\label{fig:latched_iv_curve} }
+\end{center}
+\end{figure}
 
 
 %As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
@@ -428,11 +436,22 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=2.5in]{figures/Nb01_squid7_etau_morepts}
-\caption{Electrothermal time constants of two bolometers on 150-01. What does the fit to this data give? This is the time constant between the TES and the web? As expected, the for the web to thermalize is much faster than the optical time constant (time for light to couple to the web). 
+\includegraphics[width=0.48\columnwidth]{figures/Nb01_squid7_etau_morepts.png}
+\includegraphics[width=0.48\columnwidth]{figures/b53w0c1_etau.png}
+\caption{Left: Electrothermal time constants of two bolometers on 150-01. What does the fit to this data give? This is the time constant between the TES and the web? As expected, the for the web to thermalize is much faster than the optical time constant (time for light to couple to the web). Right: Electrothermal time constant for one bolometer on 150-02 at two depths in-transition ($0.9R_{initial}, 0.8R_{initial}$). 
 \label{fig:electrothermal_tau} }
 \end{center}
 \end{figure}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/b53w0_ir_led_tau.png}
+\caption{IR LED (Fairchild LED56) optical time constant measurement on 150-02. 
+\label{fig:ir_led_tau} }
+\end{center}
+\end{figure}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
