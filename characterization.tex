@@ -398,22 +398,37 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 \label{sec:optical_efficiency}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\textcolor{red}{Oh, I wish you had time to remake the bb intensity versus frequency plot so you could actually read the axes.}
+
+\textcolor{red}{Remove labels that you don't use, e.g. SqCh1 Ch2. Also, if you don't use the resistance curve, do you want it in there?}
+
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=2.5in]{figures/blackbody_design}
-\caption{Eccosorb blackbody design.}
+\includegraphics[height=2.5in]{figures/blackbody_design.jpeg}
+\caption{Eccosorb blackbody design.
 \label{fig:blackbody_design} }
 \end{center}
 \end{figure}
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=2.5in]{figures/Nb01_PelecvsPopt_b53_w1_c0}
-\caption{One 150-01 detector electrical power as function of blackbody power. The slope is the detector's optical efficiency. 
+\includegraphics[height=2in]{figures/SqCh2_Ch1_all_bb_curves.png}
+\caption{IV and PV curves for wafer 150-01 bolometer 8-04. The electrical power required to hold the detector in its transition decreases as the blackbody temperature (legend) increases. 
+\label{fig:opt_eff_bb_curves} }
+\end{center}
+\end{figure}
+
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=0.49\columnwidth]{figures/blackbody_intensity_plot.png}
+\includegraphics[width=0.48\columnwidth]{figures/SqCh2_Ch1_p_vs_p.png}
+\caption{Left: Power radiated from a blackbody as a function of temperature. The \ac{EBEX} 150~GHz band is marked by the black vertical lines. Right: Wafer~150-01 bolometer~8-04 electrical power as function of blackbody power. The slope, $0.8$, is the detector's optical efficiency. 
 \label{fig:pelec_vs_popt} }
 \end{center}
 \end{figure}
+
 
 
 \begin{figure}[ht!]
