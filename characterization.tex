@@ -398,10 +398,21 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 \label{sec:optical_efficiency}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{Oh, I wish you had time to remake the bb intensity versus frequency plot so you could actually read the axes.}
+%\textcolor{red}{Oh, I wish you had time to remake the bb intensity versus frequency plot so you could actually read the axes.}
+%
+%\textcolor{red}{Remove labels that you don't use, e.g. SqCh1 Ch2. Also, if you don't use the resistance curve, do you want it in there?}
 
-\textcolor{red}{Remove labels that you don't use, e.g. SqCh1 Ch2. Also, if you don't use the resistance curve, do you want it in there?}
+A blackbody is defined as a thing which absorbs all the incident radiation. 
+The blackbody was an inverted cone with an angle of XXX, Figure~\ref{fig:blackbody_design}. 
+It was made by pouring eccosorb XXX into a teflon mould.
+Eccosorb XXX absorbs XXX of radiation at XXX GHz.
+The \ac{EBEX} 150~GHz detectors had a field of view of 20 $^{\circ}$. 
+The light path for the detector with the outermost angle, the fewest bounces, still bounced off the blackbody surface four times, $XXX \times 4 = XXX$ absorptivity. 
 
+There was a cooper bar embedded inside the eccosorb for mounting a temperature sensor. %RuOx?
+A flat wire heater was glued to the outside of the cone in order to raise the blackbody above 4.2~K.
+To cool the blackbody down, a copper bar embedded in the eccosorb was connected to the 4~K plate via a gas-gap heat switch. 
+The heat switch was opened for the measurements when the blackbody was heated.
 
 \begin{figure}[ht!]
 \begin{center}
@@ -411,10 +422,18 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 \end{center}
 \end{figure}
 
+The x8 multiplexing readout schematic for wafer~150-01 with the blackbody setup is shown in Figure~\ref{fig:bb_wafer_layout}. 
+Each detector is represented by a circle with several identifying labels (the bolometer's row-column name, the wire bonding pad number, the channel number on the \ac{LC} board, and the pin from the \ac{LC} board to the \ac{SQUID} board).
+The lines leading from each circle to the edge of the wafer are the bolometer's niobium leads to the wire bonding pads. 
+The grouping of the bolometers read out by each \ac{SQUID} is indicated by outlines of different colors.
+There was a hexagon of 7~bolometers, with an optical stack of wave guides, cones, and miniature \ac{EBEX} low-pass radiative filters, open to the blackbody. 
+The other detectors were looking at the 320~mK box enclosing them. 
+The non-functioning detectors were crossed off. 
+
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=2.5in]{figures/EBEX_Nb01_150GHz_wafer_schem.pdf}
-\caption{x8 wafer layout for wafer~150-01. Squids are grouped by different color. Inside the pink circle are the detectors open to the blackbody. 
+\includegraphics[height=7in]{figures/EBEX_Nb01_150GHz_wafer_schem.png}
+\caption{Blackbody setup x8 multiplexing readout setup for wafer~150-01. Inside the pink circle were the detectors open to the blackbody. Squid groups were circled in different colors. Non-functioning detectors were crossed out. 
 \label{fig:bb_wafer_layout} }
 \end{center}
 \end{figure}
