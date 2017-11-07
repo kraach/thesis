@@ -549,10 +549,19 @@ c6 & 19 & 8.4 \\
 \label{sec:dark_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The noise measurements were broken down in order to determine if the performance of each part of the detector readout chain was as expected. 
-That is, we measured the warm electronic noise open loop (with the squids off), the electronic noise up to and including the squids (with their feedback loops closed), the noise of resistor channels (i.e. the entire electronic chain up to the bond pads on the \ac{LC} board), the noise of the bolometers over-biased with the stage above the bolometers' $T_{c}$, the noise of the bolometers overbiased with the stage at the refrigerator's base temperature, and the noise of the bolometers in-transition as a function of their transition depth. 
+
+In order to understand the noise performance of each part of the detector readout chain, the noise measurements were broken down into 
+room temperature electronics noise, 
+electronic noise up to and including the 4~K \ac{SQUID}s, 
+%the noise of resistor channels (i.e. the entire electronics chain up to the bond pads on the \ac{LC} board), %leave these out for now?! time...
+the noise of the bolometers over-biased with the stage above the bolometers' $T_{c}$, 
+the noise of the bolometers overbiased with the stage at the refrigerator's base temperature, 
+and the noise of the bolometers in-transition as a function of their transition depth. 
+The dark \ac{ETC} had the exact same electronics boards, filters, and cables as \ac{EBEX}. 
+In the dark test cryostat, the noise agreed with predictions until the detectors were dropped beyond 90\% into their transitions. 
 
 
+\textcolor{red}{You haven't shown any resistor noise!!}
 
 \textcolor{red}{can you draw a circuit diagram of the warm electronic noise you're measuring?}
 
@@ -582,6 +591,8 @@ That is, we measured the warm electronic noise open loop (with the squids off), 
 
 \textcolor{red}{Do you want to make it clear that we measured squid noise in EBEX with dark squids not attached to any bolometers but in ETC we used squids attached to bolometers and just looked off resonance?}
 
+
+warm electronic noise open loop (with the squids off)
 With the \ac{SQUID}s off, we measured the open loop noise.
 %(no current bias, no flux bias, and no voltage offset) % no need to define off ... also, that's the voltage offset of ... the firs stage amplifier???
 This was a measure of the noise of the warm electronics referred back to the input of the \ac{SQUID} controller first stage amplifier. 
@@ -610,6 +621,7 @@ The measurement agrees with the prediction at low frequencies and then the signa
 
 \textcolor{red}{How/why on earth did we estimate $\mathscr{L}_{FLL}$ to be 13? How did we even generate the plot of squid 7 loop gain vs demodulation frequency? that plot tells us it's a pretty dramatic function of frequency? Is there any reason taking the lower limit would be ok? In EBEX, we used the 5K feedback resistors?}
 
+squids (with their feedback loops closed)
 With the \ac{SQUID}s on and their feedback loops closed, the warm electronic components' noise predictions were referred to current noise at the \ac{SQUID} input coil.
 The \ac{SQUID} transimpedance, $dV/dI$, was used to reference the noise of the \ac{SQUID} controller first stage amplifier and its gain defining 20~$\Omega$ resistor. 
 We measured $dV/dI$ from the slope of the linear regime of the $V-\phi$ curve where we biased the squid, Figure~\ref{fig:squid_transimpedance}. 
@@ -640,7 +652,7 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 
 \textcolor{red}{Why is the on resonance noise higher than predicted? Do you want to find and include the 700mK squid noise data to say we don't know what's going on at 4.2~K, but meas/pred agree more at lower temperatures?}
 
-\textcolor{red}{Is it appropriate to reference the conversation with the nist folks? you don't even remember when it was. should we simply not mention they thought that was reasonable? should we point to the paper where it said 2.5 pA/rtHz and say this was unreasonably low?}
+\textcolor{red}{Is it appropriate to reference the conversation with the nist folks? you don't even remember when it was. should we simply not mention they thought that was reasonable? should we point to the paper where it said 2.5 pA/rtHz and say this was unreasonably low? from Huber et al the SQUID white noise level at 4.2K is 2.5 pArms/rtHz.}
 
 \textcolor{red}{how can you say, at 4.2K, the predictions, for reasons we don't understand, seemed to put a lower limit on the measured Johnson noise. ?}
 
@@ -716,7 +728,7 @@ The contribution from the electronics is higher because there are carrier and nu
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/overbias_noise.png}
-\caption{Overbias noise (blue dots) for one \ac{SQUID} in \ac{ETC} as a function of demodulation frequency at 340~mK. The prediction (blue line) includes electronic, \ac{SQUID}, and 340~mK bolometer Johnson noise. 
+\caption{Overbias noise (blue dots) for one \ac{SQUID} in \ac{ETC} as a function of demodulation frequency at 340~mK. The prediction (blue line) includes electronic, \ac{SQUID}, and \textcolor{red}{XXX}~mK bolometer Johnson noise. 
 \label{fig:770mK_squid_noise} }
 \end{center}
 \end{figure}
