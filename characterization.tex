@@ -549,23 +549,39 @@ c6 & 19 & 8.4 \\
 \label{sec:dark_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+%what is this section about
 In order to understand the noise performance of each part of the detector readout chain, the noise measurements were broken down into 
 room temperature electronics noise, 
-electronic noise up to and including the 4~K \ac{SQUID}s, 
+electronics noise up to and including the 4~K \ac{SQUID}s, 
 %the noise of resistor channels (i.e. the entire electronics chain up to the bond pads on the \ac{LC} board), %leave these out for now?! time...
 the noise of the bolometers over-biased with the stage above the bolometers' $T_{c}$, 
 the noise of the bolometers overbiased with the stage at the refrigerator's base temperature, 
 and the noise of the bolometers in-transition as a function of their transition depth. 
 The dark \ac{ETC} had the exact same electronics boards, filters, and cables as \ac{EBEX}. 
-In the dark test cryostat, the noise agreed with predictions until the detectors were dropped beyond 90\% into their transitions. 
+In \ac{ETC}, most of the measured noise agreed with the predictions until the bolometers were dropped below 90\% of their initial resistance. 
+
+%attempting to explain method for measuring noise
+For each noise measurement, $\sim3$ minutes of data was taken. 
+We demodulated, \ac{ADC} counts were measured on the  \ac{DfMUX} board. 
+We converted to nV or pA or aW. 
+We calculated the PSD (pA2/Hz) and averaged from 0.5 to 5.0~Hz and then took the square root and called that the white noise level. 
+Figure~\ref{fig:timestream_and_psd} is an example of a raw bolometer timestream converted to A for wafer~150-01 bolometer~3-01 as a function of sample number (there were 20MHz/2**17 (FIR stage) = 190.73 samples per second) and the corresponding PSD.
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/b54w2c3_overbias.png}
+\caption{The raw bolometer timestream converted from \ac{ADC} counts to current and the PSD of that timestream for 150-01 bolometer 3-01 noise determination. The timestream was $\sim3$ minutes long. The white noise level was averaged from 0.5 to 5~Hz and for this bolometer had a value of 11.2 pA.
+\label{fig:timestream_and_psd} }
+\end{center}
+\end{figure}
+
 
 
 \textcolor{red}{You haven't shown any resistor noise!!}
 
 \textcolor{red}{can you draw a circuit diagram of the warm electronic noise you're measuring?}
 
-\textcolor{red}{Which electronic component is responsible for the roll off? It is the squid controller first stage amplifier. Can you get the specs to determine what roll off we expected? Can't find on wiki. Ask Franky. Then, answer, is it consistent with what we measured?}
+%\textcolor{red}{Which electronic component is responsible for the roll off? It is the squid controller first stage amplifier. Can you get the specs to determine what roll off we expected? Can't find on wiki. Ask Franky. Then, answer, is it consistent with what we measured?}
 
 \textcolor{red}{do you understand why we don't have this roll off when it's operating under normal conditions and why we DO have this roll off when it's open loop?}
 
@@ -573,11 +589,11 @@ In the dark test cryostat, the noise agreed with predictions until the detectors
 
 \textcolor{red}{As you talk about noise, you need to be clear somewhere that you're using NEP and noise and ASD and PSD interchangeably. OR. don't use them interchangeably!}
 
-\textcolor{red}{Are you sure you have the contribution calculations correct? What are those $\sqrt{2}$s coming from??}
+%\textcolor{red}{Are you sure you have the contribution calculations correct? What are those $\sqrt{2}$s coming from??}
 
 \textcolor{red}{If you're going to mention the 20 ohm resistor noise as a main contributor, you need to be able to point to where this is. perhaps say it in words and refer to Franky's thesis??}
 
-\textcolor{red}{before you dive in to plots where you have the white noise level/asd plotted on the y-axis, you need to describe how you obtained those data points!}
+%\textcolor{red}{before you dive in to plots where you have the white noise level/asd plotted on the y-axis, you need to describe how you obtained those data points!}
 
 \textcolor{red}{Can you please be more specific about exactly which electronic components are included in this measurement?}
 
@@ -637,13 +653,16 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 \end{center}
 \end{figure}
 
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[height=2.5in]{figures/squid7_loopgain.png}
-\caption{We measured the \ac{SQUID} flux-locked loop gain. we did voltage (?) open loop over voltage (?) at Rfeedback -1. as a function of frequency. ???
-\label{fig:squid_flux_locked_loopgain} }
-\end{center}
-\end{figure}
+%maybe better to just remove this plot? since you don't remember how you got it? 
+%and, just take the value from hannes' thesis of Lfluxlockedloop = 13 for 10K feedback, even though it's clearly a strong function of frequency...
+
+%\begin{figure}[ht!]
+%\begin{center}
+%\includegraphics[height=2.5in]{figures/squid7_loopgain.png}
+%\caption{We measured the \ac{SQUID} flux-locked loop gain. we did voltage (?) open loop over voltage (?) at Rfeedback -1. as a function of frequency. ???
+%\label{fig:squid_flux_locked_loopgain} }
+%\end{center}
+%\end{figure}
 
 \textcolor{red}{Include squid noise measured in EBEX at float in thesis? Later on in performance section? don't even mention here?}
 %\textcolor{red}{These predictions are from an era where the squid noise was 2.5 pA/rtHz. Later on in this 150-01 run is where we adjusted the prediction to measure the measurement and found the intrinsic squid noise was more like 4pA/rtHz (though franky used 3.5 pA/rtHz in the analysis code). So. You should: 
@@ -696,13 +715,6 @@ The 4.2~K Johnson noise roughly doubled the noise.
 At 770~mK, the low frequency off bolometer resonance noise measured agreed with the prediction but at the higher demodulation frequencies, whether it was on or off resonance, the noise was higher than predicted, Figure~\ref{fig:770mK_squid_noise}. 
 
 
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[height=2.5in]{figures/b54w2c3_overbias.png}
-\caption{The raw bolometer timestream converted from \ac{ADC} counts to current and the PSD of that timestream for 150-01 bolometer 3-01 noise determination. The timestream was ~3 minutes long. The white noise level was averaged from 0.5 to 5~Hz and for this bolometer had a value of 11.2 pA.
-\label{fig:timestream_and_psd} }
-\end{center}
-\end{figure}
 
 \begin{figure}[ht!]
 \begin{center}
