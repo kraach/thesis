@@ -5,6 +5,8 @@
 \label{characterization_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\textcolor{red}{If you are going to insist on referring to wafers by their names, you need to explain what the name means.}
+
 There were more than four dozen detector wafers fabricated and characterized for \ac{EBEX}. 
 The characterization measurements provided here are only for those wafers which flew in the \ac{EBEX2013} flight. 
 The measurements were performed in testbeds designed to be as similar to the final flight configuration as possible. 
@@ -29,25 +31,23 @@ We measured detector parameters with the goals of controlling fabrication and pr
 %TOWARDS NORMAL RESISTANCES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{If you are going to insist on referring to wafers by their names, you need to explain what the name means.}
+\textcolor{red}{What exactly are you trying to say here? What is the point of this section?}
 
 \textcolor{red}{Are you going to include a zoom of one of the peaks. You would do this so you can show how (well) it fits to a Lorentzian and also to point out where you set the carrier frequency. do these plots already exist? hmmm. that must have been later in life when we saved the zooms of the fits?}
 
-\textcolor{red}{If you have time, it sure would be nice to go back and make those axes (the labels and the numbers) large enough to read. also, do in kHz. and use fewer words (more readable).}
+\textcolor{red}{You took this data, but you didn't write the code to make the plots. See: Kevin's thesis. So. Do you go back and remake the plots then??? Fuck. You're so far removed from this, you don't even remember how specifically you analyzed this data.}
+
+%\textcolor{red}{If you have time, it sure would be nice to go back and make those axes (the labels and the numbers) large enough to read. also, do in kHz. and use fewer words (more readable).}
 
 \textcolor{red}{I want you to mention how you determined the lower and upper bounds of the bias frequencies. And how you set the spacing. And, in practice, how you matched the frequencies you found with the frequencies \textit{expected}}
 
-\textcolor{red}{You took this data, but you didn't write the code to make the plots. See: Kevin's thesis. So. Do you go back and remake the plots then??? Fuck. You're so far removed from this, you don't even remember how specifically you analyzed this data.}
-
-\textcolor{red}{What exactly are you trying to say here? What is the point of this section?}
 
 
 
 
-Figure~\ref{fig:network_analysis} is a network analysis for a single multiplexed comb of detectors. 
-The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit. 
-At each LC resonant frequency, the multiplexed RLC circuit peaked in current. 
-Around 800~mK, when both the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
+In order to get the bolometer resonant frequencies and their normal resistances, we performed a network analysis on each comb with the bath held a couple hundred mK above $T_{c}$.
+The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit, Figure~\ref{fig:network_analysis}. 
+At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in current. 
 %The shape of the peak was modeled as a Lorentzian, 
 %\begin{equation}
 %Lorentzian
@@ -56,9 +56,10 @@ The RLC circuit was modeled to have an impedance of
 \begin{equation}
 Z_{RLC_{i}} = ???
 \end{equation}
-In addition to providing the resonant frequencies, the fit to this model gave the stray resistance and inductance in series with the comb. 
-Typical stray resistance was about XXX $\Omega$ and typical stray inductance was XXX $uH$.
-Note, the center of the current peak and the optimal frequency bias are not perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray resistance and inductance).
+Around 800~mK, when both the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
+In addition to providing the resonant frequencies and normal resistances, the fit to this model gave the stray capacitance and inductance in parallel with the comb. 
+Typical stray capacitance was about XXX $pF$ and typical stray inductance was XXX $uH$.
+Note, the center of the current peak and the optimal frequency bias are not perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray capacitance and inductance).
 
 \begin{figure}[htbp]
 \begin{center}
