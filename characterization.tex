@@ -129,21 +129,27 @@ and design (vertical gold dashed) values.
 %TOWARDS CRITICAL TEMPERATURES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-(HAVE WE MOTIVATED ELSEWHERE WHY WE CARE ABOUT VALUE OF $T_{C}$?) 
-For the measurement of the critical temperature, we placed a voltage bias of 5~$nV_{rms}$ across the detector such that the Joule heating was negligible ($\frac{V^2}{R} = 1.5~fW$) but there was still a measurable current signal. 
-Then we slowly, usually less than 3~mK/min, both cooled and warmed the detectors through their transitions while measuring the current through the detector. 
-We converted to resistance using Ohm's law, $R=V_{bias}/I_{measured}$.
-Note, this resistance does not agree with the resistance measured via the network analyses or via the IV curves. Any ideas why?
+\textcolor{red}{WANT WARMING AND COOLING IN ETC. BE CLEAR ABOUT HYSTERESIS FROM WARMING AND COOLING. I'd like for you to note we need to perform this slowly because there is an inherent hysteresis, LAG DUE TO TEMPERATURE SENSOR BEING MOUNTED TO INVAR INSTEAD OF TES.}
 
-Fig.~\ref{fig:tc_measurement} is an example of a critical temperature measurement for one detector. 
-The top panel shows the detector temperature as a function of time. %no need to point out there is hysteresis inherent in this measurement because the temperature sensor is on the invar, not on the wafer? 
+\textcolor{red}{HAVE WE MOTIVATED ELSEWHERE WHY WE CARE ABOUT VALUE OF $T_{C}$?}
+
+\textcolor{red}{Note, this resistance does not agree with the resistance measured via the network analyses or via the IV curves. Any ideas why? Maybe bring this up in loopgain section???}
+
+\textcolor{red}{Is it worth nothing there is a resistance offset of $\sim 0.1 \Omega$? And this tells us something about our stray impedance?}
+
+For the measurement of the critical temperature in \ac{ETC}, we placed a voltage bias of 5~$nV_{rms}$ across the detector such that the Joule heating was negligible ($\frac{V^2}{R} = 1.5~fW$) but there was still a measurable current signal. 
+The temperature was slowly, less than 3~mK/min, dialed up and down to move the bolometers through their superconducting transitions. 
+We measured demodulate \ac{ADC} counts with the \ac{DfMUX} boards and converted to resistance using the measured current and voltage transfer functions and Ohm's law, $R=V_{bias}/I_{measured}$.
+Fig.~\ref{fig:tc_measurement} is an example of a critical temperature measurement for a bolometer on wafer~150-02. 
+
+ %no need to point out there is hysteresis inherent in this measurement because the temperature sensor is on the invar, not on the wafer? 
 The bottom two panels show the bolometer resistance as a function of time and temperature. 
 The hysteresis between the critical temperature measured cooling and warming is generally less than 5~mK, sufficiently accurate for characterization.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[height=2.5in]{figures/G18_bolo10-03_RvsT_oral}
-\caption{FIND/MAKE THIS FIGURE: WANT WARMING AND COOLING IN ETC. BE CLEAR ABOUT HYSTERESIS FROM WARMING AND COOLING. NOTE LAG DUE TO TEMPERATURE SENSOR BEING MOUNTED TO INVAR INSTEAD OF TES.
+\includegraphics[height=2.5in]{figures/b53w0c0_rvst.png}
+\caption{
 \label{fig:tc_measurement} }
 \end{center}
 \end{figure} 
