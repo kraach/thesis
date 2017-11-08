@@ -42,13 +42,7 @@ We measured detector parameters with the goals of controlling fabrication and pr
 \textcolor{red}{What exactly are you trying to say here? What is the point of this section?}
 
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.98\textwidth]{figures/150-17_SqCh3_netanal_600mK.png}
-\caption{A network analysis from wafer 150-17.
-\label{fig:network_analysis} }
-\end{center}
-\end{figure}
+
 
 Figure~\ref{fig:network_analysis} is a network analysis for a single multiplexed comb of detectors. 
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit. 
@@ -66,15 +60,28 @@ In addition to providing the resonant frequencies, the fit to this model gave th
 Typical stray resistance was about XXX $\Omega$ and typical stray inductance was XXX $uH$.
 Note, the center of the current peak and the optimal frequency bias are not perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray resistance and inductance).
 
-\textcolor{red}{again, I'd like you to remake this figure so the units and axes across figures are consistent ... this one says "f (kHz)", the other says "Carrier Frequency (Hz)"}
-
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[height=2in]{figures/netanal_zoom.png}
-\caption{The fit of a network analysis peak (blue solid) to a Lorentzian and the optimal bias frequency determined (green dot).
-\label{fig:network_analysis_zoom} }
+\includegraphics[width=0.98\textwidth]{figures/SqCh3_netanal.png}
+\caption{An 800~mK network analysis from wafer 150-17. The blue line has frequency steps of 10~kHz to roughly locate the peaks and the orange dots are the finer scans with steps of 1~kHz to obtain the data to fit. The fits provide the bolometer resonant frequencies, the bolometer normal resistances, and the circuit's stray impedance. 
+\label{fig:network_analysis} }
 \end{center}
 \end{figure}
+
+
+
+
+%\textcolor{red}{again, I'd like you to remake this figure so the units and axes across figures are consistent ... this one says "f (kHz)", the other says "Carrier Frequency (Hz)"}
+
+%YOU DON'T GET TO INCLUDE THIS??? 
+%YOU DIDN'T WRITE THE FITTING OR PLOTTING CODE
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[height=2in]{figures/netanal_zoom.png}
+%\caption{The fit of a network analysis peak (blue solid) to a Lorentzian and the optimal bias frequency determined (green dot).
+%\label{fig:network_analysis_zoom} }
+%\end{center}
+%\end{figure}
 
 \textcolor{red}{Include: Stray impedance measured from an iv curve of a latched/superconducting bolometer.}
 
@@ -755,7 +762,7 @@ The contribution from the electronics is higher because there are carrier and nu
 \begin{center}
 \includegraphics[height=2.5in]{figures/overbias_noise.png}
 \caption{Overbias noise (blue dots) for one \ac{SQUID} in \ac{ETC} as a function of demodulation frequency at 340~mK. The prediction (blue line) includes electronic, \ac{SQUID}, and \textcolor{red}{XXX}~mK bolometer Johnson noise. 
-\label{fig:770mK_squid_noise} }
+\label{fig:overbias_noise} }
 \end{center}
 \end{figure}
 
