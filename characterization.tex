@@ -142,9 +142,15 @@ The temperature was slowly, less than 3~mK/min, dialed up and down to move the b
 We measured demodulate \ac{ADC} counts with the \ac{DfMUX} boards and converted to resistance using the measured current and voltage transfer functions and Ohm's law, $R=V_{bias}/I_{measured}$.
 Fig.~\ref{fig:tc_measurement} is an example of a critical temperature measurement for a bolometer on wafer~150-02. 
 
- %no need to point out there is hysteresis inherent in this measurement because the temperature sensor is on the invar, not on the wafer? 
-The bottom two panels show the bolometer resistance as a function of time and temperature. 
-The hysteresis between the critical temperature measured cooling and warming is generally less than 5~mK, sufficiently accurate for characterization.
+Changing the temperature slowly was important because
+1. The temperature was readout from a temperature sensor screwed to the underside of the invar plate onto which the wafer was mounted. 
+2. the wafer heater was mounted to the underside of the invar. 
+3. the bolometers were only weakly coupled to the bath via their spiderweb legs 
+
+
+
+%The bottom two panels show the bolometer resistance as a function of time and temperature. 
+%The hysteresis between the critical temperature measured cooling and warming is generally less than 5~mK, sufficiently accurate for characterization.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -702,9 +708,11 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 %The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
 With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
 Away from the bolometer resonant frequencies, this is a measure of the noise due to the warm electronics and the \ac{SQUID}s, Figure~\ref{fig:adjust_squid}. 
-Since the warm electronic noise agreed with predictions, Figure~\ref{fig:dark_electronic_noise}, the excess noise was assumed to be due to the \ac{SQUID}. 
+Earlier generations of this \ac{SQUID} design were reported to have a noise of 2.5~$pA/\sqrt{Hz}$, \cite{Huber2001}.
+Since the warm electronic noise agreed with predictions, Figure~\ref{fig:dark_electronic_noise}, the excess noise measured in \ac{ETC} was assumed to be due to the \ac{SQUID}. 
 The blue line assumed an intrinsic \ac{SQUID} noise of 2.5~$pA/\sqrt{Hz}$, while the orange line assumed 3.5~$pA/\sqrt{Hz}$.
-The \ac{SQUID} manufacturers expected the noise to be at least 3.5~$pA/\sqrt{Hz}$ \ref{conversationwithnist}, so given these measurements, from here on out, we took the \ac{SQUID} noise to be 3.5~$pA/\sqrt{Hz}$.
+From here on out, we took the intrinsic \ac{SQUID} noise to be 3.5~$pA/\sqrt{Hz}$.
+
 
 \begin{figure}[ht!]
 \begin{center}
