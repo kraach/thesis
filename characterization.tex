@@ -41,12 +41,14 @@ We measured detector parameters with the goals of controlling fabrication and pr
 
 \textcolor{red}{I want you to mention how you determined the lower and upper bounds of the bias frequencies. And how you set the spacing. BUT. How did we do this??? I forget. Where is this information? 
 
-\textcolor{red}{Also, I want you to say, in practice, how did we match the frequencies measured with the frequencies \textit{expected}? The game. The measured frequency was generally XXX\% higher than the expected one calculated from the inductance measured at 4.2~K of $24~\mu H$ and the room temperature measured capacitances. At low frequencies, the measured frequency was close to expected. At the highest frequency, however, the measured frequency was nearly 90 kHz greater than expected. }
+\textcolor{red}{Also, I want you to say (BUT IS THIS NECESSARY?), in practice, how did we match the frequencies measured with the frequencies \textit{expected}? The game. The measured frequency was generally XXX\% higher than the expected one calculated from the inductance measured at 4.2~K of $24~\mu H$ and the room temperature measured capacitances. At low frequencies, the measured frequency was close to expected. At the highest frequency, however, the measured frequency was nearly 90 kHz greater than expected. }
 
-We wanted to maximize the number of detectors per comb while minimizing harmful effects like cross-talk and whatever bad thing happens at low frequencies and whatever bad thing happens at high frequencies. 
-The lower end of the frequencies we could demodulate at was set by XXX and the higher end was set by XXX. 
-The inter-detector spacing was set by XXX. 
-We could wire up to 16 detectors per comb. 
+%YOU DON'T REMEMBER THIS WELL ENOUGH TO TALK ABOUT IT
+%AND SEARCHING EMAIL AND WEB AND READING THESES DIDN'T HELP ENOUGH
+%We wanted to maximize the number of detectors per comb while minimizing harmful effects like cross-talk and whatever bad thing happens at low frequencies and whatever bad thing happens at high frequencies. 
+%The lower end of the frequencies we could demodulate at was set by XXX and the higher end was set by XXX. 
+%The inter-detector spacing was set by XXX. 
+%We could wire up to 16 detectors per comb. 
 
 In order to get the bolometer resonant frequencies and their normal resistances, we performed a network analysis on each comb with the bath held a couple hundred mK above $T_{c}$.
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit, Figure~\ref{fig:network_analysis}. 
@@ -55,10 +57,10 @@ At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in
 %\begin{equation}
 %Lorentzian
 %\end{equation}
-The RLC circuit was modeled to have an impedance of 
-\begin{equation}
-Z_{RLC_{i}} = ???
-\end{equation}
+%The RLC circuit was modeled to have an impedance of 
+%\begin{equation}
+%Z_{RLC_{i}} = ???
+%\end{equation}
 Around 800~mK, when both the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
 In addition to providing the resonant frequencies and normal resistances, the fit to this model gave the stray capacitance and inductance in parallel with the comb. 
 Typical stray capacitance was about XXX $pF$ and typical stray inductance was XXX $uH$.
