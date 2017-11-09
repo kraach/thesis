@@ -53,11 +53,12 @@ We measured detector parameters with the goals of controlling fabrication and pr
 In order to get the bolometer resonant frequencies and their normal resistances, we performed a network analysis on each comb with the bath held a couple hundred mK above $T_{c}$.
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit, Figure~\ref{fig:network_analysis}. 
 At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in current. 
-The impedance of each bolometer was modeled as
+The impedance of each bolometer in series with its inductor, $L=24~\mu H$, and capacitor, $C_{i}$, was modeled as
 \begin{equation}
 Z_{RLC_{i}} = \sqrt{ R_{i}^{2} + \left(2\pi \nu L - \frac{1}{2\pi \nu C_{i}}\right)^{2}}
 \end{equation}
-where $R_{i}$ was the $i^{th}$ bolometer's normal resistance and $C_{i}$ its capacitance. 
+where $R_{i}$ was the $i^{th}$ bolometer's normal resistance.
+ and $C_{i}$ its capacitance. 
 Each bolometer had a $24~\mu H$ inductor in series with it. 
 There was also a stray inductance, $L_{x}$, and stray capacitance, $C_{x}$, in parallel with the detector comb. 
 The network analysis current of each peak was thus
