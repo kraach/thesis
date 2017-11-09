@@ -39,7 +39,7 @@ We measured detector parameters with the goals of controlling fabrication and pr
 
 %\textcolor{red}{If you have time, it sure would be nice to go back and make those axes (the labels and the numbers) large enough to read. also, do in kHz. and use fewer words (more readable).}
 
-\textcolor{red}{I want you to mention how you determined the lower and upper bounds of the bias frequencies. And how you set the spacing. BUT. How did we do this??? I forget. Where is this information? 
+\textcolor{red}{I want you to mention how you determined the lower and upper bounds of the bias frequencies. And how you set the spacing. BUT. How did we do this??? I forget. Where is this information?}
 
 \textcolor{red}{Also, I want you to say (BUT IS THIS NECESSARY?), in practice, how did we match the frequencies measured with the frequencies \textit{expected}? The game. The measured frequency was generally XXX\% higher than the expected one calculated from the inductance measured at 4.2~K of $24~\mu H$ and the room temperature measured capacitances. At low frequencies, the measured frequency was close to expected. At the highest frequency, however, the measured frequency was nearly 90 kHz greater than expected. }
 
@@ -53,6 +53,18 @@ We measured detector parameters with the goals of controlling fabrication and pr
 In order to get the bolometer resonant frequencies and their normal resistances, we performed a network analysis on each comb with the bath held a couple hundred mK above $T_{c}$.
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit, Figure~\ref{fig:network_analysis}. 
 At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in current. 
+The impedance of each bolometer was modeled as
+\begin{equation}
+Z_{RLC_{i}} = \sqrt{ R_{i}^{2} + \left(2\pi \nu L - \frac{1}{2\pi \nu C_{i}}\right)^{2}}
+\end{equation}
+where $R_{i}$ was the $i^{th}$ bolometer's normal resistance and $C_{i}$ its capacitance. 
+Each bolometer had a $24~\mu H$ inductor in series with it. 
+There was also a stray inductance, $L_{x}$, and stray capacitance, $C_{x}$, in parallel with the detector comb. 
+The network analysis current of each peak was thus
+\begin{equation}
+I = \frac{V_{bias}}{\lvert Z_{RLC_{i}} + j 2\pi \nu L_{x} + \frac{1}{j 2\pi \nu C_{x}}\rvert}
+\end{equation}
+
 %The shape of the peak was modeled as a Lorentzian, 
 %\begin{equation}
 %Lorentzian
@@ -68,7 +80,7 @@ Note, the center of the current peak and the optimal frequency bias are not perf
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.98\textwidth]{figures/SqCh3_netanal.png}
+\includegraphics[height=2.5in]{figures/SqCh3_netanal.png}
 \caption{An 800~mK network analysis from wafer 150-17. The blue line has frequency steps of 10~kHz to roughly locate the peaks and the orange dots are the finer scans with steps of 1~kHz to obtain the data to fit. The fits provide the bolometer resonant frequencies, the bolometer normal resistances, and the circuit's stray impedance. 
 \label{fig:network_analysis} }
 \end{center}
