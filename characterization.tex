@@ -43,6 +43,10 @@ We measured detector parameters with the goals of controlling fabrication and pr
 
 \textcolor{red}{Also, I want you to say (BUT IS THIS NECESSARY?), in practice, how did we match the frequencies measured with the frequencies \textit{expected}? The game. The measured frequency was generally XXX\% higher than the expected one calculated from the inductance measured at 4.2~K of $24~\mu H$ and the room temperature measured capacitances. At low frequencies, the measured frequency was close to expected. At the highest frequency, however, the measured frequency was nearly 90 kHz greater than expected. }
 
+\textcolor{red}{You need a circuit diagram.}
+
+\textcolor{red}{are you going to say which capacitors you used? specifically brands? values? are you going to talk about measuring the Ls? what about the setup designed just to do that?}
+
 %YOU DON'T REMEMBER THIS WELL ENOUGH TO TALK ABOUT IT
 %AND SEARCHING EMAIL AND WEB AND READING THESES DIDN'T HELP ENOUGH
 %We wanted to maximize the number of detectors per comb while minimizing harmful effects like cross-talk and whatever bad thing happens at low frequencies and whatever bad thing happens at high frequencies. 
@@ -50,43 +54,34 @@ We measured detector parameters with the goals of controlling fabrication and pr
 %The inter-detector spacing was set by XXX. 
 %We could wire up to 16 detectors per comb. 
 
-In order to get the bolometer resonant frequencies and their normal resistances, we performed a network analysis on each comb with the bath held a couple hundred mK above $T_{c}$.
+In order to get the bolometer resonant frequencies and their normal resistances, we performed a network analysis on each comb with the bath held a couple hundred millikelvin above the critical temperatures.
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit, Figure~\ref{fig:network_analysis}. 
 At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in current. 
 The impedance of each bolometer in series with its inductor, $L=24~\mu H$, and capacitor, $C_{i}$, was modeled as
 \begin{equation}
 Z_{RLC_{i}} = \sqrt{ R_{i}^{2} + \left(2\pi \nu L - \frac{1}{2\pi \nu C_{i}}\right)^{2}}
 \end{equation}
-where $R_{i}$ was the $i^{th}$ bolometer's normal resistance.
- and $C_{i}$ its capacitance. 
-Each bolometer had a $24~\mu H$ inductor in series with it. 
+where $R_{i}$ was the $i^{th}$ bolometer's resistance.
 There was also a stray inductance, $L_{x}$, and stray capacitance, $C_{x}$, in parallel with the detector comb. 
-The network analysis current of each peak was thus
+The network analysis current for each peak was thus
 \begin{equation}
 I = \frac{V_{bias}}{\lvert Z_{RLC_{i}} + j 2\pi \nu L_{x} + \frac{1}{j 2\pi \nu C_{x}}\rvert}
 \end{equation}
-
-%The shape of the peak was modeled as a Lorentzian, 
-%\begin{equation}
-%Lorentzian
-%\end{equation}
-%The RLC circuit was modeled to have an impedance of 
-%\begin{equation}
-%Z_{RLC_{i}} = ???
-%\end{equation}
+Though this model is simple, it fits the data well, Figure~\ref{fig:netanal_fit}.
 Around 800~mK, when both the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
+
 In addition to providing the resonant frequencies and normal resistances, the fit to this model gave the stray capacitance and inductance in parallel with the comb. 
 Typical stray capacitance was about XXX $pF$ and typical stray inductance was XXX $uH$.
 Note, the center of the current peak and the optimal frequency bias are not perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray capacitance and inductance).
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[height=2.5in]{figures/SqCh3_netanal.png}
-\caption{An 800~mK network analysis from wafer 150-17. The blue line has frequency steps of 10~kHz to roughly locate the peaks and the orange dots are the finer scans with steps of 1~kHz to obtain the data to fit. The fits provide the bolometer resonant frequencies, the bolometer normal resistances, and the circuit's stray impedance. 
+\includegraphics[width=0.6\columnwidth]{figures/SqCh3_netanal.png}
+\includegraphics[width=0.3\columnwidth]{figures/netanal_etcsqb_SqCh3_10K_20110606_5to8.png}
+\caption{Left: An 800~mK network analysis from wafer 150-17. The blue line has frequency steps of 10~kHz to roughly locate the peaks and the orange dots are the finer scans with steps of 1~kHz to obtain the data to fit. Right: The Lorentzian fit (blue line) to a single peak (red dots). The fit provides the bolometer resonant frequency (green dot), the bolometer normal resistance, and the circuit's stray inductance and stray capacitance. 
 \label{fig:network_analysis} }
 \end{center}
 \end{figure}
-
 
 
 
