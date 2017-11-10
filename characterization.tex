@@ -43,9 +43,12 @@ We measured detector parameters with the goals of controlling fabrication and pr
 
 \textcolor{red}{Also, I want you to say (BUT IS THIS NECESSARY?), in practice, how did we match the frequencies measured with the frequencies \textit{expected}? The game. The measured frequency was generally XXX\% higher than the expected one calculated from the inductance measured at 4.2~K of $24~\mu H$ and the room temperature measured capacitances. At low frequencies, the measured frequency was close to expected. At the highest frequency, however, the measured frequency was nearly 90 kHz greater than expected. }
 
-\textcolor{red}{You need a circuit diagram.}
+\textcolor{red}{You need a circuit diagram. BUT. Do you need to repeat the circuit diagram with a stray L and C?? No. I don't think so. People can add those two components in their heads???}
 
 \textcolor{red}{are you going to say which capacitors you used? specifically brands? values? are you going to talk about measuring the Ls? what about the setup designed just to do that?}
+
+\textcolor{red}{I want you to include: Typical stray capacitance was about XXX $pF$ and typical stray inductance was XXX $uH$. You'll also need to comment on the effect of having strays at this level, i.e. what does it do?? how much does it alter the voltage bias provided to the detector? cross-talk? }
+
 
 %YOU DON'T REMEMBER THIS WELL ENOUGH TO TALK ABOUT IT
 %AND SEARCHING EMAIL AND WEB AND READING THESES DIDN'T HELP ENOUGH
@@ -57,9 +60,10 @@ We measured detector parameters with the goals of controlling fabrication and pr
 In order to get the bolometer resonant frequencies and their normal resistances, we performed a network analysis on each comb with the bath held a couple hundred millikelvin above the critical temperatures.
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit, Figure~\ref{fig:network_analysis}. 
 At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in current. 
-The impedance of each bolometer in series with its inductor, $L=24~\mu H$, and capacitor, $C_{i}$, was modeled as
+
+The impedance as a function of frequency, $\nu$, for each bolometer in series with its inductor, $L=24~\mu H$, and capacitor, $C_{i}$, was modeled as
 \begin{equation}
-Z_{RLC_{i}} = \sqrt{ R_{i}^{2} + \left(2\pi \nu L - \frac{1}{2\pi \nu C_{i}}\right)^{2}}
+Z_{RLC_{i}} \left(\nu\right) = \sqrt{ R_{i}^{2} + \left(2\pi \nu L - \frac{1}{2\pi \nu C_{i}}\right)^{2}}
 \end{equation}
 where $R_{i}$ was the $i^{th}$ bolometer's resistance.
 There was also a stray inductance, $L_{x}$, and stray capacitance, $C_{x}$, in parallel with the detector comb. 
@@ -68,11 +72,14 @@ The network analysis current for each peak was thus
 I = \frac{V_{bias}}{\lvert Z_{RLC_{i}} + j 2\pi \nu L_{x} + \frac{1}{j 2\pi \nu C_{x}}\rvert}
 \end{equation}
 Though this model is simple, it fits the data well, Figure~\ref{fig:netanal_fit}.
-Around 800~mK, when both the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
+Note, the frequency at the maximum current and the optimal bias frequency are not necessarily perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray capacitance and inductance).
 
-In addition to providing the resonant frequencies and normal resistances, the fit to this model gave the stray capacitance and inductance in parallel with the comb. 
-Typical stray capacitance was about XXX $pF$ and typical stray inductance was XXX $uH$.
-Note, the center of the current peak and the optimal frequency bias are not perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray capacitance and inductance).
+Around 800~mK, when both the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
+Histograms summarizing the measured normal resistance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:rn_histograms}. 
+%Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
+The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands was 1.9, 1.5, and 1.0~$\Omega$ respectively. 
+
+
 
 \begin{figure}[htbp]
 \begin{center}
@@ -105,9 +112,7 @@ Note, the center of the current peak and the optimal frequency bias are not perf
 
 \textcolor{red}{Include: Stray impedance measured from an iv curve of a latched/superconducting bolometer.}
 
-Histograms summarizing the measured normal resistance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:rn_histograms}. 
-%Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
-The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands was 1.9, 1.5, and 1.0~$\Omega$ respectively. 
+
 FROM THE PAPER.
 The 150 and 410~GHz bimodal distributions were due to detector parameters being closely grouped within a single fabrication run, but varying between fabrication runs. 
 The measured value of $R_{n}$ for the 250~GHz band closely matched the design (see 
