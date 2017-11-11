@@ -49,6 +49,8 @@ We measured detector parameters with the goals of controlling fabrication and pr
 
 \textcolor{red}{I want you to include: Typical stray capacitance was about XXX $pF$ and typical stray inductance was XXX $uH$. You'll also need to comment on the effect of having strays at this level, i.e. what does it do?? how much does it alter the voltage bias provided to the detector? cross-talk? }
 
+\textcolor{red}{Include: Stray impedance measured from an iv curve of a latched/superconducting bolometer.}
+
 
 %YOU DON'T REMEMBER THIS WELL ENOUGH TO TALK ABOUT IT
 %AND SEARCHING EMAIL AND WEB AND READING THESES DIDN'T HELP ENOUGH
@@ -61,6 +63,14 @@ In order to get the bolometer resonant frequencies and their normal resistances,
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit, Figure~\ref{fig:network_analysis}. 
 At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in current. 
 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{figures/SqCh3_netanal.png}
+\caption{An 800~mK network analysis from wafer 150-17. The blue line has frequency steps of 10~kHz to roughly locate the peaks and the orange dots are the finer scans with steps of 1~kHz to obtain the data to fit. 
+\label{fig:network_analysis} }
+\end{center}
+\end{figure}
+
 The impedance as a function of frequency, $\nu$, for each bolometer in series with its inductor, $L=24~\mu H$, and capacitor, $C_{i}$, was modeled as
 \begin{equation}
 Z_{RLC_{i}} \left(\nu\right) = \sqrt{ R_{i}^{2} + \left(2\pi \nu L - \frac{1}{2\pi \nu C_{i}}\right)^{2}}
@@ -71,23 +81,8 @@ The network analysis current for each peak was thus
 \begin{equation}
 I = \frac{V_{bias}}{\lvert Z_{RLC_{i}} + j 2\pi \nu L_{x} + \frac{1}{j 2\pi \nu C_{x}}\rvert}
 \end{equation}
-Though this model is simple, it fits the data well, Figure~\ref{fig:netanal_fit}.
+Figure~\ref{fig:netanal_fit} shows the fit of this model and a single peak.
 Note, the frequency at the maximum current and the optimal bias frequency are not necessarily perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray capacitance and inductance).
-
-Around 800~mK, when both the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
-Histograms summarizing the measured normal resistance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:rn_histograms}. 
-%Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
-The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands was 1.9, 1.5, and 1.0~$\Omega$ respectively. 
-
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.6\columnwidth]{figures/SqCh3_netanal.png}
-\caption{An 800~mK network analysis from wafer 150-17. The blue line has frequency steps of 10~kHz to roughly locate the peaks and the orange dots are the finer scans with steps of 1~kHz to obtain the data to fit. 
-\label{fig:network_analysis} }
-\end{center}
-\end{figure}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -96,6 +91,33 @@ The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands 
 \label{fig:netanal_fit} }
 \end{center}
 \end{figure}
+
+Around 800~mK, when both the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
+Histograms summarizing the measured normal resistance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:rn_histograms}. 
+%Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
+The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands was 1.9, 1.5, and 1.0~$\Omega$ respectively. 
+\textcolor{red}{FROM THE PAPER.}
+The 150 and 410~GHz bimodal distributions were due to detector parameters being closely grouped within a single fabrication run, but varying between fabrication runs. 
+The measured value of $R_{n}$ for the 250~GHz band closely matched the design (see 
+Table~\ref{tab:Design_Params}). 
+For the other two frequency bands, one mode of the distribution closely matched while the other mode was higher (lower) than design for the 150 (410)~GHz band. 
+The 150~GHz detectors with a measured $R_{n}$ of 2~$\Omega$, instead of the nominal 1.5~$\Omega$, were calculated to have increased electrical cross-talk from a value of 0.5\% to 0.9\% and decreased loopgain by 30\%. 
+The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the design value, were calculated to have increased Johnson noise by 20\% relative to the nominal expected value of 4.0 pA$/\sqrt{\mathrm{Hz}}$ (9.4~aW$/\sqrt{\mathrm{Hz}}$); see Equation~\ref{eqn:noisebudget}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.31\textwidth]{figures/150_rn_hist.png}
+\includegraphics[width=0.31\textwidth]{figures/250_rn_hist.png}
+\includegraphics[width=0.31\textwidth]{figures/410_rn_hist.png}
+\caption{Histogram of measured normal resistances $R_{n}$ for each of the frequency bands, including the median (vertical cyan)  
+and design (vertical gold dashed) values.
+\label{fig:rn_histograms} }
+\end{figure}
+
+
+
+
+
 
 
 %\textcolor{red}{again, I'd like you to remake this figure so the units and axes across figures are consistent ... this one says "f (kHz)", the other says "Carrier Frequency (Hz)"}
@@ -110,16 +132,11 @@ The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands 
 %\end{center}
 %\end{figure}
 
-\textcolor{red}{Include: Stray impedance measured from an iv curve of a latched/superconducting bolometer.}
 
 
-FROM THE PAPER.
-The 150 and 410~GHz bimodal distributions were due to detector parameters being closely grouped within a single fabrication run, but varying between fabrication runs. 
-The measured value of $R_{n}$ for the 250~GHz band closely matched the design (see 
-Table~\ref{tab:Design_Params}). 
-For the other two frequency bands, one mode of the distribution closely matched while the other mode was higher (lower) than design for the 150 (410)~GHz band. 
-The 150~GHz detectors with a measured $R_{n}$ of 2~$\Omega$, instead of the nominal 1.5~$\Omega$, were calculated to have increased electrical cross-talk from a value of 0.5\% to 0.9\% and decreased loopgain by 30\%. 
-The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the design value, were calculated to have increased Johnson noise by 20\% relative to the nominal expected value of 4.0 pA$/\sqrt{\mathrm{Hz}}$ (9.4~aW$/\sqrt{\mathrm{Hz}}$); see Equation~\ref{eqn:noisebudget}.
+
+
+
 
 DO YOU WANT TO INCLUDE MORE DETAILS ABOUT THE CROSS-TALK CALCULATION? PROBABLY? 
 There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
@@ -144,16 +161,6 @@ For a detector dropped to 85\% in the transition, having a normal resistance of 
 %\comred{Assume detector optimization explains what about the electronics set our target to be 1.5~$\Omega$? Ben says "The requirement is really ~1.25 because what actually matters is Rtes in transition for the L/R requirement.  So depending on how deep we get in to the transition we could start anywhere just above 1.2 Ohms to operate at 0.88 to 1.0 Ohms." BUT. When determining which Rfrac to tune to, we didn't do this calculation. Rather, we noted, in general, below 80\% $R_{start}$, we had (not well understood) excess noise and so opted to go to 85\%. What I'm trying to say is, in practice, the operating fracRn value was not chosen carefully on a bolo by bolo basis or even a wafer by wafer basis to achieve a specific L/R. Explain the consequence of having a higher or lower normal resistance, e.g. 150s and one of the 410s (was it the 410 that operated or the 410 that was saturated?)? Ben says "Increased johnson noise and possibly bolo stability.  However, I'm not sure if either of these effects were detected in the wafers in test cryostats, Palestine, or flight."}
 
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=0.31\textwidth]{figures/150_rn_hist.png}
-\includegraphics[width=0.31\textwidth]{figures/250_rn_hist.png}
-\includegraphics[width=0.31\textwidth]{figures/410_rn_hist.png}
-\caption{Histogram of measured normal resistances $R_{n}$ for each of the frequency bands, including the median (vertical cyan)  
-and design (vertical gold dashed) values.
-}
-\label{fig:rn_histograms}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Critical Temperature}
