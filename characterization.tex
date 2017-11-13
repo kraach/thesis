@@ -526,18 +526,35 @@ Rearranging Equation~\ref{eq:bolo_power}, we get the electrical power as a funct
 \begin{equation}
 P_{elec} = \overline{G} \Delta T -  \epsilon P_{BB} 
 \end{equation}
-The slope of the line is the optical efficiency, $\epsilon$.
-
+Note, the slope of the line is the optical efficiency, $\epsilon$.
+The right panel of Figure~\ref{fig:pelec_vs_popt} is the fit for wafer~150-01 bolometer~8-04. 
+Table~\ref{tab:opt_eff} gives the slopes for all of the functioning bolometers open to the blackbody. 
 
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[width=0.49\columnwidth]{figures/blackbody_intensity_plot.png}
 \includegraphics[width=0.48\columnwidth]{figures/SqCh2_Ch1_p_vs_p.png}
-\caption{Left: Blackbody radiation as a function of temperature. The \ac{EBEX} 150~GHz band is marked by the black vertical lines. Right: Wafer~150-01 bolometer~8-04 electrical power as function of blackbody power. The slope, $0.8$, is the detector's optical efficiency. 
+\caption{Left: Blackbody radiation as a function of temperature. The \ac{EBEX} 150~GHz band is marked by the black vertical lines. Right: Wafer~150-01 bolometer 8-04 electrical power as function of blackbody power. The slope, $\sim0.8$, is the detector's optical efficiency. 
 %\textcolor{red}{remake this figure st the x-axis is labeled Prad not PBB!}
 \label{fig:pelec_vs_popt} }
 \end{center}
 \end{figure}
+
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{|c|c|}
+bolometer & efficiency \\
+7-03	& 66\% \\
+7-04	& 87\% \\
+8-03	& 74\% \\
+8-04	& 81\% \\
+9-03	& 74\% \\
+\end{tabular}
+\end{center}
+\caption{Measured optical efficiencies of wafer~150-01 bolometers open to blackbody in \ac{ETC}.
+\label{tab:opt_eff} }
+\end{table}
+
 
 
 \begin{figure}[htp]
