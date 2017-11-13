@@ -497,7 +497,7 @@ The non-functioning detectors were crossed off.
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=7in]{figures/EBEX_Nb01_150GHz_wafer_schem.png}
-\caption{Blackbody setup x8 multiplexing readout setup for wafer~150-01. Inside the pink circle were the detectors open to the blackbody. Squid groups were circled in different colors. Non-functioning detectors were crossed out. 
+\caption{Blackbody setup x8 multiplexing readout setup for wafer~150-01. Within the pink ring were the hexagon of detectors open to the blackbody. Squid groups were outlined in different colors and labelled SQ$N$, for $N \in (1,8)$. Non-functioning detectors were crossed out. 
 \label{fig:bb_wafer_layout} }
 \end{center}
 \end{figure}
@@ -524,11 +524,11 @@ That is, there was no turnaround observed in the IV curve, the bolometer was nor
 The blackbody radiation curve was integrated over the \ac{EBEX} 150~GHz observation band to determine the amount of power incident upon the detectors at each blackbody temperature, left panel of Figure~\ref{fig:pelec_vs_popt}.
 Rearranging Equation~\ref{eq:bolo_power}, we get the electrical power as a function of the radiative load
 \begin{equation}
-P_{elec} = \overline{G} \Delta T -  \epsilon P_{BB} 
+P_{elec} = \overline{G} \Delta T -  \epsilon P_{rad} 
 \end{equation}
-Note, the slope of the line is the optical efficiency, $\epsilon$.
+The slope of the line is the optical efficiency, $\epsilon$.
 The right panel of Figure~\ref{fig:pelec_vs_popt} is the fit for wafer~150-01 bolometer~8-04. 
-Table~\ref{tab:opt_eff} gives the slopes for all of the functioning bolometers open to the blackbody. 
+Table~\ref{tab:opt_eff} gives the slope for each of the functioning bolometers open to the blackbody. 
 
 \begin{figure}[htp]
 \begin{center}
@@ -555,6 +555,13 @@ bolometer & efficiency \\
 \label{tab:opt_eff} }
 \end{table}
 
+
+\textcolor{red}{HERE you need to talk about:
+\begin{itemize}
+\item what is the uncertainty on the final percentage you quote? what are the major uncertainties in the optical efficiency measurement?
+\item also note, the load the dark detectors saw. how big was it? why did they see it? what, if anything, does that say about the optical efficiency measurement for the detectors open to the blackbody? 
+\end{itemize}
+ }
 
 
 \begin{figure}[htp]
