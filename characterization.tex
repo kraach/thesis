@@ -453,14 +453,16 @@ Higher thermal conductance increases phonon noise. For example, for a median 410
 %
 %\textcolor{red}{Remove labels that you don't use, e.g. SqCh1 Ch2. Also, if you don't use the resistance curve, do you want it in there?}
 
-\textcolor{red}{Do you want to/ can you include any pictures or designs of the optics stack or teflon mould or box lid, etc ?}
+\textcolor{red}{Please include pictures or designs of the optics stack + blackbody. Or maybe the teflon mould or box lid, etc ?}
 
-\textcolor{red}{Re: Rederiving how black is blackbody (threw away the f-ing papers???). from cobe firas blackbody paper: "The optical properties of the Eccosorb have been report- ed (Hemmati, Mather, \& Eichhorn 1985; Peterson \& Richards 1984; Halpern et al. 1986)"}
+\textcolor{red}{At the very least, you need to explain that there was only a single hexagon of detectors open to the blackbody and they had their own EBEX optics stack.}
+
+%\textcolor{red}{Re: Rederiving how black is blackbody (threw away the f-ing papers???). from cobe firas blackbody paper: "The optical properties of the Eccosorb have been report- ed (Hemmati, Mather, \& Eichhorn 1985; Peterson \& Richards 1984; Halpern et al. 1986)"}
 
 \textcolor{red}{I want you to comment on the abosprtivity/reflectivity of eccosorb cr-110 as a function of frequency!}
 
 In order to measure the optical efficiency of the \ac{EBEX} bolometers, the bolometers needed to observe a known, controllable radiative load.
-This radiative load was provided via a blackbody, a body absorbing all incident radiation falling upon it. 
+This radiative load was provided via a blackbody, a body absorbing all incident radiation falling upon it and reemitting . 
 The \ac{ETC} blackbody was inspired by the design of Peterson and Richards for calibrating IR photometers \cite{Peterson1984a}. 
 The blackbody itself was an inverted cone with an angle of 37$^{\circ}$, Figure~\ref{fig:blackbody_design}. 
 The blackbody was made by pouring castable Eccosorb CR-110 into a teflon mould and baking it.
@@ -471,12 +473,7 @@ The reflected radiation for the light ray with the outermost angle, the \ac{EBEX
 Fewer than 8 parts in 1000 of the incident radiation escaped the blackbody. 
 A steeper cone would have had greater absorptivity, but the height was limited by the cryostat dimensions. 
 
-There was a cooper bar embedded inside the eccosorb for mounting a temperature sensor. %RuOx?
-A flat wire heater was glued to the outside of the cone in order to raise the blackbody above 4.2~K.
-To cool the blackbody down, a copper bar embedded in the eccosorb was connected to the 4~K plate via a gas-gap heat switch. 
-The heat switch was opened for the measurements when the blackbody was heated.
-
-\begin{figure}[ht!]
+\begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/blackbody_design.jpeg}
 \caption{Eccosorb blackbody design above detectors (black dots). The detector's field of view (red dashed lines) was 20$^{\circ}$. The blackbody cone had an opening angle of 37$^{\circ}$. The outermost light ray (blue line) bounced off the surface of the blackbody four times. 
@@ -484,12 +481,17 @@ The heat switch was opened for the measurements when the blackbody was heated.
 \end{center}
 \end{figure}
 
+There was a cooper bar embedded inside the Eccosorb for mounting a temperature sensor. %RuOx?
+To cool the blackbody down from room temperature, a copper bar embedded in the Eccosorb was connected to the 4~K plate via a gas-gap heat switch.
+For the optical efficiency measurements, the heat switch was opened and the blackbody temperature was controlled by a flat copper heater glued to the outside of the cone.
+
 The x8 multiplexing readout schematic for wafer~150-01 with the blackbody setup is shown in Figure~\ref{fig:bb_wafer_layout}. 
-Each detector is represented by a circle with several identifying labels (the bolometer's row-column name, the wire bonding pad number, the channel number on the \ac{LC} board, and the pin from the \ac{LC} board to the \ac{SQUID} board).
-The lines leading from each circle to the edge of the wafer are the bolometer's niobium leads to the wire bonding pads. 
-The grouping of the bolometers read out by each \ac{SQUID} is indicated by outlines of different colors.
-There was a hexagon of 7~bolometers, with an optical stack of wave guides, cones, and miniature \ac{EBEX} low-pass radiative filters, open to the blackbody. 
-The other detectors were looking at the 320~mK box enclosing them. 
+Each detector was represented by a circle with several identifying labels (the bolometer's row-column name, the wire bonding pad number, the channel number on the \ac{LC} board, and the pin from the \ac{LC} board to the \ac{SQUID} board).
+There was a hexagon of 7~bolometers (outlined in pink), with an optical stack of wave guides, cones, and miniature \ac{EBEX} low-pass radiative filters, open to the blackbody. 
+%I WANT YOU TO REFERENCE A FIGURE OF THE MINI OPTICS STACK HERE!!
+The other detectors were looking at the 320~mK box enclosing them. %wait, for the bb setup, was the box actually 320~mK?
+The lines leading from each circle to the edge of the wafer were the bolometer's niobium leads to the wire bonding pads. 
+The grouping of the bolometers read out by each \ac{SQUID} were indicated by outlines of different colors.
 The non-functioning detectors were crossed off. 
 
 \begin{figure}[htp]
@@ -503,15 +505,15 @@ The non-functioning detectors were crossed off.
 As discussed in Section~\ref{}, the total power dissipated in the detector is
 \begin{equation}
 P = P_{elec} + \epsilon P_{rad} = \overline{G} \Delta T
+\label{eq:bolo_power}
 \end{equation}
 where $\epsilon$ is the detector optical efficiency. 
-
-By 9~K, the power from the blackbody saturated the detectors. 
+For several temperatures of the blackbody, the electrical power required to hold the detector in the transition was measured, Figure~\ref{fig:opt_eff_bb_curves}.
+As the blackbody temperature increased, the electrical power decreased.  
+By 9~K, the power from the blackbody alone saturated the detectors. 
 That is, there was no turnaround observed in the IV curve, the bolometer was normal even when the electrical power was at zero. 
 
-
-
-\begin{figure}[ht!]
+\begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2in]{figures/SqCh2_Ch1_all_bb_curves.png}
 \caption{IV (left) and PV (right) curves for wafer 150-01 bolometer 8-04. The electrical power required to hold the detector in the transition decreases as the blackbody temperature increases. 
@@ -519,18 +521,26 @@ That is, there was no turnaround observed in the IV curve, the bolometer was nor
 \end{center}
 \end{figure}
 
+The blackbody radiation curve was integrated over the \ac{EBEX} 150~GHz observation band to determine the amount of power incident upon the detectors at each blackbody temperature, left panel of Figure~\ref{fig:pelec_vs_popt}.
+Rearranging Equation~\ref{eq:bolo_power}, we get the electrical power as a function of the radiative load
+\begin{equation}
+P_{elec} = \overline{G} \Delta T -  \epsilon P_{BB} 
+\end{equation}
+The slope of the line is the optical efficiency, $\epsilon$.
 
-\begin{figure}[ht!]
+
+\begin{figure}[htp]
 \begin{center}
 \includegraphics[width=0.49\columnwidth]{figures/blackbody_intensity_plot.png}
 \includegraphics[width=0.48\columnwidth]{figures/SqCh2_Ch1_p_vs_p.png}
 \caption{Left: Blackbody radiation as a function of temperature. The \ac{EBEX} 150~GHz band is marked by the black vertical lines. Right: Wafer~150-01 bolometer~8-04 electrical power as function of blackbody power. The slope, $0.8$, is the detector's optical efficiency. 
+\textcolor{red}{remake this figure st the x-axis is labeled Prad not PBB!}
 \label{fig:pelec_vs_popt} }
 \end{center}
 \end{figure}
 
 
-\begin{figure}[ht!]
+\begin{figure}[htp]
 \begin{center}
 \includegraphics[width=0.65\columnwidth]{figures/SqCh7_Ch5_all_bb_curves.png}
 \includegraphics[width=0.33\columnwidth]{figures/SqCh7_Ch5_p_vs_p.png}
