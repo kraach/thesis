@@ -20,7 +20,7 @@ In the measurements reported here, the wafer was mounted and coupled to the read
 The wafers were cooled to 250-320~mK, where the exact temperature depended on the testbed. 
 %highlight the difference between the light and dark configuration (and that you were attempting to minimize such that they were tested under conditions as similar to operation as possible.
 
-As the fabrication procedure was modified to build detectors optimized for a space-like environment, we measured detector parameters in the dark cryostats to provide feedback to fabrication. 
+As the fabrication procedure was modified to build detectors optimized for a space-like environment, we measured the detector parameters in the dark cryostats to provide feedback to fabrication. 
 The detector parameter measurements also enabled us to estimate the sensitivity the detectors would be able to achieve. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,7 +32,7 @@ The detector parameter measurements also enabled us to estimate the sensitivity 
 
 The main detector parameters measured for each detector were normal resistance, critical temperature, and thermal conductance. 
 For a subset of wafers, we also measured time constants, both electrothermal and optical. 
-There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of the 150~GHz detectors. 
+There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of some 150~GHz detectors. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Normal Resistance}
@@ -40,11 +40,11 @@ There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of 
 %TOWARDS NORMAL RESISTANCES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{What exactly are you trying to say here? What is the point of this section?}
+%\textcolor{red}{What exactly are you trying to say here? What is the point of this section? SEE BELOW.}
 
-\textcolor{red}{Are you going to include a zoom of one of the peaks. You would do this so you can show how (well) it fits to a Lorentzian and also to point out where you set the carrier frequency. do these plots already exist? hmmm. that must have been later in life when we saved the zooms of the fits?}
+%\textcolor{red}{Are you going to include a zoom of one of the peaks. You would do this so you can show how (well) it fits to a Lorentzian and also to point out where you set the carrier frequency. do these plots already exist? hmmm. that must have been later in life when we saved the zooms of the fits? - REMADE}
 
-\textcolor{red}{You took this data, but you didn't write the code to make the plots. See: Kevin's thesis. So. Do you go back and remake the plots then??? Fuck. You're so far removed from this, you don't even remember how specifically you analyzed this data.}
+%\textcolor{red}{You took this data, but you didn't write the code to make the plots. See: Kevin's thesis. So. Do you go back and remake the plots then??? Fuck. You're so far removed from this, you don't even remember how specifically you analyzed this data. YES, REMAKE.}
 
 %\textcolor{red}{If you have time, it sure would be nice to go back and make those axes (the labels and the numbers) large enough to read. also, do in kHz. and use fewer words (more readable).}
 
@@ -52,7 +52,7 @@ There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of 
 
 \textcolor{red}{Also, I want you to say (BUT IS THIS NECESSARY?), in practice, how did we match the frequencies measured with the frequencies \textit{expected}? The game. The measured frequency was generally XXX\% higher than the expected one calculated from the inductance measured at 4.2~K of $24~\mu H$ and the room temperature measured capacitances. At low frequencies, the measured frequency was close to expected. At the highest frequency, however, the measured frequency was nearly 90 kHz greater than expected. }
 
-\textcolor{red}{You need a circuit diagram. BUT. Do you need to repeat the circuit diagram with a stray L and C?? No. I don't think so. People can add those two components in their heads???}
+%\textcolor{red}{You need a circuit diagram. BUT. Do you need to repeat the circuit diagram with a stray L and C?? No. I don't think so. People can add those two components in their heads??? INCLUDED IN INTRO SECTION. AND DECLINED TO INCLUDE THE ONE WITH LX AND CX.}
 
 \textcolor{red}{are you going to say which capacitors you used? specifically brands? values? are you going to talk about measuring the Ls? what about the setup designed just to do that?}
 
@@ -75,7 +75,7 @@ At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.6\columnwidth]{figures/SqCh3_netanal.png}
-\caption{An 800~mK network analysis from wafer 150-17. The blue line has frequency steps of 10~kHz to roughly locate the peaks and the orange dots are the finer scans with steps of 1~kHz to obtain the data to fit. 
+\caption{An 800~mK network analysis from wafer 150-17. The blue line has frequency steps of 10~kHz to roughly locate the peaks and the orange dots are finer scans with steps of 1~kHz to obtain the data to fit. 
 \label{fig:network_analysis} }
 \end{center}
 \end{figure}
@@ -90,19 +90,19 @@ The network analysis current for each peak was thus
 \begin{equation}
 I = \frac{V_{bias}}{\lvert Z_{RLC_{i}} + j 2\pi \nu L_{x} + \frac{1}{j 2\pi \nu C_{x}}\rvert}
 \end{equation}
-Figure~\ref{fig:netanal_fit} shows the fit of this model and a single peak.
+Figure~\ref{fig:netanal_fit} shows a single peak and the fit to the model.
 Note, the frequency at the maximum current and the optimal bias frequency are not necessarily perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray capacitance and inductance).
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.3\columnwidth]{figures/netanal_etcsqb_SqCh3_10K_20110606_5to8.png}
-\caption{The Lorentzian fit (blue line) to a single network analysis peak (red dots). The fit provides the bolometer resonant frequency (green dot), the bolometer normal resistance, and the circuit's stray inductance and stray capacitance. 
+\caption{The Lorentzian fit (blue line) to a network analysis peak (red dots). The fit provides the bolometer resonant frequency (green dot), the bolometer normal resistance, and the circuit's stray inductance and stray capacitance. 
 \label{fig:netanal_fit} }
 \end{center}
 \end{figure}
 
-Around 800~mK, when both the niobium leads and aluminum wirebonds were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
-Histograms summarizing the measured normal resistance values for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:rn_histograms}. 
+Around 800~mK, when both the niobium leads on the wafer and the aluminum wirebonds between the wafer and the \ac{LC} board were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
+Histograms summarizing the measured normal resistance values for the flight wafers, broken down by frequency band, are shown in Fig.~\ref{fig:rn_histograms}. 
 %Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
 The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands was 1.9, 1.5, and 1.0~$\Omega$ respectively. 
 \textcolor{red}{FROM THE PAPER.}
