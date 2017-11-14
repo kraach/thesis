@@ -60,6 +60,7 @@ There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of 
 
 \textcolor{red}{Include: Stray impedance measured from an iv curve of a latched/superconducting bolometer.}
 
+\textcolor{red}{Fix reference to eqn:noisebudget}
 
 %YOU DON'T REMEMBER THIS WELL ENOUGH TO TALK ABOUT IT
 %AND SEARCHING EMAIL AND WEB AND READING THESES DIDN'T HELP ENOUGH
@@ -101,7 +102,8 @@ Note, the frequency at the maximum current and the optimal bias frequency are no
 \end{center}
 \end{figure}
 
-Around 800~mK, when both the niobium leads on the wafer and the aluminum wirebonds between the wafer and the \ac{LC} board were superconducting, fitting the peak width provided the normal resistance of the \ac{TES}. 
+Around 800~mK, when both the niobium leads on the wafer and the aluminum wirebonds between the wafer and the \ac{LC} board were superconducting, the fit provided the normal resistance of the \ac{TES}. 
+%fitting the peak width provided the normal resistance of the \ac{TES}. 
 Histograms summarizing the measured normal resistance values for the flight wafers, broken down by frequency band, are shown in Fig.~\ref{fig:rn_histograms}. 
 %Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
 The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands was 1.9, 1.5, and 1.0~$\Omega$ respectively. 
@@ -115,9 +117,9 @@ The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the d
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=0.31\textwidth]{figures/150_rn_hist.png}
-\includegraphics[width=0.31\textwidth]{figures/250_rn_hist.png}
-\includegraphics[width=0.31\textwidth]{figures/410_rn_hist.png}
+\includegraphics[width=0.32\textwidth]{figures/150_rn_hist.png}
+\includegraphics[width=0.32\textwidth]{figures/250_rn_hist.png}
+\includegraphics[width=0.32\textwidth]{figures/410_rn_hist.png}
 \caption{Histogram of measured normal resistances $R_{n}$ for each of the frequency bands, including the median (vertical cyan)  
 and design (vertical gold dashed) values.
 \label{fig:rn_histograms} }
