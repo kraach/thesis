@@ -83,20 +83,26 @@ where $h$ is Planck's constant, $\nu$ is the center of the observation frequency
 Discuss target detector parameters. Be very clear about which changes were made to fabrication process in order to optimize the detector sensitivity for a space-like environment and for EBEX.
 
 1. Ideal normal resistance.  
-The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). THIS HAS NOTHING TO DO WITH A SPACE-LIKE ENVIRONMENT.
+The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). THIS HAS NOTHING TO DO WITH A SPACE-LIKE ENVIRONMENT, but it does have to do with multiplexing!
 
 2. Ideal transition temperature for our bath temperature. NEED: PLOT OF PHONON NOISE AS FUNCTION OF TRANSITION TEMPERATURE (GIVEN A FIXED EBEX BATH TEMPERATURE OF 260 MK)
 
 3. Ideal thermal conductance and heat capacity of TES/web 
-\begin{itemize}
-\item When we set our target $G$, we included a safety factor of 2.5 times the expected load from the \ac{CMB} in case of excess load or fluctuations or other shit. 
-\end{itemize}
 
+\textcolor{red}{It's not obvious that/why a decrease in radiative load can equate to an increase in detector sensitivity. This needs to be spelled out clearly somewhere. Here?}
+
+Ground-based telescopes must design their detectors to accommodate the radiative load and fluctuations from the atmosphere. 
+The predicted load at float, an altitude of $\sim120,000$~ft, above $\sim98\%$ of the atmosphere, was XXX for the150~GHz observation band. 
+%not mentioning 410 here because it's not accessible from the ground and one number is sufficient for comparison purporses
+This is a factor of roughly XXX less than the load observed by a ground-based telescope. 
+The \ac{EBEX} detectors inherited their initial design from the ground-based telescope, XXX. 
+In order to take advantage of the decrease in radiative load at float and increase the detector sensitivity, the fabrication goal was to lower the thermal conductance from the bolometer to the bath by a factor of XXX. 
+In case of unanticipated radiative load or fluctuations, this provided a safety factor of 2.5. 
 
 4. Ideal time constant
 
 
-The \ac{TES} is a square of 19 x 19~$\mu m^{2}$.
+The \ac{TES} itself is an AlTi bilayer in the shape of a 19 x 19~$\mu m^{2}$ square, Figure~\ref{fig:bling_and_tes}.
 
 \begin{figure}[ht!]
 \begin{center}
