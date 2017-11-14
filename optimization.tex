@@ -1,11 +1,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %optimization.tex: Detector Optimization
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Detector Optimization}
+\chapter{Detector Design and Optimization}
 \label{optimization_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We optimized the detectors for a space-like environment.
+\ac{EBEX} employed a kilopixel array of \ac{TES} bolometers. 
+These types of detectors are used on ground-based experiments, like XXX, XXX, and XXX. 
+We modified the design in order to optimize the detectors to take advantage of the space-like environment in which \ac{EBEX} was flown.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TES Bolometer Theory {{{
@@ -83,31 +85,33 @@ where $h$ is Planck's constant, $\nu$ is the center of the observation frequency
 Discuss target detector parameters. Be very clear about which changes were made to fabrication process in order to optimize the detector sensitivity for a space-like environment and for EBEX.
 
 1. Ideal normal resistance.  
-The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). THIS HAS NOTHING TO DO WITH A SPACE-LIKE ENVIRONMENT, but it does have to do with multiplexing!
+The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
+%THIS HAS NOTHING TO DO WITH A SPACE-LIKE ENVIRONMENT, but it does have to do with optimization of multiplexing! and so it's relevant. 
 
 2. Ideal transition temperature for our bath temperature. 
 
 \textcolor{red}{Need to generate: plot of phonon noise as a function of critical temperature, given a fixed ebex bath temperature of 260~mK.}
 
-We wanted to decrease $T_{c}$. 
-\textcolor{red}{Why?}
-The \ac{TES} was a bilayer of aluminum on the bottom and titanium on top. 
-The titanium thickness was fixed at $\sim110~nm$. 
-Depending on the wafer, the aluminum thickness varied from $\sim$ 30 to 50~nm. 
+
+The \ac{TES} was a bilayer of titanium atop aluminum. 
+The titanium thickness was fixed at $\sim$110~nm. 
+Depending on the wafer, the aluminum thickness varied from $\sim$30 to 50~nm. 
 The critical temperature was controlled by the aluminum layer thickness, where the thinner aluminum layer provided a lower critical temperature (and also a higher normal resistance). 
 
+The \ac{EBEX} target critical temperature for all observation frequency bands was 440~mK.
 
 3. Ideal thermal conductance and heat capacity of TES/web 
 
 \textcolor{red}{It's not obvious that/why a decrease in radiative load can equate to an increase in detector sensitivity. This needs to be spelled out clearly somewhere. Here?}
 
 Ground-based telescopes must design their detectors to accommodate the radiative load and fluctuations from the atmosphere. 
-The average long-duration balloon floats at an altitude of $\sim120,000$~ft, above $\sim98\%$ of the atmosphere. 
-The predicted load for \ac{EBEX} at float was XXX for the150~GHz observation band. 
+The average long-duration balloon floats at an altitude of $\sim$120,000~ft, above $\sim$98\% of the atmosphere. 
+\textcolor{red}{Fact check that.}
+The predicted load for \ac{EBEX} at float was XXX for the 150~GHz observation band. 
 %not mentioning 410 here because it's not accessible from the ground and one number is sufficient for comparison purporses
 This is a factor of roughly XXX less than the load observed by a ground-based telescope. 
 The \ac{EBEX} detectors inherited their initial design from the ground-based telescopes, the South Pole Telescope and the Atacama Pathfinder Experiment. 
-In order to take advantage of the decrease in radiative load at float and increase the detector sensitivity, the fabrication goal was to lower the average thermal conductance from the bolometer to the bath by a factor of XXX to $XXX~pW/K$. 
+In order to take advantage of the decrease in radiative load at float and increase the detector sensitivity, the fabrication goal was to lower the average thermal conductance from the bolometer to the bath by a factor of XXX to XXX~$pW/K$. 
 The design goal provided a safety factor of 2.5 in case of unanticipated radiative load or fluctuations.
 
 In order to work towards (achieve?) this goal for the 150~GHz detectors, the spiderweb legs were roughly doubled in length, from 0.5~mm to 1.05~mm, and a couple of them were decreased in width from 17~$\mu m$ to 6~$\mu m$. 
