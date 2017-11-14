@@ -106,14 +106,26 @@ The \ac{TES} is a square of 19 x 19~$\mu m^{2}$.
 \end{center}
 \end{figure}
 
-\emph{We wanted to decrease G, so we roughly doubled the leg length (where you could find space). Do you have pictures of the mask with the original leg length and the final leg length?
+\emph{FROM EMAIL EXCHANGES WITH BEN.
+We wanted to decrease G, so we roughly doubled the leg length (where you could find space). Do you have pictures of the mask with the original leg length and the final leg length?
 For 150, we pulled out all of the stops we could.  We doubled the length of 7/8 legs from 0.5mm to 1.05 mm. For the 8th leg, we increased it's length by a factor of 3 to 1.45 mm. In addition, we made all the legs expect the one with Nb 6 um wide.  The old design had 2 / 8 with 17 um wide legs. 
 We wanted to decrease Tc, so you messed around with the thickness of the Al layer in our Al/Ti TES sandwich. 
 Specifically we modulate the thickness of the Al (30-50 nm) compared to the Ti layer, which we held at constant thickness (~110nm). More Al means higher Tc and lower Rn (and converse is true).  Technically it's not a sandwhich (that's Shaul's term) it's just a bilayer, Al with Ti on top. Not Al-Ti-Al nor Ti-Al-Ti.
 We wanted to keep the time constant (C/G) the same, so we decreased the heat capacitance by decreasing the thickness of the bling (or we did something else??). 
 So we still had a BLING layer (the waffle pattern at the center of the photos).  However, we didn't add any EXTRA gold here like SPT and APEX had.  The C of the EBEX detectors comes from 20 nm of Gold on a 1um thick layer of Silicon nitride.  Where as the SPT/APEX had the 20nm of gold for the web, the 1 um of Silicon Nitrides, + ~500-700 nm of extra BLING only gold at the center.  Since gold has a large heat capacity, it dominates the total C in the detectors.  I attached a quick memo on this I wrote for Shaul that summarized the changes in heat capacity. 
 Why did we move away from the circle bling design? 
-This is because the waffle pattern has a lower G than the circle so that heat absorbed by the web more efficiently couples to the TES, which ultimately increases optical efficiency (and thus sensitivity) as the TES has time to sense it (i.e it thermalizes) before the heat is dissipated to the bath via the legs.}
+This is because the waffle pattern has a lower G than the circle so that heat absorbed by the web more efficiently couples to the TES, which ultimately increases optical efficiency (and thus sensitivity) as the TES has time to sense it (i.e it thermalizes) before the heat is dissipated to the bath via the legs.
+Does the CPA track speed control the thickness of the Al in the Al/Ti bilayer?
+Functionally yes.  There are three knobs one could turn: track speed, target power, and argon pressure.  We chose to modulate thickness by varying the track speed while  trying to keep power and pressure constant.
+In the old design, what was the thickness of the other 6 legs?
+The old design had 6, 6 micron wide legs and 2, 17 micron wide legs (one with leads and the one opposite the one with leads). 
+The one with leads also carried the gold heat link.
+> Do you happen to have a schematic that illustrates how we etch the silicon from beneath the silicon nitride? 
+This is my talk from the collab meeting eons ago at McGill.  Pages 7-13 describe the fab process in a cartoon sort of way.  It's the closest thing I have to showing how we release the bolometer structures in presentation form.  If you want the full PPT version let me know.  What basically happens is you etch holes/trenches in the silicon nitride layer and then let the wafer sit in a chamber with XeF2 (Xenon DiFlouride), which etches silicon much much faster than it etches silicon nitride.  The gas finds it's way into the holes and starts digging/etching out the silicon.  After some time a pocket is formed underneath the Silicon nitride (I can make a slide showing this if you need) and the XeF2 starts to isotropically etch (not just down by side to side as well) all of the silicon underneath the structure.  Let me know if you need any more help describing this process. 
+> Did we have the same goal for Tc for each of our wafers?
+> I said it was 1.7 * bath temperature and I think we assumed the bath would be at 270 mK. (giving us a goal of 460 mK)
+> Does this magic number 1.7 change with frequency band?
+Tc = 1.7* Tbath comes from theory for using dieletrics as a thermal bridge.  The plot attached shows that when n = 3, the optimal Tc (the minimum of the dotted lines) is 1.7 * Tbath. However, we used this is a soft criteria and tune our Tc for psat before we did thermal carrier noise.    That means that we basically did have the same target Tc for each wafer, but that was more to tune Psat rather than noise performance.  We did a pretty good job and found that if Tc was around 480-520  we got the Psats we wanted for our 150 and 250/410 GHz wafers (6-8 and 10-12+ pW) for our mask sets. }
 
 
 
