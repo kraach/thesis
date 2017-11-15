@@ -5,9 +5,11 @@
 \label{optimization_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ac{EBEX} employed a kilopixel array of \ac{TES} bolometers. 
-These types of detectors are used on ground-based experiments, like XXX, XXX, and XXX. 
-We modified the design in order to optimize the detectors to take advantage of the space-like environment in which \ac{EBEX} was flown.
+\ac{EBEX} employed a kilopixel array of \ac{TES} bolometers, described in Section~\ref{sec:tes_bolometer}. 
+These types of detectors were used on ground-based telescopes, like XXX, XXX, and XXX. 
+We modified the design, described in Section~\ref{sec:detector_design}, in order to optimize the detectors to take advantage of the space-like environment in which \ac{EBEX} was flown.
+
+\textcolor{red}{Is it necessary/helpful to point to the sections here?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TES Bolometer Theory {{{
@@ -18,37 +20,35 @@ We modified the design in order to optimize the detectors to take advantage of t
 
 %\textcolor{red}{Acronyms is failing us ... the figure descriptions are the first place they appear ... how do we fix this??? FIXED... BUT DON'T REMEMBER HOW :/}
 
-\textcolor{red}{Describe how a bolometer works. Power to temperature detector.}
+%\textcolor{red}{Describe how a bolometer works. Power to temperature detector.}
 % Need: cartoon. }
 
-A bolometer is an absorber with some heat capacity weakly coupled to a bath. 
-Bolometers measure temperature changes due to power absorption. 
-The heat capacitive element absorbs radiation, warms up, and the change in temperature is measured with a thermistor.  
+A bolometer is an absorber with some heat capacity weakly thermally coupled to a bath, Figure ~\ref{fig:bolometer_cartoon}. 
+Bolometers absorb power and measure the resultant change in temperature. 
+That is, the heat capacitive element absorbs radiation, warms up, and that change in temperature is measured with a thermistor.  
 A \ac{TES} bolometer has a superconducting metal as its thermistor. 
-The \ac{TES} is called such because it is operated on the edge of its superconducting transition, where there is a steep change in resistance as a function of temperature. 
-
-
-\textcolor{red}{Figure out how to properly add Mather 1982 applied optics bolometer noise paper to bibfile and reference.}
+A superconductor is a special metal which has a normal resistance until it reaches its critical temperature, at which point its resistance drops to zero, Figure~\ref{fig:r_vs_t}. 
+The \ac{TES} is called such because it is a sensor operated on the edge of its superconducting transition, where there is a steep change in resistance as a function of temperature. 
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/bolometer_cartoon}
-\caption{Bolometer. 
+\caption{Cartoon bolometer with incoming radiation, $\gamma$. There is an absorber with heat capacity, C, thermally coupled, with conductance G, to a reservoir at $T_{bath}$. A thermistor measures the change in temperature due to the power absorbed. \textcolor{red}{(Do you want to add a thermometer or something to the chunk of heat capacity to show that's what you're measuring the temperature of?)}
 \label{fig:bolometer_cartoon} }
 \end{center}
 \end{figure}
 
-
-Describe TES.  
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[height=2.5in]{figures/G18_bolo10-03_RvsT_oral}
-\caption{Resistance versus temperature for an \ac{EBEX} bolometer.
+\includegraphics[height=2.5in]{figures/RvsT_for_thesis.png}
+\caption{Resistance versus temperature for an \ac{EBEX} bolometer. As the temperature goes from high to low, the \ac{TES} goes from normal (finite resistance) to superconducting (zero resistance). The region in between is the transition and this is exactly where the \ac{TES} is biased for operation. 
+%\textcolor{red}{Make this figure prettier. Need to be able to read axes and their labels OR \textit{remove them}. Say where metal is normal and where it's superconducting and where it's transitioning and where the detector is operated.} 
 \label{fig:r_vs_t} }
 \end{center}
 \end{figure}
 
 
+\textcolor{red}{Figure out how to properly add Mather 1982 applied optics bolometer noise paper to bibfile and reference.}
 
 \textcolor{red}{Four noise sources, fundamental limit set by photon arrival stats}
 
@@ -89,7 +89,7 @@ where $h$ is Planck's constant, $\nu$ is the center of the observation frequency
 \label{sec:detector_design}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Discuss target detector parameters. Be very clear about which changes were made to fabrication process in order to optimize the detector sensitivity for a space-like environment and for EBEX.
+%Discuss target detector parameters. Be very clear about which changes were made to fabrication process in order to optimize the detector sensitivity for a space-like environment and for EBEX.
 
 1. Ideal normal resistance.  
 The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
