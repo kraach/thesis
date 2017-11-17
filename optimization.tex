@@ -140,13 +140,15 @@ The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure t
 
 %\textcolor{red}{Need to generate: plot of phonon noise as a function of critical temperature, given a fixed ebex bath temperature of 260~mK.}
 
+\textcolor{red}{For a thermal conductance that follows a power law, what kind of material is n=1 and what about n=3? i.e. why are there our bounds??}
+
 
 The \ac{TES} was a bilayer of titanium atop aluminum. 
 The titanium thickness was fixed at $\sim$110~nm. 
 Depending on the wafer, the aluminum thickness varied from $\sim$30 to 50~nm. 
 The critical temperature was controlled by the aluminum layer thickness, where the thinner aluminum layer provided a lower critical temperature (and also a higher normal resistance). 
 
-The phonon noise as a function of $T_{c}$, the power of thermal conductivity $n$,  the power to hold the detector in the transition $P_{sat}$, and the bath temperature $T_{bath}$ is
+The phonon noise as a function of the critical temperature $T_{c}$, the power of thermal conductivity $n$,  the power to hold the detector in the transition $P_{sat}$, and the bath temperature $T_{bath}$ is
 \begin{equation}
 \label{eq:phonon_nep}
 \begin{split}
@@ -154,13 +156,13 @@ NEP_{phonon}^2 & = \gamma4k_{B}T_{c}G_{dyn} \\
 & = 4k_{B}T_{bath}P_{sat}\frac{(n+1)^{2}}{(2n+3)^2}\frac{\left(\frac{T_{c}}{T_{bath}}\right)^{2n+3}-1}{\left( \left(\frac{T_{c}}{T_{bath}}\right)^{n+1}-1\right)^{2}}
 \end{split}
 \end{equation}
-The phonon \ac{NEP} was minimized at a ratio of transition temperature to bath temperature of $\sim$1.7, Figure~\ref{fig:phonon_nep_vs_temps}. 
+If we assumed $T_{bath}$ was 0.26~K, $P_{sat}$ was 6~pW, and $n$ was in between one and three, then the phonon \ac{NEP} was minimized at a ratio of transition temperature to bath temperature, $\frac{T_{c}}{T_{bath}}$, of $\sim$1.7, Figure~\ref{fig:phonon_nep_vs_temps}. 
 The \ac{EBEX} bath temperature was 260~mK and so the target critical temperature for all \ac{EBEX} observation frequency bands was 440~mK.
 
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/phonon_nep_vs_temperature.png}
-\caption{Phonon \ac{NEP} as a function of the ratio of critical temperature to bath temperature. The goal was to choose $T_{c}$ such that we minimize phonon noise.
+\caption{Phonon \ac{NEP} as a function of the ratio of critical temperature to bath temperature for three different values of the thermal conductivity power. The goal was to choose $T_{c}$ such that phonon noise was minimized.
 \label{fig:phonon_nep_vs_temps} }
 \end{center}
 \end{figure}
