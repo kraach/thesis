@@ -117,7 +117,8 @@ The \ac{TES} itself was an AlTi bilayer in the shape of a 19 x 19~$\mu m^{2}$ sq
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[width=0.49\columnwidth]{figures/bolometer_photo.png}
+%\includegraphics[width=0.49\columnwidth]{figures/bolometer_photo.png}
+\includegraphics[width=0.49\columnwidth]{figures/fullpixel1_v4_small_annotated.png}
 \includegraphics[width=0.45\columnwidth]{figures/EBEX_BLINGTES_Annotated.png}
 \caption{Left: One \ac{EBEX} 150~GHz spiderweb \ac{TES} bolometer. The light blue is the silicon wafer on which the detectors were fabricated. The dark blue is open space where the silicon was etched away. Running above the center of the etched out area are the thin silicon nitride strings of the spider web. The spider web is attached to the wafer at the end of each of the spokes. The gold waffle bling in the center provides the heat capacity. Right: A zoom of the bling and the \ac{TES}. The \ac{TES} is a square near the bottom of the bling and is coupled to the bling via the overlap on its left side. The signal travels out the niobium leads to bond pads at the wafers' edge. Both figures courtesy of Benjamin Westbrook. 
 \label{fig:bolo_and_bling} }
@@ -137,7 +138,7 @@ The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure t
 
 2. Ideal transition temperature for our bath temperature. 
 
-\textcolor{red}{Need to generate: plot of phonon noise as a function of critical temperature, given a fixed ebex bath temperature of 260~mK.}
+%\textcolor{red}{Need to generate: plot of phonon noise as a function of critical temperature, given a fixed ebex bath temperature of 260~mK.}
 
 
 The \ac{TES} was a bilayer of titanium atop aluminum. 
@@ -145,7 +146,24 @@ The titanium thickness was fixed at $\sim$110~nm.
 Depending on the wafer, the aluminum thickness varied from $\sim$30 to 50~nm. 
 The critical temperature was controlled by the aluminum layer thickness, where the thinner aluminum layer provided a lower critical temperature (and also a higher normal resistance). 
 
-The target critical temperature for all \ac{EBEX} observation frequency bands was 440~mK.
+The phonon noise as a function of $T_{c}$, the power of thermal conductivity $n$,  the power to hold the detector in the transition $P_{sat}$, and the bath temperature $T_{bath}$ is
+\begin{equation}
+\label{eq:phonon_nep}
+\begin{split}
+NEP_{phonon}^2 & = \gamma4k_{B}T_{c}G_{dyn} \\
+& = 4k_{B}T_{bath}P_{sat}\frac{(n+1)^{2}}{(2n+3)^2}\frac{\left(\frac{T_{c}}{T_{bath}}\right)^{2n+3}-1}{\left( \left(\frac{T_{c}}{T_{bath}}\right)^{n+1}-1\right)^{2}}
+\end{split}
+\end{equation}
+The phonon \ac{NEP} was minimized at a ratio of transition temperature to bath temperature of $\sim$1.7, Figure~\ref{fig:phonon_nep_vs_temps}. 
+The \ac{EBEX} bath temperature was 260~mK and so the target critical temperature for all \ac{EBEX} observation frequency bands was 440~mK.
+
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[height=2.5in]{figures/phonon_nep_vs_temperature.png}
+\caption{Phonon \ac{NEP} as a function of the ratio of critical temperature to bath temperature. The goal was to choose $T_{c}$ such that we minimize phonon noise.
+\label{fig:phonon_nep_vs_temps} }
+\end{center}
+\end{figure}
 
 3. Ideal thermal conductance and heat capacity of TES/web 
 
