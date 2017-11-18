@@ -75,7 +75,8 @@ For flight, we calibrate on a known source in the sky to determine how much the 
 
 The sensitivity of the instrument is quantified by the \ac{NEP}. 
 \ac{NEP} is defined as the absorbed power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz. 
-We use \ac{NEP} and noise interchangeably. 
+Though \ac{NEP} is a measure of signal-to-noise, we will use the terms noise and \ac{NEP} interchangeably. 
+\textcolor{red}{That sounds like a stupid idea.}
 There are four main contributors to the \ac{TES} bolometer \ac{NEP}: electronic/readout noise, Johnson noise, phonon noise, and photon noise. 
 %not important?
 %Note, sometimes \ac{NEP} is instead defined as the \textit{incident} power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz, \textcolor{red}{cite who??}.
@@ -105,9 +106,12 @@ The degree to which this noise source contributes to the bolometer \ac{NEP} is n
 %\textcolor{red}{who says this? richards. and he says van vliet and mather do one thing and pike and lamarre do other things. can I just reference richards? or do I have to refer to all these other folks?}
 This disagreement is encapsulated in the factor of $\xi$ which is multiplied by the noise one would have in the case of complete correlation.
 $\xi$ can take on a value between zero (no correlation) and one (completely correlated).
-There is no correlation in the case of XXX.  
+There is no correlation when the "beam is produced by an incoherent source and is uniformly distributed over the beam throughput, which is large with respect to the entendue of coherence $\nu^{2}/c{2}$" \cite{Lamarre}.
 There is complete correlation in the case of telescopes "observing sources with angular diameters much smaller than the diffraction pattern" \cite{Lamarre}. 
-\ac{EBEX} is a telescope observing the 
+\ac{EBEX} is a telescope observing the \ac{CMB}, which is a uniform source across the sky which occupies a large number of entendues of coherence. 
+So, Lamarre would argue, $\xi$ should be zero?
+But. We have a diffraction limited beam where our throughput is exactly $A\Omega = \lambda^{2}$.
+\textcolor{red}{What is the argument for keeping this second photon noise term??}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
