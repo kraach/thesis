@@ -90,7 +90,11 @@ N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{reado
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance \citep{Mather1982a}. 
 
-The electronic and readout noise is noise due to XXX. 
+The electronic and readout noise is noise due to fluctuations in current and voltage in the carrier, nuller, and demodulator circuits, i.e. the readout electronics. 
+The electronic components were sourced with the requirement they provided subdominant contributions to the \ac{NEP}. 
+The largest contributors were the \ac{SQUID}s and their first stage operational amplifiers. 
+Measurements of the electronics and readout noise are discussed in Section~\ref{sec:dark_noise}.
+\textcolor{red}{should we point to our noise discussions later? reference franky's thesis? and/or dfmux papers??}
 
 The Johnson noise is due to XXX (the \ac{TES} being a resistor at a finite temperature). 
 
@@ -106,12 +110,12 @@ The degree to which this noise source contributes to the bolometer \ac{NEP} is n
 %\textcolor{red}{who says this? richards. and he says van vliet and mather do one thing and pike and lamarre do other things. can I just reference richards? or do I have to refer to all these other folks?}
 This disagreement is encapsulated in the factor of $\xi$ which is multiplied by the noise one would have in the case of complete correlation.
 $\xi$ can take on a value between zero (no correlation) and one (completely correlated).
-There is no correlation when the "beam is produced by an incoherent source and is uniformly distributed over the beam throughput, which is large with respect to the entendue of coherence $\nu^{2}/c{2}$" \cite{Lamarre}.
+There is no correlation when the "beam is produced by an incoherent source and is uniformly distributed over the beam throughput, which is large with respect to the etendue of coherence $\nu^{2}/c^{2}$" \cite{Lamarre}.
 There is complete correlation in the case of telescopes "observing sources with angular diameters much smaller than the diffraction pattern" \cite{Lamarre}. 
-\ac{EBEX} is a telescope observing the \ac{CMB}, which is a uniform source across the sky which occupies a large number of entendues of coherence. 
+\ac{EBEX} is a telescope observing the \ac{CMB}, which is a uniform source across the sky which occupies a large number of etendues of coherence. 
 So, Lamarre would argue, $\xi$ should be zero?
-But. We have a diffraction limited beam where our throughput is exactly $A\Omega = \lambda^{2}$.
-\textcolor{red}{What is the argument for keeping this second photon noise term??}
+But. We have a diffraction limited beam where our throughput is exactly $A\Omega = \lambda^{2}$. That is, we are observing a uniformly distributed, incoherent source, BUT our beam throughput $\lambda^{2}$ is NOT large with respect to the etendue of coherence $\nu^{2}/c^{2}$. 
+\textcolor{red}{What is the argument for keeping this second photon noise term?? It seems both derivations tell me we shouldn't include it for \ac{EBEX}???}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
