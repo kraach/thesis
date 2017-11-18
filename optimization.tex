@@ -70,14 +70,15 @@ For flight, we calibrate on a known source in the sky to determine how much the 
 
 \textcolor{red}{Does it make sense to talk about the four sources first and then provide the expression for total NEP? Or to first provide the expression and then derive/talk about each source?}
 
-\textcolor{red}{Figure out how to properly add Mather 1982 applied optics bolometer noise paper to bibfile and reference.}
+\textcolor{red}{Figure out how to properly add Mather 1982 applied optics bolometer noise paper to bibfile and reference. Also add Lamarre, "Photon noise in photometric instruments at far-infrared and submillimeter wavelengths", applied optics, vol 25, no 6, 15 march 1986 (he's not there)}
 
 
 The sensitivity of the instrument is quantified by the \ac{NEP}. 
 \ac{NEP} is defined as the absorbed power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz. 
+We use \ac{NEP} and noise interchangeably. 
+There are four main contributors to the \ac{TES} bolometer \ac{NEP}: electronic/readout noise, Johnson noise, phonon noise, and photon noise. 
 %not important?
 %Note, sometimes \ac{NEP} is instead defined as the \textit{incident} power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz, \textcolor{red}{cite who??}.
-There are four main contributors to the \ac{TES} bolometer \ac{NEP}: electronic/readout noise, Johnson noise, phonon noise, and photon noise. 
 The total predicted detector \ac{NEP}, $N$, is given by 
 \begin{equation}
 N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{readout}^2 )
@@ -86,11 +87,28 @@ N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{reado
 = 2h\nu P_{rad} + \xi \frac{P_{rad}^2}{\Delta \nu} + \gamma 4k_{B} T^2 G + \frac{1}{S_I^2} (\frac{4k_BT}{R} + N_{readout}^2 )
 \label{eq:nep}
 \end{equation}
-where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance~\citep{Mather1982a}. 
+where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance \citep{Mather1982a}. 
 
-The photon noise is due to the arrival statistics of the photons. 
+The electronic and readout noise is noise due to XXX. 
 
-\textcolor{red}{Describe each noise 1. Electronic/Readout 2. Johnson 3. Phonon (ballistic vs É?) 4. Photon (a. Poisson process, b. Shot noise. Fundamental limit set by photon arrival statistics)}
+The Johnson noise is due to XXX (the \ac{TES} being a resistor at a finite temperature). 
+
+The phonon noise is due to the motion of the thermal carriers, phonons, along the weak thermal link. 
+If the motion were ballistic versus another kind of transport, then XXX. 
+
+The photon noise is due to the particle nature of photons and the Poisson statistics which govern their arrival. 
+This is often referred to as shot noise.
+Bolometers have been designed and understood such that the the fundamental limit of the \ac{NEP} is set by the photon arrival statistics. 
+There is another source of noise from the photons if their arrivals are correlated, that is if the photons tend to arrive in bunches. 
+This is called photon correlation or bunching noise. 
+The degree to which this noise source contributes to the bolometer \ac{NEP} is not agreed upon, \cite{Richards}. 
+%\textcolor{red}{who says this? richards. and he says van vliet and mather do one thing and pike and lamarre do other things. can I just reference richards? or do I have to refer to all these other folks?}
+This disagreement is encapsulated in the factor of $\xi$ which is multiplied by the noise one would have in the case of complete correlation.
+$\xi$ can take on a value between zero (no correlation) and one (completely correlated).
+There is no correlation in the case of XXX.  
+There is complete correlation in the case of telescopes "observing sources with angular diameters much smaller than the diffraction pattern" \cite{Lamarre}. 
+\ac{EBEX} is a telescope observing the 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
@@ -116,7 +134,7 @@ The \ac{TES} itself was an AlTi bilayer in the shape of a 19 x 19~$\mu m^{2}$ sq
 %\includegraphics[width=0.49\columnwidth]{figures/bolometer_photo.png}
 \includegraphics[width=0.49\columnwidth]{figures/fullpixel1_v4_small_annotated.png}
 \includegraphics[width=0.45\columnwidth]{figures/EBEX_BLINGTES_Annotated.png}
-\caption{Left: One \ac{EBEX} 150~GHz spiderweb \ac{TES} bolometer. The light blue is the silicon wafer on which the detectors were fabricated. The dark blue is open space where the silicon was etched away. Running above the center of the etched out area are the thin silicon nitride strings of the spider web. The spider web is attached to the wafer at the end of each of the spokes. The gold waffle bling in the center provides the heat capacity. Right: A zoom of the bling and the \ac{TES}. The \ac{TES} is a square near the bottom of the bling and is coupled to the bling via the overlap on its left side. The signal travels out the niobium leads to bond pads at the wafers' edge. Both figures courtesy of Benjamin Westbrook. 
+\caption{Left: One \ac{EBEX} 150~GHz spiderweb \ac{TES} bolometer. The light blue is the silicon wafer on which the detectors were fabricated. The dark blue is open space where the silicon was etched away. Running above the center of the etched out area are the thin silicon nitride strings of the spider web. The spider web is attached to the wafer at the end of each of the spokes. The gold waffle bling in the center provides the heat capacity. Right: A zoom of the bling and the \ac{TES}. The \ac{TES} is a square near the bottom of the bling and is coupled to the bling via the overlap on its left side. The signal travels out the niobium leads to bond pads at the wafer's edge. Both figures courtesy of Benjamin Westbrook. 
 \label{fig:bolo_and_bling} }
 \end{center}
 \end{figure}
@@ -138,7 +156,7 @@ The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure t
 
 \textcolor{red}{For a thermal conductance that follows a power law, what kind of material is n=1 and what about n=3? i.e. why are there our bounds??}
 
-\textcolor{red}{I would like for you to explain why modulating the thickness of the aluminum layer changes $T_{c}$. (see p32 of irwin/hilton paper}
+\textcolor{red}{I would like for you to explain why modulating the thickness of the aluminum layer changes $T_{c}$. (see p32 of irwin/hilton paper)}
 
 
 The \ac{TES} was a bilayer of titanium atop aluminum. 
