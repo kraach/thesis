@@ -39,11 +39,18 @@ The \ac{TES} is called such because it is a sensor operated on the edge of its s
 \end{center}
 \end{figure}
 
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[height=2.5in]{figures/RvsT_for_thesis.png}
+\caption{Resistance versus temperature for an \ac{EBEX} \ac{TES} bolometer. As the temperature goes from high to low, the \ac{TES} goes from normal (finite resistance) to superconducting (zero resistance). The region in between is the transition and this is where the \ac{TES} is biased for operation. 
+%\textcolor{red}{Make this figure prettier. Need to be able to read axes and their labels OR \textit{remove them}. Say where metal is normal and where it's superconducting and where it's transitioning and where the detector is operated.} 
+\label{fig:r_vs_t} }
+\end{center}
+\end{figure}
+
 %\textcolor{red}{Describe negative electrothermal feedback.}
 
-
 %\textcolor{red}{For a moment here, just put down some words describing how it works. You can and will return to make it more technical and correct.}
-%\textcolor{red}{There is some math to describe this more accurately.}
 To operate the detector, a voltage bias is applied across the \ac{TES}. 
 The voltage bias provides Joule heating of $\frac{V^{2}_{bias}}{R}$.
 The voltage bias is chosen such that the detector is heated just enough to hold the \ac{TES} between normal and superconducting. 
@@ -55,37 +62,23 @@ This change in temperature moves the detector up (down) its R vs T curve.
 In response to the increase (decrease) in resistance, the Joule heating decreases (increases) and the detector cools (warms). 
 For small changes in temperature, this feedback holds the detector on the edge of the transition. 
 The voltage bias is constant and so the excursions in resistance change the current through the detector and this is what we measure. 
-We then calibrate on a known source in the sky to determine how much current corresponds to a given amount of power from the sky.   
+For flight, we calibrate on a known source in the sky to determine how much the current measured changes given a known amount of power from the sky.   
 
-\begin{figure}[htp]
-\begin{center}
-\includegraphics[height=2.5in]{figures/RvsT_for_thesis.png}
-\caption{Resistance versus temperature for an \ac{EBEX} \ac{TES} bolometer. As the temperature goes from high to low, the \ac{TES} goes from normal (finite resistance) to superconducting (zero resistance). The region in between is the transition and this is where the \ac{TES} is biased for operation. 
-%\textcolor{red}{Make this figure prettier. Need to be able to read axes and their labels OR \textit{remove them}. Say where metal is normal and where it's superconducting and where it's transitioning and where the detector is operated.} 
-\label{fig:r_vs_t} }
-\end{center}
-\end{figure}
+\textcolor{red}{You need to include the math to describe negative electrothermal feedback more accurately. And then reference that stuff!}
 
 \textcolor{red}{What are the other essential pieces to explaining how a bolometer works?}
 
-\textcolor{red}{Four noise sources, fundamental limit set by photon arrival stats}
+\textcolor{red}{Does it make sense to talk about the four sources first and then provide the expression for total NEP? Or to first provide the expression and then derive/talk about each source?}
 
-
-1. Electronic/Readout
-
-2. Johnson
-
-3. Phonon (ballistic vs É?)
-
-4. Photon (a. Poisson process, b. Shot noise)
-
+\textcolor{red}{Figure out how to properly add Mather 1982 applied optics bolometer noise paper to bibfile and reference.}
 
 
 The sensitivity of the instrument is quantified by the \ac{NEP}. 
 \ac{NEP} is defined as the absorbed power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz. 
 %not important?
 %Note, sometimes \ac{NEP} is instead defined as the \textit{incident} power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz, \textcolor{red}{cite who??}.
-The predicted detector \ac{NEP}, $N$, is given by 
+There are four main contributors to the \ac{TES} bolometer \ac{NEP}: electronic/readout noise, Johnson noise, phonon noise, and photon noise. 
+The total predicted detector \ac{NEP}, $N$, is given by 
 \begin{equation}
 N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{readout}^2 )
 \end{equation}
@@ -95,8 +88,9 @@ N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{reado
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance~\citep{Mather1982a}. 
 
+The photon noise is due to the arrival statistics of the photons. 
 
-\textcolor{red}{Figure out how to properly add Mather 1982 applied optics bolometer noise paper to bibfile and reference.}
+\textcolor{red}{Describe each noise 1. Electronic/Readout 2. Johnson 3. Phonon (ballistic vs É?) 4. Photon (a. Poisson process, b. Shot noise. Fundamental limit set by photon arrival statistics)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
@@ -143,6 +137,8 @@ The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure t
 %\textcolor{red}{Need to generate: plot of phonon noise as a function of critical temperature, given a fixed ebex bath temperature of 260~mK.}
 
 \textcolor{red}{For a thermal conductance that follows a power law, what kind of material is n=1 and what about n=3? i.e. why are there our bounds??}
+
+\textcolor{red}{I would like for you to explain why modulating the thickness of the aluminum layer changes $T_{c}$. (see p32 of irwin/hilton paper}
 
 
 The \ac{TES} was a bilayer of titanium atop aluminum. 
@@ -193,7 +189,7 @@ In order to work towards (achieve?) this goal for the 150~GHz detectors, the spi
 
 4. Ideal time constant
 
-\textcolor{red}{You should talk about time constants... BUT. Your analysis was super simple. And what they did for the paper was much better. So... What do you do?}
+\textcolor{red}{You should talk about time constants... BUT. Your analysis was super simple. And what they did for the paper was much better. So... What do you do? Are you able to write anything intelligent (and correct) about time constants in a small amount of time?}
 
 \textcolor{red}{You really ought to talk about what sets the lower limit (readout) and upper limit (scan speed) on the time constant.}
 
@@ -201,10 +197,12 @@ In order to work towards (achieve?) this goal for the 150~GHz detectors, the spi
 
 \textcolor{red}{Why did we have an observation frequency band dependent target tau??}
 
+\textcolor{red}{I think the following paragraph is not true to how the ideal $\tau$ was decided. Also, isn't $\tau$ also a function of loopgain? (see irwin/hilton p12 on)}
 So long as the thermal conductance between the \ac{TES} and the bath was the dominant effect, the time constant of the bolometer was $\tau = C/G$. 
 The time constant needed to be held approximately constant at $\sim$20~ms because our telescope was to have roughly the same scan speed as the ground-based telescopes. 
 Since the thermal conductance, G, was decreased by a factor of 4 relative to the ground-based detector design, to keep $\tau$ constant, the heat capacity, C, also needed to be decreased by this factor. 
 %During the fabrication process for the ground-based detectors, the bling was made of 500-700~nm of gold \textcolor{red}{reference Ben???}. %TOO COMPLICATED. A NICE TO HAVE, NOT A NEED.
+
 The heat capacity was provided by the gold topped silicon nitride bling in the center of the web, see Figure~\ref{fig:bolo_and_bling}. 
 For the \ac{EBEX} detectors, we decreased the total thickness of the gold deposited to 20~nm. 
 
