@@ -85,7 +85,7 @@ The total predicted detector \ac{NEP}, $N$, is given by
 N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{readout}^2 )
 \end{equation}
 \begin{equation}
-= 2h\nu P_{rad} + \xi \frac{P_{rad}^2}{\Delta \nu} + \gamma 4k_{B} T^2 G + \frac{1}{S_I^2} (\frac{4k_BT}{R} + N_{readout}^2 )
+= 2h\nu P_{rad} + \xi \frac{P_{rad}^2}{\Delta \nu} + \gamma 4k_{B} T^2 G + \frac{1}{S_I^2} (\frac{4k_{B}T}{R} + N_{readout}^2 )
 \label{eq:nep}
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance \citep{Mather1982a}. 
@@ -95,8 +95,18 @@ The electronic components were sourced with the requirement they provided subdom
 The largest contributors were the \ac{SQUID}s and their first stage operational amplifiers. 
 Measurements of the electronic and readout noise are discussed in Section~\ref{sec:dark_noise} and Section~\ref{sec:flight_noise_performance}.
 %\textcolor{red}{should we point to our noise discussions later? I guess do this. And in that later section, be sure to reference franky's thesis? and/or dfmux papers??}
+\textcolor{red}{Were you thinking you want to say something about how there's no nice succinct expression for readout \ac{NEP}, but rather a lengthy expression adding all the numbers from the manufacturers in quadrature?}
 
-The Johnson noise is due to XXX (the \ac{TES} being a resistor at a finite temperature). 
+The Johnson noise is due to the thermal agitation of the electrons in the \ac{TES}, regardless of applied voltage. 
+Johnson noise is typically in terms of voltage noise, $4k_{B}TR$, where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the resistor, and $R$ the resistance. 
+\textcolor{red}{Should this be an equation? Should we derive it?}
+In order to get Johnson noise for the current through our \ac{TES}, we divide the voltage noise by R. 
+In order to convert from current to power, we divide by the bolometer's current responsivity, $S_{I} = dI/dP$. 
+The Johnson \ac{NEP} is thus
+\begin{equation}
+N^{2}_{Johnson} =  \frac{1}{S_I^2} (\frac{4k_{B}T}{R})
+\label{eq:johnson}
+\end{equation}
 
 The phonon noise is due to the motion of the thermal carriers, phonons, along the weak thermal link. 
 If the motion were ballistic versus another kind of transport, then XXX. 
