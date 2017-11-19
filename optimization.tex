@@ -25,19 +25,22 @@ We modified the design, described in Section~\ref{sec:detector_design}, in order
 
 
 A bolometer is an absorber with some heat capacity weakly thermally coupled to a bath, Figure ~\ref{fig:bolometer_cartoon}. 
-%Bolometers absorb power and measure the resultant change in temperature. 
-The heat capacitive element absorbs radiation and the resultant change in temperature is measured with a thermistor.  
-A \ac{TES} bolometer has a superconductor as its thermistor. 
-A superconductor is a special material which has a normal resistance until it drops below its critical temperature, at which point its resistance drops to zero, Figure~\ref{fig:r_vs_t}. 
-The \ac{TES} is called such because it is a sensor operated on the edge of its superconducting transition, where there is a steep change in resistance as a function of temperature. 
-\textcolor{red}{(Do you have time to add a thermometer or something to the chunk of heat capacity to show that's what you're measuring the temperature of?)}
+Bolometers absorb power from radiation and measure the resultant change in temperature. 
+The heat capacitive element absorbs the radiation and the resultant change in temperature is measured with a thermistor. 
+\textcolor{red}{some equation to describe bolometers here?}
 
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/bolometer_cartoon}
-\caption{Cartoon bolometer with incoming radiation, $\gamma$. There is an absorber, with heat capacity C, weakly coupled, with thermal conductance G, to a reservoir at $T_{bath}$. A thermistor measures the change in temperature due to the power absorbed. \label{fig:bolometer_cartoon} }
+\caption{Cartoon bolometer with incoming radiation, $\gamma$. There is an absorber, with heat capacity C, weakly coupled, with thermal conductance G, to a reservoir at $T_{bath}$. A thermistor measures the change in temperature due to the power absorbed. 
+\textcolor{red}{(Do you have time to add a thermometer or something to the chunk of heat capacity to show that's what you're measuring the temperature of?)}
+\label{fig:bolometer_cartoon} }
 \end{center}
 \end{figure}
+
+A \ac{TES} bolometer has a superconductor as its thermistor. 
+A superconductor is a special material which has a normal resistance until it drops below its critical temperature, at which point its resistance drops to zero, Figure~\ref{fig:r_vs_t}. 
+The \ac{TES} is called such because it is a sensor operated on the edge of its superconducting transition, where there is a steep change in resistance as a function of temperature. 
 
 \begin{figure}[htp]
 \begin{center}
@@ -99,7 +102,7 @@ Measurements of the electronic and readout noise are discussed in Section~\ref{s
 
 The Johnson noise is due to the thermal agitation of the electrons in the \ac{TES}, regardless of applied voltage. 
 Johnson noise is typically in terms of voltage noise, $4k_{B}TR$, where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the resistor, and $R$ the resistance. 
-\textcolor{red}{Should this be an equation? Should we derive it?}
+\textcolor{red}{Should this be an equation? Should we derive it? Whatever you do, reference!}
 In order to get Johnson noise for the current through our \ac{TES}, we divide the voltage noise by R. 
 In order to convert from current to power, we divide by the bolometer's current responsivity, $S_{I} = dI/dP$. 
 The Johnson \ac{NEP} is thus
