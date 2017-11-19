@@ -27,7 +27,7 @@ We modified the design, described in Section~\ref{sec:detector_design}, in order
 A bolometer is an absorber with some heat capacity weakly thermally coupled to a bath, Figure ~\ref{fig:bolometer_cartoon}. 
 Bolometers absorb power from radiation and measure the resultant change in temperature. 
 The heat capacitive element absorbs the radiation and the resultant change in temperature is measured with a thermistor. 
-\textcolor{red}{some equation to describe bolometers here?}
+\textcolor{red}{some equation(s) to describe bolometers here?}
 
 \begin{figure}[htp]
 \begin{center}
@@ -55,7 +55,7 @@ The \ac{TES} is called such because it is a sensor operated on the edge of its s
 
 %\textcolor{red}{For a moment here, just put down some words describing how it works. You can and will return to make it more technical and correct.}
 To operate the detector, a voltage bias is applied across the \ac{TES}. 
-The voltage bias provides Joule heating of $\frac{V^{2}_{bias}}{R}$.
+The voltage bias provides Joule heating of $V^{2}_{bias}/{R}$.
 The voltage bias is chosen such that the detector is heated just enough to hold the \ac{TES} between normal and superconducting. 
 In steady-state, there is a constant power flow from the detector to the bath. 
 Negative electrothermal feedback holds the detector at the edge of its transition. 
@@ -71,15 +71,15 @@ For flight, we calibrate on a known source in the sky to determine how much the 
 
 \textcolor{red}{What are the other essential pieces to explaining how a bolometer works?}
 
-\textcolor{red}{Does it make sense to talk about the four sources first and then provide the expression for total NEP? Or to first provide the expression and then derive/talk about each source?}
+%\textcolor{red}{Does it make sense to talk about the four sources first and then provide the expression for total NEP? Or to first provide the expression and then derive/talk about each source? It doesn't matter! Just do one!}
 
 \textcolor{red}{Figure out how to properly add Mather 1982 applied optics bolometer noise paper to bibfile and reference. Also add Lamarre, "Photon noise in photometric instruments at far-infrared and submillimeter wavelengths", applied optics, vol 25, no 6, 15 march 1986 (he's not there)}
 
 
 The sensitivity of the instrument is quantified by the \ac{NEP}. 
 \ac{NEP} is defined as the absorbed power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz. 
-Though \ac{NEP} is a measure of signal-to-noise, we will use the terms noise and \ac{NEP} interchangeably. 
-\textcolor{red}{That sounds like a stupid idea.}
+% \ac{NEP} is a measure of signal-to-noise, we will use the terms noise and \ac{NEP} interchangeably. 
+%\textcolor{red}{That sounds like a stupid idea.}
 There are four main contributors to the \ac{TES} bolometer \ac{NEP}: electronic/readout noise, Johnson noise, phonon noise, and photon noise. 
 %not important?
 %Note, sometimes \ac{NEP} is instead defined as the \textit{incident} power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz, \textcolor{red}{cite who??}.
@@ -94,21 +94,27 @@ N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{reado
 where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance \citep{Mather1982a}. 
 
 The electronic and readout noise is due to current and voltage fluctuations in the readout electronics, i.e. the carrier, nuller, and demodulator circuits, schematic shown in Figure~\ref{fig:dfmux}. 
-The electronic components were sourced with the requirement they provided subdominant contributions to the \ac{NEP}. 
+The electronic components were sourced with the requirement that they provide subdominant contributions to the \ac{NEP}. 
 The largest contributors were the \ac{SQUID}s and their first stage operational amplifiers. 
 Measurements of the electronic and readout noise are discussed in Section~\ref{sec:dark_noise} and Section~\ref{sec:flight_noise_performance}.
 %\textcolor{red}{should we point to our noise discussions later? I guess do this. And in that later section, be sure to reference franky's thesis? and/or dfmux papers??}
 \textcolor{red}{Were you thinking you want to say something about how there's no nice succinct expression for readout \ac{NEP}, but rather a lengthy expression adding all the numbers from the manufacturers in quadrature?}
 
-The Johnson noise is due to the thermal agitation of the electrons in the \ac{TES}, regardless of applied voltage. 
-Johnson noise is typically in terms of voltage noise, $4k_{B}TR$, where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the resistor, and $R$ the resistance. 
+The Johnson noise is due to the thermal agitation of the electrons in the \ac{TES}. 
+As a voltage noise source, in units of $V^2/Hz$, the Johnson noise is $4k_{B}TR$,
+%\begin{equation}
+%v^2 = 4k_{B}TR
+%\label{eq:johnson_v}
+%\end{equation}
+where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the resistor, and $R$ the resistance \cite{}.
+Note, this noise source is present regardless of any applied voltage
 \textcolor{red}{Should this be an equation? Should we derive it? Whatever you do, reference!}
-In order to get Johnson noise for the current through our \ac{TES}, we divide the voltage noise by R. 
-In order to convert from current to power, we divide by the bolometer's current responsivity, $S_{I} = dI/dP$. 
+In order to get the Johnson noise of a current source, i.e. our \ac{TES}, we divide the voltage noise by R. 
+For \ac{NEP}, in order to convert from $A/\sqrt{Hz}$ to $W/\sqrt{Hz}$, we divide the current noise by the bolometer's current responsivity, $S_{I} = dI/dP$. 
 The Johnson \ac{NEP} is thus
 \begin{equation}
-N^{2}_{Johnson} =  \frac{1}{S_I^2} (\frac{4k_{B}T}{R})
-\label{eq:johnson}
+N_{Johnson} =  \frac{1}{S_I} \sqrt{ \frac{4k_{B}T}{R}}
+\label{eq:johnson_i}
 \end{equation}
 
 The phonon noise is due to the motion of the thermal carriers, phonons, along the weak thermal link. 
