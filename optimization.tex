@@ -136,7 +136,7 @@ As a voltage-referred noise, in units of $V^2/Hz$, the Johnson noise \ac{PSD} is
 %\end{equation}
 where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the resistor, and $R$ the resistance \cite{}.
 Note, this voltage noise source is present regardless of any applied voltage
-\textcolor{red}{Should this be an equation? Should we derive it? Whatever you do, reference!}
+%\textcolor{red}{Should this be an equation? Should we derive it? Whatever you do, reference!}
 In order to convert the Johnson noise from our \ac{TES} to a current-referred noise, we divide the voltage noise \ac{ASD} by R, $\sqrt{4k_{B}TR}/R = \sqrt{4k_BT/R}$. 
 For \ac{NEP}, in order to convert from $A/\sqrt{Hz}$ to $W/\sqrt{Hz}$, we divide the current noise by the bolometer's current responsivity, $S_{I} = dI/dP$. 
 The Johnson \ac{NEP} is thus
@@ -144,17 +144,18 @@ The Johnson \ac{NEP} is thus
 N_{Johnson} =  \frac{1}{S_I} \sqrt{ \frac{4k_{B}T}{R}}
 \label{eq:johnson}
 \end{equation}
+%don't love this explanation, but we're just looking for good enough.
 
 The phonon noise is due to the motion of the thermal carriers, phonons, along the weak thermal link. 
 If the motion were ballistic versus another kind of transport, then XXX. 
 Phonon noise is a power noise. 
 \begin{equation}
-N_{phonon} = \gamma 4k_{B} T^2 G
+N_{phonon} = \sqrt{\gamma 4k_{B} T^2 G}
 \label{eq:phonon}
 \end{equation}
 where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the \ac{TES}, and $G$ the dynamic thermal conductance along the weak link. 
- $\gamma$ is a unitless number between zero and one which does something like describe the temperature and thermal conductivity power dependence along the link (?)
- \begin{equation}
+ $\gamma$ is a unitless number between zero and one which does something like describe the temperature and thermal conductivity power dependence along the link (?)  
+\begin{equation}
 \gamma = \frac{n+1}{2n+3} \frac{1-\left(\frac{T_{bath}}{T_c}\right)^{2n+3}}{1-\left(\frac{T_{bath}}{T_c}\right)^{n+1}}
 \label{eq:gamma}
 \end{equation}
@@ -162,7 +163,7 @@ where $n$ is the power of thermal conductivity, $T_{bath}$ is the temperature of
 
 The photon noise is due to the particle nature of photons and the Poisson statistics which govern their arrival. 
 This is often referred to as shot noise.
-Bolometers have been designed and understood such that the the fundamental limit of the \ac{NEP} is set by the photon arrival statistics. 
+Bolometers have been designed and understood such that the the fundamental limit of the \ac{NEP} can be set by the photon arrival statistics. 
 There is another source of noise from the photons if their arrivals are correlated, that is if the photons tend to arrive in bunches. 
 This is called photon correlation or bunching noise. 
 The degree to which this noise source contributes to the bolometer \ac{NEP} is not agreed upon, \cite{Richards}. 
