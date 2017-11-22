@@ -58,6 +58,16 @@ To operate the detector, a voltage bias is applied across the \ac{TES}.
 The voltage bias provides Joule heating of $V^{2}_{bias}/{R}$.
 The voltage bias is chosen such that the detector is heated just enough to hold the \ac{TES} between normal and superconducting. 
 In steady-state, there is a constant power flow from the detector to the bath. 
+The total power is the sum of the electrical power dissipated, $P_{elec}$, and the radiative power absorbed, $P_{rad}$,
+\begin{equation}
+P_{total}\left(T\right) = P_{elec}\left(T\right) + P_{rad} = \frac{V^{2}_{bias}}{R\left(T\right)} + P_{rad}
+\end{equation}
+To understand what happens to the bolometer when its temperature changes by dT, we take the derivation of P with respect to temperature, 
+\begin{equation}
+\frac{dP_{total}}{dT} = \frac{dP_{elec}\left(T\right)}{dT} + \cancel{\frac{dP_{rad}}{dT}} = \frac{-V^{2}_{bias}}{R^2} \frac{dR}{dT} 
+\end{equation}
+
+
 Negative electrothermal feedback holds the detector at the edge of its transition. 
 When the radiative load changes, the \ac{TES} warms (cools). 
 This change in temperature moves the detector up (down) its R vs T curve. 
