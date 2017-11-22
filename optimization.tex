@@ -101,15 +101,15 @@ Measurements of the electronic and readout noise are discussed in Section~\ref{s
 \textcolor{red}{Were you thinking you want to say something about how there's no nice succinct expression for readout \ac{NEP}, but rather a lengthy expression adding all the numbers from the manufacturers in quadrature?}
 
 The Johnson noise is due to the thermal agitation of the electrons in the \ac{TES}. 
-As a voltage noise source, in units of $V^2/Hz$, the Johnson noise is $4k_{B}TR$,
+As a voltage-referred noise, in units of $V^2/Hz$, the Johnson noise \ac{PSD} is $4k_{B}TR$,
 %\begin{equation}
 %v^2 = 4k_{B}TR
 %\label{eq:johnson_v}
 %\end{equation}
 where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the resistor, and $R$ the resistance \cite{}.
-Note, this noise source is present regardless of any applied voltage
+Note, this voltage noise source is present regardless of any applied voltage
 \textcolor{red}{Should this be an equation? Should we derive it? Whatever you do, reference!}
-In order to get the Johnson noise of a current source, i.e. our \ac{TES}, we divide the voltage noise by R. 
+In order to convert the Johnson noise from our \ac{TES} to a current-referred noise, we divide the voltage noise \ac{ASD} by R, $\sqrt{4k_{B}TR}/R = \sqrt{4k_BT/R}$. 
 For \ac{NEP}, in order to convert from $A/\sqrt{Hz}$ to $W/\sqrt{Hz}$, we divide the current noise by the bolometer's current responsivity, $S_{I} = dI/dP$. 
 The Johnson \ac{NEP} is thus
 \begin{equation}
