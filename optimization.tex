@@ -24,28 +24,31 @@ We modified the design, described in Section~\ref{sec:detector_design}, in order
 % Need: cartoon. }
 
 
-A bolometer is an absorber with some heat capacity weakly thermally coupled to a bath, Figure ~\ref{fig:bolometer_cartoon}. 
+A bolometer, first invented by Langley in the late 1800s, is an absorber with some heat capacity weakly thermally coupled to a bath \cite{langley}.
+%S. P. Langley. BOLOMETER. New York, The Society, 1880.
+Figure~\ref{fig:bolometer_cartoon} is a schematic of a bolometer. 
 Bolometers absorb power from radiation and measure the resultant change in temperature. 
 The heat capacitive element absorbs the radiation and the change in temperature is measured with a thermistor. 
-\textcolor{red}{some equation(s) to describe bolometers here?}
 
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/bolometer_cartoon}
 \caption{Cartoon bolometer with incoming radiation, $\gamma$. There is an absorber, with heat capacity C, weakly coupled, with thermal conductance G, to a reservoir at $T_{bath}$. A thermistor measures the change in temperature due to the power absorbed. 
-\textcolor{red}{(Do you have time to add a thermometer or something to the chunk of heat capacity to show that's what you're measuring the temperature of?)}
+%\textcolor{red}{(Do you have time to add a thermometer or something to the chunk of heat capacity to show that's what you're measuring the temperature of?) Probably not. but did it anyhow.}
 \label{fig:bolometer_cartoon} }
 \end{center}
 \end{figure}
 
 A \ac{TES} bolometer has a superconductor as its thermistor. 
-A superconductor is a special material which has a normal resistance until it drops below its critical temperature, at which point its resistance drops to zero, Figure~\ref{fig:r_vs_t}. 
+A superconductor is a special material which has a normal resistance until it drops below its critical temperature, at which point its resistance drops to zero \cite{tinkham}.
+%M. Tinkham, Introduction to Superconductivity, 2nd Ed., McGraw-Hill, NY, 1996, ISBN 0-486-43503-2
+Figure~\ref{fig:r_vs_t} shows the resistance as a function of temperature for a superconductor. 
 The \ac{TES} is called such because it is a sensor operated on the edge of its superconducting transition, where there is a steep change in resistance as a function of temperature. 
 
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/RvsT_for_thesis.png}
-\caption{Resistance versus temperature for an \ac{EBEX} \ac{TES} bolometer. As the temperature goes from high to low, the \ac{TES} goes from normal (finite resistance) to superconducting (zero resistance). The region in between is the transition and this is where the \ac{TES} is biased for operation. 
+\caption{Resistance versus temperature for an \ac{EBEX} \ac{TES} bolometer. As the temperature goes from high to low, the \ac{TES} goes from a finite normal resistance to superconducting with zero resistance. The region in between is the transition. The \ac{TES} is biased roughly in the middle (black dot) for operation. 
 %\textcolor{red}{Make this figure prettier. Need to be able to read axes and their labels OR \textit{remove them}. Say where metal is normal and where it's superconducting and where it's transitioning and where the detector is operated.} 
 \label{fig:r_vs_t} }
 \end{center}
@@ -56,7 +59,6 @@ The \ac{TES} is called such because it is a sensor operated on the edge of its s
 %\textcolor{red}{For a moment here, just put down some words describing how it works. You can and will return to make it more technical and correct.}
 To operate the detector, a voltage bias, $V_{bias}$, is applied across the \ac{TES}. 
 The voltage bias provides Joule heating of $P_{elec} = V^{2}_{bias}/{R}$, where $R$ is the resistance of the \ac{TES}.
-The voltage bias is chosen such that the detector is heated just enough to hold the \ac{TES} between normal and superconducting. 
 In steady-state, there is a constant power flow from the detector to the bath. 
 The total power is the sum of the electrical power dissipated, $P_{elec}$, and the radiative power absorbed, $P_{rad}$,
 \begin{equation}
@@ -76,8 +78,10 @@ where we define $\alpha$ to be a unitless measure of the slope of the resistance
 \end{equation}
 Since the slope of the resistance versus temperature curve is positive for a \ac{TES}, the change in power will be opposite in sign to the change of temperature. 
 This negative electrothermal feedback holds the detector at the edge of its transition. 
+\textcolor{red}{ref all of the above equations??? you certainly didn't derive them.}
 
-Qualitatively, when the radiative load changes, the \ac{TES} warms (cools). 
+Qualitatively, the voltage bias is chosen such that the detector is heated just enough to hold the \ac{TES} between normal and superconducting. 
+When the radiative load changes, the \ac{TES} warms (cools). 
 This change in temperature moves the detector up (down) its R vs T curve. 
 %That is, the resistance of the \ac{TES} increases (decreases) in response to an increase (decrease) in radiative load. 
 In response to the increase (decrease) in resistance, the Joule heating decreases (increases) and the detector cools (warms). 
