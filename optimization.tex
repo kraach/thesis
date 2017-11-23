@@ -96,9 +96,9 @@ For flight, we calibrated on a known source in the sky to determine how much the
 %\textcolor{red}{Does it make sense to talk about the four sources first and then provide the expression for total NEP? Or to first provide the expression and then derive/talk about each source? It doesn't matter! Just do one!}
 
 \textcolor{red}{Figure out how to properly add : 
-Mather 1982 applied optics bolometer noise paper to bibfile and reference. 
+%Mather 1982 applied optics bolometer noise paper to bibfile and reference. 
 Also add Lamarre, "Photon noise in photometric instruments at far-infrared and submillimeter wavelengths", applied optics, vol 25, no 6, 15 march 1986 (he's not there)
-langley - S. P. Langley. BOLOMETER. New York, The Society, 1880.
+%langley - S. P. Langley. BOLOMETER. New York, The Society, 1880.
 tinkham - M. Tinkham, Introduction to Superconductivity, 2nd Ed., McGraw-Hill, NY, 1996, ISBN 0-486-43503-2
 }
 
@@ -119,7 +119,7 @@ N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{reado
 = 2h\nu P_{rad} + \xi \frac{P_{rad}^2}{\Delta \nu} + \gamma 4k_{B} T^2 G + \frac{1}{S_I^2} (\frac{4k_{B}T}{R} + N_{readout}^2 )
 \label{eq:nep}
 \end{equation}
-where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance \citep{Mather1982a}. 
+where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance \cite{Mather1982}. 
 
 The electronic and readout noise is due to current and voltage fluctuations in the readout electronics, i.e. the carrier, nuller, and demodulator circuits, schematic shown in Figure~\ref{fig:dfmux}. 
 The electronic components were sourced with the requirement that they provide subdominant contributions to the \ac{NEP}. 

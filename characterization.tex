@@ -155,13 +155,13 @@ The level of this leakage is approximated by calculating the current modulation 
 \begin{equation}
 \frac{R_{bolo}^2}{(2\Delta \omega L)^2}
 \end{equation}
-~\citep{Dobbs2011}
+~\cite{Dobbs2011}
 %see page 100 of notebook for calculation
 where for \ac{EBEX} we have inductors $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \omega = 2\pi 60~kHz$. 
 (The lower bias frequencies have this spacing, but when cooled, the lower capacitance values change more and the resonant frequency spacing is larger than predicted.)
 For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%
 
-%The consequences of overshooting this value, as is the case for many of the 150~GHz detectors, are an increase in the detector voltage bias leakage, which is proportional to $R^2$ \citep{dobbs_revSciInst_2012}, and a decrease in the loopgain, which is inversely proportional to R. 
+%The consequences of overshooting this value, as is the case for many of the 150~GHz detectors, are an increase in the detector voltage bias leakage, which is proportional to $R^2$ \cite{dobbs_revSciInst_2012}, and a decrease in the loopgain, which is inversely proportional to R. 
 %% if R is higher, then johnson current noise is decreased since it goes like 1/sqrt(R)
 %% if R is higher, then stability requirement has R/(2*pi*L) > 5.8/tau_tes is more satisfied
 %For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%, and a loopgain decrease of 30\%. 
