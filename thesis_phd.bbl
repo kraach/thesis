@@ -1,0 +1,50 @@
+\begin{thebibliography}{1}
+
+\bibitem{langley}
+S.P. Langley.
+\newblock {\em The bolometer}.
+\newblock New York, The Society, 1881.
+
+\bibitem{tinkham}
+M.~Tinkham.
+\newblock {\em Introduction to Superconductivity}.
+\newblock McGraw-Hill, NY, 2 edition, 1996.
+
+\bibitem{Mather1982}
+J~C Mather.
+\newblock {Bolometer noise: nonequilibrium theory}.
+\newblock {\em Appl Opt}, 21(6):1125--1129, 1982.
+
+\bibitem{Richards}
+P~L Richards.
+\newblock {Bolometers for Infrared and Millimeter Waves}.
+\newblock {\em J . Appl. Phys., Vol. 76, No.}, 1pp:1--24.
+
+\bibitem{Dobbs2011}
+M.~A. Dobbs, M.~Lueker, K.~A. Aird, A.~N. Bender, B.~A. Benson, L.~E. Bleem,
+  J.~E. Carlstrom, C.~L. Chang, H.~M. Cho, J.~Clarke, T.~M. Crawford, A.~T.
+  Crites, D.~I. Flanigan, T.~de~Haan, E.~M. George, N.~W. Halverson, W.~L.
+  Holzapfel, J.~D. Hrubes, B.~R. Johnson, J.~Joseph, R.~Keisler, J.~Kennedy,
+  Z.~Kermish, T.~M. Lanting, A.~T. Lee, E.~M. Leitch, D.~Luong-Van, J.~J.
+  McMahon, J.~Mehl, S.~S. Meyer, T.~E. Montroy, S.~Padin, T.~Plagge, C.~Pryke,
+  P.~L. Richards, J.~E. Ruhl, K.~K. Schaffer, D.~Schwan, E.~Shirokoff, H.~G.
+  Spieler, Z.~Staniszewski, A.~A. Stark, K.~Vanderlinde, J.~D. Vieira, C.~Vu,
+  B.~Westbrook, and R.~Williamson.
+\newblock {Frequency Multiplexed SQUID Readout of Large Bolometer Arrays for
+  Cosmic Microwave Background Measurements}.
+\newblock {\em Review of Scientific Instruments}, page~28, December 2011.
+
+\bibitem{Peterson1984a}
+J.~B. Peterson and P.~L. Richards.
+\newblock {A Cryogenic Blackbody for Millimeter Wavelengths}.
+\newblock {\em International Journal of Infrared and Millimeter Waves},
+  5(12):1507--1515, December 1984.
+
+\bibitem{Huber2001}
+Martin~E Huber, Patricia~A Neil, Robert~G Benson, Deborah~A Burns, Alan~M
+  Corey, Christopher~S Flynn, Yevgeniya Kitaygorodskaya, Omid Massihzadeh, and
+  John~M Martinis.
+\newblock {DC SQUID Series Array Amplifiers with 120 MHz Bandwidth}.
+\newblock I(I), 2001.
+
+\end{thebibliography}
