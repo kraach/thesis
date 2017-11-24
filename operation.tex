@@ -221,7 +221,7 @@ Using the dark characterization measurements, the measured radiative load, the e
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We get a handle on the measured readout noise relative to the predicted readout noise by monitoring a few \ac{SQUID}s with no bolometers attached.
-The predicted readout noise is calculated from the electronic specifications of each element of the readout chain and is converted to current via the \ac{DfMUX} transfer functions~\cite{aubin_thesis}. 
+The predicted readout noise is calculated from the electronic specifications of each element of the readout chain and is converted to current via the \ac{DfMUX} transfer functions~\cite{Francois2012}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -372,7 +372,7 @@ The current responsivity is the current response of the bolometer to incident po
 S_I = -\frac{dI}{dP} = \frac{-\sqrt{2}}{V_{bias}} * \frac{\mathcal{L}}{\mathcal{L} + 1} * \frac{1}{1 + i\omega\tau}
 \label{eq:current_responsivity}
 \end{equation}
-where $V_{bias}$ is the voltage bias across the bolometer, $\mathcal{L}$ is the bolometer loopgain, $\omega$ is the angular frequency of the signal modulation, and $\tau$ is the bolometer time constant~\cite{aubin_thesis}. we need to explain and/or reference why dfmux puts a $\sqrt{2}$ in the responsivity.
+where $V_{bias}$ is the voltage bias across the bolometer, $\mathcal{L}$ is the bolometer loopgain, $\omega$ is the angular frequency of the signal modulation, and $\tau$ is the bolometer time constant~\cite{Francois2012}. we need to explain and/or reference why dfmux puts a $\sqrt{2}$ in the responsivity.
 Assuming the loopgain, $\mathcal{L}$, is high and the time constant factor can be neglected, the current responsivity simplifies to $-\sqrt{2}/V_{bias}$, where $V_{bias}$ is calculated from the \ac{DfMUX} board settings and the transfer function from bias amplitude to voltage across the \ac{TES}. 
 This analysis assumes the loopgain for each detector is high and we address this assumption in Section XXX. 
 
@@ -390,13 +390,13 @@ We then find the dynamic thermal conductance via the following relation between 
 \begin{equation}
 G_{dynamic} = (n+1) \frac{1 - T_{bath}/T_{critical}}{1 - T_{bath}^{n+1}/T_{critical}^{n+1}} \times \overline{G}
 \end{equation}
-where $T_{bath}$ is the temperature of the bath, $T_{critical}$ is the detector's measured critical temperature, and n is the power of the thermal conductivity \cite{mather_appliedoptics_1982}. 
+where $T_{bath}$ is the temperature of the bath, $T_{critical}$ is the detector's measured critical temperature, and n is the power of the thermal conductivity \cite{Mather1982}. 
 In order to calculate $\gamma$, the factor accounting for the temperature gradient along the weak link from the TES to the bath, we again need to assume the thermal conductivity takes the form of a power law of power n. 
 Gamma is then
 \begin{equation}
 \gamma = \frac{(n+1)}{(n+2)} \frac{1 - (T_{bath}/T_{critical})^{n+2}}{1 - (T_{bath}/T_{critical})^{n+1}}
 \end{equation}
-where $T_{bath}$ is the temperature of the bath, $T_{critical}$ is the detector's measured critical temperature, and n is the power of the thermal conductivity \cite{mather_appliedoptics_1982}. 
+where $T_{bath}$ is the temperature of the bath, $T_{critical}$ is the detector's measured critical temperature, and n is the power of the thermal conductivity \cite{Mather1982}. 
 %\comred{I used the derivations/equations from Hannes' thesis, but he says he follows Mather. Should I cite both of them?}
 $T_{bath}$ is measured by a temperature sensor mounted to the stage and $T_{critical}$ is found during the critical transition temperature measurements.
 We take n to be 2 since thermal conductivity measurements of \ac{EBEX} test flight wafers gave values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410 GHz bands respectively \cite{Hubmayr2009}.
@@ -504,12 +504,12 @@ We can estimate the loopgain at any depth in the transition via the definition o
 \begin{equation}
 \mathcal{L} \equiv \frac{P\alpha}{GT}
 \end{equation}
-where $P$ is the Joule power dissipated in the bolometer, alpha is a unitless number quantifying the temperature sensitivity, $G$ is the dynamic thermal conductance, and $T$ is the bolometer temperature \cite{irwin_book_2005}. 
+where $P$ is the Joule power dissipated in the bolometer, alpha is a unitless number quantifying the temperature sensitivity, $G$ is the dynamic thermal conductance, and $T$ is the bolometer temperature \cite{Enss2005}. 
 The largest uncertainty is in the value of $\alpha$, 
  \begin{equation}
  \alpha \equiv \frac{\partial \log R}{\partial \log T}=\frac{T}{R} \frac{dR}{dT}
  \end{equation}
- where R is the detector resistance and T is the detector temperature \cite{irwin_book_2005}. 
+ where R is the detector resistance and T is the detector temperature \cite{Enss2005}. 
 The \ac{EBEX} detector resistances are known to 10\%, but near the transition, $dR/dT$ changes steeply given small changes in detector resistance. 
 If we take a typical resistance versus temperature curve and overestimate the average value of R by 10\%, then $\mathcal{L}$ decreases by a factor of 2.
 If we underestimate R by 10\%, then $\mathcal{L}$ increases by a factor of 7. 
