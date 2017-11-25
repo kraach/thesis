@@ -92,17 +92,19 @@ For flight, we calibrated on a known source in the sky to determine how much the
 
 %\textcolor{red}{You need to include the math to describe negative electrothermal feedback more accurately. And then reference that stuff!}
 
-\textcolor{red}{What are the other essential pieces to explaining how a bolometer works?}
+\textcolor{red}{What are the other essential pieces to explaining how a bolometer works?
+e.g. how does power depend on bath temperature and n?
+}
 
 %\textcolor{red}{Does it make sense to talk about the four sources first and then provide the expression for total NEP? Or to first provide the expression and then derive/talk about each source? It doesn't matter! Just do one!}
 
-\textcolor{red}{Figure out how to properly add : 
+%\textcolor{red}{Figure out how to properly add : 
 %Kyle's thesis details need to be added
 %Mather 1982 applied optics bolometer noise paper to bibfile and reference. 
 %Also add Lamarre, "Photon noise in photometric instruments at far-infrared and submillimeter wavelengths", applied optics, vol 25, no 6, 15 march 1986 (he's not there)
 %langley - S. P. Langley. BOLOMETER. New York, The Society, 1880.
 %tinkham - M. Tinkham, Introduction to Superconductivity, 2nd Ed., McGraw-Hill, NY, 1996, ISBN 0-486-43503-2
-}
+%}
 
 
 The sensitivity of the detectors is quantified by their \ac{NEP}. 
@@ -123,12 +125,15 @@ N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{reado
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance \cite{Mather1982}. 
 
-The electronic and readout noise is due to current and voltage fluctuations in the readout electronics, i.e. the carrier, nuller, and demodulator circuits, schematic shown in Figure~\ref{fig:dfmux}. 
-The electronic components were sourced with the requirement that they provide subdominant contributions to the \ac{NEP}. 
-The largest contributors were the \ac{SQUID}s and their first stage operational amplifiers. 
+The electronic readout noise is due to current and voltage fluctuations in the readout electronics, i.e. the carrier, nuller, and demodulator circuits, schematic shown in Figure~\ref{fig:dfmux}. 
+The electronic components were sourced with the requirement that their noise, added in quadrature, provided a subdominant contribution to the \ac{NEP}. 
+The largest contributors were the 4.2~K \ac{SQUID}s and their room temperature first stage operational amplifiers. 
 Measurements of the electronic and readout noise are discussed in Section~\ref{sec:dark_noise} and Section~\ref{sec:flight_noise_performance}.
+%COME BACK TO THIS IF YOU HAVE TO TIME
 %\textcolor{red}{should we point to our noise discussions later? I guess do this. And in that later section, be sure to reference franky's thesis? and/or dfmux papers??}
-\textcolor{red}{Were you thinking you want to say something about how there's no nice succinct expression for readout \ac{NEP}, but rather a lengthy expression adding all the numbers from the manufacturers in quadrature?}
+%\textcolor{red}{Were you thinking you want to say something about how there's no nice succinct expression for readout \ac{NEP}, but rather a lengthy expression adding all the numbers from the manufacturers in quadrature?}
+%There is not a nice, succinct expression for the readout electronics \ac{NEP}, but rather a lengthy expression adding all the numbers from the manufacturers in quadrature and referencing each noise source to current through the \ac{SQUID}. 
+%The measurement and the theory agree to within $13\%$ of each other. 
 
 The Johnson noise is due to the thermal agitation of the electrons in the \ac{TES}. 
 As a voltage-referred noise, in units of $V^2/Hz$, the Johnson noise \ac{PSD} is $4k_{B}TR$,
@@ -224,9 +229,11 @@ The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure t
 
 %\textcolor{red}{Need to generate: plot of phonon noise as a function of critical temperature, given a fixed ebex bath temperature of 260~mK.}
 
-\textcolor{red}{For a thermal conductance that follows a power law, what kind of material is n=1 and what about n=3? i.e. why are there our bounds??}
+\textcolor{red}{For a thermal conductance that follows a power law, what kind of material is n=1 and what about n=3? i.e. why are these our bounds??}
 
 \textcolor{red}{I would like for you to explain why modulating the thickness of the aluminum layer changes $T_{c}$. (see p32 of irwin/hilton paper)}
+
+\textcolor{red}{are you sure you're using the correct expression for phonon nep? your curves are NOT minimized at Tc/Tbath of 1.7 .... FIGURE THIS OUT!}
 
 
 The \ac{TES} was a bilayer of titanium atop aluminum. 
@@ -243,6 +250,7 @@ NEP_{phonon}^2 & = \gamma4k_{B}T_{c}G_{dyn} \\
 \end{split}
 \end{equation}
 If we assumed $T_{bath}$ was 0.26~K, $P_{sat}$ was 6~pW, and $n$ was in between one and three, then the phonon \ac{NEP} was minimized at a ratio of transition temperature to bath temperature, $\frac{T_{c}}{T_{bath}}$, of $\sim$1.7, Figure~\ref{fig:phonon_nep_vs_temps}. 
+Note, the phonon noise only increases shallowly around the minimum so the detector \ac{NEP} is tolerant to errors in $T_{c}$ of $\pm20\%$.
 The \ac{EBEX} bath temperature was 260~mK and so the target critical temperature for all \ac{EBEX} observation frequency bands was 440~mK.
 
 \begin{figure}[htp]
