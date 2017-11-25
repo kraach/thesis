@@ -1,5 +1,17 @@
 \begin{thebibliography}{10}
 
+\bibitem{Ruhl2004}
+John~E. Ruhl et~al.
+\newblock The south pole telescope.
+\newblock In {\em Millimeter and Submillimeter Detectors for Astronomy II},
+  volume 5498 of {\em Proc.~SPIE}, page~11, 2004.
+
+\bibitem{Schwan2011}
+D.~Schwan et~al.
+\newblock Millimeter-wave bolometer array receiver for the atacama pathfinder
+  experiment sunyaev-zel’dovich (apex-sz) instrument.
+\newblock {\em Review of Scientific Instruments}, 82:091301, 2011, 1008.0342.
+
 \bibitem{langley}
 S.P. Langley.
 \newblock {\em The bolometer}.
@@ -21,7 +33,7 @@ P~L Richards.
 \newblock {\em Journal of Applied Physics}, 76:1--24, 1994.
 
 \bibitem{Lamarre}
-Lamarre.
+J.~M. Lamarre.
 \newblock Photon noise in photometric instruments at far-infrared and
   submillimeter wavelengths.
 \newblock {\em Applied Optics}, 25(6), mar 1986.
@@ -45,6 +57,12 @@ M.~A. Dobbs, M.~Lueker, K.~A. Aird, A.~N. Bender, B.~A. Benson, L.~E. Bleem,
 \newblock {Frequency Multiplexed SQUID Readout of Large Bolometer Arrays for
   Cosmic Microwave Background Measurements}.
 \newblock {\em Review of Scientific Instruments}, page~28, December 2011.
+
+\bibitem{Lanting2006}
+Trevor~Michael Lanting.
+\newblock {\em {Multiplexed Readout of Superconducting Bolometers for
+  Cosmological Observations}}.
+\newblock PhD thesis, Berkeley, 2006.
 
 \bibitem{Peterson1984a}
 J.~B. Peterson and P.~L. Richards.
