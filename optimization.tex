@@ -170,12 +170,12 @@ Phonon noise is a power noise.
 N_{phonon} = \sqrt{\gamma 4k_{B} T^2 G}
 \label{eq:phonon}
 \end{equation}
-where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the \ac{TES}, and $G$ the dynamic thermal conductance along the weak link. 
+where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the \ac{TES}, and $G \equiv dP/dT$ the dynamic thermal conductance along the weak link \cite{Mather1982}. 
  $\gamma$ is a unitless number between zero and one which describes the temperature gradient along the thermal link from the \ac{TES} to the bath  
 \begin{equation}
 \gamma \equiv \frac{\int_{T_{bath}}^{T} \left( \frac{t\kappa(t)}{T\kappa(T)}\right)^2 dt}{\int_{T_{bath}}^{T} \frac{\kappa(t)}{\kappa(T)} dt} 
 \end{equation}
-where $\kappa$ is the thermal conductivity, $T$ is the bolometer temperature, and $T_{bath}$ is the bath temperature. 
+where $\kappa$ is the thermal conductivity, $T$ is the bolometer temperature, and $T_{bath}$ is the bath temperature \cite{Mather1982}. 
 When we assume $\kappa(T) = \kappa_0 T^n$ and say the bolometer temperature is equal to its critical temperature $T_c$, then
 \begin{equation}
 \gamma = \frac{n+1}{2n+3} \frac{1-\left(\frac{T_{bath}}{T_c}\right)^{2n+3}}{1-\left(\frac{T_{bath}}{T_c}\right)^{n+1}}
