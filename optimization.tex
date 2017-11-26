@@ -93,7 +93,31 @@ For flight, we calibrated on a known source in the sky to determine how much the
 %\textcolor{red}{You need to include the math to describe negative electrothermal feedback more accurately. And then reference that stuff!}
 
 \textcolor{red}{What are the other essential pieces to explaining how a bolometer works?
-e.g. how does power depend on bath temperature and n?
+you've touched on power flow and negative electrothermal feedback. 
+we haven't touched on how power depends on bath temperature and n.
+or done a more thorough mathematical description of a small incident signal? i.e. poptical = psteady + ptimevarying
+what about responsonsivity? 
+dynamic range? 
+bandwidth? 
+"We quantify the dynamic range, responsivity, sensitivity, and bandwidth of a TES
+bolometer by following [25]." lanting
+[25] S. Lee, J. M. Gildemeister, W. Holmes, A. T. Lee, and P. L. Richards. Voltage-Biased
+Superconducting Transition-Edge Bolometer with Strong Electrothermal Feedback Operated
+at 370 mK. Applied Optics, 37:3391Ð3397, June 1998.
+}
+
+
+\textcolor{red}{THIS TEXT IS SEARCHING FOR A PLACE TO BELONG!
+%\textcolor{red}{is the following not relevant to the noise derivation?}
+%Typical materials at low temperatures have a thermal conductance of the form of a power law, $\kappa = \kappa_o T^n$, where \cite{Mather1982}. 
+If the phonon transport is diffusive, as opposed to ballistic (where the mean free path of the phonon is much longer than the length of the material in the direction of travel), then the thermal conductivity should follow a power law, 
+\begin{equation}
+\kappa \left( T \right) = \kappa_0 T^n
+\end{equation}
+where n is the power of the thermal conductivity. 
+Normal metals have $n=1$ while crystalline dielectrics or superconductors have $n=3$ \cite{Mather1982}. 
+The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410~GHz bands respectively \cite{Hubmayr2009}.
+%\textcolor{red}{derive it? that's what I want you to do ... at the very least, spell out how it's done. barfing equations on paper isn't my style.}
 }
 
 %\textcolor{red}{Does it make sense to talk about the four sources first and then provide the expression for total NEP? Or to first provide the expression and then derive/talk about each source? It doesn't matter! Just do one!}
@@ -112,18 +136,26 @@ The sensitivity of the detectors is quantified by their \ac{NEP}.
 \ac{NEP} is defined as the absorbed power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz. 
 % \ac{NEP} is a measure of signal-to-noise, we will use the terms noise and \ac{NEP} interchangeably. 
 %\textcolor{red}{That sounds like a stupid idea.}
-There are four main contributors to the \ac{TES} bolometer \ac{NEP}: electronic/readout noise, Johnson noise, phonon noise, and photon noise. 
+There are four main contributors to the \ac{TES} bolometer \ac{NEP}: electronic readout noise, Johnson noise, phonon noise, and photon noise. 
 %not important?
 %Note, sometimes \ac{NEP} is instead defined as the \textit{incident} power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz, \textcolor{red}{cite who??}.
 The total predicted detector \ac{NEP}, $N$, is given by 
 \begin{equation}
-N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} ( N_{Johnson}^2 + N_{readout}^2 )
+%N^{2} = N_{photon}^2 + N_{phonon}^2 + \frac{1}{S_I^2} \left( N_{Johnson}^2 + N_{readout}^2 \right)
+N^{2} = N_{photon}^2 + N_{phonon}^2 + N_{Johnson}^2 + N_{readout}^2
 \end{equation}
 \begin{equation}
-= 2h\nu P_{rad} + \xi \frac{P_{rad}^2}{\Delta \nu} + \gamma 4k_{B} T^2 G + \frac{1}{S_I^2} (\frac{4k_{B}T}{R} + N_{readout}^2 )
+= 2h\nu P_{rad} + \xi \frac{P_{rad}^2}{\Delta \nu} + \gamma 4k_{B} T^2 G + \frac{1}{S_I^2} \left(\frac{4k_{B}T}{R} + N_{readout}^2 \right)
 \label{eq:nep}
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance \cite{Mather1982}. 
+%YOU TALK ABOUT THIS LATER. 
+%Both the Johnson and readout noise will have been referred to current through the \ac{SQUID}, so they are divided by the current responsivity, 
+%%\begin{equation}
+%%S_I = \frac{dI}{dP} = \frac{-\sqrt{2}}{V_{bias}}
+%%%not \equiv ?
+%%\end{equation}
+%in order to convert them to units of $W/\sqrt{Hz}$. 
 
 The electronic readout noise is due to current and voltage fluctuations in the readout electronics, i.e. the carrier, nuller, and demodulator circuits, schematic shown in Figure~\ref{fig:dfmux}. 
 The electronic components were sourced with the requirement that their noise, added in quadrature, provided a subdominant contribution to the \ac{NEP}. 
@@ -153,24 +185,16 @@ N_{Johnson} =  \frac{1}{S_I} \sqrt{ \frac{4k_{B}T}{R}}
 \end{equation}
 %don't love this explanation, but we're just looking for good enough.
 
+
+
 The phonon noise is due to the motion of the thermal carriers, phonons, along the weak thermal link. 
-%\textcolor{red}{is the following not relevant to the noise derivation?}
-%Typical materials at low temperatures have a thermal conductance of the form of a power law, $\kappa = \kappa_o T^n$, where \cite{Mather1982}. 
-If the phonon transport is diffusive, as opposed to ballistic (where the mean free path of the phonon is much longer than the length of the material in the direction of travel), then the thermal conductivity should follow a power law, 
-\begin{equation}
-\kappa \left( T \right) = \kappa_0 T^n
-\end{equation}
-where n is the power of the thermal conductivity. 
-Normal metals have $n=1$ while crystalline dielectrics or superconductors have $n=3$ \cite{Mather1982}. 
-The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410~GHz bands respectively \cite{Hubmayr2009}.
-\textcolor{red}{keep telling the story to connect these two lines of thought.}
-%\textcolor{red}{derive it? that's what I want you to do ... at the very least, spell out how it's done. barfing equations on paper isn't my style.}
-Phonon noise is a power noise. 
+This random thermodynamic energy flow gives rise to the phonon \ac{NEP},
 \begin{equation}
 N_{phonon} = \sqrt{\gamma 4k_{B} T^2 G}
 \label{eq:phonon}
 \end{equation}
-where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the \ac{TES}, and $G \equiv dP/dT$ the dynamic thermal conductance along the weak link \cite{Mather1982}. 
+where $k_{B}$ is Boltzmann's constant, $T$ is the temperature of the \ac{TES}, and $G \equiv dP/dT$ is the dynamic thermal conductance along the weak link \cite{Mather1982}. 
+%mather says it "is readily shown from thermodynamics that this power flow ...". BUT. it's not obvious to me. Sadly. there's not time to understand this right now. You can return if you have the luxury to do so. 
  $\gamma$ is a unitless number between zero and one which describes the temperature gradient along the thermal link from the \ac{TES} to the bath  
 \begin{equation}
 \gamma \equiv \frac{\int_{T_{bath}}^{T} \left( \frac{t\kappa(t)}{T\kappa(T)}\right)^2 dt}{\int_{T_{bath}}^{T} \frac{\kappa(t)}{\kappa(T)} dt} 
@@ -182,10 +206,17 @@ When we assume $\kappa(T) = \kappa_0 T^n$ and say the bolometer temperature is e
 \label{eq:gamma}
 \end{equation}
 
-\textcolor{red}{shouldn't we have said somewhere the dynamic thermal conductance is $G \equiv dP/dT$ ? Do you want to relate $\kappa$ to $G$?}
+%\textcolor{red}{shouldn't we have said somewhere the dynamic thermal conductance is $G \equiv dP/dT$ ? Do you want to relate $\kappa$ to $G$?}
 
-The photon noise is due to the particle nature of photons and the Poisson statistics which govern their arrival. 
-This is often referred to as shot noise.
+%The photon noise is due to the particle nature of photons and the Poisson statistics which govern their arrival. %This is only true if you're only talking about the first term of the photon noise.
+The photon noise is due to the particle nature of photons and the statistics which govern their arrival. 
+%YOU CAN COME BACK AND EXPLAIN THIS MORE IF YOU HAVE TIME
+Quantifying the fluctuations in the absorbed energy (via boson statistics) and integrating over the radiative bandwidth, the photon \ac{NEP} is
+\begin{equation}
+N_{phonon}^2 = 2 \int h \nu P_{\nu} d\nu + \int \frac{P_{\nu}^{2}c^2}{A\Omega\nu^2} d\nu
+\end{equation}
+
+This is often referred to as shot noise. %except that's only the first term! 
 Bolometers have been designed and understood such that the the fundamental limit of the \ac{NEP} can be set by the photon arrival statistics. 
 There is another source of noise from the photons if their arrivals are correlated, that is if the photons tend to arrive in bunches. 
 This is called photon correlation or bunching noise. 
