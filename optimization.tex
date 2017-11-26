@@ -141,7 +141,7 @@ As a voltage-referred noise, in units of $V^2/Hz$, the Johnson noise \ac{PSD} is
 %v^2 = 4k_{B}TR
 %\label{eq:johnson_v}
 %\end{equation}
-where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the resistor, and $R$ the resistance \cite{}.
+where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the resistor, and $R$ the resistance \cite{PhysRev.32.97}.
 Note, this voltage noise source is present regardless of any applied voltage
 %\textcolor{red}{Should this be an equation? Should we derive it? Whatever you do, reference!}
 In order to convert the Johnson noise from our \ac{TES} to a current-referred noise, we divide the voltage noise \ac{ASD} by R, $\sqrt{4k_{B}TR}/R = \sqrt{4k_BT/R}$. 
@@ -154,7 +154,17 @@ N_{Johnson} =  \frac{1}{S_I} \sqrt{ \frac{4k_{B}T}{R}}
 %don't love this explanation, but we're just looking for good enough.
 
 The phonon noise is due to the motion of the thermal carriers, phonons, along the weak thermal link. 
-If the motion were ballistic versus another kind of transport, then XXX. 
+%\textcolor{red}{is the following not relevant to the noise derivation?}
+%Typical materials at low temperatures have a thermal conductance of the form of a power law, $\kappa = \kappa_o T^n$, where \cite{Mather1982}. 
+If the phonon transport is diffusive, as opposed to ballistic (where the mean free path of the phonon is much longer than the length of the material in the direction of travel), then the thermal conductivity should follow a power law, 
+\begin{equation}
+\kappa \left( T \right) = \kappa_0 T^n
+\end{equation}
+where n is the power of the thermal conductivity. 
+Normal metals have $n=1$ while cyrstalline dielectrics or superconductors have $n=3$ \cite{Mather1982}. 
+The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410~GHz bands respectively \cite{Hubmayr2009}.
+\textcolor{red}{keep telling the story to connect these two lines of thought.}
+%\textcolor{red}{derive it? that's what I want you to do ... at the very least, spell out how it's done. barfing equations on paper isn't my style.}
 Phonon noise is a power noise. 
 \begin{equation}
 N_{phonon} = \sqrt{\gamma 4k_{B} T^2 G}
@@ -163,10 +173,16 @@ N_{phonon} = \sqrt{\gamma 4k_{B} T^2 G}
 where $k_{B}$ is Boltzmann's constant, $T$ the temperature of the \ac{TES}, and $G$ the dynamic thermal conductance along the weak link. 
  $\gamma$ is a unitless number between zero and one which does something like describe the temperature and thermal conductivity power dependence along the link (?)  
 \begin{equation}
+\gamma \equiv \frac{\int_{T_{bath}}^{T} \left( \frac{t\kappa(t)}{T\kappa(T)}\right)^2 dt}{\int_{T_{bath}}^{T} \frac{\kappa(t)}{\kappa(T)} dt} 
+\end{equation}
+where $\kappa$ is the thermal conductivity, $T$ is the bolometer temperature, and $T_{bath}$ is the bath temperature. 
+When we assume $\kappa(T) = \kappa_0 T^n$ and say the bolometer temperature is equal to its critical temperature $T_c$, then
+\begin{equation}
 \gamma = \frac{n+1}{2n+3} \frac{1-\left(\frac{T_{bath}}{T_c}\right)^{2n+3}}{1-\left(\frac{T_{bath}}{T_c}\right)^{n+1}}
 \label{eq:gamma}
 \end{equation}
-where $n$ is the power of thermal conductivity, $T_{bath}$ is the temperature of the bath, and $T_c$ is the critical temperature of the \ac{TES}.
+
+\textcolor{red}{shouldn't we have said somewhere the dynamic thermal conductance is $G \equiv dP/dT$ ?}
 
 The photon noise is due to the particle nature of photons and the Poisson statistics which govern their arrival. 
 This is often referred to as shot noise.
@@ -230,6 +246,10 @@ The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure t
 %\textcolor{red}{Need to generate: plot of phonon noise as a function of critical temperature, given a fixed ebex bath temperature of 260~mK.}
 
 \textcolor{red}{For a thermal conductance that follows a power law, what kind of material is n=1 and what about n=3? i.e. why are these our bounds??}
+
+Typical materials at low temperatures have a thermal conductance of the form of a power law, $\kappa = \kappa_o T^n$, where % \cite{Mather1982}. 
+normal metals have $n=1$ while cyrstalline dielectrics or superconductors have $n=3$ \cite{Mather1982}. 
+The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410~GHz bands respectively \cite{Hubmayr2009}.
 
 \textcolor{red}{I would like for you to explain why modulating the thickness of the aluminum layer changes $T_{c}$. (see p32 of irwin/hilton paper)}
 
