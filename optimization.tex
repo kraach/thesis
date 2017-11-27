@@ -221,8 +221,15 @@ N_{photon}^2 = 2 \int h \nu P_{\nu} d\nu + \xi \int \frac{P_{\nu}^{2}c^2}{A\Omeg
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the frequency of the radiation, $P_{\nu}$ is the absorbed spectral power, and $\xi$ is the so-called correlation factor \cite{Richards}. 
 %this $P_{\nu}$ was a sticking point for you when you were trying to understand this. are you SURE you're using the correct words??? Eh. both richards and lammare call it spectral power. good enough for now. 
-Note, this derivation assumed we have a diffraction limited beam so the throughput is $A\Omega = \lambda^2$, where $\Omega$ is the solid angle of a plane wave after passing through a circular aperture of area $A$ and $\lambda$ is the wavelength of the incident light. 
-The \ac{EBEX} optics were designed to provide a diffraction limited beam. 
+If we assume the spectral power is roughly constant over a small bandwidth and that we have a diffraction limited beam so the throughput is $A\Omega = \lambda^2$, where $\Omega$ is the solid angle of a plane wave after passing through a circular aperture of area $A$ and $\lambda$ is the wavelength of the incident light, then the photon \ac{NEP} becomes
+\begin{equation}
+N_{photon}^2 = 2h \nu P_{rad} + \xi \frac{P_{rad}^{2}}{\delta\nu}
+\end{equation}
+%YOU DERIVED THIS WITH SHAUL, BUT YOU FORGOT. I WISH YOU HAD THE TIME TO DO IT AGAIN. 
+where $P_{rad}$ is the radiative power absorbed and $\delta\nu$ the observation frequency bandwidth. 
+
+
+%The \ac{EBEX} optics were designed to provide a diffraction limited beam. 
 %I'D LIKE TO REFERENCE SOMETHING/ONE HERE
  
 The first term of the photon \ac{NEP} is often referred to as shot noise. 
@@ -235,6 +242,9 @@ $\xi$ can take on a value between zero (no correlation) and one (completely corr
 Lamarre writes, the photon correlation factor when the "beam is produced by an incoherent source and is uniformly distributed over the beam throughput, which is large with respect to the etendue of coherence $\nu^{2}/c^{2}$" is completely different than the photon correlation factor in the case of telescopes "observing sources with angular diameters much smaller than the diffraction pattern" \cite{Lamarre}. 
 While our source, the \ac{CMB}, is incoherent and uniformly distributed over the beam throughput, the beam throughput is equal to (so not large with respect to) the etendue of coherence. 
 It is not clear what the true value of $\xi$ should be for \ac{EBEX}.
+
+\textcolor{red}{do you have anything else to say about shot noise?}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
