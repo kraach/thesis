@@ -281,7 +281,7 @@ The absorber, to which radiation coupled, was a silicon nitride spider web.
 The silicon nitride was deposited on the device wafer and a silicon etch carved away the silicon underneath so that the web was actually suspended in space.
 The link to the bath was provided by eight legs which attached the web to the silicon wafer. 
 The heat capacity was provided by a gold waffle, called bling, in the center. 
-The \ac{TES} itself was an AlTi bilayer in the shape of a 19 x 19~$\mu m^{2}$ square located towards the bottom of the bling. 
+The \ac{TES} itself was an AlTi bilayer in the shape of a 19 x 19~$\mu m^{2}$ square located towards the center of the bling. 
 The left edge of the bilayer overlapped the bling, right panel of Figure~\ref{fig:bolo_and_bling}, providing the thermal coupling between the absorber and the \ac{TES}.
 
 \begin{figure}[ht!]
@@ -289,7 +289,7 @@ The left edge of the bilayer overlapped the bling, right panel of Figure~\ref{fi
 %\includegraphics[width=0.49\columnwidth]{figures/bolometer_photo.png}
 \includegraphics[width=0.49\columnwidth]{figures/fullpixel1_v4_small_annotated.png}
 \includegraphics[width=0.45\columnwidth]{figures/EBEX_BLINGTES_Annotated.png}
-\caption{Left: One \ac{EBEX} 150~GHz spiderweb \ac{TES} bolometer. The light blue is the silicon wafer on which the detectors were fabricated. The dark blue is open space where the silicon was etched away. Running above the center of the etched out area are the thin silicon nitride strings of the spider web. The spider web is attached to the wafer at the end of each of the spokes. The gold waffle bling in the center provides the heat capacity. Right: A zoom of the bling and the \ac{TES}. The \ac{TES} is a square near the bottom of the bling and is coupled to the bling via the overlap on its left side. The signal travels out the niobium leads to bond pads at the wafer's edge. Both figures courtesy of Benjamin Westbrook. 
+\caption{Left: One \ac{EBEX} 150~GHz spiderweb \ac{TES} bolometer. The light blue is the silicon wafer on which the detectors were fabricated. The dark blue is open space where the silicon was etched away. Running above the center of the etched out area are the thin silicon nitride strings of the spider web. The spider web is attached to the wafer at the end of each of the spokes. The gold waffle bling in the center provides the heat capacity. Right: A zoom of the bling and the \ac{TES}. The \ac{TES} is a square near the middle of the bling and is coupled to the bling via the overlap on its left side. The signal travels out the niobium leads to bond pads at the wafer's edge. Both figures courtesy of Benjamin Westbrook. 
 \label{fig:bolo_and_bling} }
 \end{center}
 \end{figure}
@@ -304,6 +304,27 @@ The left edge of the bilayer overlapped the bling, right panel of Figure~\ref{fi
 \subsubsection{Ideal Normal Resistance} 
 The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
 %THIS HAS NOTHING TO DO WITH A SPACE-LIKE ENVIRONMENT, but it does have to do with optimization of multiplexing! and so it's relevant. 
+%You wrote about this somewhere else, no? where???
+%DO YOU WANT TO INCLUDE MORE DETAILS ABOUT THE CROSS-TALK CALCULATION? PROBABLY? 
+There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
+The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer. 
+\begin{equation}
+\frac{R_{bolo}^2}{(2\Delta \omega L)^2}
+\end{equation}
+~\cite{Dobbs2011}
+%see page 100 of notebook for calculation
+where for \ac{EBEX} we have inductors $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \omega = 2\pi 60~kHz$. 
+(The lower bias frequencies have this spacing, but when cooled, the lower capacitance values change more and the resonant frequency spacing is larger than predicted.)
+For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%
+%The consequences of overshooting this value, as is the case for many of the 150~GHz detectors, are an increase in the detector voltage bias leakage, which is proportional to $R^2$ \cite{dobbs_revSciInst_2012}, and a decrease in the loopgain, which is inversely proportional to R. 
+%% if R is higher, then johnson current noise is decreased since it goes like 1/sqrt(R)
+%% if R is higher, then stability requirement has R/(2*pi*L) > 5.8/tau_tes is more satisfied
+%For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%, and a loopgain decrease of 30\%. 
+%The consequence of undershooting the normal resistance, as is the case for many of the detectors on wafer 410-28, is an increase in the Johnson current noise. The Johnson noise is proportional to $1/\sqrt{R}$, so that noise term increases by 20\% given a value of 1.0~$\Omega$ instead of 1.5~$\Omega$.
+%\comred{Assume detector optimization explains what about the electronics set our target to be 1.5~$\Omega$? Ben says "The requirement is really ~1.25 because what actually matters is Rtes in transition for the L/R requirement.  So depending on how deep we get in to the transition we could start anywhere just above 1.2 Ohms to operate at 0.88 to 1.0 Ohms." BUT. When determining which Rfrac to tune to, we didn't do this calculation. Rather, we noted, in general, below 80\% $R_{start}$, we had (not well understood) excess noise and so opted to go to 85\%. What I'm trying to say is, in practice, the operating fracRn value was not chosen carefully on a bolo by bolo basis or even a wafer by wafer basis to achieve a specific L/R. Explain the consequence of having a higher or lower normal resistance, e.g. 150s and one of the 410s (was it the 410 that operated or the 410 that was saturated?)? Ben says "Increased johnson noise and possibly bolo stability.  However, I'm not sure if either of these effects were detected in the wafers in test cryostats, Palestine, or flight."}
+
+
+
 
 \subsubsection{Ideal Transition Temperature} 
 
