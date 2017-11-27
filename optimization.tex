@@ -208,16 +208,24 @@ When we assume $\kappa(T) = \kappa_0 T^n$ and say the bolometer temperature is e
 
 %\textcolor{red}{shouldn't we have said somewhere the dynamic thermal conductance is $G \equiv dP/dT$ ? Do you want to relate $\kappa$ to $G$?}
 
+\textcolor{red}{Is this true? is it relevant?
+Bolometers have been designed and understood such that the the fundamental limit of the \ac{NEP} can be set by the photon arrival statistics. 
+}
+
 %The photon noise is due to the particle nature of photons and the Poisson statistics which govern their arrival. %This is only true if you're only talking about the first term of the photon noise.
 The photon noise is due to the particle nature of photons and the statistics which govern their arrival. 
 %YOU CAN COME BACK AND EXPLAIN THIS MORE IF YOU HAVE TIME
-Quantifying the fluctuations in the absorbed energy (via boson statistics) and integrating over the radiative bandwidth, the photon \ac{NEP} is
+Quantifying the fluctuations in the absorbed energy (via boson statistics) and integrating over the radiation bandwidth, the photon \ac{NEP} is
 \begin{equation}
-N_{phonon}^2 = 2 \int h \nu P_{\nu} d\nu + \int \frac{P_{\nu}^{2}c^2}{A\Omega\nu^2} d\nu
+N_{photon}^2 = 2 \int h \nu P_{\nu} d\nu + \xi \int \frac{P_{\nu}^{2}c^2}{A\Omega\nu^2} d\nu
 \end{equation}
-
-This is often referred to as shot noise. %except that's only the first term! 
-Bolometers have been designed and understood such that the the fundamental limit of the \ac{NEP} can be set by the photon arrival statistics. 
+where $h$ is Planck's constant, $\nu$ is the frequency of the radiation, $P_{\nu}$ is the absorbed spectral power \cite{Richards}, and \xi is the so-called correlation factor. 
+%this $P_{\nu}$ was a sticking point for you when you were trying to understand this. are you SURE you're using the correct words??? Eh. both richards and lammare call it spectral power. good enough for now. 
+Note, this derivation assumed we have a diffraction limited beam so the throughput is $A\Omega = \lambda^2$, where $\Omega$ is the solid angle of a plane wave after passing through a circular aperture of area $A$ and $\lambda$ is the wavelength of the incident light. 
+The \ac{EBEX} optics were designed to provide a diffraction limited beam. 
+%I'D LIKE TO REFERENCE SOMETHING/ONE HERE
+ 
+The first term of the photon \ac{NEP} is often referred to as shot noise. 
 There is another source of noise from the photons if their arrivals are correlated, that is if the photons tend to arrive in bunches. 
 This is called photon correlation or bunching noise. 
 The degree to which this noise source contributes to the bolometer \ac{NEP} is not agreed upon, \cite{Richards}. 
