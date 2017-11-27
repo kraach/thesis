@@ -27,16 +27,16 @@ J~C Mather.
 \newblock {Bolometer noise: nonequilibrium theory}.
 \newblock {\em Applied Optics}, 21(6):1125--1129, 1982.
 
-\bibitem{PhysRev.32.97}
-J.~B. Johnson.
-\newblock Thermal agitation of electricity in conductors.
-\newblock {\em Phys. Rev.}, 32:97--109, Jul 1928.
-
 \bibitem{Hubmayr2009}
 Johannes Hubmayr.
 \newblock {\em {Bolometric detectors for EBEX : a balloon-borne cosmic
   microwave background polarimeter}}.
 \newblock PhD thesis, University of Minnesota, 2009.
+
+\bibitem{PhysRev.32.97}
+J.~B. Johnson.
+\newblock Thermal agitation of electricity in conductors.
+\newblock {\em Phys. Rev.}, 32:97--109, Jul 1928.
 
 \bibitem{Richards}
 P~L Richards.
