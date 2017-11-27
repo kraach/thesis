@@ -40,6 +40,8 @@ The heat capacitive element absorbs the radiation and the change in temperature 
 \end{center}
 \end{figure}
 
+\subsection{Transition Edge Sensors}
+
 A \ac{TES} bolometer has a superconductor as its thermistor. 
 A superconductor is a special material which has a normal resistance until it drops below its critical temperature, at which point its resistance drops to zero \cite{tinkham}.
 %M. Tinkham, Introduction to Superconductivity, 2nd Ed., McGraw-Hill, NY, 1996, ISBN 0-486-43503-2
@@ -130,6 +132,7 @@ The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm
 %tinkham - M. Tinkham, Introduction to Superconductivity, 2nd Ed., McGraw-Hill, NY, 1996, ISBN 0-486-43503-2
 %}
 
+\subsection{Noise Equivalent Power}
 
 The sensitivity of the detectors is quantified by their \ac{NEP}. 
 %should I instead say sensitivity of the instrument?
@@ -149,6 +152,9 @@ N^{2} = N_{photon}^2 + N_{phonon}^2 + N_{Johnson}^2 + N_{readout}^2
 \label{eq:nep}
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the center of the observation frequency band, $P_{rad}$ is the radiative power absorbed by the bolometer, $\xi$ is a unitless number between zero and one quantifying the contribution of photon correlation noise, $\Delta \nu$ is the width of the observation frequency band, $\gamma$ is a unitless number between zero and one accounting for the temperature gradient along the link from the \ac{TES} to the bath, $k_{B}$ is Boltzmann's constant, $T$ is the \ac{TES} temperature, $G$ is the bolometer dynamic thermal conductance, $S_{I}$ is the bolometer current responsivity, and $R$ is the \ac{TES} resistance \cite{Mather1982}. 
+\ac{TES} bolometers have been developed such that the the fundamental limit of the \ac{NEP} can be set by the photon arrival statistics, i.e. background limited. 
+We wanted to create an instrument with background noise limited \ac{TES} bolometers. 
+
 %YOU TALK ABOUT THIS LATER. 
 %Both the Johnson and readout noise will have been referred to current through the \ac{SQUID}, so they are divided by the current responsivity, 
 %%\begin{equation}
@@ -156,6 +162,8 @@ where $h$ is Planck's constant, $\nu$ is the center of the observation frequency
 %%%not \equiv ?
 %%\end{equation}
 %in order to convert them to units of $W/\sqrt{Hz}$. 
+
+\subsubsection{Readout Noise}
 
 The electronic readout noise is due to current and voltage fluctuations in the readout electronics, i.e. the carrier, nuller, and demodulator circuits, schematic shown in Figure~\ref{fig:dfmux}. 
 The electronic components were sourced with the requirement that their noise, added in quadrature, provided a subdominant contribution to the \ac{NEP}. 
@@ -166,6 +174,8 @@ Measurements of the electronic and readout noise are discussed in Section~\ref{s
 %\textcolor{red}{Were you thinking you want to say something about how there's no nice succinct expression for readout \ac{NEP}, but rather a lengthy expression adding all the numbers from the manufacturers in quadrature?}
 %There is not a nice, succinct expression for the readout electronics \ac{NEP}, but rather a lengthy expression adding all the numbers from the manufacturers in quadrature and referencing each noise source to current through the \ac{SQUID}. 
 %The measurement and the theory agree to within $13\%$ of each other. 
+
+\subsubsection{Johnson Noise}
 
 The Johnson noise is due to the thermal agitation of the electrons in the \ac{TES}. 
 As a voltage-referred noise, in units of $V^2/Hz$, the Johnson noise \ac{PSD} is $4k_{B}TR$,
@@ -185,7 +195,7 @@ N_{Johnson} =  \frac{1}{S_I} \sqrt{ \frac{4k_{B}T}{R}}
 \end{equation}
 %don't love this explanation, but we're just looking for good enough.
 
-
+\subsubsection{Phonon Noise}
 
 The phonon noise is due to the motion of the thermal carriers, phonons, along the weak thermal link. 
 This random thermodynamic energy flow gives rise to the phonon \ac{NEP},
@@ -200,7 +210,7 @@ where $k_{B}$ is Boltzmann's constant, $T$ is the temperature of the \ac{TES}, a
 \gamma \equiv \frac{\int_{T_{bath}}^{T} \left( \frac{t\kappa(t)}{T\kappa(T)}\right)^2 dt}{\int_{T_{bath}}^{T} \frac{\kappa(t)}{\kappa(T)} dt} 
 \end{equation}
 where $\kappa$ is the thermal conductivity, $T$ is the bolometer temperature, and $T_{bath}$ is the bath temperature \cite{Mather1982}. 
-When we assume $\kappa(T) = \kappa_0 T^n$ and say the bolometer temperature is equal to its critical temperature $T_c$, then
+When we assume $\kappa(T) = \kappa_0 T^n$ and also assume the bolometer temperature $T$ is equal to its critical temperature $T_c$, then
 \begin{equation}
 \gamma = \frac{n+1}{2n+3} \frac{1-\left(\frac{T_{bath}}{T_c}\right)^{2n+3}}{1-\left(\frac{T_{bath}}{T_c}\right)^{n+1}}
 \label{eq:gamma}
@@ -208,9 +218,7 @@ When we assume $\kappa(T) = \kappa_0 T^n$ and say the bolometer temperature is e
 
 %\textcolor{red}{shouldn't we have said somewhere the dynamic thermal conductance is $G \equiv dP/dT$ ? Do you want to relate $\kappa$ to $G$?}
 
-\textcolor{red}{Is this true? is it relevant?
-Bolometers have been designed and understood such that the the fundamental limit of the \ac{NEP} can be set by the photon arrival statistics. 
-}
+\subsubsection{Photon Noise}
 
 %The photon noise is due to the particle nature of photons and the Poisson statistics which govern their arrival. %This is only true if you're only talking about the first term of the photon noise.
 The photon noise is due to the particle nature of photons and the statistics which govern their arrival. 
@@ -221,12 +229,12 @@ N_{photon}^2 = 2 \int h \nu P_{\nu} d\nu + \xi \int \frac{P_{\nu}^{2}c^2}{A\Omeg
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the frequency of the radiation, $P_{\nu}$ is the absorbed spectral power, and $\xi$ is the so-called correlation factor \cite{Richards}. 
 %this $P_{\nu}$ was a sticking point for you when you were trying to understand this. are you SURE you're using the correct words??? Eh. both richards and lammare call it spectral power. good enough for now. 
-If we assume the spectral power is roughly constant over a small bandwidth and that we have a diffraction limited beam so the throughput is $A\Omega = \lambda^2$, where $\Omega$ is the solid angle of a plane wave after passing through a circular aperture of area $A$ and $\lambda$ is the wavelength of the incident light, then the photon \ac{NEP} becomes
+If we assume the spectral power is roughly constant over a small bandwidth and that we have a diffraction limited beam so the throughput is $A\Omega = \lambda^2$, where $\Omega$ is the solid angle of a wave after passing through a circular aperture of area $A$ and $\lambda$ is the wavelength of the incident light, then the photon \ac{NEP} becomes
 \begin{equation}
-N_{photon} = \sqrt{2h \nu P_{rad} + \xi \frac{P_{rad}^{2}}{\delta\nu}}
+N_{photon} = \sqrt{2h \nu P_{rad} + \xi \frac{P_{rad}^{2}}{\Delta\nu}}
 \end{equation}
 %YOU DERIVED THIS WITH SHAUL, BUT YOU FORGOT. I WISH YOU HAD THE TIME TO DO IT AGAIN. 
-where $P_{rad}$ is the radiative power absorbed and $\delta\nu$ the observation frequency bandwidth. 
+where $P_{rad}$ is the radiative power absorbed and $\Delta\nu$ the observation frequency bandwidth. 
 
 
 %The \ac{EBEX} optics were designed to provide a diffraction limited beam. 
@@ -235,7 +243,7 @@ where $P_{rad}$ is the radiative power absorbed and $\delta\nu$ the observation 
 The first term of the photon \ac{NEP} is often referred to as shot noise. 
 The second term is only relevant if the photon arrivals are correlated, that is if the photons tend to arrive in bunches. 
 This is called photon correlation or bunching noise. 
-The degree to which this second photon noise term contributes to the bolometer \ac{NEP} is not agreed upon, \cite{Richards}. 
+The degree to which this second photon noise term contributes to the bolometer \ac{NEP} is not agreed upon \cite{Richards}. 
 %\textcolor{red}{who says this? richards. and he says van vliet and mather do one thing and pike and lamarre do other things. can I just reference richards? or do I have to refer to all these other folks?}
 This disagreement is encapsulated in the factor of $\xi$ which is multiplied by the noise one would have in the case of complete correlation.
 $\xi$ can take on a value between zero (no correlation) and one (completely correlated).
@@ -243,8 +251,12 @@ Lamarre writes, the photon correlation factor when the "beam is produced by an i
 While our source, the \ac{CMB}, is incoherent and uniformly distributed over the beam throughput, the beam throughput is equal to (so not large with respect to) the etendue of coherence. 
 It is not clear what the true value of $\xi$ should be for \ac{EBEX}.
 
-\textcolor{red}{do you have anything else to say about shot noise?
-does it make sense to do $N_{source}$ or $N_{source}^2$?}
+%\textcolor{red}{do you have anything else to say about shot noise?
+%does it make sense to do $N_{source}$ or $N_{source}^2$?
+%I'm not sure you've correctly explained how we get from voltage noise to current noise for johnson.
+%}
+
+\textcolor{red}{(If there's time, reference more papers on the xi disagreement.)}
 
 
 
@@ -259,7 +271,10 @@ does it make sense to do $N_{source}$ or $N_{source}^2$?}
 \label{sec:detector_design}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The \ac{EBEX} bolometers were fabricated on a silicon device wafer, the thickness of which depended on the observation frequency band, glued to a thick silicon backing wafer.
+\textcolor{red}{Sure would be nice if you had more time to talk about how the detectors are fabricated. Go ahead and just reference Ben's thesis for now?}
+
+The \ac{EBEX} bolometers were fabricated on a silicon device wafer, the thickness of which, $\lambda/4$, was determined by the observation frequency band. 
+The device wafers were each glued to a thick silicon backing wafer for mechanical stability.
 The left panel of Figure~\ref{fig:bolo_and_bling} is a photograph of a single \ac{EBEX} bolometer. 
 The absorber, to which radiation coupled, was a spider web silicon nitride web. 
 A silicon etch carved away the silicon underneath so that the web was actually suspended in space.
