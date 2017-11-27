@@ -219,25 +219,22 @@ Quantifying the fluctuations in the absorbed energy (via boson statistics) and i
 \begin{equation}
 N_{photon}^2 = 2 \int h \nu P_{\nu} d\nu + \xi \int \frac{P_{\nu}^{2}c^2}{A\Omega\nu^2} d\nu
 \end{equation}
-where $h$ is Planck's constant, $\nu$ is the frequency of the radiation, $P_{\nu}$ is the absorbed spectral power \cite{Richards}, and \xi is the so-called correlation factor. 
+where $h$ is Planck's constant, $\nu$ is the frequency of the radiation, $P_{\nu}$ is the absorbed spectral power, and $\xi$ is the so-called correlation factor \cite{Richards}. 
 %this $P_{\nu}$ was a sticking point for you when you were trying to understand this. are you SURE you're using the correct words??? Eh. both richards and lammare call it spectral power. good enough for now. 
 Note, this derivation assumed we have a diffraction limited beam so the throughput is $A\Omega = \lambda^2$, where $\Omega$ is the solid angle of a plane wave after passing through a circular aperture of area $A$ and $\lambda$ is the wavelength of the incident light. 
 The \ac{EBEX} optics were designed to provide a diffraction limited beam. 
 %I'D LIKE TO REFERENCE SOMETHING/ONE HERE
  
 The first term of the photon \ac{NEP} is often referred to as shot noise. 
-There is another source of noise from the photons if their arrivals are correlated, that is if the photons tend to arrive in bunches. 
+The second term is only relevant if the photon arrivals are correlated, that is if the photons tend to arrive in bunches. 
 This is called photon correlation or bunching noise. 
-The degree to which this noise source contributes to the bolometer \ac{NEP} is not agreed upon, \cite{Richards}. 
+The degree to which this second photon noise term contributes to the bolometer \ac{NEP} is not agreed upon, \cite{Richards}. 
 %\textcolor{red}{who says this? richards. and he says van vliet and mather do one thing and pike and lamarre do other things. can I just reference richards? or do I have to refer to all these other folks?}
 This disagreement is encapsulated in the factor of $\xi$ which is multiplied by the noise one would have in the case of complete correlation.
 $\xi$ can take on a value between zero (no correlation) and one (completely correlated).
-There is no correlation when the "beam is produced by an incoherent source and is uniformly distributed over the beam throughput, which is large with respect to the etendue of coherence $\nu^{2}/c^{2}$" \cite{Lamarre}.
-There is complete correlation in the case of telescopes "observing sources with angular diameters much smaller than the diffraction pattern" \cite{Lamarre}. 
-\ac{EBEX} is a telescope observing the \ac{CMB}, which is a uniform source across the sky which occupies a large number of etendues of coherence. 
-So, Lamarre would argue, $\xi$ should be zero?
-But. We have a diffraction limited beam where our throughput is exactly $A\Omega = \lambda^{2}$. That is, we are observing a uniformly distributed, incoherent source, BUT our beam throughput $\lambda^{2}$ is NOT large with respect to the etendue of coherence $\nu^{2}/c^{2}$. 
-\textcolor{red}{What is the argument for keeping this second photon noise term?? It seems both derivations tell me we shouldn't include it for \ac{EBEX}???}
+Lamarre writes, the photon correlation factor when the "beam is produced by an incoherent source and is uniformly distributed over the beam throughput, which is large with respect to the etendue of coherence $\nu^{2}/c^{2}$" is completely different than the photon correlation factor in the case of telescopes "observing sources with angular diameters much smaller than the diffraction pattern" \cite{Lamarre}. 
+While our source, the \ac{CMB}, is incoherent and uniformly distributed over the beam throughput, the beam throughput is equal to (so not large with respect to) the etendue of coherence. 
+It is not clear what the true value of $\xi$ should be for \ac{EBEX}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
