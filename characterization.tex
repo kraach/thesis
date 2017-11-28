@@ -295,7 +295,12 @@ This value of $G$, however, needs to be sufficiently high to allow for the detec
 The dark test cryostat measurements of $G$ allowed us to predict the phonon \ac{NEP} for each detector and also determine if there would be sufficient dynamic range to operate the detectors under the expected loading conditions. 
 
 In practice, we measured the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
-Then, knowing the bath temperature, the bolometer temperature, and the power of thermal conductivity, we used \textcolor{red}{EquationThatDoesn'tExistYet} to relate our measurement of $\overline G$ to $G$. 
+Then, assuming the thermal conductivity was of the form of a power law and knowing the bath temperature, the bolometer temperature, and the power of thermal conductivity, we related our measurement of $\overline G$ to $G$ via \cite{Lee1998}
+\begin{equation}
+G = (n + 1) \frac{1-\frac{T_{bath}}{T}}{1-\left(\frac{T_{bath}}{T}\right)^{n+1}} \overline{G}
+\end{equation}
+where $n$ was the power of the thermal conductivity, $T$ was the bolometer temperature, and $T_{bath}$ was the bath temperature. 
+%SURE WOULD BE NICE IF YOU COULD RE-DERIVE THIS
 In order to measure $\overline G$, we performed an IV curve for each bolometer.
 That is, we stepped down the voltage bias, typically in steps of 0.05~$\mu V$, and measured the current through the bolometer. 
 At each step, the instantaneous resistance, the ratio of the voltage bias to the current measured, was calculated, Figure~\ref{fig:bolo_rv_curve}. 
