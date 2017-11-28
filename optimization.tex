@@ -130,18 +130,8 @@ at 370 mK. Applied Optics, 37:3391Ð3397, June 1998.
 }
 
 
-\textcolor{red}{THIS TEXT IS SEARCHING FOR A PLACE TO BELONG!
-%\textcolor{red}{is the following not relevant to the noise derivation?}
-%Typical materials at low temperatures have a thermal conductance of the form of a power law, $\kappa = \kappa_o T^n$, where \cite{Mather1982}. 
-If the phonon transport is diffusive, as opposed to ballistic (where the mean free path of the phonon is much longer than the length of the material in the direction of travel), then the thermal conductivity should follow a power law, 
-\begin{equation}
-\kappa \left( T \right) = \kappa_0 T^n
-\end{equation}
-where n is the power of the thermal conductivity. 
-Normal metals have $n=1$ while crystalline dielectrics or superconductors have $n=3$ \cite{Mather1982}. 
-The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410~GHz bands respectively \cite{Hubmayr2009}.
+
 %\textcolor{red}{derive it? that's what I want you to do ... at the very least, spell out how it's done. barfing equations on paper isn't my style.}
-}
 
 %\textcolor{red}{Does it make sense to talk about the four sources first and then provide the expression for total NEP? Or to first provide the expression and then derive/talk about each source? It doesn't matter! Just do one!}
 
@@ -229,6 +219,7 @@ where $k_{B}$ is Boltzmann's constant, $T$ is the temperature of the \ac{TES}, a
  $\gamma$ is a unitless number between zero and one which describes the temperature gradient along the thermal link from the \ac{TES} to the bath  
 \begin{equation}
 \gamma \equiv \frac{\int_{T_{bath}}^{T} \left( \frac{t\kappa(t)}{T\kappa(T)}\right)^2 dt}{\int_{T_{bath}}^{T} \frac{\kappa(t)}{\kappa(T)} dt} 
+\label{eq:phonon_nep}
 \end{equation}
 where $\kappa$ is the thermal conductivity, $T$ is the bolometer temperature, and $T_{bath}$ is the bath temperature \cite{Mather1982}. 
 When we assume $\kappa(T) = \kappa_0 T^n$ and also assume the bolometer temperature $T$ is equal to its critical temperature $T_c$, then

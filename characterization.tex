@@ -249,55 +249,46 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 %TOWARDS THERMAL CONDUCTANCES 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{Are you going to include the Psat versus Tbath curves, for e.g. 150-02? They fit poorly to  $P = (a/l*kappa_{o})/(n+1)*[T_{c}^{n+1} - T_{o}^{n+1}]$. The fits don't look good on the plots and the uncertainty (presumably a standard deviation) on the fit is larger than the values.}
+
 
 %\textcolor{red}{will you have already discussed \ac{NEP}? Yes. In 2.1. Bolometer Theory. in particular, phonon noise. for now point to eqtn in measured noise section.}
 
-\textcolor{red}{you need to be clear that you are using noise and \ac{NEP} interchangeably. NO. They are not interchangeable. Stop using them as if they were.}
+%\textcolor{red}{you need to be clear that you are using noise and \ac{NEP} interchangeably. NO. They are not interchangeable. Stop using them as if they were.}
 
-\textcolor{red}{Address: Why do we need to know the thermal conductance? i.e. Why do we care? When we talked about targets, we already should have talked about including a safety factor? And what set that target? maybe all of these words need to be moved to the bolometer theory section?}
+%\textcolor{red}{Address: Why do we need to know the thermal conductance? i.e. Why do we care? When we talked about targets, we already should have talked about including a safety factor? And what set that target? maybe all of these words need to be moved to the bolometer theory section?}
 % too vague. The thermal conductance of the thermal link from the TES to the bath governs the bolometer sensitivity. 
 
-\textcolor{red}{Doesn't it make sense to expand on the sources of radiative load? and instead of saying expected load, say exactly what the expected load was?}
-
-\textcolor{red}{ What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
-
-\textcolor{red}{What have we learned from the thermal conductance measurements? How did we (attempt to) modify detector fabrication given our measurements?}
-
-\textcolor{red}{You need to say what bath temperature these average thermal conductances are quoted at and how you got them.}
+%\textcolor{red}{In bolometer theory, you need to have already explained electrothermal feedback.}
 
 \textcolor{red}{How do we measure the thermal conductance? (Be sure you explain how we get from IV to PV and how we extract $P_{electrical}$ and how wrong we might be about this number.)}
 
-\textcolor{red}{Talk about dropping one bolometer at a time versus dropping the entire comb? i.e. talk about cross-talk? and how it's more dramatic when overbiased because the signal you're supplying is stronger?}
-
-\textcolor{red}{Talk about why it's not correct to do the ratio of vbias/imeasured and call that R? what uncertainty does this introduce?}
-
-\textcolor{red}{Talk about the stray impedance effect you modeled. also, trevor lanting talked about this? in the case of a well-behaved bolometer with small stray impedance, \cite{Lanting2006} \textcolor{red}{fix citation}}
-
-\textcolor{red}{In bolometer theory, you need to have already explained electrothermal feedback.}
+\textcolor{red}{You need to say what bath temperature these average thermal conductances are quoted at and how you got them.}
+\textcolor{red}{Are you going to include the Psat versus Tbath curves, for e.g. 150-02? They fit poorly to  $P = (a/l*kappa_{o})/(n+1)*[T_{c}^{n+1} - T_{o}^{n+1}]$. The fits don't look good on the plots and the uncertainty (presumably a standard deviation) on the fit is larger than the values.}
 
 \textcolor{red}{Discuss results. What are the major uncertainties in this measurement? Talk about how deep you drop and how you define depth in transition. (will address noise as function of depth in transition in dark noise section).}
-
-\textcolor{red}{Do you want to include double transition iv curve? e.g. /data/ebex3/systems/nigel/data/2010/nigel.backup.data/07/30/boloIV.340mK/plots/250-01-02.IV.201007301208.png}
-
-
-\textcolor{red}{are you going to comment on how the resistance measured for this bolo (2.9 $\Omega$) compares to the resistance measured via the network analysis? put that information in a loopgain section instead?.}
-
-\textcolor{red}{are you going to comment on WHY the fit gives a non-zero current offset?}
-
-\textcolor{red}{You need to talk about going from average thermal conductance to dynamic thermal conductance ... does that belong here? no, I think it'd be better in bolometer theory or in the measured noise section. and it'll be fine if you also move the top paragraph out.}
-
- \textcolor{red}{I wish you could find or rewrite the code to make the bolo.iv.curve figures - the pW are in square brackets and all the others in parenthesis. and the axis labels are smaller than I want them to be.}
-
-
 \textcolor{red}{Use this R vs V curve to help explain how deep in the transition the detectors are dropped. point out why it isn't the greatest way. Also, point out that R at high values of $V_{bias}$ still has some slope (how much slope?), so it's not obvious where to define $R_{normal}$. }
+\textcolor{red}{Mention voltage bias is kind of a proxy for temperature? i.e. R vs V is effectively an R vs T curve where we don't have a calibration for the x-axis?}
+\textcolor{red}{are you going to comment on how the resistance measured for this bolo (2.9 $\Omega$) compares to the resistance measured via the network analysis? put that information in a loopgain section instead?.}
+\textcolor{red}{Talk about why it's not correct to do the ratio of vbias/imeasured and call that R? what uncertainty does this introduce?}
+
+\textcolor{red}{You need to talk about going from average thermal conductance to dynamic thermal conductance ... does that belong here? no, I think it'd be better in bolometer theory or in the measured noise section. and it'll be fine if you also move the top paragraph out.} 
+%Step one: introduce each one (in bolometer theory)
+%step two: provide equation relating the two. 
 
 \textcolor{red}{You need to comment on the $\overline{G}$ distribution shapes and consequences of overshooting, e.g. for 410~GHz.}
+\textcolor{red}{What have we learned from the thermal conductance measurements? How did we (attempt to) modify detector fabrication given our measurements?}
 
-\textcolor{red}{Mention voltage bias is kind of a proxy for temperature? i.e. R vs V is effectively an R vs T curve where we don't have a calibration for the x-axis?}
+
+%WOULD BE NICE TO HAVES
+\textcolor{red}{Talk about the stray impedance effect you modeled. also, trevor lanting talked about this? in the case of a well-behaved bolometer with small stray impedance, \cite{Lanting2006}  }\textcolor{red}{I wish you could find or rewrite the code to make the bolo.iv.curve figures - the pW are in square brackets and all the others in parenthesis. and the axis labels are smaller than I want them to be.}
+\textcolor{red}{are you going to comment on WHY the fit gives a non-zero current offset?}
+\textcolor{red}{Do you want to include double transition iv curve? e.g. /data/ebex3/systems/nigel/data/2010/nigel.backup.data/07/30/boloIV.340mK/plots/250-01-02.IV.201007301208.png}
+\textcolor{red}{Talk about dropping one bolometer at a time versus dropping the entire comb? i.e. talk about cross-talk? and how it's more dramatic when overbiased because the signal you're supplying is stronger?}
+\textcolor{red}{ What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
+\textcolor{red}{Doesn't it make sense to expand on the sources of radiative load? and instead of saying expected load, say exactly what the expected load was?}
 
 The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath. %, Figure~\ref{fig:bolometer_cartoon}.
-In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:nep}. 
+In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:phonon_nep}. 
 We want to minimize $G$ so that we minimize the detector \ac{NEP} and thus maximize the detector sensitivity. 
 This value of $G$, however, needs to be sufficiently high to allow for the detectors to operate in the presence of the radiative load at float, Section~\ref{sec:detector_design}. 
 %as well as any fluctuations in load %fluctuations are a problem for ground-based expt's, not us
@@ -324,8 +315,9 @@ The value used in flight was higher than the nominal lab value because in the te
 
 
 Example IV and PV curves from one detector on wafer 150-01 are shown in Figure~\ref{fig:bolo_iv_curve}.
-Above the superconducting transition, at higher voltage biases, the AlTi bilayer of the \ac{TES} was normal and so the current was proportional to $1 / R$. 
-Fitting the normal region for this particular detector gave a resistance of 2.9 $\Omega$. 
+Above the superconducting transition, at higher voltage biases, the AlTi bilayer of the \ac{TES} was normal and so the current was proportional to $1/R$. 
+Fitting the normal region for this particular detector gave a resistance of 2.9 $\Omega$.
+Note this resistance value was XXX higher than the value found from the network analysis. 
 As the bilayer began to superconduct, the resistance dropped and the current measured turned around with a characteristic smooth checkmark shape. 
 Once the bolometer was sufficiently far into the superconducting transition, electro-thermal feedback caused the power dissipated in the bolometer to remain fixed, Section~\ref{sec:tes_bolometer}.
 When we plot the power dissipated in the bolometer ($I \times V$), the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
@@ -389,9 +381,24 @@ The average thermal conductance of the weak link was calculated from the saturat
 \begin{equation}
 \overline{G}(T_{bath}) = \frac{P_{sat}(T_{bath})}{T_{c} - T_{bath}}
 \end{equation}
-Histograms summarizing the measured average thermal conductance values for the three \ac{EBEX} frequency bands are shown in Figure~\ref{fig:G_Histograms}.
+The average thermal conductance is a function of the bath temperature and the test cryostats operated at different bath temperature than \ac{EBEX}. 
+In order to calculate $\overline{G}$ for \ac{EBEX}, we assume XXX. 
+If the phonon transport is diffusive, as opposed to ballistic (where the mean free path of the phonon is much longer than the length of the material in the direction of travel), then the thermal conductivity should follow a power law, 
+\begin{equation}
+\kappa \left( T \right) = \kappa_0 T^n
+\end{equation}
+where n is the power of the thermal conductivity. 
+Normal metals have $n=1$ while crystalline dielectrics or superconductors have $n=3$ \cite{Mather1982}. 
+The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410~GHz bands respectively \cite{Hubmayr2009}.
+Then the thermal conductance at the \ac{EBEX} bath temperature, $T_{EBEX}$, is found via
+\begin{equation}
+G \left( T_{EBEX} \right) = something
+\end{equation}
+%Mention the two focal planes had different temperatures??
+
+Histograms summarizing the measured average thermal conductance values, corrected to the \ac{EBEX} bath temperatures, for the three observation frequency bands are shown in Figure~\ref{fig:G_Histograms}.
 We found the median average thermal conductance, $\overline{G}$, for the 150, 250, and 410 GHz bands to be 36, 51, and 69~pW/K respectively. 
-The target values for the average thermal conductances were set by the radiative loading in the balloon environment, Section~\ref{sec:detector_optimization}, and were 30, 40, and 50~$pW/K$ for the 150, 250, and 410~GHz bands respectively. 
+The target values for the average thermal conductances were set by the radiative loading in the balloon environment, Section~\ref{sec:detector_design}, and were 30, 40, and 50~$pW/K$ for the 150, 250, and 410~GHz bands respectively. 
 The goal was to err on the higher side of the target and take the hit in phonon noise rather than risk rendering the detectors inoperable because of too little thermal conductance for the radiative load. 
 
 \begin{figure}[ht!]
