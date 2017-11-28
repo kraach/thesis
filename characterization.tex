@@ -301,8 +301,9 @@ G = (n + 1) \frac{1-\frac{T_{bath}}{T}}{1-\left(\frac{T_{bath}}{T}\right)^{n+1}}
 \end{equation}
 where $n$ was the power of the thermal conductivity, $T$ was the bolometer temperature, and $T_{bath}$ was the bath temperature. 
 %SURE WOULD BE NICE IF YOU COULD RE-DERIVE THIS
+
 In order to measure $\overline G$, we performed an IV curve for each bolometer.
-That is, we stepped down the voltage bias, typically in steps of 0.05~$\mu V$, and measured the current through the bolometer. 
+That is, we stepped down the voltage bias, typically in steps of 0.05~$\mu V$, and measured the current through the \ac{TES}. 
 At each step, the instantaneous resistance, the ratio of the voltage bias to the current measured, was calculated, Figure~\ref{fig:bolo_rv_curve}. 
 The bias voltage of each bolometer was dropped until the ratio of the voltage bias to the current measured reached a fixed fraction of its original value.
 In the test cryostats, the fraction was typically 0.7. 
@@ -324,54 +325,60 @@ Above the superconducting transition, at higher voltage biases, the AlTi bilayer
 Fitting the normal region for this particular detector gave a resistance of 2.9 $\Omega$.
 Note this resistance value was XXX higher than the value found from the network analysis. 
 As the bilayer began to superconduct, the resistance dropped and the current measured turned around with a characteristic smooth checkmark shape. 
-Once the bolometer was sufficiently far into the superconducting transition, electro-thermal feedback caused the power dissipated in the bolometer to remain fixed, Section~\ref{sec:tes_bolometer}.
+Once the bolometer was sufficiently far into the superconducting transition, negative electro-thermal feedback kept the power dissipated in the bolometer at a fixed level, Section~\ref{sec:tes_bolometer}.
 When we plot the power dissipated in the bolometer ($I \times V$), the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.99\columnwidth]{figures/IV_201007301208.png} 
-\caption{Left: The current through the \ac{SQUID} as function of the voltage bias across the bolometer. Right: The electrical power dissipated in the bolometer ($I / V$) as a function of the voltage bias across the bolometer.
+\caption{Left: The current through the \ac{SQUID} as function of the voltage bias across the bolometer. Right: The electrical power dissipated in the bolometer ($I \times V$) as a function of the voltage bias across the bolometer.
 \label{fig:bolo_iv_curve} }
 \end{center}
 \end{figure}
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.99\columnwidth]{figures/b53w0c0_IV_201011080952.png} 
-\caption{Consider using this bolo's iv curve instead because it was dropped deeper in the transition.
-\label{fig:other_bolo_iv_curve} }
-\end{center}
-\end{figure}
+% RETURN TO THIS IF YOU HAVE TIME. 
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=0.99\columnwidth]{figures/b53w0c0_IV_201011080952.png} 
+%\caption{Consider using this bolo's iv curve instead because it was dropped deeper in the transition.
+%\label{fig:other_bolo_iv_curve} }
+%\end{center}
+%\end{figure}
 
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[height=2.5in]{figures/150-02_b53w0c0_messingwithX.png} 
-\caption{Simulating stray impedance.
-\label{fig:stray_impedance_curve} }
-\end{center}
-\end{figure}
 
-This is 150-02 b53w0c0 dropped to 60\% $R_{initial}$ using the IV algorithm which nulled at each voltage step and measured the current required to null the detector timestream.
-The green line is the naive calculation of power: P = I*V.
-The other lines include a stray imaginary impedance: $P = I^2*R, R = sqrt[(V/I)^2 - Rx^2]$
-teal has Rx = 0.2
-pink has Rx = 0.3
-blue has Rx = 0.33
-red has Rx = 0.4
-From this data, because we know the power dissipated in the bolometer deep in the transition is constant, we would conclude Rx ~ 0.3j ohms.
-This corresponds to a stray inductance of Lx ~ 110 nH. (used ZL = i*omega*L, and $\nu_{res} \approx 430~kHz$)
-For b53w0c0 at 60\% in the transition, Rbolo ~ 1.0 ohms. (calculated letting Rx = 0.3)
-The responsivity factor $sqrt[(1+eta^2)]/(1-eta^2) ~ 1.15$.
-A 15\% increase in the responsivity is not enough to explain the factor of 2.5 between the measured and predicted noise for b53w0c0 at 60\% in the transition.
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[height=2.5in]{figures/b53w0c0_IV_latched.png} 
-\caption{Measure of resistance while bolometer is superconducting. This channel has $R_{x} = 0.08 \Omega$ and we typically find $R_{x} \sim 0.1 \Omega$. Is this even a legitimate method to get stray impedance??? Are you measuring $R_{x}$? $Z_{x}$? Nothing of the sort?
-\label{fig:latched_iv_curve} }
-\end{center}
-\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%RETURN TO THIS SECTION ON STRAY IMPEDANCE IF YOU HAVE TIME
+%This is 150-02 b53w0c0 dropped to 60\% $R_{initial}$ using the IV algorithm which nulled at each voltage step and measured the current required to null the detector timestream.
+%The green line is the naive calculation of power: P = I*V.
+%The other lines include a stray imaginary impedance: $P = I^2*R, R = sqrt[(V/I)^2 - Rx^2]$
+%teal has Rx = 0.2
+%pink has Rx = 0.3
+%blue has Rx = 0.33
+%red has Rx = 0.4
+%From this data, because we know the power dissipated in the bolometer deep in the transition is constant, we would conclude Rx ~ 0.3j ohms.
+%This corresponds to a stray inductance of Lx ~ 110 nH. (used ZL = i*omega*L, and $\nu_{res} \approx 430~kHz$)
+%For b53w0c0 at 60\% in the transition, Rbolo ~ 1.0 ohms. (calculated letting Rx = 0.3)
+%The responsivity factor $sqrt[(1+eta^2)]/(1-eta^2) ~ 1.15$.
+%A 15\% increase in the responsivity is not enough to explain the factor of 2.5 between the measured and predicted noise for b53w0c0 at 60\% in the transition.
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[height=2.5in]{figures/150-02_b53w0c0_messingwithX.png} 
+%\caption{Simulating stray impedance.
+%\label{fig:stray_impedance_curve} }
+%\end{center}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[height=2.5in]{figures/b53w0c0_IV_latched.png} 
+%\caption{Measure of resistance while bolometer is superconducting. This channel has $R_{x} = 0.08 \Omega$ and we typically find $R_{x} \sim 0.1 \Omega$. Is this even a legitimate method to get stray impedance??? Are you measuring $R_{x}$? $Z_{x}$? Nothing of the sort?
+%\label{fig:latched_iv_curve} }
+%\end{center}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 

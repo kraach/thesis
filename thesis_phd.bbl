@@ -27,12 +27,6 @@ J~C Mather.
 \newblock {Bolometer noise: nonequilibrium theory}.
 \newblock {\em Applied Optics}, 21(6):1125--1129, 1982.
 
-\bibitem{Hubmayr2009}
-Johannes Hubmayr.
-\newblock {\em {Bolometric detectors for EBEX : a balloon-borne cosmic
-  microwave background polarimeter}}.
-\newblock PhD thesis, University of Minnesota, 2009.
-
 \bibitem{PhysRev.32.97}
 J.~B. Johnson.
 \newblock Thermal agitation of electricity in conductors.
@@ -69,11 +63,24 @@ M.~A. Dobbs, M.~Lueker, K.~A. Aird, A.~N. Bender, B.~A. Benson, L.~E. Bleem,
   Cosmic Microwave Background Measurements}.
 \newblock {\em Review of Scientific Instruments}, page~28, December 2011.
 
+\bibitem{Hubmayr2009}
+Johannes Hubmayr.
+\newblock {\em {Bolometric detectors for EBEX : a balloon-borne cosmic
+  microwave background polarimeter}}.
+\newblock PhD thesis, University of Minnesota, 2009.
+
 \bibitem{Lanting2006}
 Trevor~Michael Lanting.
 \newblock {\em {Multiplexed Readout of Superconducting Bolometers for
   Cosmological Observations}}.
 \newblock PhD thesis, Berkeley, 2006.
+
+\bibitem{Lee1998}
+Shih-fu Lee, Jan~M Gildemeister, Warren Holmes, Adrian~T Lee, and Paul~L
+  Richards.
+\newblock {Voltage-biased superconducting transition-edge bolometer with strong
+  electrothermal feedback operated at 370 mK}.
+\newblock {\em Applied optics}, 37(16):3391--3397, 1998.
 
 \bibitem{Peterson1984a}
 J.~B. Peterson and P.~L. Richards.
