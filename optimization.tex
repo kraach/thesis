@@ -28,8 +28,19 @@ We modified the design, described in Section~\ref{sec:detector_design}, in order
 A bolometer, first invented by Langley in the late 1800s, is an absorber with some heat capacity weakly thermally coupled to a bath \cite{langley}.
 %S. P. Langley. BOLOMETER. New York, The Society, 1880.
 Figure~\ref{fig:bolometer_cartoon} is a schematic of a bolometer. 
+The dynamic thermal conductance of the weak link is 
+\begin{equation}
+G \equiv \frac{dP}{dT}
+\end{equation}
+and is a function of position along the link. 
+The steady state power flow from the absorber to the bath, $P$ is described by
+\begin{equation}
+P = \overline G \Delta T
+\end{equation}
+where $\overline G$ is the average thermal conductance along the weak link and $\Delta T$ is the difference between the absorber and bath temperatures. 
 Bolometers absorb power from radiation and measure the resultant change in temperature. 
 The heat capacitive element absorbs the radiation and the change in temperature is measured with a thermistor. 
+The power 
 
 \begin{figure}[htp]
 \begin{center}
@@ -57,6 +68,8 @@ The \ac{TES} is called such because it is a sensor operated on the edge of its s
 \end{center}
 \end{figure}
 
+
+\subsubsection{Negative Electrothermal Feedback}
 %\textcolor{red}{Describe negative electrothermal feedback.}
 
 %\textcolor{red}{For a moment here, just put down some words describing how it works. You can and will return to make it more technical and correct.}
@@ -68,7 +81,7 @@ The total power is the sum of the electrical power dissipated, $P_{elec}$, and t
 P_{total}\left(T\right) = P_{elec}\left(T\right) + P_{rad} = \frac{V^{2}_{bias}}{R\left(T\right)} + P_{rad}
 \end{equation}
 where $T$ is the bolometer temperature. 
-To understand what happens to the bolometer when its temperature changes by a small amount, we take the derivative of the power with respect to temperature, 
+To understand what happens to the power dissipated in the bolometer when its temperature changes by a small amount, we take the derivative of the power with respect to temperature, 
 \begin{equation}
 \begin{split}
 \frac{dP_{total}}{dT} & = \frac{dP_{elec}\left(T\right)}{dT} + \cancel{\frac{dP_{rad}}{dT}} = \frac{-V^{2}_{bias}}{R^2} \frac{dR}{dT} \\
@@ -90,15 +103,20 @@ This change in temperature moves the detector up (down) its R vs T curve.
 In response to the increase (decrease) in resistance, the Joule heating decreases (increases) and the detector cools (warms). 
 For small changes in temperature, this feedback holds the detector on the edge of the transition. 
 The voltage bias is constant and so the excursions in resistance change the current through the detector and this is what we measure. 
-For flight, we calibrated on a known source in the sky to determine how much the current measured changed given a known amount of power from the sky.   
+%For flight, we calibrated on a known source in the sky to determine how much the current measured changed given a known amount of power from the sky.   %NOT RELEVANT
 
 %\textcolor{red}{You need to include the math to describe negative electrothermal feedback more accurately. And then reference that stuff!}
 
+\subsubsection{Responsivity}
+
+mathematical description of a small incident signal. i.e. poptical = psteady + ptimevarying
+
+
 \textcolor{red}{What are the other essential pieces to explaining how a bolometer works?
+Responsivity. i.e. 
+Dynamic Range?
 you've touched on power flow and negative electrothermal feedback. 
 we haven't touched on how power depends on bath temperature and n.
-or done a more thorough mathematical description of a small incident signal? i.e. poptical = psteady + ptimevarying
-what about responsonsivity? 
 dynamic range? 
 bandwidth? 
 "We quantify the dynamic range, responsivity, sensitivity, and bandwidth of a TES
@@ -303,6 +321,8 @@ The left edge of the bilayer overlapped the bling, right panel of Figure~\ref{fi
 
 \subsubsection{Ideal Normal Resistance} 
 The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
+Also. We needed cross-talk to be less than XXX. 
+A resistance of XXX gives a crosstalk of XXX. 
 %THIS HAS NOTHING TO DO WITH A SPACE-LIKE ENVIRONMENT, but it does have to do with optimization of multiplexing! and so it's relevant. 
 %You wrote about this somewhere else, no? where???
 %DO YOU WANT TO INCLUDE MORE DETAILS ABOUT THE CROSS-TALK CALCULATION? PROBABLY? 
