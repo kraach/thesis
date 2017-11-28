@@ -28,19 +28,22 @@ We modified the design, described in Section~\ref{sec:detector_design}, in order
 A bolometer, first invented by Langley in the late 1800s, is an absorber with some heat capacity weakly thermally coupled to a bath \cite{langley}.
 %S. P. Langley. BOLOMETER. New York, The Society, 1880.
 Figure~\ref{fig:bolometer_cartoon} is a schematic of a bolometer. 
+Bolometers absorb power from radiation, via the heat capacitive element, and measure the resultant change in temperature with a thermistor. 
+The bolometer's steady state power flow, $P$, from the absorber to the bath is described by
+\begin{equation}
+P = \overline G \Delta T
+\end{equation}
+where $\overline G$ is the average thermal conductance along the weak link and $\Delta T$ is the difference between the absorber and bath temperatures. 
 The dynamic thermal conductance of the weak link is 
 \begin{equation}
 G \equiv \frac{dP}{dT}
 \end{equation}
 and is a function of position along the link. 
-The steady state power flow from the absorber to the bath, $P$ is described by
+When additional power is deposited on the bolometer and absorbed, the temperature of the heat capacitive element increases and then the absorbed power dissipates to the bath via the link with a characteristic time constant of 
 \begin{equation}
-P = \overline G \Delta T
+\tau = \frac{C}{G}
 \end{equation}
-where $\overline G$ is the average thermal conductance along the weak link and $\Delta T$ is the difference between the absorber and bath temperatures. 
-Bolometers absorb power from radiation and measure the resultant change in temperature. 
-The heat capacitive element absorbs the radiation and the change in temperature is measured with a thermistor. 
-The power 
+
 
 \begin{figure}[htp]
 \begin{center}
