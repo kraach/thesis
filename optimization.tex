@@ -73,18 +73,38 @@ The \ac{TES} is called such because it is a sensor operated on the edge of its s
 \end{figure}
 
 
-\subsubsection{Negative Electrothermal Feedback}
+%\subsubsection{Negative Electrothermal Feedback}
 %\textcolor{red}{Describe negative electrothermal feedback.}
 
 %\textcolor{red}{For a moment here, just put down some words describing how it works. You can and will return to make it more technical and correct.}
 To operate the detector, a voltage bias, $V_{bias}$, is applied across the \ac{TES}. 
 The voltage bias provides Joule heating of $P_{elec} = V^{2}_{bias}/{R}$, where $R$ is the resistance of the \ac{TES}.
-In steady-state, there is a constant power flow from the detector to the bath. 
-The total power is the sum of the electrical power dissipated, $P_{elec}$, and the radiative power absorbed, $P_{rad}$,
+In practice, the radiative signal on the detector consists of a steady-state power $P_{0}$ and a time-varying signal of amplitude $\delta P$ and frequency $\omega$
 \begin{equation}
-P_{total}\left(T\right) = P_{elec}\left(T\right) + P_{rad} = \frac{V^{2}_{bias}}{R\left(T\right)} + P_{rad}
+P_{rad} = P_{0} + \delta P e^{i\omega t}
 \end{equation}
-where $T$ is the bolometer temperature. 
+The bolometer temperature is then also a function of time
+\begin{equation}
+T = T_{0} + \delta T e^{i\omega t}
+\end{equation}
+The total power in is the sum of the electrical power dissipated, $P_{elec}$ (including the change in electrical power due to the change in detector temperature), and the radiative power absorbed, $P_{rad}$,
+\begin{equation}
+P_{in}\left(T\right) = P_{elec}\left(T\right) + P_{rad} = \frac{V^{2}_{bias}}{R\left(T\right)} - \frac{V_{bias}^2}{R\left(T\right)^2} \frac{dR}{dT} \delta T e^{i\omega t} + P_{0} + \delta P e^{i\omega t} 
+\label{eq:pin}
+\end{equation}
+The total power out is the steady-state power to the bath plus the time-varying power to the bath plus the power stored in the heat capacity
+\begin{equation}
+P_{out}\left(T\right) = \overline{G}\Delta T + G \delta T e^{i\omega t} + i\omega C \delta T e^{i\omega t}
+\label{eq:pout}
+\end{equation}
+Conservation of power equates equation~\ref{eq:pin} and equation~\ref{eq:pout}. 
+
+
+
+
+
+In steady-state, there is a constant power flow from the detector to the bath. 
+
 To understand what happens to the power dissipated in the bolometer when its temperature changes by a small amount, we take the derivative of the power with respect to temperature, 
 \begin{equation}
 \begin{split}
@@ -113,22 +133,29 @@ The voltage bias is constant and so the excursions in resistance change the curr
 
 \subsubsection{Responsivity}
 
-mathematical description of a small incident signal. i.e. poptical = psteady + ptimevarying
+The total power in is the radiative power plus the electrical bias power plus the electrical power change due to the bolometer temperature change.
+The total power out is the steady-state power to the bath plus the time-varying power to the bath plus the power stored in the heat capacity. 
+The total power flow is \cite{Lee1998}
+\begin{equation}
+P + \delta P e^{i\omega t} + \frac{V_{bias}^2}{R} - \frac{V_{bias}^2}{R^2} \frac{dR}{dT} \delta T e^{i\omega t} = \overline{G}\Delta T + G \delta T e^{i\omega t} + i\omega C \delta T e^{i\omega t}
+\end{equation}
 
 
-\textcolor{red}{What are the other essential pieces to explaining how a bolometer works?
-Responsivity. i.e. 
-Dynamic Range?
-you've touched on power flow and negative electrothermal feedback. 
-we haven't touched on how power depends on bath temperature and n.
-dynamic range? 
-bandwidth? 
-"We quantify the dynamic range, responsivity, sensitivity, and bandwidth of a TES
-bolometer by following [25]." lanting
-[25] S. Lee, J. M. Gildemeister, W. Holmes, A. T. Lee, and P. L. Richards. Voltage-Biased
-Superconducting Transition-Edge Bolometer with Strong Electrothermal Feedback Operated
-at 370 mK. Applied Optics, 37:3391Ð3397, June 1998.
-}
+
+%mathematical description of a small incident signal. i.e. poptical = psteady + ptimevarying
+%\textcolor{red}{What are the other essential pieces to explaining how a bolometer works?
+%Responsivity. i.e. 
+%Dynamic Range?
+%you've touched on power flow and negative electrothermal feedback. 
+%we haven't touched on how power depends on bath temperature and n.
+%dynamic range? 
+%bandwidth? 
+%"We quantify the dynamic range, responsivity, sensitivity, and bandwidth of a TES
+%bolometer by following [25]." lanting
+%[25] S. Lee, J. M. Gildemeister, W. Holmes, A. T. Lee, and P. L. Richards. Voltage-Biased
+%Superconducting Transition-Edge Bolometer with Strong Electrothermal Feedback Operated
+%at 370 mK. Applied Optics, 37:3391Ð3397, June 1998.
+%}
 
 
 

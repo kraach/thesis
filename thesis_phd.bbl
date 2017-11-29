@@ -22,6 +22,13 @@ M.~Tinkham.
 \newblock {\em Introduction to Superconductivity}.
 \newblock McGraw-Hill, NY, 2 edition, 1996.
 
+\bibitem{Lee1998}
+Shih-fu Lee, Jan~M Gildemeister, Warren Holmes, Adrian~T Lee, and Paul~L
+  Richards.
+\newblock {Voltage-biased superconducting transition-edge bolometer with strong
+  electrothermal feedback operated at 370 mK}.
+\newblock {\em Applied optics}, 37(16):3391--3397, 1998.
+
 \bibitem{Mather1982}
 J~C Mather.
 \newblock {Bolometer noise: nonequilibrium theory}.
@@ -74,13 +81,6 @@ Trevor~Michael Lanting.
 \newblock {\em {Multiplexed Readout of Superconducting Bolometers for
   Cosmological Observations}}.
 \newblock PhD thesis, Berkeley, 2006.
-
-\bibitem{Lee1998}
-Shih-fu Lee, Jan~M Gildemeister, Warren Holmes, Adrian~T Lee, and Paul~L
-  Richards.
-\newblock {Voltage-biased superconducting transition-edge bolometer with strong
-  electrothermal feedback operated at 370 mK}.
-\newblock {\em Applied optics}, 37(16):3391--3397, 1998.
 
 \bibitem{Peterson1984a}
 J.~B. Peterson and P.~L. Richards.
