@@ -157,11 +157,17 @@ The electrothermal feedback loopgain is the change in electrical power in respon
 \begin{equation}
 \mathscr{L} \left( \omega \right) = - \frac{\delta P_{elec}}{\delta P} = \frac{P_{elec} \alpha}{GT(1+i\omega \tau)} = \frac{\mathscr{L}}{1 + i \omega \tau}
 \end{equation}
-The DC value of the loopgain is $\mathscr{L} = \frac{P_{elec}\alpha}{GT}$ and it rolls off with a time constant of $\tau = C/G$.
+The DC value of the loopgain is 
+\begin{equation}
+\mathscr{L} = \frac{P_{elec}\alpha}{GT}
+\label{eq:dc_loopgain}
+\end{equation}
+and it rolls off with a time constant of $\tau = C/G$.
 The current responsivity of the detector is the change in current we measure for a given amount of radiative power absorbed
 \begin{equation}
 S_{I} \equiv \frac{\delta I}{\delta P} %= - \frac{1}{V_{bias}} \frac{\delta P_{elec}}{\delta P} 
-= - \frac{1}{V_{bias}} \frac{\mathscr{L}}{\mathscr{L}+1} \frac{1}{1+i\omega \tau_{eff}}
+= - \frac{1}{V_{bias}} \left( \frac{\mathscr{L}}{\mathscr{L}+1} \right) \left( \frac{1}{1+i\omega \tau_{eff}} \right)
+\label{eq:responsivity}
 \end{equation}
 where $\tau_{eff} = \tau/ ( 1 + \mathscr{L})$ is the effective time constant, sped up by electrothermal feedback. 
 
