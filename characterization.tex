@@ -415,7 +415,7 @@ Letting this equal equation~\ref{eq:gbar} and then taking the ratio of the power
 \overline{G} \left( T_{ebex} \right) = P_{sat, etc} \left( T_c - T_{ebex} \right) \frac{\left( T_c^{n+1} - T_{ebex}^{n+1} \right)}{\left( T_c^{n+1} - T_{etc}^{n+1} \right)}
 \end{equation}
 %\overline{G} \Delta T 
-where $P_{sat,etc}$ is the saturation power measured in the test cryostat, $T_c$ is the measured critical temperature, and n is the power of the thermal conductivity from the \ac{EBEX} test flight wafer measurements. 
+where $P_{sat,etc}$ is the saturation power measured in \ac{ETC}, $T_c$ is the measured critical temperature, and n is the power of the thermal conductivity from the \ac{EBEX} test flight wafer measurements. 
 For \ac{NEP} predictions, we assume the same power law form of the thermal conductivity and related our measurement of $\overline G$ to $G$ via \cite{Lee1998}
 \begin{equation}
 G = (n + 1) \frac{1-\frac{T_{bath}}{T}}{1-\left(\frac{T_{bath}}{T}\right)^{n+1}} \overline{G}
@@ -429,10 +429,19 @@ G = (n + 1) \frac{1-\frac{T_{bath}}{T}}{1-\left(\frac{T_{bath}}{T}\right)^{n+1}}
 %%SURE WOULD BE NICE IF YOU COULD RE-DERIVE THIS
 
 
-Histograms summarizing the measured average thermal conductance values, corrected to the \ac{EBEX} bath temperatures, for the three observation frequency bands are shown in Figure~\ref{fig:G_Histograms}.
+Histograms summarizing the measured average thermal conductance values, corrected to an \ac{EBEX} bath temperature of 0.25~K, for the three observation frequency bands are shown in Figure~\ref{fig:G_Histograms}.
 We found the median average thermal conductance, $\overline{G}$, for the 150, 250, and 410 GHz bands to be 36, 51, and 69~pW/K respectively. 
 The target values for the average thermal conductances were set by the radiative loading in the balloon environment, Section~\ref{sec:detector_design}, and were 30, 40, and 50~$pW/K$ for the 150, 250, and 410~GHz bands respectively. 
-The goal was to err on the higher side of the target and take the hit in phonon noise rather than risk rendering the detectors inoperable because of too little thermal conductance for the radiative load. 
+The goal was to err on the higher side of the target and take the moderate hit in phonon noise rather than risk rendering the detectors inoperable because of too little thermal conductance for the radiative load. 
+While the 
+measured medians are up to 40\% larger than the design values, the spread in the measurements is even larger. This spread is 
+a consequence of variance between wafers and is also apparent in the measurements of $T_{c}$. 
+A thermal conductance 40\% higher than the target, for a median 410~GHz detector, 
+increased the phonon \ac{NEP} by 12\% relative to the nominal value of 26~$aW/\sqrt{Hz}$. 
+% for histograms using only flight bolos, median was 69
+%17\% relative to the nominal value of 26~$aW/\sqrt{Hz}$.
+% for histograms using all ground characterization data, median is 63. so percent decreased. 
+
 
 \begin{figure}[ht!]
 \centering
@@ -454,44 +463,44 @@ We piled measurements of  $\overline{G}$ exceeding 150~pW/K into the last histog
 %Once the stage is at its base temperature, we measure the bolometer saturation powers. 
 
 
-FROM THE PAPER
-We determine the average thermal conductance of the bolometers using the relation
-\begin{equation}
- \overline{G}(T_{0}) = P_{sat}(T_0)/ (T_{c} - T_{0}),
-\label{eqn:gbar}
-\end{equation}
-where $P_{sat}$ is the total power deposited in the detector, which is the power necessary to operate the \ac{TES} in the regime of strong electrothermal feedback in which the total power absorbed is constant.
-This power is commonly called the `saturation power' and it depends on the temperature of the bath
-\begin{equation}
-P_{sat}(T_{0}) = P_{e} (T_{0}) + P_{abs}. 
-\label{eqn:boloPowerFlow}
-\end{equation}
-Here $P_{e}$ is the electrical power absorbed in Joule heating and $P_{abs}$ is the radiative power absorbed.
-In dark conditions we assume that $P_{abs}$~=~0, and so $P_{sat}(T_{0})$~=~$P_{e,d}(T_{0})$ is 
-therefore a measurable quantity; we added the subscript $_{d}$ to $P_{e,d}$ to highlight that this is the electrical 
-power measured in dark conditions. 
+%FROM THE PAPER
+%We determine the average thermal conductance of the bolometers using the relation
+%\begin{equation}
+% \overline{G}(T_{0}) = P_{sat}(T_0)/ (T_{c} - T_{0}),
+%\label{eqn:gbar}
+%\end{equation}
+%where $P_{sat}$ is the total power deposited in the detector, which is the power necessary to operate the \ac{TES} in the regime of strong electrothermal feedback in which the total power absorbed is constant.
+%This power is commonly called the `saturation power' and it depends on the temperature of the bath
+%\begin{equation}
+%P_{sat}(T_{0}) = P_{e} (T_{0}) + P_{abs}. 
+%\label{eqn:boloPowerFlow}
+%\end{equation}
+%Here $P_{e}$ is the electrical power absorbed in Joule heating and $P_{abs}$ is the radiative power absorbed.
+%In dark conditions we assume that $P_{abs}$~=~0, and so $P_{sat}(T_{0})$~=~$P_{e,d}(T_{0})$ is 
+%therefore a measurable quantity; we added the subscript $_{d}$ to $P_{e,d}$ to highlight that this is the electrical 
+%power measured in dark conditions. 
 
-FROM THE PAPER
-Histograms summarizing the measured average thermal conductance values for the three \ac{EBEX} frequency bands are shown in 
-Figure~\ref{fig:G_Histograms}. The values of  $\overline{G}$ are given for the \ac{EBEX} bath temperature, $T_{0}$~=~0.25~K.
-The measurements were conducted in three different cryostats, each operating at 
-a different bath temperature $T_{0'}$. We corrected the measured values $\overline{G}(T_{0'})$ to $\overline{G}(T_{0})$ using 
-the scaling
-\begin{equation}
-P_{sat}(T_0) = \left( \frac{T^{n+1}-T_0^{n+1}}{T^{n+1}-T_{0'}^{n+1}} \right) P_{sat}(T_{0'}),
-\label{eqn:ScalePsat}
-\end{equation}
-which assumes that the thermal conductivity follows a power law $\kappa$~=~$\kappa_{0} T^{n}$; see Section~\ref{sec:optical_time_constant}. 
-
-FROM THE PAPER
-The design and median of measured values for the average thermal conductances are given in Table~\ref{tab:Design_Params}. While the 
-measured medians are up to 40\% larger than the design values, the spread in the measurements is even larger. This spread is 
-a consequence of variance between wafers and is also apparent in the measurements of $T_{c}$. 
-Higher thermal conductance increases phonon noise. For example, for a median 410~GHz detector, phonon noise increased by 
-% for histograms using only flight bolos, median was 69
-%17\% relative to the nominal value of 26~$aW/\sqrt{Hz}$.
-% for histograms using all ground characterization data, median is 63. so percent decreased. 
-12\% relative to the nominal value of 26~$aW/\sqrt{\mathrm{Hz}}$. 
+%FROM THE PAPER
+%Histograms summarizing the measured average thermal conductance values for the three \ac{EBEX} frequency bands are shown in 
+%Figure~\ref{fig:G_Histograms}. The values of  $\overline{G}$ are given for the \ac{EBEX} bath temperature, $T_{0}$~=~0.25~K.
+%The measurements were conducted in three different cryostats, each operating at 
+%a different bath temperature $T_{0'}$. We corrected the measured values $\overline{G}(T_{0'})$ to $\overline{G}(T_{0})$ using 
+%the scaling
+%\begin{equation}
+%P_{sat}(T_0) = \left( \frac{T^{n+1}-T_0^{n+1}}{T^{n+1}-T_{0'}^{n+1}} \right) P_{sat}(T_{0'}),
+%\label{eqn:ScalePsat}
+%\end{equation}
+%which assumes that the thermal conductivity follows a power law $\kappa$~=~$\kappa_{0} T^{n}$; see Section~\ref{sec:optical_time_constant}. 
+%
+%FROM THE PAPER
+%The design and median of measured values for the average thermal conductances are given in Table~\ref{tab:Design_Params}. While the 
+%measured medians are up to 40\% larger than the design values, the spread in the measurements is even larger. This spread is 
+%a consequence of variance between wafers and is also apparent in the measurements of $T_{c}$. 
+%Higher thermal conductance increases phonon noise. For example, for a median 410~GHz detector, phonon noise increased by 
+%% for histograms using only flight bolos, median was 69
+%%17\% relative to the nominal value of 26~$aW/\sqrt{Hz}$.
+%% for histograms using all ground characterization data, median is 63. so percent decreased. 
+%12\% relative to the nominal value of 26~$aW/\sqrt{\mathrm{Hz}}$. 
 
 
 
