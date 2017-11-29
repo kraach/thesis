@@ -522,16 +522,19 @@ We piled measurements of  $\overline{G}$ exceeding 150~pW/K into the last histog
 \textcolor{red}{I want you to comment on the abosprtivity/reflectivity of eccosorb cr-110 as a function of frequency!}
 
 In order to measure the optical efficiency of the \ac{EBEX} bolometers, the bolometers needed to observe a known, controllable radiative load.
-This radiative load was provided via a blackbody, a body absorbing all incident radiation falling upon it and reemitting . 
+This radiative load was provided via a blackbody, a body absorbing all incident radiation falling upon it. 
 The \ac{ETC} blackbody was inspired by the design of Peterson and Richards for calibrating IR photometers \cite{Peterson1984a}. 
 The blackbody itself was an inverted cone with an angle of 37$^{\circ}$, Figure~\ref{fig:blackbody_design}. 
 The blackbody was made by pouring castable Eccosorb CR-110 into a teflon mould and baking it.
-Eccosorb CR-110 reflects 30\% and refracts 70\% of radiation incident on its surface. %at XXX GHz.
-The refracted radiation is absorbed inside the cone. 
-The reflected radiation for the light ray with the outermost angle, the \ac{EBEX} 150~GHz detectors had a field of view of 20$^{\circ}$, still reflected off the Eccosorb surface four times.
+For mm-wave radiation incident on flat Eccosorb CR-110 at XXX~K, 30\% is reflected and 70\% refracted \cite{}.
+%Eccosorb CR-110 reflects 30\% and refracts 70\% of radiation incident on its surface. %at XXX GHz.
+The refracted radiation was absorbed inside the cone. 
+The reflected radiation for the light ray with the outermost angle, the one with the fewest bounces,  
+%(the \ac{EBEX} 150~GHz detectors had a field of view of 20$^{\circ}$) %already said in caption
+reflected off the Eccosorb surface four times.
 %, $0.3  4 = XXX$ absorptivity. 
 Fewer than 8 parts in 1000 of the incident radiation escaped the blackbody. 
-A steeper cone would have had greater absorptivity, but the height was limited by the cryostat dimensions. 
+A steeper cone would have had greater absorptivity, but the height was limited by the dimensions of the \ac{ETC}. 
 
 \begin{figure}[htp]
 \begin{center}
@@ -542,17 +545,22 @@ A steeper cone would have had greater absorptivity, but the height was limited b
 \end{figure}
 
 A model of the optical efficiency testbed is shown in Figure~\ref{fig:opt_eff_setup}. 
-The wafer box is supported by a thin (XXX) column of XXX. 
+The wafer box was supported by a thin (XXX) column of XXX. 
 With the cold plate at a temperature of 4.2~K, the leg put a heat load of XXX on the fridge. 
 The blackbody was supported by a thin column XXX. 
 For the hexagon of seven detectors open to the blackbody, the wafer box had a miniature optics stack of wave guides and horns, to provide the high pass cutoff, and Cardiff LPE filter scraps, for the low pass cutoff. 
 
 
+%ADD PICTURE IF YOU HAVE TIME
 \begin{figure}[htp]
 \begin{center}
-\includegraphics[width=0.48\columnwidth]{figures/optical_efficiency_setup.jpg}
-\includegraphics[width=0.48\columnwidth]{figures/hardware/opt_eff_setup_picture4.jpg}
-\caption{Left: The model of the optical efficiency testbed in \ac{ETC}. Right: \textcolor{red}{While it would be lovely to have a photograph of the setup, getting this to some understandable state is probably not something you have time for.}
+\includegraphics[height=2.5in]{figures/optical_efficiency_setup.jpg}
+%\includegraphics[width=0.48\columnwidth]{figures/hardware/opt_eff_setup_picture4.jpg}
+\caption{The model of the optical efficiency testbed in \ac{ETC}. 
+The blackbody is the partially transparent cone. 
+The grey box atop the brown leg encloses the wafer 
+The wafer box and blackbody are both mounted to the 4.2~K cold plate. 
+%Right: \textcolor{red}{While it would be lovely to have a photograph of the setup, getting this to some understandable state is probably not something you have time for.}
 \label{fig:opt_eff_setup} }
 \end{center}
 \end{figure}
