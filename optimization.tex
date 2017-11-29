@@ -31,7 +31,7 @@ Figure~\ref{fig:bolometer_cartoon} is a schematic of a bolometer.
 Bolometers absorb power from radiation, via the heat capacitive element, and measure the resultant change in temperature with a thermistor. 
 The bolometer's steady state power flow, $P$, from the absorber to the bath is described by
 \begin{equation}
-P = \overline G \Delta T
+P = \overline{G} \left(T - T_{bath} \right) = \overline G \Delta T
 \label{eq:gbar}
 \end{equation}
 where $\overline G$ is the average thermal conductance along the weak link and $\Delta T$ is the difference between the absorber and bath temperatures. 
@@ -73,43 +73,19 @@ The \ac{TES} is called such because it is a sensor operated on the edge of its s
 \end{figure}
 
 
-%\subsubsection{Negative Electrothermal Feedback}
+\subsubsection{Negative Electrothermal Feedback}
 %\textcolor{red}{Describe negative electrothermal feedback.}
 
 %\textcolor{red}{For a moment here, just put down some words describing how it works. You can and will return to make it more technical and correct.}
 To operate the detector, a voltage bias, $V_{bias}$, is applied across the \ac{TES}. 
 The voltage bias provides Joule heating of $P_{elec} = V^{2}_{bias}/{R}$, where $R$ is the resistance of the \ac{TES}.
-In practice, the radiative signal on the detector consists of a steady-state power $P_{0}$ and a time-varying signal of amplitude $\delta P$ and frequency $\omega$
-\begin{equation}
-P_{rad} = P_{0} + \delta P e^{i\omega t}
-\end{equation}
-The bolometer temperature is then also a function of time
-\begin{equation}
-T = T_{0} + \delta T e^{i\omega t}
-\end{equation}
-The total power in is the sum of the electrical power dissipated, $P_{elec}$ (including the change in electrical power due to the change in detector temperature), and the radiative power absorbed, $P_{rad}$,
-\begin{equation}
-P_{in}\left(T\right) = P_{elec}\left(T\right) + P_{rad} = \frac{V^{2}_{bias}}{R\left(T\right)} - \frac{V_{bias}^2}{R\left(T\right)^2} \frac{dR}{dT} \delta T e^{i\omega t} + P_{0} + \delta P e^{i\omega t} 
-\label{eq:pin}
-\end{equation}
-The total power out is the steady-state power to the bath plus the time-varying power to the bath plus the power stored in the heat capacity
-\begin{equation}
-P_{out}\left(T\right) = \overline{G}\Delta T + G \delta T e^{i\omega t} + i\omega C \delta T e^{i\omega t}
-\label{eq:pout}
-\end{equation}
-Conservation of power equates equation~\ref{eq:pin} and equation~\ref{eq:pout}. 
-
-
-
-
-
-In steady-state, there is a constant power flow from the detector to the bath. 
-
-To understand what happens to the power dissipated in the bolometer when its temperature changes by a small amount, we take the derivative of the power with respect to temperature, 
+%In steady-state, there is a constant power flow from the detector to the bath. 
+To understand the electrothermal feedback loop, i.e. what happens to the power dissipated in the bolometer when its temperature changes by a small amount, we take the derivative of the electrical power with respect to temperature, 
 \begin{equation}
 \begin{split}
-\frac{dP_{total}}{dT} & = \frac{dP_{elec}\left(T\right)}{dT} + \cancel{\frac{dP_{rad}}{dT}} = \frac{-V^{2}_{bias}}{R^2} \frac{dR}{dT} \\
-& = - \frac{V_{bias}^2}{R} \frac{T}{R} \frac{dR}{dT} \frac{1}{T} = - \frac{P_{elec}\alpha}{T} %too many unnecessary steps ???
+\frac{dP_{elec}\left(T\right)}{dT} & = \frac{-V^{2}_{bias}}{R^2} \frac{dR}{dT} = - \frac{V_{bias}^2}{R} \frac{T}{R} \frac{dR}{dT} \frac{1}{T} \\
+& = - \frac{P_{elec}\alpha}{T} %too many unnecessary steps ???
+%\frac{dP_{total}}{dT} & = \frac{dP_{elec}\left(T\right)}{dT} + \cancel{\frac{dP_{rad}}{dT}} = \frac{-V^{2}_{bias}}{R^2} \frac{dR}{dT} \\
 \end{split}
 \end{equation}
 where we define $\alpha$ to be a unitless measure of the slope of the resistance versus temperature curve,
@@ -118,7 +94,6 @@ where we define $\alpha$ to be a unitless measure of the slope of the resistance
 \end{equation}
 Since the slope of the resistance versus temperature curve is positive for a \ac{TES}, the change in power is opposite in sign to the change of temperature. 
 This negative electrothermal feedback holds the detector at the edge of its transition. 
-\textcolor{red}{reference all of the above equations. you certainly didn't derive them.}
 
 Qualitatively, the voltage bias is chosen such that the detector is heated just enough to hold the \ac{TES} between normal and superconducting. 
 When the radiative load changes, the \ac{TES} warms (cools). 
@@ -129,16 +104,85 @@ For small changes in temperature, this feedback holds the detector on the edge o
 The voltage bias is constant and so the excursions in resistance change the current through the detector and this is what we measure. 
 %For flight, we calibrated on a known source in the sky to determine how much the current measured changed given a known amount of power from the sky.   %NOT RELEVANT
 
-%\textcolor{red}{You need to include the math to describe negative electrothermal feedback more accurately. And then reference that stuff!}
-
 \subsubsection{Responsivity}
 
-The total power in is the radiative power plus the electrical bias power plus the electrical power change due to the bolometer temperature change.
-The total power out is the steady-state power to the bath plus the time-varying power to the bath plus the power stored in the heat capacity. 
-The total power flow is \cite{Lee1998}
+To derive the detector responsivity we follow Richards~\cite{Richards} and Lee~\cite{Lee1998}.
+The radiative signal absorbed by the detector consists of a steady state power~$P_{0}$ and a time varying signal of amplitude~$\delta P$ and frequency~$\omega$
 \begin{equation}
-P + \delta P e^{i\omega t} + \frac{V_{bias}^2}{R} - \frac{V_{bias}^2}{R^2} \frac{dR}{dT} \delta T e^{i\omega t} = \overline{G}\Delta T + G \delta T e^{i\omega t} + i\omega C \delta T e^{i\omega t}
+P_{rad} = P_{0} + \delta P e^{i\omega t}
 \end{equation}
+The bolometer temperature is then also a function of time
+\begin{equation}
+T = T_{0} + \delta T e^{i\omega t}
+\end{equation}
+The total input power is the sum of the electrical power dissipated, $P_{elec}$ (including the first order change in electrical power due to the change in detector temperature), and the radiative power absorbed, $P_{rad}$,
+\begin{equation}
+%P_{in}\left(T\right) = P_{elec}\left(T\right) + P_{rad} = \frac{V^{2}_{bias}}{R\left(T\right)} - \frac{V_{bias}^2}{R\left(T\right)^2} \frac{dR}{dT} \delta T e^{i\omega t} + P_{0} + \delta P e^{i\omega t} 
+P_{in} = P_{elec} + P_{rad} = \frac{V^{2}_{bias}}{R} - \frac{V_{bias}^2}{R^2} \frac{dR}{dT} \delta T e^{i\omega t} + P_{0} + \delta P e^{i\omega t} 
+\label{eq:pin}
+\end{equation}
+The total output power is the steady state power flow to the bath, equation~\ref{eq:gbar}, plus the time varying power to the bath plus the time varying power stored in the heat capacity
+\begin{equation}
+P_{out} = \overline{G}\Delta T + G \delta T e^{i\omega t} + i\omega C \delta T e^{i\omega t}
+\label{eq:pout}
+\end{equation}
+Conservation of power equates equation~\ref{eq:pin} and equation~\ref{eq:pout}. 
+The time-independent portion is 
+\begin{equation}
+P_{0} + \frac{V^{2}_{bias}}{R} = \overline{G}\Delta T 
+\label{eq:p_time_independent}
+\end{equation}
+%This equation describes the steady state power flow and determines the detector's operating temperature. 
+The time-dependent portion is
+\begin{equation}
+\delta P - \frac{V_{bias}^2}{R^2} \frac{dR}{dT} \delta T = G \delta T + i\omega C \delta T \label{eq:p_time_dependent}
+\end{equation}
+It describes the change in power due to a small change in temperature
+\begin{equation}
+\begin{split}
+\frac{\delta P}{\delta T} & = \frac{V_{bias}^2}{R^2} \frac{dR}{dT} + G + i\omega C \\
+%& = \frac{V_{bias}^2}{R} \frac{T}{R} \frac{dR}{dT} \frac{1}{T} + G + i\omega C \\
+& = \frac{P_{elec}\alpha}{T} + G + i\omega C \\
+\end{split}
+\label{eq:dp_dt}
+\end{equation}
+%where we define $\alpha$ to be a unitless measure of the slope of the resistance versus temperature curve,
+%\begin{equation}
+%\alpha \equiv \frac{d\log{R}}{d\log{T}} = \frac{T}{R} \frac{dR}{dT}
+%\end{equation}
+%\textcolor{red}{Help! I've confused myself. this equation looks like we have positive feedback???}
+%Since the slope of the resistance versus temperature curve is positive for a \ac{TES}, the change in power is opposite in sign to the change of temperature. 
+%This negative electrothermal feedback holds the detector at the edge of its transition. 
+The electrothermal feedback loopgain is the change in electrical power in response to the small absorbed radiative signal relative to the signal amplitude
+\begin{equation}
+\mathscr{L} \left( \omega \right) = - \frac{\delta P_{elec}}{\delta P} = \frac{P_{elec} \alpha}{GT(1+i\omega \tau)} = \frac{\mathscr{L}}{1 + i \omega \tau}
+\end{equation}
+The DC value of the loopgain is $\mathscr{L} = \frac{P_{elec}\alpha}{GT}$ and it rolls off with a time constant of $\tau = C/G$.
+The current responsivity of the detector is the change in current we measure for a given amount of radiative power absorbed
+\begin{equation}
+S_{I} \equiv \frac{\delta I}{\delta P} %= - \frac{1}{V_{bias}} \frac{\delta P_{elec}}{\delta P} 
+= - \frac{1}{V_{bias}} \frac{\mathscr{L}}{\mathscr{L}+1} \frac{1}{1+i\omega \tau_{eff}}
+\end{equation}
+where $\tau_{eff} = \tau/ ( 1 + \mathscr{L})$ is the effective time constant, sped up by electrothermal feedback. 
+
+
+
+
+%I LIKED MY EXPLANATION, BUT I'M NOT SURE IT IS CORRECT.
+
+%\textcolor{red}{reference all of the above equations. you certainly didn't derive them.}
+%
+
+%\textcolor{red}{You need to include the math to describe negative electrothermal feedback more accurately. And then reference that stuff!}
+
+
+
+%The total power in is the radiative power plus the electrical bias power plus the electrical power change due to the bolometer temperature change.
+%The total power out is the steady state power to the bath plus the time varying power to the bath plus the power stored in the heat capacity. 
+%The total power flow is \cite{Lee1998}
+%\begin{equation}
+%P + \delta P e^{i\omega t} + \frac{V_{bias}^2}{R} - \frac{V_{bias}^2}{R^2} \frac{dR}{dT} \delta T e^{i\omega t} = \overline{G}\Delta T + G \delta T e^{i\omega t} + i\omega C \delta T e^{i\omega t}
+%\end{equation}
 
 
 
