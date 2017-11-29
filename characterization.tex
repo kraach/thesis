@@ -243,12 +243,10 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 \label{fig:tc_histograms} }
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Thermal Conductance}
-\label{sec:thermal_conductance}
-%TOWARDS THERMAL CONDUCTANCES 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Red Text}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %\textcolor{red}{will you have already discussed \ac{NEP}? Yes. In 2.1. Bolometer Theory. in particular, phonon noise. for now point to eqtn in measured noise section.}
@@ -287,6 +285,12 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 \textcolor{red}{ What happened when we measured $P_{elec}$ in ebex vs etc vs mcgill? How do we deal with different bath temperatures?}
 \textcolor{red}{Doesn't it make sense to expand on the sources of radiative load? and instead of saying expected load, say exactly what the expected load was?}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Thermal Conductance}
+\label{sec:thermal_conductance}
+%TOWARDS THERMAL CONDUCTANCES 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath. %, Figure~\ref{fig:bolometer_cartoon}.
 In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:phonon_nep}. 
 We want to minimize $G$ so that we minimize the detector \ac{NEP} and thus maximize the detector sensitivity. 
@@ -294,16 +298,10 @@ This value of $G$, however, needs to be sufficiently high to allow for the detec
 %as well as any fluctuations in load %fluctuations are a problem for ground-based expt's, not us
 The dark test cryostat measurements of $G$ allowed us to predict the phonon \ac{NEP} for each detector and also determine if there would be sufficient dynamic range to operate the detectors under the expected loading conditions. 
 
-In practice, we measured the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
-Then, assuming the thermal conductivity was of the form of a power law and knowing the bath temperature, the bolometer temperature, and the power of thermal conductivity, we related our measurement of $\overline G$ to $G$ via \cite{Lee1998}
-\begin{equation}
-G = (n + 1) \frac{1-\frac{T_{bath}}{T}}{1-\left(\frac{T_{bath}}{T}\right)^{n+1}} \overline{G}
-\end{equation}
-where $n$ was the power of the thermal conductivity, $T$ was the bolometer temperature, and $T_{bath}$ was the bath temperature. 
-%SURE WOULD BE NICE IF YOU COULD RE-DERIVE THIS
-
-In order to measure $\overline G$, we performed an IV curve for each bolometer.
-That is, we stepped down the voltage bias, typically in steps of 0.05~$\mu V$, and measured the current through the \ac{TES}. 
+In order to measure the thermal conductance of the link, 
+%we performed an IV curve for each bolometer.
+%That is, 
+we stepped down the voltage bias, typically in steps of 0.05~$\mu V$, and measured the current through the \ac{TES}. 
 At each step, the instantaneous resistance, the ratio of the voltage bias to the current measured, was calculated, Figure~\ref{fig:bolo_rv_curve}. 
 The bias voltage of each bolometer was dropped until the ratio of the voltage bias to the current measured reached a fixed fraction of its original value.
 In the test cryostats, the fraction was typically 0.7. 
@@ -323,7 +321,8 @@ The value used in flight was higher than the nominal lab value because in the te
 Example IV and PV curves from one detector on wafer 150-01 are shown in Figure~\ref{fig:bolo_iv_curve}.
 Above the superconducting transition, at higher voltage biases, the AlTi bilayer of the \ac{TES} was normal and so the current was proportional to $1/R$. 
 Fitting the normal region for this particular detector gave a resistance of 2.9 $\Omega$.
-Note this resistance value was XXX higher than the value found from the network analysis. 
+%RETURN HERE IF TIME
+%Note this resistance value was XXX higher than the value found from the network analysis. 
 As the bilayer began to superconduct, the resistance dropped and the current measured turned around with a characteristic smooth checkmark shape. 
 Once the bolometer was sufficiently far into the superconducting transition, negative electro-thermal feedback kept the power dissipated in the bolometer at a fixed level, Section~\ref{sec:tes_bolometer}.
 When we plot the power dissipated in the bolometer ($I \times V$), the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
@@ -385,28 +384,50 @@ When we plot the power dissipated in the bolometer ($I \times V$), the electrica
 
 Because each bolometer wafer is enclosed in a light-tight box for the dark characterization tests, there is negligible radiative power and so the total electrical power measured from the PV curve is the total power dissipated in the detector. 
 This power is often referred to as the saturation power, $P_{sat}$. 
-The detector in Figure~\ref{fig:bolo_iv_curve} has $P_{sat} = 1.9~pW$.
-Though $P_{sat}$ is just $G$ with the bath and bolometer temperatures folded in, it can be a useful parameter to think in terms of because the bolometer loses nearly all sensitivity if it saturates, i.e. if $P_{sat}$ is less than the radiative load during observations. 
-%the sensitivity of the bolometer increases with lower saturation power (lower $G$), but 
+%The detector in Figure~\ref{fig:bolo_iv_curve} has $P_{sat} = 1.9~pW$.
+$P_{sat}$ can be a useful parameter to think in terms of because the bolometer loses nearly all sensitivity if it saturates, i.e. if $P_{sat}$ is less than or near to the radiative load during observations. 
 
-The average thermal conductance of the weak link was calculated from the saturation power, measured from the PV curve, and the critical temperature, Section~\ref{sec:critical_temp}, 
+The average thermal conductance of the weak link was calculated from the $P_{sat}$, measured from the PV curve, and the measured critical temperature, Section~\ref{sec:critical_temp}, 
 \begin{equation}
 \overline{G}(T_{bath}) = \frac{P_{sat}(T_{bath})}{T_{c} - T_{bath}}
 \end{equation}
-The average thermal conductance is a function of the bath temperature and the test cryostats operated at different bath temperature than \ac{EBEX}. 
-In order to calculate $\overline{G}$ for \ac{EBEX}, we assume XXX. 
-If the phonon transport is diffusive, as opposed to ballistic (where the mean free path of the phonon is much longer than the length of the material in the direction of travel), then the thermal conductivity should follow a power law, 
+$\overline{G}$ is a function of the bath temperature. 
+The test cryostats operated at different bath temperatures than \ac{EBEX}, so the measured $\overline{G}$s needed to be adjusted to the \ac{EBEX} bath temperature. 
+%In order to calculate $\overline{G}$ for \ac{EBEX}, we assume XXX. 
+If the phonon transport along the weak link is diffusive, as opposed to ballistic (where the mean free path of the phonon is much longer than the length of the material in the direction of travel), then the thermal conductivity should follow a power law, 
 \begin{equation}
 \kappa \left( T \right) = \kappa_0 T^n
 \end{equation}
 where n is the power of the thermal conductivity. 
 Normal metals have $n=1$ while crystalline dielectrics or superconductors have $n=3$ \cite{Mather1982}. 
 The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410~GHz bands respectively \cite{Hubmayr2009}.
-Then the thermal conductance at the \ac{EBEX} bath temperature, $T_{EBEX}$, is found via
+If the weak link has a uniform cross section of area $A$ and length $l$, then the thermal conductance is 
 \begin{equation}
-G \left( T_{EBEX} \right) = something
+G = \frac{A}{l} \kappa_0 T^n
 \end{equation}
+and the power flow is described by
+\begin{equation}
+P = \int \frac{dP}{dT} dT = \int_{T_{bath}}^{T_c} \frac{A}{l} \kappa_0 T^n dT = \frac{A\kappa_0}{l(n+1)} \left( T_c^{n+1} - T_{bath}^{n+1} \right)
+\label{eq:power_int}
+\end{equation}
+Letting this equal equation~\ref{eq:gbar} and then taking the ratio of the power in \ac{EBEX} to \ac{ETC}, we find the thermal conductance at the \ac{EBEX} bath temperature, $T_{ebex}$ is
+\begin{equation}
+\overline{G} \left( T_{ebex} \right) = P_{sat, etc} \left( T_c - T_{ebex} \right) \frac{\left( T_c^{n+1} - T_{ebex}^{n+1} \right)}{\left( T_c^{n+1} - T_{etc}^{n+1} \right)}
+\end{equation}
+%\overline{G} \Delta T 
+where $P_{sat,etc}$ is the saturation power measured in the test cryostat, $T_c$ is the measured critical temperature, and n is the power of the thermal conductivity from the \ac{EBEX} test flight wafer measurements. 
+For \ac{NEP} predictions, we assume the same power law form of the thermal conductivity and related our measurement of $\overline G$ to $G$ via \cite{Lee1998}
+\begin{equation}
+G = (n + 1) \frac{1-\frac{T_{bath}}{T}}{1-\left(\frac{T_{bath}}{T}\right)^{n+1}} \overline{G}
+\end{equation}
+
+
 %Mention the two focal planes had different temperatures??
+%In practice, we measured the average thermal conductance, $\overline G$, as opposed to the dynamic thermal conductance, $G$.
+%Then, assuming the thermal conductivity was of the form of a power law and knowing the bath temperature, the bolometer temperature, and the power of thermal conductivity, 
+%where $n$ was the power of the thermal conductivity, $T$ was the bolometer temperature, and $T_{bath}$ was the bath temperature. 
+%%SURE WOULD BE NICE IF YOU COULD RE-DERIVE THIS
+
 
 Histograms summarizing the measured average thermal conductance values, corrected to the \ac{EBEX} bath temperatures, for the three observation frequency bands are shown in Figure~\ref{fig:G_Histograms}.
 We found the median average thermal conductance, $\overline{G}$, for the 150, 250, and 410 GHz bands to be 36, 51, and 69~pW/K respectively. 
