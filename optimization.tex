@@ -387,13 +387,12 @@ The left edge of the bilayer overlapped the bling, right panel of Figure~\ref{fi
 \subsubsection{Ideal Normal Resistance} 
 The target normal resistance for all bands was 1.5~$\Omega$, Table~\ref{tab:Design_Params}.
 The goal was to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
-Also. We needed cross-talk to be less than XXX. 
-A resistance of XXX gives a crosstalk of XXX. 
-%THIS HAS NOTHING TO DO WITH A SPACE-LIKE ENVIRONMENT, but it does have to do with optimization of multiplexing! and so it's relevant. 
-%You wrote about this somewhere else, no? where???
-%DO YOU WANT TO INCLUDE MORE DETAILS ABOUT THE CROSS-TALK CALCULATION? PROBABLY? 
-There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
-The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer ~\cite{Dobbs2011}
+
+The electrical cross-talk is also a function of the bolometer resistance. 
+This needed to be subdominant to the optical cross-talk, due to beam side-lobes and radiation leakage within the detector integration cavity, which is typically at a level of $\sim$1\% \cite{Dobbs2011} . 
+%There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
+%The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer ~\cite{Dobbs2011}
+The electrical cross-talk is estimated by ~\cite{Dobbs2011}
 \begin{equation}
 \frac{R_{bolo}^2}{(2\Delta \omega L)^2}
 \end{equation}
@@ -468,9 +467,10 @@ The smaller radiative load allows for a smaller dynamic range which allows for a
 The goal was to minimize $G$, in order to minimize the phonon \ac{NEP}, while keeping $G$ large enough for the detectors to not saturate in the presence of the radiative load at float. 
 
 For \ac{EBEX} at float, the predicted radiative loads on the detectors were 2.4, 7.3, and 12~pW for the 150, 250, and 410~GHz observation bands. 
+Assuming bolometer absorption efficiencies of 0.6, 0.5, and 0.4 for the 150, 250, and 410~GHz bands, the predicted absorbed radiative powers were 1.4, 3.6, and 4.6 pW, respsectively.
 %not mentioning 410 here because it's not accessible from the ground and one number is sufficient for comparison purporses
 The \ac{EBEX} detectors inherited their initial design from ground-based telescopes, \ac{APEX} and the South Pole Telescope. 
-At 150~GHz, the expected radiative load was a factor of roughly 6 less than the $\sim$15~pW load observed by \ac{APEX} \cite{Westbrook2014}. 
+At 150~GHz, the expected radiative load was a factor of roughly 10 less than the $\sim$15~pW load observed at 150~GHz by \ac{APEX} \cite{Westbrook2014}. 
 \textcolor{red}{Is ben's thesis an acceptable place to reference for the APEX measured load?? If not, which published paper is?}
 In order to take advantage of the decrease in radiative load at float and increase the detector sensitivity, the fabrication goal was to lower the average thermal conductance for the 150~GHz detectors by a factor of $\sim$3 to 30~$pW/K$. 
 In order to decrease G for the 150~GHz detectors, the spiderweb legs were roughly doubled in length, from 0.5~mm to 1.05~mm, and two of the legs were decreased in width from 17~$\mu m$ to 6~$\mu m$, right panel of Figure~\ref{fig:bolo_and_bling}. 
