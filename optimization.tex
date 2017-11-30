@@ -121,12 +121,12 @@ The total input power is the sum of the electrical power dissipated, $P_{elec}$ 
 P_{in} = P_{elec} + P_{rad} = \frac{V^{2}_{bias}}{R} - \frac{V_{bias}^2}{R^2} \frac{dR}{dT} \delta T e^{i\omega t} + P_{0} + \delta P e^{i\omega t} 
 \label{eq:pin}
 \end{equation}
-The total output power is the steady state power flow to the bath, equation~\ref{eq:gbar}, plus the time varying power to the bath plus the time varying power stored in the heat capacity
+The total output power is the steady state power flow to the bath, Equation~\ref{eq:gbar}, plus the time varying power to the bath plus the time varying power stored in the heat capacity
 \begin{equation}
 P_{out} = \overline{G}\Delta T + G \delta T e^{i\omega t} + i\omega C \delta T e^{i\omega t}
 \label{eq:pout}
 \end{equation}
-Conservation of power equates equation~\ref{eq:pin} and equation~\ref{eq:pout}. 
+Conservation of power equates Equation~\ref{eq:pin} and Equation~\ref{eq:pout}. 
 The time-independent portion is 
 \begin{equation}
 P_{0} + \frac{V^{2}_{bias}}{R} = \overline{G}\Delta T 
@@ -282,14 +282,14 @@ The phonon noise is due to the motion of the thermal carriers, phonons, along th
 This random thermodynamic energy flow gives rise to the phonon \ac{NEP},
 \begin{equation}
 N_{phonon} = \sqrt{\gamma 4k_{B} T^2 G}
-\label{eq:phonon}
+\label{eq:phonon_nep}
 \end{equation}
 where $k_{B}$ is Boltzmann's constant, $T$ is the temperature of the \ac{TES}, and $G \equiv dP/dT$ is the dynamic thermal conductance along the weak link \cite{Mather1982}. 
 %mather says it "is readily shown from thermodynamics that this power flow ...". BUT. it's not obvious to me. Sadly. there's not time to understand this right now. You can return if you have the luxury to do so. 
  $\gamma$ is a unitless number between zero and one which describes the temperature gradient along the thermal link from the \ac{TES} to the bath  
 \begin{equation}
 \gamma \equiv \frac{\int_{T_{bath}}^{T} \left( \frac{t\kappa(t)}{T\kappa(T)}\right)^2 dt}{\int_{T_{bath}}^{T} \frac{\kappa(t)}{\kappa(T)} dt} 
-\label{eq:phonon_nep}
+\label{eq:gamma_integral}
 \end{equation}
 where $\kappa$ is the thermal conductivity, $T$ is the bolometer temperature, and $T_{bath}$ is the bath temperature \cite{Mather1982}. 
 When we assume $\kappa(T) = \kappa_0 T^n$ and also assume the bolometer temperature $T$ is equal to its critical temperature $T_c$, then
@@ -308,6 +308,7 @@ The photon noise is due to the particle nature of photons and the statistics whi
 Quantifying the fluctuations in the absorbed energy (via boson statistics) and integrating over the radiation bandwidth, the photon \ac{NEP} is
 \begin{equation}
 N_{photon}^2 = 2 \int h \nu P_{\nu} d\nu + \xi \int \frac{P_{\nu}^{2}c^2}{A\Omega\nu^2} d\nu
+\label{eq:photon_nep}
 \end{equation}
 where $h$ is Planck's constant, $\nu$ is the frequency of the radiation, $P_{\nu}$ is the absorbed spectral power, and $\xi$ is the so-called correlation factor \cite{Richards}. 
 %this $P_{\nu}$ was a sticking point for you when you were trying to understand this. are you SURE you're using the correct words??? Eh. both richards and lammare call it spectral power. good enough for now. 
@@ -451,24 +452,26 @@ The \ac{EBEX} bath temperature was $\sim$250~mK and so the target critical tempe
 
 \subsubsection{Ideal Thermal Conductance}
 
-\textcolor{red}{It's not obvious that/why a decrease in radiative load can equate to an increase in detector sensitivity. This needs to be spelled out clearly somewhere. Here?}
+%\textcolor{red}{It's not obvious that/why a decrease in radiative load can equate to an increase in detector sensitivity. This needs to be spelled out clearly somewhere. Here?}
 
-\textcolor{red}{You're talking about radiative loads and thermal conductance and assuming rather than making the connection between them.}
-
-\textcolor{red}{%Add Ben's thesis to bibliography. 
-Is ben's thesis an acceptable place to reference for the APEX measured load?? If not, which published paper is?}
+%\textcolor{red}{You're talking about radiative loads and thermal conductance and assuming rather than making the connection between them.}
 
 Ground-based telescopes design their detectors to accommodate the radiative load and fluctuations from the atmosphere. 
-Long-duration balloon flights typically float at an altitude of $\sim$120,000~ft, above $\sim$98\% of the atmosphere. 
-%\textcolor{red}{Fact check that. - checked csbf website altitude profiles}
+Long-duration balloon flights, however, typically float at an altitude of $\sim$120,000~ft, above $\sim$98\% of the atmosphere. \textcolor{red}{reference CSBF, website? publication(s)?} 
+Without any adjustments to detector fabrication, the photon \ac{NEP} in a space-like environment is improved relative to on the ground because of the decrease in radiative power absorbed, Equation~\ref{eq:photon_nep}. 
+The decrease in radiative power also allows for, with adjustment to detector fabrication, a decrease in the phonon \ac{NEP}. 
+The smaller radiative load allows for a smaller dynamic range which allows for a smaller $G$, Equation~\ref{eq:gbar}. 
+The goal was to minimize $G$, in order to minimize the phonon \ac{NEP}, while keeping $G$ large enough for the detectors to not saturate in the presence of the radiative load at float. 
+
 For \ac{EBEX} at float, the predicted radiative loads on the detectors were 2.4, 7.3, and 12~pW for the 150, 250, and 410~GHz observation bands. 
 %not mentioning 410 here because it's not accessible from the ground and one number is sufficient for comparison purporses
 The \ac{EBEX} detectors inherited their initial design from ground-based telescopes, \ac{APEX} and the South Pole Telescope. 
 At 150~GHz, the expected radiative load was a factor of roughly 6 less than the $\sim$15~pW load observed by \ac{APEX} \cite{Westbrook2014}. 
+\textcolor{red}{Is ben's thesis an acceptable place to reference for the APEX measured load?? If not, which published paper is?}
 In order to take advantage of the decrease in radiative load at float and increase the detector sensitivity, the fabrication goal was to lower the average thermal conductance from the bolometer to the bath by a factor of $\sim$3 to 30~$pW/K$. 
 This design goal provided a safety factor of 2.5 in case of unanticipated radiative load or fluctuations.
-
 In order to decrease G for the 150~GHz detectors, the spiderweb legs were roughly doubled in length, from 0.5~mm to 1.05~mm, and two of the legs were decreased in width from 17~$\mu m$ to 6~$\mu m$, right panel of Figure~\ref{fig:bolo_and_bling}. 
+
 
 \subsubsection{Ideal Time Constant}
 
