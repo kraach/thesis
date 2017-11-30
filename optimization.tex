@@ -385,7 +385,8 @@ The left edge of the bilayer overlapped the bling, right panel of Figure~\ref{fi
 %Discuss target detector parameters. Be very clear about which changes were made to fabrication process in order to optimize the detector sensitivity for a space-like environment and for EBEX.
 
 \subsubsection{Ideal Normal Resistance} 
-The target normal resistance for all bands was 1.5~$\Omega$ in order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
+The target normal resistance for all bands was 1.5~$\Omega$, Table~\ref{tab:Design_Params}.
+In order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
 Also. We needed cross-talk to be less than XXX. 
 A resistance of XXX gives a crosstalk of XXX. 
 %THIS HAS NOTHING TO DO WITH A SPACE-LIKE ENVIRONMENT, but it does have to do with optimization of multiplexing! and so it's relevant. 
@@ -438,7 +439,7 @@ For $n=2$, the phonon \ac{NEP} was minimized at a ratio of transition temperatur
 %Note, the phonon noise only increases shallowly around the minimum. 
 %An error of $\pm20\%$ in $T_{c}$ would change the detector \ac{NEP} by XXX. 
 %COME BACK TO THIS CALCULATION IF YOU HAVE TIME
-The \ac{EBEX} bath temperature was $\sim$250~mK and so the target critical temperature for all \ac{EBEX} observation frequency bands was 440~mK.
+The \ac{EBEX} bath temperature was $\sim$250~mK and so the target critical temperature for all \ac{EBEX} observation frequency bands was 440~mK, Table~\ref{tab:Design_Params}.
 %Ben writes the target was 0.48K !
 % he assumed t_ebex = 0.275K and psat = 3.5pw and n=3
 
@@ -468,9 +469,11 @@ For \ac{EBEX} at float, the predicted radiative loads on the detectors were 2.4,
 The \ac{EBEX} detectors inherited their initial design from ground-based telescopes, \ac{APEX} and the South Pole Telescope. 
 At 150~GHz, the expected radiative load was a factor of roughly 6 less than the $\sim$15~pW load observed by \ac{APEX} \cite{Westbrook2014}. 
 \textcolor{red}{Is ben's thesis an acceptable place to reference for the APEX measured load?? If not, which published paper is?}
-In order to take advantage of the decrease in radiative load at float and increase the detector sensitivity, the fabrication goal was to lower the average thermal conductance from the bolometer to the bath by a factor of $\sim$3 to 30~$pW/K$. 
-This design goal provided a safety factor of 2.5 in case of unanticipated radiative load or fluctuations.
+In order to take advantage of the decrease in radiative load at float and increase the detector sensitivity, the fabrication goal was to lower the average thermal conductance for the 150~GHz detectors by a factor of $\sim$3 to 30~$pW/K$. 
 In order to decrease G for the 150~GHz detectors, the spiderweb legs were roughly doubled in length, from 0.5~mm to 1.05~mm, and two of the legs were decreased in width from 17~$\mu m$ to 6~$\mu m$, right panel of Figure~\ref{fig:bolo_and_bling}. 
+The average thermal conductance goal for the 250~GHz was 40~$pW/K$ and for the 410~GHz detectors was 50~$pW/K$, Table~\ref{tab:Design_Params}.
+This design goal provided a safety factor of 2.5 in case of unanticipated radiative load or fluctuations.
+
 
 
 \subsubsection{Ideal Time Constant}
@@ -540,7 +543,7 @@ $\overline{G}$ (pW/K)       & 30   & 39 & 40   & 53 & 50   & 63  \\ \hline
 %\multicolumn{7}{l}{\footnotesize* Calculated from time constant and thermal conductivity.}
 \end{tabular}
 \caption{Designed and measured detector parameters for each of the frequency
-bands.  The values in the 'measured' columns are median values for 
+bands.  The values in the 'Measured' columns are median values for 
 all detectors on the wafers used for flight.  Description of the measurements and histograms and further discussion 
 of the measured values are given in Section~\ref{sec:detector_characterization}.
 %For the parameters $\alpha$ and $\beta$, shown in Figure~\ref{fig:Bolometer_Overview} we give the design values. 
