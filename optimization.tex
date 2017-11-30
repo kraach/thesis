@@ -386,7 +386,7 @@ The left edge of the bilayer overlapped the bling, right panel of Figure~\ref{fi
 
 \subsubsection{Ideal Normal Resistance} 
 The target normal resistance for all bands was 1.5~$\Omega$, Table~\ref{tab:Design_Params}.
-In order to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
+The goal was to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
 Also. We needed cross-talk to be less than XXX. 
 A resistance of XXX gives a crosstalk of XXX. 
 %THIS HAS NOTHING TO DO WITH A SPACE-LIKE ENVIRONMENT, but it does have to do with optimization of multiplexing! and so it's relevant. 
@@ -399,9 +399,12 @@ The level of this leakage is approximated by calculating the current modulation 
 \end{equation}
 ~\cite{Dobbs2011}
 %see page 100 of notebook for calculation
-where for \ac{EBEX} we have inductors $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \omega = 2\pi 60~kHz$. 
-(The lower bias frequencies have this spacing, but when cooled, the lower capacitance values change more and the resonant frequency spacing is larger than predicted.)
-For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%
+where for \ac{EBEX} we have inductors $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \nu = 60~kHz$. %$\Delta \omega = 2\pi 60~kHz$. 
+(The lower bias frequencies have this spacing, but when cooled, the lower capacitance values change more (in absolute value)and the resonant frequency spacing is larger than predicted.)
+For a detector dropped to 85\% in the transition, a resistance of1.5~$\Omega$ results in cross-talk at a level of 0.5\%.
+
+%having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%
+
 %The consequences of overshooting this value, as is the case for many of the 150~GHz detectors, are an increase in the detector voltage bias leakage, which is proportional to $R^2$ \cite{dobbs_revSciInst_2012}, and a decrease in the loopgain, which is inversely proportional to R. 
 %% if R is higher, then johnson current noise is decreased since it goes like 1/sqrt(R)
 %% if R is higher, then stability requirement has R/(2*pi*L) > 5.8/tau_tes is more satisfied
@@ -488,6 +491,7 @@ This design goal provided a safety factor of 2.5 in case of unanticipated radiat
 
 \textcolor{red}{I think the following paragraph is not true to how the ideal $\tau$ was decided. Also, isn't $\tau$ also a function of loopgain? (see irwin/hilton p12 on)}
 So long as the thermal conductance between the \ac{TES} and the bath was the dominant effect, the time constant of the bolometer was $\tau = C/G$. 
+When the loopgain was high, though, the time constant was sped up $\tau_{eff} = \tau / ( 1 + \mathscr{L}$.
 The time constant needed to be held approximately constant at $\sim$20~ms because our telescope was to have roughly the same scan speed as the ground-based telescopes. 
 Since the thermal conductance, G, was decreased by a factor of 4 relative to the ground-based detector design, to keep $\tau$ constant, the heat capacity, C, also needed to be decreased by this factor. 
 %During the fabrication process for the ground-based detectors, the bling was made of 500-700~nm of gold \textcolor{red}{reference Ben???}. %TOO COMPLICATED. A NICE TO HAVE, NOT A NEED.
@@ -497,6 +501,32 @@ For the \ac{EBEX} detectors, we decreased the total thickness of the gold deposi
 
 %The dominant heat capacity  dominated by gold deposited  was deposited atop the bling, which was 20~nm of gold atop 1~$\mu m$ of silicon nitride. 
 
+
+\begin{table}[ht!]
+\centering
+%\footnotesize
+\begin{tabular}{| c | c c | c c | c c |}\hline
+\multicolumn{1}{|c}{Band (GHz)}   &  \multicolumn{2}{|c}{150}   & \multicolumn{2}{|c}{250}   & \multicolumn{2}{|c|}{410}  \\% \hline
+                                     & Design & Measured & Design & Measured & Design & Measured  \\ \hline
+$R_{n}$ ($\Omega$)            & 1.5  & 1.9  & 1.5  & 1.5  & 1.5  & 1.4  \\
+$T_{c}$ (K)                        & 0.44 & 0.45 & 0.44 & 0.49 & 0.44 & 0.47  \\
+$\overline{G}$ (pW/K)       & 30   & 39 & 40   & 53 & 50   & 63  \\ \hline
+%$\tau_{0}$ (ms)                 & 17 & 88$^\dagger$  & 13  &  46$^\dagger$  &  10 &  57$^\dagger$  \\ \hline
+%$C$ (pJ/K)*                         & 0.5  & 3.8$^\dagger$ & 0.5  & 3.3$^\dagger$  & 0.5   & 8.4$^\dagger$  \\ \hline
+% Wafer Thickness ($\mu$m)   & \multicolumn{2}{|c|}{150}  & \multicolumn{2}{|c|}{90}  & \multicolumn{2}{|c|}{56}  \\
+%$\alpha$ (mm)                &  \multicolumn{2}{|c|}{1.05}   & \multicolumn{2}{|c|}{1.0}   &  \multicolumn{2}{|c|}{0.5}  \\
+%$\beta$ (mm)                & \multicolumn{2}{|c|}{1.45} & \multicolumn{2}{|c|}{1.0}  & \multicolumn{2}{|c|}{0.5}  \\ \hline
+%\multicolumn{7}{l}{\footnotesize$^\dagger$ Median of measurements on a single wafer at each frequency; see Section~\ref{sec:time_constants}.}\\
+%\multicolumn{7}{l}{\footnotesize* Calculated from time constant and thermal conductivity.}
+\end{tabular}
+\caption{Designed and measured detector parameters for each of the frequency
+bands.  The values in the 'Measured' columns are median values for 
+all detectors on the wafers used for flight.  Description of the measurements and histograms and further discussion 
+of the measured values are given in Chapter~\ref{sec:detector_characterization}.
+%For the parameters $\alpha$ and $\beta$, shown in Figure~\ref{fig:Bolometer_Overview} we give the design values. 
+%The lithography was generally accurate to within 0.5~$\mu$m.
+\label{tab:Design_Params} }
+\end{table}
 
 
 
@@ -525,31 +555,7 @@ For the \ac{EBEX} detectors, we decreased the total thickness of the gold deposi
 
 
 
-\begin{table}[ht!]
-\centering
-%\footnotesize
-\begin{tabular}{| c | c c | c c | c c |}\hline
-\multicolumn{1}{|c}{Band (GHz)}   &  \multicolumn{2}{|c}{150}   & \multicolumn{2}{|c}{250}   & \multicolumn{2}{|c|}{410}  \\% \hline
-                                     & Design & Measured & Design & Measured & Design & Measured  \\ \hline
-$R_{n}$ ($\Omega$)            & 1.5  & 1.9  & 1.5  & 1.5  & 1.5  & 1.4  \\
-$T_{c}$ (K)                        & 0.44 & 0.45 & 0.44 & 0.49 & 0.44 & 0.47  \\
-$\overline{G}$ (pW/K)       & 30   & 39 & 40   & 53 & 50   & 63  \\ \hline
-%$\tau_{0}$ (ms)                 & 17 & 88$^\dagger$  & 13  &  46$^\dagger$  &  10 &  57$^\dagger$  \\ \hline
-%$C$ (pJ/K)*                         & 0.5  & 3.8$^\dagger$ & 0.5  & 3.3$^\dagger$  & 0.5   & 8.4$^\dagger$  \\ \hline
-% Wafer Thickness ($\mu$m)   & \multicolumn{2}{|c|}{150}  & \multicolumn{2}{|c|}{90}  & \multicolumn{2}{|c|}{56}  \\
-%$\alpha$ (mm)                &  \multicolumn{2}{|c|}{1.05}   & \multicolumn{2}{|c|}{1.0}   &  \multicolumn{2}{|c|}{0.5}  \\
-%$\beta$ (mm)                & \multicolumn{2}{|c|}{1.45} & \multicolumn{2}{|c|}{1.0}  & \multicolumn{2}{|c|}{0.5}  \\ \hline
-%\multicolumn{7}{l}{\footnotesize$^\dagger$ Median of measurements on a single wafer at each frequency; see Section~\ref{sec:time_constants}.}\\
-%\multicolumn{7}{l}{\footnotesize* Calculated from time constant and thermal conductivity.}
-\end{tabular}
-\caption{Designed and measured detector parameters for each of the frequency
-bands.  The values in the 'Measured' columns are median values for 
-all detectors on the wafers used for flight.  Description of the measurements and histograms and further discussion 
-of the measured values are given in Section~\ref{sec:detector_characterization}.
-%For the parameters $\alpha$ and $\beta$, shown in Figure~\ref{fig:Bolometer_Overview} we give the design values. 
-%The lithography was generally accurate to within 0.5~$\mu$m.
-\label{tab:Design_Params} }
-\end{table}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
