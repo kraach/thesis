@@ -393,13 +393,12 @@ A resistance of XXX gives a crosstalk of XXX.
 %You wrote about this somewhere else, no? where???
 %DO YOU WANT TO INCLUDE MORE DETAILS ABOUT THE CROSS-TALK CALCULATION? PROBABLY? 
 There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
-The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer. 
+The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer ~\cite{Dobbs2011}
 \begin{equation}
 \frac{R_{bolo}^2}{(2\Delta \omega L)^2}
 \end{equation}
-~\cite{Dobbs2011}
 %see page 100 of notebook for calculation
-where for \ac{EBEX} we have inductors $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \nu = 60~kHz$. %$\Delta \omega = 2\pi 60~kHz$. 
+For \ac{EBEX} we have inductors of $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \nu = 60~kHz$. %$\Delta \omega = 2\pi 60~kHz$. 
 (The lower bias frequencies have this spacing, but when cooled, the lower capacitance values change more (in absolute value)and the resonant frequency spacing is larger than predicted.)
 For a detector dropped to 85\% in the transition, a resistance of1.5~$\Omega$ results in cross-talk at a level of 0.5\%.
 
