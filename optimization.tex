@@ -466,16 +466,32 @@ The decrease in radiative power also allows for, with adjustment to detector fab
 The smaller radiative load allows for a smaller dynamic range which allows for a smaller $G$, Equation~\ref{eq:gbar}. 
 The goal was to minimize $G$, in order to minimize the phonon \ac{NEP}, while keeping $G$ large enough for the detectors to not saturate in the presence of the radiative load at float. 
 
+Table~\ref{tab:target_gbar} summarizes the calculation of the target average thermal conductance. 
 For \ac{EBEX} at float, the predicted radiative loads on the detectors were 2.4, 7.3, and 12~pW for the 150, 250, and 410~GHz observation bands. 
-Assuming bolometer absorption efficiencies of 0.6, 0.5, and 0.4 for the 150, 250, and 410~GHz bands, the predicted absorbed radiative powers were 1.4, 3.6, and 4.6 pW, respsectively.
+Assuming bolometer absorption efficiencies of 0.6, 0.5, and 0.4 for the 150, 250, and 410~GHz bands, the predicted absorbed radiative powers were 1.4, 3.6, and 4.6 pW, respectively.
 %not mentioning 410 here because it's not accessible from the ground and one number is sufficient for comparison purporses
 The \ac{EBEX} detectors inherited their initial design from ground-based telescopes, \ac{APEX} and the South Pole Telescope. 
 At 150~GHz, the expected radiative load was a factor of roughly 10 less than the $\sim$15~pW load observed at 150~GHz by \ac{APEX} \cite{Westbrook2014}. 
 \textcolor{red}{Is ben's thesis an acceptable place to reference for the APEX measured load?? If not, which published paper is?}
-In order to take advantage of the decrease in radiative load at float and increase the detector sensitivity, the fabrication goal was to lower the average thermal conductance for the 150~GHz detectors by a factor of $\sim$3 to 30~$pW/K$. 
+In order to take advantage of the decrease in radiative load at float and increase the detector sensitivity, the fabrication goal was to lower the average thermal conductance for the 150~GHz detectors to 20~$pW/K$. 
+%by a factor of XXX to 30~$pW/K$. 
+%I'D LOVE TO HAVE TIME TO BE MORE QUANTITATIVE ABOUT THE CHANGES RELATIVE TO APEX/SPT
 In order to decrease G for the 150~GHz detectors, the spiderweb legs were roughly doubled in length, from 0.5~mm to 1.05~mm, and two of the legs were decreased in width from 17~$\mu m$ to 6~$\mu m$, right panel of Figure~\ref{fig:bolo_and_bling}. 
-The average thermal conductance goal for the 250~GHz was 40~$pW/K$ and for the 410~GHz detectors was 50~$pW/K$, Table~\ref{tab:Design_Params}.
+The average thermal conductance goal for the 250~GHz was 50~$pW/K$ and for the 410~GHz detectors was 60~$pW/K$, Table~\ref{tab:target_gbar}.
 This design goal provided a safety factor of 2.5 in case of unanticipated radiative load or fluctuations.
+%IF YOU HAVE TIME, A TABLE WOULD BE REALLY NICE HERE!
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{| c | c | c | c | c | c  |}\hline
+Freq (GHz) & $P_{input}$ (pW) & $\epsilon$ & $P_{absorbed}$ (pW) & $\times$ Safety Factor & Target $\overline{G}$ \\ \hline
+150 & 2.4 & 0.6 & 1.4  & 3.6 & 20  \\
+250 & 7.3 & 0.5 & 3.7 & 9.1 & 50  \\
+410 & 12 & 0.4 & 4.7 & 11.6 & 60  \\ \hline
+\end{tabular}
+\caption{For each observation frequency, the path to the target average thermal conductance. $P_{input}$ was calculated given all of the predicted transmissions and reflections of all of the optical elements. $\epsilon$ is the detector efficiency assumed. $P_{absorbed}$ is the predicted absorbed power, $P_{input} \cdot \epsilon$. All frequency bands were multiplied by a safety factor of 2.5. The target $\overline{G}$ was $P_{absorbed}/\Delta T$, where $\Delta T$ was the target $T_{crit}$=0.44~K minus the expected $T_{ebex}$=0.25~K.
+\label{tab:target_gbar} }
+\end{table}
 
 
 
