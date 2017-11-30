@@ -170,16 +170,8 @@ S_{I} \equiv \frac{\delta I}{\delta P} %= - \frac{1}{V_{bias}} \frac{\delta P_{e
 \label{eq:responsivity}
 \end{equation}
 where $\tau_{eff} = \tau/ ( 1 + \mathscr{L})$ is the effective time constant, sped up by electrothermal feedback. 
+%IF YOU HAVE TIIME, COME BACK HERE AND EXPLAIN MORE
 
-
-
-
-%I LIKED MY EXPLANATION, BUT I'M NOT SURE IT IS CORRECT.
-
-%\textcolor{red}{reference all of the above equations. you certainly didn't derive them.}
-%
-
-%\textcolor{red}{You need to include the math to describe negative electrothermal feedback more accurately. And then reference that stuff!}
 
 
 
@@ -422,37 +414,33 @@ For a detector dropped to 85\% in the transition, having a normal resistance of 
 
 %\textcolor{red}{Need to generate: plot of phonon noise as a function of critical temperature, given a fixed ebex bath temperature of 260~mK.}
 
-\textcolor{red}{For a thermal conductance that follows a power law, what kind of material is n=1 and what about n=3? i.e. why are these our bounds??}
+%\textcolor{red}{For a thermal conductance that follows a power law, what kind of material is n=1 and what about n=3? i.e. why are these our bounds?? answered in thermal conductance section of characterization.}
 
-Typical materials at low temperatures have a thermal conductance of the form of a power law, $\kappa = \kappa_o T^n$, where normal metals have $n=1$ while cyrstalline dielectrics or superconductors have $n=3$ \cite{Mather1982}. 
-The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410~GHz bands respectively \cite{Hubmayr2009}.
-
-\textcolor{red}{I would like for you to explain why modulating the thickness of the aluminum layer changes $T_{c}$. (see p32 of irwin/hilton paper)}
-
-\textcolor{red}{are you sure you're using the correct expression for phonon nep? your curves are NOT minimized at Tc/Tbath of 1.7 .... FIGURE THIS OUT!}
+%\textcolor{red}{are you sure you're using the correct expression for phonon nep? your curves are NOT minimized at Tc/Tbath of 1.7 .... FIGURE THIS OUT!}
 
 
 The \ac{TES} was a bilayer of titanium atop aluminum. 
 The titanium thickness was fixed at $\sim$110~nm. 
 Depending on the wafer, the aluminum thickness varied from $\sim$30 to 50~nm. 
 The critical temperature was controlled by the aluminum layer thickness, where the thinner aluminum layer provided a lower critical temperature (and also a higher normal resistance). 
+%\textcolor{red}{I would like for you to explain why modulating the thickness of the aluminum layer changes $T_{c}$. (see p32 of irwin/hilton paper)} COME BACK HERE IF YOU HAVE TIME
 
-The phonon noise as a function of the critical temperature $T_{c}$, the power of thermal conductivity $n$,  the power to hold the detector in the transition $P_{sat}$, and the bath temperature $T_{bath}$ is
+The ideal critical temperature minimized the phonon noise for detectors at the \ac{EBEX} bath temperature.
+To express the phonon \ac{NEP} as a function of our measurable quantities, 
+we replaced gamma by equation~\ref{eq:gamma} and let $g = dP/dT$. 
+The phonon \ac{NEP} as a function of the critical temperature $T_{c}$, the power of thermal conductivity $n$,  the power to hold the detector in the transition $P_{sat}$, and the bath temperature $T_{bath}$ is
 \begin{equation}
-\label{eq:phonon_nep}
-\begin{split}
-NEP_{phonon}^2 & = \gamma4k_{B}T_{c}G_{dyn} \\
-& = 4k_{B}T_{bath}P_{sat}\frac{(n+1)^{2}}{(2n+3)^2}\frac{\left(\frac{T_{c}}{T_{bath}}\right)^{2n+3}-1}{\left( \left(\frac{T_{c}}{T_{bath}}\right)^{n+1}-1\right)^{2}}
-\end{split}
+NEP_{phonon}^2 & = 4k_{B}T_{bath}P_{sat}\frac{(n+1)^{2}}{(2n+3)^2}\frac{\left(\frac{T_{c}}{T_{bath}}\right)^{2n+3}-1}{\left( \left(\frac{T_{c}}{T_{bath}}\right)^{n+1}-1\right)^{2}}
 \end{equation}
 If we assumed $T_{bath}$ was 0.26~K, $P_{sat}$ was 6~pW, and $n$ was in between one and three, then the phonon \ac{NEP} was minimized at a ratio of transition temperature to bath temperature, $\frac{T_{c}}{T_{bath}}$, of $\sim$1.7, Figure~\ref{fig:phonon_nep_vs_temps}. 
-Note, the phonon noise only increases shallowly around the minimum so the detector \ac{NEP} is tolerant to errors in $T_{c}$ of $\pm20\%$.
+Note, the phonon noise only increases shallowly around the minimum. 
+An error of $\pm20\%$ in $T_{c}$ would change the detector \ac{NEP} by XXX. 
 The \ac{EBEX} bath temperature was 260~mK and so the target critical temperature for all \ac{EBEX} observation frequency bands was 440~mK.
 
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/phonon_nep_vs_temperature.png}
-\caption{Phonon \ac{NEP} as a function of the ratio of critical temperature to bath temperature for three different values of the thermal conductivity power. The goal was to choose $T_{c}$ such that phonon noise was minimized. \textcolor{red}{remake this figure with a single value of n. but which is the correct one to use? we assumed n=3 when we set our targets?}
+\caption{Phonon \ac{NEP} as a function of the ratio of critical temperature to bath temperature for three different values of the thermal conductivity power. The goal was to choose $T_{c}$ such that phonon noise was minimized. \textcolor{red}{remake this figure with a single value of n. but which is the correct one to use? we assumed n=3 when we set our targets? WHY ISN'T 1.7 OUR MININUM? try ben's numbers instead?}
 \label{fig:phonon_nep_vs_temps} }
 \end{center}
 \end{figure}
