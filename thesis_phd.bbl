@@ -22,6 +22,11 @@ M.~Tinkham.
 \newblock {\em Introduction to Superconductivity}.
 \newblock McGraw-Hill, NY, 2 edition, 1996.
 
+\bibitem{Richards}
+P~L Richards.
+\newblock {Bolometers for Infrared and Millimeter Waves}.
+\newblock {\em Journal of Applied Physics}, 76:1--24, 1994.
+
 \bibitem{Lee1998}
 Shih-fu Lee, Jan~M Gildemeister, Warren Holmes, Adrian~T Lee, and Paul~L
   Richards.
@@ -38,11 +43,6 @@ J~C Mather.
 J.~B. Johnson.
 \newblock Thermal agitation of electricity in conductors.
 \newblock {\em Phys. Rev.}, 32:97--109, Jul 1928.
-
-\bibitem{Richards}
-P~L Richards.
-\newblock {Bolometers for Infrared and Millimeter Waves}.
-\newblock {\em Journal of Applied Physics}, 76:1--24, 1994.
 
 \bibitem{Lamarre}
 J.~M. Lamarre.
@@ -70,17 +70,17 @@ M.~A. Dobbs, M.~Lueker, K.~A. Aird, A.~N. Bender, B.~A. Benson, L.~E. Bleem,
   Cosmic Microwave Background Measurements}.
 \newblock {\em Review of Scientific Instruments}, page~28, December 2011.
 
-\bibitem{Hubmayr2009}
-Johannes Hubmayr.
-\newblock {\em {Bolometric detectors for EBEX : a balloon-borne cosmic
-  microwave background polarimeter}}.
-\newblock PhD thesis, University of Minnesota, 2009.
-
 \bibitem{Lanting2006}
 Trevor~Michael Lanting.
 \newblock {\em {Multiplexed Readout of Superconducting Bolometers for
   Cosmological Observations}}.
 \newblock PhD thesis, Berkeley, 2006.
+
+\bibitem{Hubmayr2009}
+Johannes Hubmayr.
+\newblock {\em {Bolometric detectors for EBEX : a balloon-borne cosmic
+  microwave background polarimeter}}.
+\newblock PhD thesis, University of Minnesota, 2009.
 
 \bibitem{Peterson1984a}
 J.~B. Peterson and P.~L. Richards.
@@ -108,8 +108,9 @@ Kyle Zilic.
 \newblock PhD thesis, University of Minnesota, 2014.
 
 \bibitem{Enss2005}
-Hilton~G. Irwin~K.
-\newblock {\em Cryogenic Particle Detection}, volume~99.
-\newblock Springer, Berlin, Heidelberg, 2005.
+Irwin~K. Hilton~G.
+\newblock Transition-edge sensors.
+\newblock In {\em Cryogenic Particle Detection}, volume~99. Springer, Berlin,
+  Heidelberg, 2005.
 
 \end{thebibliography}
