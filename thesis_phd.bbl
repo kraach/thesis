@@ -56,6 +56,18 @@ Benjamin~G. Westbrook.
   Sensor Bolomters}.
 \newblock PhD thesis, University of California, Berkeley, 2014.
 
+\bibitem{Enss2005}
+Irwin~K. Hilton~G.
+\newblock Transition-edge sensors.
+\newblock In {\em Cryogenic Particle Detection}, volume~99. Springer, Berlin,
+  Heidelberg, 2005.
+
+\bibitem{Irwin1998b}
+K.~D. Irwin, G.~C. Hilton, D.~A. Wollman, and J.~M. Martinis.
+\newblock Thermal-response time of superconducting transition-edge
+  microcalorimeters.
+\newblock {\em J. Appl. Phys.}, 83:3978, 1998.
+
 \bibitem{Dobbs2011}
 M.~A. Dobbs, M.~Lueker, K.~A. Aird, A.~N. Bender, B.~A. Benson, L.~E. Bleem,
   J.~E. Carlstrom, C.~L. Chang, H.~M. Cho, J.~Clarke, T.~M. Crawford, A.~T.
@@ -106,11 +118,5 @@ Kyle Zilic.
 \newblock {\em Calibration and Design of the E and B EXperiment (EBEX)
   Cryogenic Receiver}.
 \newblock PhD thesis, University of Minnesota, 2014.
-
-\bibitem{Enss2005}
-Irwin~K. Hilton~G.
-\newblock Transition-edge sensors.
-\newblock In {\em Cryogenic Particle Detection}, volume~99. Springer, Berlin,
-  Heidelberg, 2005.
 
 \end{thebibliography}

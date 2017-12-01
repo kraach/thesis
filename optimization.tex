@@ -385,22 +385,29 @@ The left edge of the bilayer overlapped the bling, right panel of Figure~\ref{fi
 %Discuss target detector parameters. Be very clear about which changes were made to fabrication process in order to optimize the detector sensitivity for a space-like environment and for EBEX.
 
 \subsubsection{Ideal Normal Resistance} 
+
+The \ac{TES} bolometer response would be unstable if it were underdamped or with exponentially increasing oscillations \cite{Enss2005}. 
+To operate the \ac{TES} bolometer in a stable regime, the bolometer's LCR filter bandwidth, $\Delta B = R_{bolo}/(2\pi L)$, needed to exceed the \ac{TES} effective thermal bandwidth by a factor of 5.8 \cite{Irwin1998b}.
+
+The stability of the detector depended on the value of the normal resistance. 
+The 
+
 The target normal resistance for all bands was 1.5~$\Omega$, Table~\ref{tab:Design_Params}.
 The goal was to ensure the detector, when biased in the transition, remained in the stable regime where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} thermal bandwidth by at least XXX (CITE PAPER). 
 
-The electrical cross-talk is also a function of the bolometer resistance. 
-This needed to be subdominant to the optical cross-talk, due to beam side-lobes and radiation leakage within the detector integration cavity, which is typically at a level of $\sim$1\% \cite{Dobbs2011} . 
+The electrical cross-talk was also a function of the bolometer resistance. 
+In designing the electronics, we required the electrical cross-talk be subdominant to the optical cross-talk, due to beam side-lobes and radiation leakage within the detector integration cavity, which is typically at a level of $\sim$1\% \cite{Dobbs2011} . 
 %There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
 %The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer ~\cite{Dobbs2011}
-The electrical cross-talk is estimated by ~\cite{Dobbs2011}
+This electrical cross-talk was estimated by ~\cite{Dobbs2011}
 \begin{equation}
-\frac{R_{bolo}^2}{(2\Delta \omega L)^2}
+\left| \frac{R_{bolo}^2}{(2\Delta \omega L)^2} \right|
 \end{equation}
 %see page 100 of notebook for calculation
-For \ac{EBEX} we have inductors of $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \omega = 2\pi \cdot 60~kHz$. %$\Delta \nu = 60~kHz$. %
+For \ac{EBEX} we had inductors of $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \omega = 2\pi \cdot 60~kHz$. %$\Delta \nu = 60~kHz$. %
 %The lower bias frequencies have 60~$kHz$ spacing, but the higher bias frequencies (the lower capacitance values) are spaced by 80~$kHz$. 
 %This is because the change more (in absolute value)and the resonant frequency spacing is larger than predicted.)
-For a detector dropped to 85\% in the transition, a resistance of1.5~$\Omega$ results in cross-talk at a level of 0.5\%.
+For a detector dropped to 85\% in the transition, a resistance of1.5~$\Omega$ resulted in a predicted electrical cross-talk at a level of 0.5\%.
 
 %having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%
 
