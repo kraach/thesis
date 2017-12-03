@@ -307,25 +307,27 @@ The value used in flight was higher than the nominal lab value because in the te
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[height=2in]{figures/RV_201007301208.png} 
-\caption{The instantaneous resistance ($I \over V$) of a 150-01 bolometer as a function of the voltage bias across the bolometer. This bolometer was dropped to 0.7 of the starting value. 
+\includegraphics[height=2in]{figures/b53w0c0_RV.png} 
+\caption{The instantaneous resistance ($I \over V$) of a 150-01 bolometer as a function of the voltage bias across the bolometer. This bolometer was dropped to 0.6 of the starting value. 
 \label{fig:bolo_rv_curve} }
 \end{center}
 \end{figure}
 
 
-The left panel of Figure~\ref{fig:bolo_iv_curve} is an IV curve, the current measured as a function of the voltage bias across the \ac{TES}, for one detector on wafer 150-01.
+The left panel of Figure~\ref{fig:bolo_iv_curve} is an IV curve, the current measured as a function of the voltage bias across the \ac{TES}, for one detector on wafer~150-01.
 Above the superconducting transition, at higher voltage biases, the AlTi bilayer of the \ac{TES} was normal and so the current was proportional to $1/R$. 
-Fitting the normal region for this particular detector gave a resistance of 2.9~$\Omega$.
+Fitting the linear, normal region for this particular detector gave a resistance of 2.2~$\Omega$.
+%I=0.45V+0.85 this one had a big offset! 
 %RETURN HERE IF TIME
 %Note this resistance value was XXX higher than the value found from the network analysis. 
-As the bilayer began to superconduct, the resistance dropped and the current measured turned around with a characteristic smooth checkmark shape. 
+As the bilayer began to superconduct, the resistance dropped and the current measured turned around. % with a characteristic smooth checkmark shape. NOT THIS PLOT!
 Once the bolometer was sufficiently far into the superconducting transition, negative electro-thermal feedback kept the power dissipated in the bolometer at a fixed level, Section~\ref{sec:tes_bolometer}.
-In the plot of the power dissipated in the bolometer ($I \times V$) as function of $V_{bias}$, the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
+The right panel of Figure~\ref{fig:bolo_iv_curve} is a PV curve, the power dissipated in the bolometer ($I \times V$) as function of $V_{bias}$. 
+The electrical power required to hold the detector in the transition is the horizontal section of the PV curve, $\sim$10~pW for this detector.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.99\columnwidth]{figures/IV_201007301208.png} 
+\includegraphics[width=0.99\columnwidth]{figures/b53w0c0_IV.png} 
 \caption{Left: The current through the \ac{SQUID} as function of the voltage bias across the bolometer. Right: The electrical power dissipated in the bolometer ($I \times V$) as a function of the voltage bias across the bolometer.
 \label{fig:bolo_iv_curve} }
 \end{center}
