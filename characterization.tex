@@ -206,11 +206,11 @@ Histograms summarizing the measured critical temperatures for the three \ac{EBEX
 The median critical temperatures, 0.45, 0.49, and 0.51~K for the 150, 250, and 410 GHz bands, respectively, were within 16\% of the target value of 0.44~K. 
 %There was a $\sim$20\% wafer-to-wafer spread
 The greatest spread in measured values of $T_{c}$ was in the 150~GHz band. 
-\textcolor{red}{The effect of this spread is to increase Johnson (phonon) 
+The effect of this spread is to increase Johnson (phonon) 
 noise when $T_{c}$ is above (below) the design value. 
 At the high (low) edge of the distribution with $T_{c}$~=~0.54~K (0.36~K), there was an 11\% (5\%) increase in the calculated Johnson (phonon) noise 
 relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\sqrt{\mathrm{Hz}}$). 
-}
+
 
 %IN THE PAPER, THEY GO ON TO TALK ABOUT THE EFFECT OF THE MEASURED TCS ON PSAT AND RESPONSIVITY, BUT IT'S NOT MAKING SENSE TO ME AND I DIDN'T DO THE CALCULATION. COME BACK TO THIS IF YOU HAVE TIME.
 
@@ -239,7 +239,7 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Red Text}
+%\subsection{Red Text}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -251,6 +251,8 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 % too vague. The thermal conductance of the thermal link from the TES to the bath governs the bolometer sensitivity. 
 
 %\textcolor{red}{In bolometer theory, you need to have already explained electrothermal feedback.}
+
+%COME BACK TO ALL OF THESE IF YOU HAVE TIME!
 
 \textcolor{red}{How do we measure the thermal conductance? (Be sure you explain how we get from IV to PV and how we extract $P_{electrical}$ and how wrong we might be about this number.)}
 
@@ -285,12 +287,12 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 %TOWARDS THERMAL CONDUCTANCES 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath. %, Figure~\ref{fig:bolometer_cartoon}.
-In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:phonon_nep}. 
-We want to minimize $G$ so that we minimize the detector \ac{NEP} and thus maximize the detector sensitivity. 
-This value of $G$, however, needs to be sufficiently high to allow for the detectors to operate in the presence of the radiative load at float, Section~\ref{sec:detector_design}. 
+%The detector sensitivity is a function of the thermal conductance, $G$, of the link from the TES to the bath. %, Figure~\ref{fig:bolometer_cartoon}.
+%In particular, the phonon \ac{NEP} is proportional to $G$, Equation~\ref{eq:phonon_nep}. 
 %as well as any fluctuations in load %fluctuations are a problem for ground-based expt's, not us
-The dark test cryostat measurements of $G$ allowed us to predict the phonon \ac{NEP} for each detector and also determine if there would be sufficient dynamic range to operate the detectors under the expected loading conditions. 
+The dark test cryostat measurements of the thermal conductance of the link from the \ac{TES} to the bath allowed us to predict the phonon \ac{NEP} for each detector and also determine if there would be sufficient dynamic range to operate the detectors under the expected loading conditions. 
+We wanted to minimize $G$ so that we minimized the detector \ac{NEP} and thus maximized the detector sensitivity. 
+The value of $G$, however, needed to be sufficiently high to allow for the detectors to operate in the presence of the radiative load at float, Section~\ref{sec:detector_design}. 
 
 In order to measure the thermal conductance of the link, 
 %we performed an IV curve for each bolometer.
@@ -312,14 +314,14 @@ The value used in flight was higher than the nominal lab value because in the te
 \end{figure}
 
 
-Example IV and PV curves from one detector on wafer 150-01 are shown in Figure~\ref{fig:bolo_iv_curve}.
+The left panel of Figure~\ref{fig:bolo_iv_curve} is an IV curve, the current measured as a function of the voltage bias across the \ac{TES}, for one detector on wafer 150-01.
 Above the superconducting transition, at higher voltage biases, the AlTi bilayer of the \ac{TES} was normal and so the current was proportional to $1/R$. 
-Fitting the normal region for this particular detector gave a resistance of 2.9 $\Omega$.
+Fitting the normal region for this particular detector gave a resistance of 2.9~$\Omega$.
 %RETURN HERE IF TIME
 %Note this resistance value was XXX higher than the value found from the network analysis. 
 As the bilayer began to superconduct, the resistance dropped and the current measured turned around with a characteristic smooth checkmark shape. 
 Once the bolometer was sufficiently far into the superconducting transition, negative electro-thermal feedback kept the power dissipated in the bolometer at a fixed level, Section~\ref{sec:tes_bolometer}.
-When we plot the power dissipated in the bolometer ($I \times V$), the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
+In the plot of the power dissipated in the bolometer ($I \times V$) as function of $V_{bias}$, the electrical power required to hold the detector in the transition is the horizontal section of the PV curve.
 
 \begin{figure}[htbp]
 \begin{center}
