@@ -109,13 +109,13 @@ Around 800~mK, when both the niobium leads on the wafer and the aluminum wirebon
 Histograms summarizing the measured normal resistance values for the flight wafers, broken down by frequency band, are shown in Fig.~\ref{fig:rn_histograms}. 
 %Section~\ref{sec:detector_optimization}. the optimization section doesn't actually provide the detail I want it to provide.
 The median normal resistance, $R_{normal}$, for the 150, 250, and 410~GHz bands was 1.9, 1.5, and 1.0~$\Omega$ respectively. 
-\textcolor{red}{FROM THE PAPER.}
+%\textcolor{red}{FROM THE PAPER.}
 The 150 and 410~GHz bimodal distributions were due to detector parameters being closely grouped within a single fabrication run, but varying between fabrication runs. 
 The measured value of $R_{n}$ for the 250~GHz band closely matched the design (see 
 Table~\ref{tab:Design_Params}). 
 For the other two frequency bands, one mode of the distribution closely matched while the other mode was higher (lower) than design for the 150 (410)~GHz band. 
-The 150~GHz detectors with a measured $R_{n}$ of 2~$\Omega$, instead of the nominal 1.5~$\Omega$, were calculated to have increased electrical cross-talk from a value of 0.5\% to 0.9\% and decreased loopgain by 30\%. 
-The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the design value, were calculated to have increased Johnson noise by 20\% relative to the nominal expected value of 4.0 pA$/\sqrt{\mathrm{Hz}}$ (9.4~aW$/\sqrt{\mathrm{Hz}}$); see Equation~\ref{eqn:noisebudget}.
+The 150~GHz detectors with a measured $R_{n}$ of 1.9~$\Omega$, instead of the nominal 1.5~$\Omega$, were calculated to have increased electrical cross-talk from a value of 0.5\% to 0.9\% and decreased loopgain by 30\%. 
+The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the design value, were calculated to have increased Johnson noise by 20\% relative to the nominal expected value of 4.0 pA$/\sqrt{\mathrm{Hz}}$ (9.4~aW$/\sqrt{\mathrm{Hz}}$); see Equation~\ref{eq:johnson}.
 
 \begin{figure}[ht!]
 \centering
@@ -126,8 +126,6 @@ The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the d
 and design (vertical gold dashed) values.
 \label{fig:rn_histograms} }
 \end{figure}
-
-
 
 
 
@@ -145,23 +143,6 @@ and design (vertical gold dashed) values.
 %\end{center}
 %\end{figure}
 
-
-
-
-
-
-
-DO YOU WANT TO INCLUDE MORE DETAILS ABOUT THE CROSS-TALK CALCULATION? PROBABLY? 
-There is electrical cross-talk between detectors due to the modulation of the detector resistance which results in the modulation of the carrier bias. 
-The level of this leakage is approximated by calculating the current modulation due to the neighboring bolometer's carrier bias leaking relative to the on-resonance current modulation for a bolometer. 
-\begin{equation}
-\frac{R_{bolo}^2}{(2\Delta \omega L)^2}
-\end{equation}
-~\cite{Dobbs2011}
-%see page 100 of notebook for calculation
-where for \ac{EBEX} we have inductors $L_{EBEX} = 24~\mu H$ and frequency spacing of at least $\Delta \omega = 2\pi 60~kHz$. 
-(The lower bias frequencies have this spacing, but when cooled, the lower capacitance values change more and the resonant frequency spacing is larger than predicted.)
-For a detector dropped to 85\% in the transition, having a normal resistance of 1.9~$\Omega$ instead of 1.5~$\Omega$ results in a bias leakage increase of 60\%, increasing the cross-talk from 0.5\% to 0.8\%
 
 %The consequences of overshooting this value, as is the case for many of the 150~GHz detectors, are an increase in the detector voltage bias leakage, which is proportional to $R^2$ \cite{dobbs_revSciInst_2012}, and a decrease in the loopgain, which is inversely proportional to R. 
 %% if R is higher, then johnson current noise is decreased since it goes like 1/sqrt(R)
