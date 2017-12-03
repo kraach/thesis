@@ -322,7 +322,7 @@ Fitting the linear, normal region for this particular detector gave a resistance
 %Note this resistance value was XXX higher than the value found from the network analysis. 
 As the bilayer began to superconduct, the resistance dropped and the current measured turned around. % with a characteristic smooth checkmark shape. NOT THIS PLOT!
 Once the bolometer was sufficiently far into the superconducting transition, negative electro-thermal feedback kept the power dissipated in the bolometer at a fixed level, Section~\ref{sec:tes_bolometer}.
-The right panel of Figure~\ref{fig:bolo_iv_curve} is a PV curve, the power dissipated in the bolometer ($I \times V$) as function of $V_{bias}$. 
+The right panel of Figure~\ref{fig:bolo_iv_curve} is a PV curve, the power dissipated in the bolometer ($I \times V$) as a function of the voltage bias. 
 The electrical power required to hold the detector in the transition is the horizontal section of the PV curve, $\sim$10~pW for this detector.
 
 \begin{figure}[htbp]
@@ -380,12 +380,13 @@ The electrical power required to hold the detector in the transition is the hori
 
 %As the Joule Power decreases, the detector temperature decreases towards its transition temperature and the . 
 
-Because each bolometer wafer is enclosed in a light-tight box for the dark characterization tests, there is negligible radiative power and so the total electrical power measured from the PV curve is the total power dissipated in the detector. 
-This power is often referred to as the saturation power, $P_{sat}$. 
+For the dark characterization tests, because each bolometer wafer was enclosed in a light-tight box which was heat sunk to the bath, the radiative power on the bolometer should have been negligible. 
+In the case of a negligible radiative load, the total electrical power measured from the PV curve was the total power dissipated in the detector. 
+This power was often referred to as the saturation power, $P_{sat}$. 
 %The detector in Figure~\ref{fig:bolo_iv_curve} has $P_{sat} = 1.9~pW$.
-$P_{sat}$ can be a useful parameter to think in terms of because the bolometer loses nearly all sensitivity if it saturates, i.e. if $P_{sat}$ is less than or near to the radiative load during observations. 
+$P_{sat}$ was a useful parameter to think in terms of because the bolometer lost nearly all sensitivity if it saturated, i.e. if $P_{sat}$ was less than or near to the radiative load during observations. 
 
-The average thermal conductance of the weak link was calculated from the $P_{sat}$, measured from the PV curve, and the measured critical temperature, Section~\ref{sec:critical_temp}, 
+The average thermal conductance of the weak link was calculated from $P_{sat}$, measured from the PV curve, and the measured critical temperature, Section~\ref{sec:critical_temp}, 
 \begin{equation}
 \overline{G}(T_{bath}) = \frac{P_{sat}(T_{bath})}{T_{c} - T_{bath}}
 \end{equation}
