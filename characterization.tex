@@ -176,12 +176,19 @@ and design (vertical gold dashed) values.
 
 For the measurement of the critical temperature in \ac{ETC}, we placed a voltage bias of 5~$nV_{rms}$ across the detector such that the Joule heating of $\frac{V^2}{R} = 1.5~fW$ was negligible but there was still a measurable current signal. 
 The temperature was slowly, less than 3~mK/min, dialed up and down to move the bolometers through their superconducting transitions. 
-Changing the temperature slowly was important because the temperature was readout from a temperature sensor screwed to the underside of the invar plate onto which the wafer was mounted 
+Changing the temperature slowly was important because the temperature was read out from a sensor attached to the underside of the invar plate onto which the wafer was mounted 
 %2. the wafer heater was mounted to the underside of the invar. 
 and the bolometers were only weakly coupled to the bath via their spiderweb legs. 
+We used the bath temperature as a proxy for the bolometer temperature. 
+%I WANT YOU TO SAY WHY IT WAS IMPORTANT TO DO THIS MEASUREMENT DARK (COME BACK IF YOU HAVE TIME)
 Without time to thermalize, there would have been significant hysteresis. 
+This measurement also relies on the cryostat being dark because radiative power would have increased the temperature of the detector but not the bath where the temperature sensor was mounted. 
+%So the wafer temperature sensor would not have been a good proxy for the bolometer temperature. 
 Fig.~\ref{fig:tc_measurement} is an example of a critical temperature measurement for a bolometer on wafer~150-02. 
 We measured demodulated \ac{ADC} counts with the \ac{DfMUX} boards and converted to resistance using the measured current and voltage transfer functions and Ohm's law, $R=V_{bias}/I_{measured}$.
+When the \ac{TES} was superconducting, there was an offset in the resistance measured because there was still current due to the non-zero stray impedance. 
+%When the \ac{TES} is normal, there is more noise because .... why would the current be noisier when the \ac{tES} was normal ??? current was smaller. so we saw digitization noise?
+
 
 %The bottom two panels show the bolometer resistance as a function of time and temperature. 
 %The hysteresis between the critical temperature measured cooling and warming is generally less than 5~mK, sufficiently accurate for characterization.
@@ -189,16 +196,17 @@ We measured demodulated \ac{ADC} counts with the \ac{DfMUX} boards and converted
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/b53w0c0_rvst.png}
-\caption{
+\caption{Resistance as a function of bolometer temperature for a detector from wafer 150-02. The resistance was the ratio of the voltage bias across the bolometer to the current measured through the \ac{SQUID}. This bolometer had a $T_{c}$ of $\sim$414~mK. 
 \label{fig:tc_measurement} }
 \end{center}
 \end{figure} 
 
 Histograms summarizing the measured critical temperatures for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:tc_histograms}. 
-The target critical temperature for each band was 0.44~K, a value which optimizes the phonon noise term given the \ac{EBEX} bath temperature. %or refer to Section~\ref{sec:detector_optimization} for the motivation ??
-We find the median critical temperature for the 150, 250, and 410 GHz bands to be 0.45, 0.49, and 0.51~K respectively.  
-The consequence of overshooting the critical temperature, as for some of the detectors in each of the frequency bands, is an increase in the Johnson noise, proportional to $\sqrt{T}$, and an increase in the phonon noise, proportional to $T$. 
-The consequence of undershooting the critical temperature, as for roughly half of the 150~GHz detectors, is potentially not being able to drop the detector into the transition because the critical temperature is too close to the bath temperature. % is this actually why we didn't want to go too low?
+%The target critical temperature for each band was 0.44~K, a value which optimizes the phonon noise term given the \ac{EBEX} bath temperature. %or refer to Section~\ref{sec:detector_optimization} for the motivation ??
+The median critical temperatures for the 150, 250, and 410 GHz bands were 0.45, 0.49, and 0.51~K respectively.  
+
+%The consequence of overshooting the critical temperature, as for some of the detectors in each of the frequency bands, is an increase in the Johnson noise, proportional to $\sqrt{T}$, and an increase in the phonon noise, proportional to $T$. 
+%The consequence of undershooting the critical temperature, as for roughly half of the 150~GHz detectors, is potentially not being able to drop the detector into the transition because the critical temperature is too close to the bath temperature. % is this actually why we didn't want to go too low?
 %\comred{what's the consequence of the wide spread in Tc for the 150s? how concerned are we about the level of spread we fabricated?}
 
 FROM THE PAPER.
