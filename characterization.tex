@@ -384,38 +384,38 @@ For the dark characterization tests, because each bolometer wafer was enclosed i
 In the case of a negligible radiative load, the total electrical power measured from the PV curve was the total power dissipated in the detector. 
 This power was often referred to as the saturation power, $P_{sat}$. 
 %The detector in Figure~\ref{fig:bolo_iv_curve} has $P_{sat} = 1.9~pW$.
-$P_{sat}$ was a useful parameter to think in terms of because the bolometer lost nearly all sensitivity if it saturated, i.e. if $P_{sat}$ was less than or near to the radiative load during observations. 
+The saturation power was a useful parameter to think in terms of because the bolometer lost nearly all sensitivity if it saturated, i.e. if $P_{sat}$ was less than or near to the radiative load during observations. 
 
-The average thermal conductance of the weak link was calculated from $P_{sat}$, measured from the PV curve, and the measured critical temperature, Section~\ref{sec:critical_temp}, 
+The average thermal conductance of the weak link for each detector was calculated from $P_{sat}$, measured from the PV curve, and its measured critical temperature, Section~\ref{sec:critical_temp}, 
 \begin{equation}
 \overline{G}(T_{bath}) = \frac{P_{sat}(T_{bath})}{T_{c} - T_{bath}}
 \end{equation}
 $\overline{G}$ is a function of the bath temperature. 
 The test cryostats operated at different bath temperatures than \ac{EBEX}, so the measured $\overline{G}$s needed to be adjusted to the \ac{EBEX} bath temperature. 
 %In order to calculate $\overline{G}$ for \ac{EBEX}, we assume XXX. 
-If the phonon transport along the weak link is diffusive, as opposed to ballistic (where the mean free path of the phonon is much longer than the length of the material in the direction of travel), then the thermal conductivity should follow a power law, 
+If the phonon transport along the weak link was diffusive, as opposed to ballistic (where the mean free path of the phonon was much longer than the length of the material in the direction of travel), then the thermal conductivity followed a power law, 
 \begin{equation}
 \kappa \left( T \right) = \kappa_0 T^n
 \end{equation}
-where n is the power of the thermal conductivity. 
+where n was the power of the thermal conductivity. 
 Normal metals have $n=1$ while crystalline dielectrics or superconductors have $n=3$ \cite{Mather1982}. 
 The 2009 \ac{EBEX} test flight wafers were measured to have n values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410~GHz bands respectively \cite{Hubmayr2009}.
-If the weak link has a uniform cross section of area $A$ and length $l$, then the thermal conductance is 
+If the weak link had a uniform cross section of area $A$ and length $l$, then the thermal conductance was 
 \begin{equation}
 G = \frac{A}{l} \kappa_0 T^n
 \end{equation}
-and the power flow is described by
+and the power flow was described by
 \begin{equation}
 P = \int \frac{dP}{dT} dT = \int_{T_{bath}}^{T_c} \frac{A}{l} \kappa_0 T^n dT = \frac{A\kappa_0}{l(n+1)} \left( T_c^{n+1} - T_{bath}^{n+1} \right)
 \label{eq:power_int}
 \end{equation}
-Letting this equal equation~\ref{eq:gbar} and then taking the ratio of the power in \ac{EBEX} to \ac{ETC}, we find the thermal conductance at the \ac{EBEX} bath temperature, $T_{ebex}$ is
+Letting this equal equation~\ref{eq:gbar} and then taking the ratio of the power in \ac{EBEX} to the test cryostat, we found the corrected thermal conductance at the \ac{EBEX} bath temperature, $T_{ebex}$ to be
 \begin{equation}
-\overline{G} \left( T_{ebex} \right) = P_{sat, etc} \left( T_c - T_{ebex} \right) \frac{\left( T_c^{n+1} - T_{ebex}^{n+1} \right)}{\left( T_c^{n+1} - T_{etc}^{n+1} \right)}
+\overline{G} \left( T_{ebex} \right) = P_{sat, test} \left( T_c - T_{ebex} \right) \frac{\left( T_c^{n+1} - T_{ebex}^{n+1} \right)}{\left( T_c^{n+1} - T_{test}^{n+1} \right)}
 \end{equation}
 %\overline{G} \Delta T 
-where $P_{sat,etc}$ is the saturation power measured in \ac{ETC}, $T_c$ is the measured critical temperature, and n is the power of the thermal conductivity from the \ac{EBEX} test flight wafer measurements. 
-For \ac{NEP} predictions, we assume the same power law form of the thermal conductivity and related our measurement of $\overline G$ to $G$ via \cite{Lee1998}
+where $P_{sat,etc}$ was the saturation power measured in the test cryostat, $T_c$ was the measured critical temperature, and n was the power of the thermal conductivity from the \ac{EBEX} test flight wafer measurements. 
+For \ac{NEP} predictions, we assumed the same power law form of the thermal conductivity and related our measurement of $\overline G$ to $G$ via Lee \cite{Lee1998}
 \begin{equation}
 G = (n + 1) \frac{1-\frac{T_{bath}}{T}}{1-\left(\frac{T_{bath}}{T}\right)^{n+1}} \overline{G}
 \label{eq:gbar_to_g}
