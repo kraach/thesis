@@ -182,7 +182,7 @@ and the bolometers were only weakly coupled to the bath via their spiderweb legs
 We used the bath temperature as a proxy for the bolometer temperature. 
 %I WANT YOU TO SAY WHY IT WAS IMPORTANT TO DO THIS MEASUREMENT DARK (COME BACK IF YOU HAVE TIME)
 Without time to thermalize, there would have been significant hysteresis. 
-This measurement also relies on the cryostat being dark because radiative power would have increased the temperature of the detector but not the bath where the temperature sensor was mounted. 
+This measurement also relied on the cryostat being dark because radiative power would have increased the temperature of the detector but not the bath where the temperature sensor was mounted. 
 %So the wafer temperature sensor would not have been a good proxy for the bolometer temperature. 
 Fig.~\ref{fig:tc_measurement} is an example of a critical temperature measurement for a bolometer on wafer~150-02. 
 We measured demodulated \ac{ADC} counts with the \ac{DfMUX} boards and converted to resistance using the measured current and voltage transfer functions and Ohm's law, $R=V_{bias}/I_{measured}$.
@@ -203,24 +203,28 @@ When the \ac{TES} was superconducting, there was an offset in the resistance mea
 
 Histograms summarizing the measured critical temperatures for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:tc_histograms}. 
 %The target critical temperature for each band was 0.44~K, a value which optimizes the phonon noise term given the \ac{EBEX} bath temperature. %or refer to Section~\ref{sec:detector_optimization} for the motivation ??
-The median critical temperatures for the 150, 250, and 410 GHz bands were 0.45, 0.49, and 0.51~K respectively.  
+The median critical temperatures, 0.45, 0.49, and 0.51~K for the 150, 250, and 410 GHz bands, respectively, were within 16\% of the target value of 0.44~K. 
+%There was a $\sim$20\% wafer-to-wafer spread
+The greatest spread in measured values of $T_{c}$ was in the 150~GHz band. 
+\textcolor{red}{The effect of this spread is to increase Johnson (phonon) 
+noise when $T_{c}$ is above (below) the design value. 
+At the high (low) edge of the distribution with $T_{c}$~=~0.54~K (0.36~K), there was an 11\% (5\%) increase in the calculated Johnson (phonon) noise 
+relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\sqrt{\mathrm{Hz}}$). 
+}
+
+%IN THE PAPER, THEY GO ON TO TALK ABOUT THE EFFECT OF THE MEASURED TCS ON PSAT AND RESPONSIVITY, BUT IT'S NOT MAKING SENSE TO ME AND I DIDN'T DO THE CALCULATION. COME BACK TO THIS IF YOU HAVE TIME.
 
 %The consequence of overshooting the critical temperature, as for some of the detectors in each of the frequency bands, is an increase in the Johnson noise, proportional to $\sqrt{T}$, and an increase in the phonon noise, proportional to $T$. 
 %The consequence of undershooting the critical temperature, as for roughly half of the 150~GHz detectors, is potentially not being able to drop the detector into the transition because the critical temperature is too close to the bath temperature. % is this actually why we didn't want to go too low?
 %\comred{what's the consequence of the wide spread in Tc for the 150s? how concerned are we about the level of spread we fabricated?}
 
-FROM THE PAPER.
-For the measurement of the critical temperature $T_{c}$ we biased the detectors with 5~nV such that the Joule heating of 1.5~fW was 
-small and the bath temperature was a good proxy for the bolometer's temperature. For the same reason, the measurement was 
-done in dark conditions. We slowly changed the detectors' temperature while monitoring their current. 
-At the critical temperature the current showed a steep transition.
-Figure~\ref{fig:tc_histograms} shows histograms summarizing the measured critical temperatures. There 
-was a $\sim$20\% wafer-to-wafer spread in the measured $T_{c}$ with the medians for the three bands within 
-16\% of the target value of 0.44~K. 
-The 150~GHz detectors have the widest spread of measured $T_{c}$. The effect of this spread is to increase Johnson (phonon) 
-noise when $T_{c}$ is above (below) the design value. 
-At the high (low) edge of the distribution with $T_{c}$~=~0.54~K (0.36~K), there was an 11\% (5\%) increase in the calculated Johnson (phonon) noise 
-relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\sqrt{\mathrm{Hz}}$). 
+%FROM THE PAPER.
+%There was a $\sim$20\% wafer-to-wafer spread in the measured $T_{c}$ with the medians for the three bands within 
+%16\% of the target value of 0.44~K. 
+%The 150~GHz detectors have the widest spread of measured $T_{c}$. The effect of this spread is to increase Johnson (phonon) 
+%noise when $T_{c}$ is above (below) the design value. 
+%At the high (low) edge of the distribution with $T_{c}$~=~0.54~K (0.36~K), there was an 11\% (5\%) increase in the calculated Johnson (phonon) noise 
+%relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\sqrt{\mathrm{Hz}}$). 
 
 
 
