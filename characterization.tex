@@ -162,27 +162,26 @@ and design (vertical gold dashed) values.
 %TOWARDS CRITICAL TEMPERATURES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{WANT WARMING AND COOLING IN ETC. BE CLEAR ABOUT HYSTERESIS FROM WARMING AND COOLING. I'd like for you to note we need to perform this slowly because there is an inherent hysteresis, LAG DUE TO TEMPERATURE SENSOR BEING MOUNTED TO INVAR INSTEAD OF TES.}
+%\textcolor{red}{HAVE WE MOTIVATED ELSEWHERE WHY WE CARE ABOUT VALUE OF $T_{C}$? Yes.}
 
-\textcolor{red}{HAVE WE MOTIVATED ELSEWHERE WHY WE CARE ABOUT VALUE OF $T_{C}$?}
+%
+%WOULD LIKE TO ADDRESS THESE! COME BACK IF YOU HAVE TIME. 
+%\textcolor{red}{WANT WARMING AND COOLING IN ETC. BE CLEAR ABOUT HYSTERESIS FROM WARMING AND COOLING. I'd like for you to note we need to perform this slowly because there is an inherent hysteresis, LAG DUE TO TEMPERATURE SENSOR BEING MOUNTED TO INVAR INSTEAD OF TES.}
+%
+%\textcolor{red}{Note, this resistance does not agree with the resistance measured via the network analyses or via the IV curves. Any ideas why? Maybe bring this up in loopgain section???}
+%
+%\textcolor{red}{Is it worth nothing there is a resistance offset of $\sim 0.1 \Omega$? And this tells us something about our stray impedance?}
+%
+%\textcolor{red}{Can you explain exactly how $T_{c}$ was extracted from the data, i.e. what temperature did you call Tc? Also, what defined/determined the transition width?}
 
-\textcolor{red}{Note, this resistance does not agree with the resistance measured via the network analyses or via the IV curves. Any ideas why? Maybe bring this up in loopgain section???}
-
-\textcolor{red}{Is it worth nothing there is a resistance offset of $\sim 0.1 \Omega$? And this tells us something about our stray impedance?}
-
-\textcolor{red}{Can you explain exactly how $T_{c}$ was extracted from the data, i.e. what temperature did you call Tc? Also, what defined/determined the transition width?}
-
-For the measurement of the critical temperature in \ac{ETC}, we placed a voltage bias of 5~$nV_{rms}$ across the detector such that the Joule heating was negligible ($\frac{V^2}{R} = 1.5~fW$) but there was still a measurable current signal. 
+For the measurement of the critical temperature in \ac{ETC}, we placed a voltage bias of 5~$nV_{rms}$ across the detector such that the Joule heating of $\frac{V^2}{R} = 1.5~fW$ was negligible but there was still a measurable current signal. 
 The temperature was slowly, less than 3~mK/min, dialed up and down to move the bolometers through their superconducting transitions. 
-We measured demodulate \ac{ADC} counts with the \ac{DfMUX} boards and converted to resistance using the measured current and voltage transfer functions and Ohm's law, $R=V_{bias}/I_{measured}$.
+Changing the temperature slowly was important because the temperature was readout from a temperature sensor screwed to the underside of the invar plate onto which the wafer was mounted 
+%2. the wafer heater was mounted to the underside of the invar. 
+and the bolometers were only weakly coupled to the bath via their spiderweb legs. 
+Without time to thermalize, there would have been significant hysteresis. 
 Fig.~\ref{fig:tc_measurement} is an example of a critical temperature measurement for a bolometer on wafer~150-02. 
-
-Changing the temperature slowly was important because
-1. The temperature was readout from a temperature sensor screwed to the underside of the invar plate onto which the wafer was mounted. 
-2. the wafer heater was mounted to the underside of the invar. 
-3. the bolometers were only weakly coupled to the bath via their spiderweb legs 
-
-
+We measured demodulated \ac{ADC} counts with the \ac{DfMUX} boards and converted to resistance using the measured current and voltage transfer functions and Ohm's law, $R=V_{bias}/I_{measured}$.
 
 %The bottom two panels show the bolometer resistance as a function of time and temperature. 
 %The hysteresis between the critical temperature measured cooling and warming is generally less than 5~mK, sufficiently accurate for characterization.
@@ -196,7 +195,7 @@ Changing the temperature slowly was important because
 \end{figure} 
 
 Histograms summarizing the measured critical temperatures for the three \ac{EBEX} frequency bands are shown in Fig.~\ref{fig:tc_histograms}. 
-The target critical temperature for each band is 0.44~K, a value which optimizes the phonon noise term given the \ac{EBEX} bath temperature. %or refer to Section~\ref{sec:detector_optimization} for the motivation ??
+The target critical temperature for each band was 0.44~K, a value which optimizes the phonon noise term given the \ac{EBEX} bath temperature. %or refer to Section~\ref{sec:detector_optimization} for the motivation ??
 We find the median critical temperature for the 150, 250, and 410 GHz bands to be 0.45, 0.49, and 0.51~K respectively.  
 The consequence of overshooting the critical temperature, as for some of the detectors in each of the frequency bands, is an increase in the Johnson noise, proportional to $\sqrt{T}$, and an increase in the phonon noise, proportional to $T$. 
 The consequence of undershooting the critical temperature, as for roughly half of the 150~GHz detectors, is potentially not being able to drop the detector into the transition because the critical temperature is too close to the bath temperature. % is this actually why we didn't want to go too low?
