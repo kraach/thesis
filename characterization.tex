@@ -526,10 +526,10 @@ This radiative load was provided via a blackbody, a body absorbing all incident 
 The \ac{ETC} blackbody was inspired by the design of Peterson and Richards for calibrating IR photometers \cite{Peterson1984a}. 
 The blackbody itself was an inverted cone with an angle of 37$^{\circ}$, Figure~\ref{fig:blackbody_design}. 
 The blackbody was made by pouring castable Eccosorb CR-110 into a teflon mould and baking it.
-For mm-wave radiation incident on flat Eccosorb CR-110 at XXX~K, 30\% is reflected and 70\% refracted \cite{}.
+For mm-wave radiation incident on flat Eccosorb CR-110 at cryogenic temperatures, 30\% is reflected and 70\% refracted \cite{Peterson1984a}.
 %Eccosorb CR-110 reflects 30\% and refracts 70\% of radiation incident on its surface. %at XXX GHz.
 The refracted radiation was absorbed inside the cone. 
-The reflected radiation for the light ray with the outermost angle, the one with the fewest bounces,  
+The reflected radiation for the light ray with the outermost angle, the one with the fewest number of bounces,  
 %(the \ac{EBEX} 150~GHz detectors had a field of view of 20$^{\circ}$) %already said in caption
 reflected off the Eccosorb surface four times.
 %, $0.3  4 = XXX$ absorptivity. 
@@ -545,11 +545,13 @@ A steeper cone would have had greater absorptivity, but the height was limited b
 \end{figure}
 
 A model of the optical efficiency testbed is shown in Figure~\ref{fig:opt_eff_setup}. 
-The wafer box was supported by a thin (XXX) column of XXX. 
-With the cold plate at a temperature of 4.2~K, the leg put a heat load of XXX on the fridge. 
-The blackbody was supported by a thin column XXX. 
-For the hexagon of seven detectors open to the blackbody, the wafer box had a miniature optics stack of wave guides and horns, to provide the high pass cutoff, and Cardiff LPE filter scraps, for the low pass cutoff. 
-
+The wafer box was supported by a thin column of vespel mounted directly to the 4~K cold plate. 
+For the hexagon of seven detectors open to the blackbody, the wafer box had a miniature gold-plated optics stack of wave guides and horns, to provide the high pass cutoff, and Cardiff LPE filter scraps, for the low pass cutoff. 
+%With the cold plate at a temperature of 4.2~K, the leg put a heat load of XXX on the fridge. 
+The blackbody was supported by a thin column of GR-10, also mounted directly to the 4~K cold plate. 
+There was a cooper bar embedded inside the Eccosorb for mounting a temperature sensor. %RuOx?
+To cool the blackbody down from room temperature, another copper bar embedded in the Eccosorb was connected to the 4~K plate via a gas-gap heat switch (not shown in the figure).
+For the optical efficiency measurements, the heat switch was opened and the blackbody temperature was controlled by a flat copper heater glued to the outside of the cone.
 
 %ADD PICTURE IF YOU HAVE TIME
 \begin{figure}[htp]
@@ -557,17 +559,16 @@ For the hexagon of seven detectors open to the blackbody, the wafer box had a mi
 \includegraphics[height=2.5in]{figures/optical_efficiency_setup.jpg}
 %\includegraphics[width=0.48\columnwidth]{figures/hardware/opt_eff_setup_picture4.jpg}
 \caption{The model of the optical efficiency testbed in \ac{ETC}. 
-The blackbody is the partially transparent cone. 
-The grey box atop the brown leg encloses the wafer 
+The blackbody is the partially transparent cone hanging from the metal plate attached to the top of the green GR-10 column. 
+The grey wedge-shaped box atop the brown vespel leg encloses the wafer. 
+There is a gold-plated stack of horns and waveguides, as well as a set of low pass filters, above a hexagon of seven detectors open to the blackbody. 
 The wafer box and blackbody are both mounted to the 4.2~K cold plate. 
 %Right: \textcolor{red}{While it would be lovely to have a photograph of the setup, getting this to some understandable state is probably not something you have time for.}
 \label{fig:opt_eff_setup} }
 \end{center}
 \end{figure}
 
-There was a cooper bar embedded inside the Eccosorb for mounting a temperature sensor. %RuOx?
-To cool the blackbody down from room temperature, a copper bar embedded in the Eccosorb was connected to the 4~K plate via a gas-gap heat switch.
-For the optical efficiency measurements, the heat switch was opened and the blackbody temperature was controlled by a flat copper heater glued to the outside of the cone.
+
 
 
 \begin{figure}[htp]
@@ -588,13 +589,13 @@ The lines leading from each circle to the edge of the wafer were the bolometer's
 The grouping of the bolometers read out by each \ac{SQUID} were indicated by outlines of different colors.
 The non-functioning detectors were crossed off. 
 
-As discussed in Section~\ref{}, the total power dissipated in the detector is
+The total power dissipated in the detector was
 \begin{equation}
 P = P_{elec} + \epsilon P_{rad} = \overline{G} \Delta T
 \label{eq:bolo_power}
 \end{equation}
-where $\epsilon$ is the detector optical efficiency. 
-For several temperatures of the blackbody, the electrical power required to hold the detector in the transition was measured, Figure~\ref{fig:opt_eff_bb_curves}.
+where $\epsilon$ was the detector optical efficiency. 
+For several blackbody temperatures, the electrical power required to hold the detector in the transition was measured, Figure~\ref{fig:opt_eff_bb_curves}.
 As the blackbody temperature increased, the electrical power decreased.  
 By 9~K, the power from the blackbody alone saturated the detectors. 
 That is, there was no turnaround observed in the IV curve, the bolometer was normal even when the electrical power was at zero. 
@@ -602,7 +603,7 @@ That is, there was no turnaround observed in the IV curve, the bolometer was nor
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2in]{figures/SqCh2_Ch1_all_bb_curves.png}
-\caption{IV (left) and PV (right) curves for wafer 150-01 bolometer 8-04. The electrical power required to hold the detector in the transition decreases as the blackbody temperature increases. 
+\caption{IV (left) and PV (right) curves for wafer 150-01 bolometer 8-04. The electrical power required to hold the detector in the transition decreased as the blackbody temperature increased. 
 \label{fig:opt_eff_bb_curves} }
 \end{center}
 \end{figure}
@@ -641,14 +642,16 @@ bolometer & efficiency \\
 \label{tab:opt_eff} }
 \end{table}
 
+%SO. MANY. THINGS. TO COME BACK TO IF YOU HAVE TIME.
+%\textcolor{red}{HERE you need to talk about:
+%\begin{itemize}
+%\item what is the uncertainty on the final percentage you quote? what are the major uncertainties in the optical efficiency measurement?
+%\item also note, the load the dark detectors saw. how big was it? why did they see it? what, if anything, does that say about the optical efficiency measurement for the detectors open to the blackbody? 
+%\item say if this is or is not consistent with other measurements of EBEX detector optical efficiency
+%\end{itemize}
+% }
 
-\textcolor{red}{HERE you need to talk about:
-\begin{itemize}
-\item what is the uncertainty on the final percentage you quote? what are the major uncertainties in the optical efficiency measurement?
-\item also note, the load the dark detectors saw. how big was it? why did they see it? what, if anything, does that say about the optical efficiency measurement for the detectors open to the blackbody? 
-\item say if this is or is not consistent with other measurements of EBEX detector optical efficiency
-\end{itemize}
- }
+The detectors not open to the blackbody also saw a change in their electrical power as a function of the blackbody temperature, Figure~\ref{fig:dark_pelec_vs_popt}
 
 
 \begin{figure}[htp]
