@@ -7,7 +7,7 @@
 
 %\textcolor{red}{If you are going to insist on referring to wafers by their names, you need to explain what the name means.}
 
-\textcolor{red}{in Section~\ref{sec:ebex} you need to describe the wafer mounting procedure and how the signal is read out. Perhaps make a subsection and reference that subsection when referencing how the wafer was mounted and coupled to readout?}
+
 %\textcolor{red}{You say in EACH of these cryostats the wafer was mounted and coupled to readout electronics as was done for flight. BUT. At McGill, it was only until the end of the copper pigtail that it was flight-like. So. That sentence isn't true. Unless you're being more general. It was connected to a strip that went to a squid that went to some cables (none of which were specific to ebex)... FIXED sentence.}
 
 There were more than four dozen detector wafers fabricated and characterized for \ac{EBEX}. 
@@ -48,19 +48,21 @@ There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of 
 
 %\textcolor{red}{If you have time, it sure would be nice to go back and make those axes (the labels and the numbers) large enough to read. also, do in kHz. and use fewer words (more readable).}
 
-\textcolor{red}{I want you to mention how you determined the lower and upper bounds of the bias frequencies. And how you set the spacing. BUT. How did we do this??? I forget. Where is this information? SEE PAGE 9 (UPPER LEFT) OF DOBBS 2012 PAPER!}
-
-\textcolor{red}{Also, I want you to say (BUT IS THIS NECESSARY?), in practice, how did we match the frequencies measured with the frequencies \textit{expected}? The game. The measured frequency was generally XXX\% higher than the expected one calculated from the inductance measured at 4.2~K of $24~\mu H$ and the room temperature measured capacitances. At low frequencies, the measured frequency was close to expected. At the highest frequency, however, the measured frequency was nearly 90 kHz greater than expected. }
-
 %\textcolor{red}{You need a circuit diagram. BUT. Do you need to repeat the circuit diagram with a stray L and C?? No. I don't think so. People can add those two components in their heads??? INCLUDED IN INTRO SECTION. AND DECLINED TO INCLUDE THE ONE WITH LX AND CX.}
 
-\textcolor{red}{are you going to say which capacitors you used? specifically brands? values? are you going to talk about measuring the Ls? what about the setup designed just to do that?}
 
-\textcolor{red}{I want you to include: Typical stray capacitance was about XXX $pF$ and typical stray inductance was XXX $uH$. You'll also need to comment on the effect of having strays at this level, i.e. what does it do?? how much does it alter the voltage bias provided to the detector? cross-talk? }
-
-\textcolor{red}{Include: Stray impedance measured from an iv curve of a latched/superconducting bolometer.}
-
-\textcolor{red}{Fix reference to eqn:noisebudget}
+%Still want. But. Need to move on for now. COME BACK IF YOU HAVE TIME
+%\textcolor{red}{I want you to mention how you determined the lower and upper bounds of the bias frequencies. And how you set the spacing. BUT. How did we do this??? I forget. Where is this information? SEE PAGE 9 (UPPER LEFT) OF DOBBS 2012 PAPER!}
+%
+%\textcolor{red}{Also, I want you to say (BUT IS THIS NECESSARY?), in practice, how did we match the frequencies measured with the frequencies \textit{expected}? The game. The measured frequency was generally XXX\% higher than the expected one calculated from the inductance measured at 4.2~K of $24~\mu H$ and the room temperature measured capacitances. At low frequencies, the measured frequency was close to expected. At the highest frequency, however, the measured frequency was nearly 90 kHz greater than expected. }
+%
+%\textcolor{red}{are you going to say which capacitors you used? specifically brands? values? are you going to talk about measuring the Ls? what about the setup designed just to do that?}
+%
+%\textcolor{red}{I want you to include: Typical stray capacitance was about XXX $pF$ and typical stray inductance was XXX $uH$. You'll also need to comment on the effect of having strays at this level, i.e. what does it do?? how much does it alter the voltage bias provided to the detector? cross-talk? }
+%
+%\textcolor{red}{Include: Stray impedance measured from an iv curve of a latched/superconducting bolometer.}
+%
+%\textcolor{red}{Fix reference to eqn:noisebudget}
 
 %YOU DON'T REMEMBER THIS WELL ENOUGH TO TALK ABOUT IT
 %AND SEARCHING EMAIL AND WEB AND READING THESES DIDN'T HELP ENOUGH
@@ -71,7 +73,7 @@ There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of 
 
 In order to get the bolometer resonant frequencies and their normal resistances, we performed a network analysis on each comb with the bath held a couple hundred millikelvin above the critical temperatures.
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit, Figure~\ref{fig:network_analysis}. 
-At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in current. 
+At each bolometer's LC resonant frequency, the multiplexed LCR circuit peaked in current. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -83,13 +85,13 @@ At each bolometer's LC resonant frequency, the multiplexed RLC circuit peaked in
 
 The impedance as a function of frequency, $\nu$, for each bolometer in series with its inductor, $L=24~\mu H$, and capacitor, $C_{i}$, was modeled as
 \begin{equation}
-Z_{RLC_{i}} \left(\nu\right) = \sqrt{ R_{i}^{2} + \left(2\pi \nu L - \frac{1}{2\pi \nu C_{i}}\right)^{2}}
+Z_{LCR_{i}} \left(\nu\right) = \sqrt{ R_{i}^{2} + \left(2\pi \nu L - \frac{1}{2\pi \nu C_{i}}\right)^{2}}
 \end{equation}
 where $R_{i}$ was the $i^{th}$ bolometer's resistance.
 There was also a stray inductance, $L_{x}$, and stray capacitance, $C_{x}$, in parallel with the detector comb. 
 The network analysis current for each peak was thus
 \begin{equation}
-I = \frac{V_{bias}}{\lvert Z_{RLC_{i}} + j 2\pi \nu L_{x} + \frac{1}{j 2\pi \nu C_{x}}\rvert}
+I = \frac{V_{bias}}{\lvert Z_{LCR_{i}} + j 2\pi \nu L_{x} + \frac{1}{j 2\pi \nu C_{x}}\rvert}
 \end{equation}
 Figure~\ref{fig:netanal_fit} shows a single peak and the fit to the model.
 Note, the frequency at the maximum current and the optimal bias frequency are not necessarily perfectly aligned because we wanted to maximize the current through the bolometer rather than maximize the current through the entire circuit (which included the stray capacitance and inductance).
