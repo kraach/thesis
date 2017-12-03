@@ -390,9 +390,8 @@ The \ac{TES} bolometer response would be unstable if it were underdamped or had 
 The goal was to ensure the detector, when biased in the transition, remained in the stable regime.  
 The stability of the detector depended on the value of the normal resistance. 
 In order to be stable, the bolometer's LCR filter bandwidth, $\Delta B = R_{bolo}/(2\pi L)$, needed to exceed the \ac{TES}' effective thermal bandwidth by a factor of 5.8 \cite{Irwin1998b}. 
-With our inductors of 24~$\mu H$ and expected thermal time constants of 
-The target normal resistance for all bands was 1.5~$\Omega$, Table~\ref{tab:Design_Params}.
-
+With our inductors of 24~$\mu H$ and expected thermal time constants on the order of 10~ms, the target normal resistance for all bands was 1.5~$\Omega$, Table~\ref{tab:Design_Params}.
+%I DID SOME CALCULATIONS, BUT MY NUMBERS DON'T QUITE WORK OUT IN A WAY THAT I UNDERSTAND. COME BACK HERE IF YOU HAVE TIME. 
  
 %where the detector electrical bandwidth, determined in part by the resistance, exceeded the \ac{TES} effective thermal bandwidth by at least a factor of 5.8 (CITE PAPER). 
 
@@ -508,25 +507,33 @@ Freq (GHz) & $P_{input}$ (pW) & $\epsilon$ & $P_{absorbed}$ (pW) & $\times$ Safe
 
 \subsubsection{Ideal Time Constant}
 
-\textcolor{red}{You should talk about time constants... BUT. Your analysis was super simple. And what they did for the paper was much better. So... What do you do? Are you able to write anything intelligent (and correct) about time constants in a small amount of time?}
+%\textcolor{red}{You should talk about time constants... BUT. Your analysis was super simple. And what they did for the paper was much better. So... What do you do? Are you able to write anything intelligent (and correct) about time constants in a small amount of time?}
+%
+%\textcolor{red}{You really ought to talk about what sets the lower limit (readout) and upper limit (scan speed) on the time constant.}
+%
+%\textcolor{red}{Also, you can't just say it needs to be held approximately constant if you don't know what the time constants for the ground-based telescopes were!}
+%
+%\textcolor{red}{Why did we have an observation frequency band dependent target tau??}
+%
+%\textcolor{red}{I think the following paragraph is not true to how the ideal $\tau$ was decided. Also, isn't $\tau$ also a function of loopgain? (see irwin/hilton p12 on)}
+%So long as the thermal conductance between the \ac{TES} and the bath was the dominant effect, the time constant of the bolometer was $\tau = C/G$. 
+%When the loopgain was high, though, the time constant was sped up $\tau_{eff} = \tau / ( 1 + \mathscr{L}$.
+%The time constant needed to be held approximately constant at $\sim$20~ms because our telescope was to have roughly the same scan speed as the ground-based telescopes. 
+%Since the thermal conductance, G, was decreased by a factor of 4 relative to the ground-based detector design, to keep $\tau$ constant, the heat capacity, C, also needed to be decreased by this factor. 
+%%During the fabrication process for the ground-based detectors, the bling was made of 500-700~nm of gold \textcolor{red}{reference Ben???}. %TOO COMPLICATED. A NICE TO HAVE, NOT A NEED.
+%For the \ac{EBEX} detectors, we decreased the total thickness of the gold deposited to 20~nm. 
 
-\textcolor{red}{You really ought to talk about what sets the lower limit (readout) and upper limit (scan speed) on the time constant.}
 
-\textcolor{red}{Also, you can't just say it needs to be held approximately constant if you don't know what the time constants for the ground-based telescopes were!}
+The \ac{TES}' intrinsic thermal time constant was $\tau_0 = C/G$ and it was sped up by electrothermal feedback to give $\tau_{ETF} = \tau_0/(1 + \mathscr{L})$. 
+The heat capacity was dominated by the 20~nm gold (atop the 1~$\mu m$ silicon nitride) bling in the center of the web, see Figure~\ref{fig:bolo_and_bling}. 
+The target time constants at zero loopgain were calculated by taking the ratio of the expected heat capacity of 0.5~pJ/K to the target thermal conductances.
+%We used Equation~\ref{eq:gbar_to_g} and assumed a power of thermal conductivity of 2 to convert the target average thermal conductances (20, 50, 60, for 150, 250, 410~GHz) to target dynamic thermal conductances (30, 80, 90). 
+We used Equation~\ref{eq:gbar_to_g} and assumed a power of thermal conductivity of 2 to convert the target average thermal conductances to target dynamic thermal conductances. 
+This gave target time constants of 16, 6, and 5~ms for the 150, 250, and 410~GHz bands, Table~\ref{tab:Design_Params}.  
 
-\textcolor{red}{Why did we have an observation frequency band dependent target tau??}
+%The dominant heat capacity  dominated by gold deposited  was deposited atop the bling, which was 20~nm of gold atop 1~$\mu m$ of silicon nitride. 		
 
-\textcolor{red}{I think the following paragraph is not true to how the ideal $\tau$ was decided. Also, isn't $\tau$ also a function of loopgain? (see irwin/hilton p12 on)}
-So long as the thermal conductance between the \ac{TES} and the bath was the dominant effect, the time constant of the bolometer was $\tau = C/G$. 
-When the loopgain was high, though, the time constant was sped up $\tau_{eff} = \tau / ( 1 + \mathscr{L}$.
-The time constant needed to be held approximately constant at $\sim$20~ms because our telescope was to have roughly the same scan speed as the ground-based telescopes. 
-Since the thermal conductance, G, was decreased by a factor of 4 relative to the ground-based detector design, to keep $\tau$ constant, the heat capacity, C, also needed to be decreased by this factor. 
-%During the fabrication process for the ground-based detectors, the bling was made of 500-700~nm of gold \textcolor{red}{reference Ben???}. %TOO COMPLICATED. A NICE TO HAVE, NOT A NEED.
 
-The heat capacity was provided by the gold topped silicon nitride bling in the center of the web, see Figure~\ref{fig:bolo_and_bling}. 
-For the \ac{EBEX} detectors, we decreased the total thickness of the gold deposited to 20~nm. 
-
-%The dominant heat capacity  dominated by gold deposited  was deposited atop the bling, which was 20~nm of gold atop 1~$\mu m$ of silicon nitride. 
 
 
 \begin{table}[ht!]
@@ -537,7 +544,7 @@ For the \ac{EBEX} detectors, we decreased the total thickness of the gold deposi
                                      & Design & Measured & Design & Measured & Design & Measured  \\ \hline
 $R_{n}$ ($\Omega$)            & 1.5  & 1.9  & 1.5  & 1.5  & 1.5  & 1.4  \\
 $T_{c}$ (K)                        & 0.44 & 0.45 & 0.44 & 0.49 & 0.44 & 0.47  \\
-$\overline{G}$ (pW/K)       & 30   & 39 & 40   & 53 & 50   & 63  \\ \hline
+$\overline{G}$ (pW/K)       & 30   & 39 & 50   & 53 & 60   & 63  \\ \hline
 %$\tau_{0}$ (ms)                 & 17 & 88$^\dagger$  & 13  &  46$^\dagger$  &  10 &  57$^\dagger$  \\ \hline
 %$C$ (pJ/K)*                         & 0.5  & 3.8$^\dagger$ & 0.5  & 3.3$^\dagger$  & 0.5   & 8.4$^\dagger$  \\ \hline
 % Wafer Thickness ($\mu$m)   & \multicolumn{2}{|c|}{150}  & \multicolumn{2}{|c|}{90}  & \multicolumn{2}{|c|}{56}  \\
