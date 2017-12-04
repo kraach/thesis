@@ -117,7 +117,7 @@ For the other two frequency bands, one mode of the distribution closely matched 
 The 150~GHz detectors with a measured $R_{n}$ of 1.9~$\Omega$, instead of the nominal 1.5~$\Omega$, were calculated to have increased electrical cross-talk from a value of 0.5\% to 0.9\% and decreased loopgain by 30\%. 
 The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the design value, were calculated to have increased Johnson noise by 20\% relative to the nominal expected value of 4.0 pA$/\sqrt{\mathrm{Hz}}$ (9.4~aW$/\sqrt{\mathrm{Hz}}$); see Equation~\ref{eq:johnson}.
 
-\begin{figure}[ht!]
+\begin{figure}[htp]
 \centering
 \includegraphics[width=0.32\textwidth]{figures/150_rn_hist.png}
 \includegraphics[width=0.32\textwidth]{figures/250_rn_hist.png}
@@ -228,7 +228,7 @@ relative to the nominal expected value of 4.0~pA/$\sqrt{\mathrm{Hz}}$ (20~aW/$\s
 
 
 
-\begin{figure}[ht!]
+\begin{figure}[htp]
 \centering
 \includegraphics[width=0.31\textwidth]{figures/150_tc_hist.png}
 \includegraphics[width=0.31\textwidth]{figures/250_tc_hist.png}
@@ -770,16 +770,17 @@ The dark \ac{ETC} had the exact same electronics boards, filters, and cables as 
 In \ac{ETC}, most of the measured noise agreed with the predictions until the bolometers were dropped below 90\% of their initial resistance. 
 
 %attempting to explain method for measuring noise
-For each noise measurement, $\sim3$ minutes of data was taken. 
-We demodulated, \ac{ADC} counts were measured on the  \ac{DfMUX} board. 
-We converted to nV or pA or aW. 
-We calculated the PSD (pA2/Hz) and averaged from 0.5 to 5.0~Hz and then took the square root and called that the white noise level. 
-Figure~\ref{fig:timestream_and_psd} is an example of a raw bolometer timestream converted to A for wafer~150-01 bolometer~3-01 as a function of sample number (there were 20MHz/2**17 (FIR stage) = 190.73 samples per second) and the corresponding PSD.
+For each noise measurement, $\sim$3~minutes of data was taken. 
+We measured demodulated \ac{ADC} counts with the \ac{DfMUX} board and converted to physical units, typically nV, pA, or aW. 
+The upper panel of Figure~\ref{fig:timestream_and_psd} is an example of a raw bolometer timestream converted to A for wafer~150-01 bolometer~3-01 as a function of sample number (there were 20MHz/$2^{17} = 190.73 samples per second).
+The \ac{PSD} was calculated from the timestream. 
+For the dark measurements, the noise level reported is the square root of the average of the \ac{PSD} from 0.5 to 5.0~Hz. 
+The lower panel of Figure~\ref{fig:timestream_and_psd} is the square root of the PSD with the red line indicating the average noise level. 
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/b54w2c3_overbias.png}
-\caption{The raw bolometer timestream converted from \ac{ADC} counts to current and the PSD of that timestream for 150-01 bolometer 3-01 noise determination. The timestream was $\sim3$ minutes long. The white noise level was averaged from 0.5 to 5~Hz and for this bolometer had a value of 11.2 pA.
+\caption{The raw bolometer timestream converted from \ac{ADC} counts to current and the square root of the PSD for wafer~150-01 bolometer 3-01 noise determination. The timestream was $\sim3$ minutes long. The white noise level was averaged from 0.5 to 5~Hz and for this bolometer had a value of 11.2 pA. 
 \label{fig:timestream_and_psd} }
 \end{center}
 \end{figure}
