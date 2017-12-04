@@ -772,7 +772,7 @@ In \ac{ETC}, most of the measured noise agreed with the predictions until the bo
 %attempting to explain method for measuring noise
 For each noise measurement, $\sim$3~minutes of data was taken. 
 We measured demodulated \ac{ADC} counts with the \ac{DfMUX} board and converted to physical units, typically nV, pA, or aW. 
-The upper panel of Figure~\ref{fig:timestream_and_psd} is an example of a raw bolometer timestream converted to A for wafer~150-01 bolometer~3-01 as a function of sample number (there were 20MHz/$2^{17} = 190.73 samples per second).
+The upper panel of Figure~\ref{fig:timestream_and_psd} is an example of a raw bolometer timestream converted to A for wafer~150-01 bolometer~3-01 as a function of sample number (there were 20~MHz/$2^{17}$ = 190.73 samples per second).
 The \ac{PSD} was calculated from the timestream. 
 For the dark measurements, the noise level reported is the square root of the average of the \ac{PSD} from 0.5 to 5.0~Hz. 
 The lower panel of Figure~\ref{fig:timestream_and_psd} is the square root of the PSD with the red line indicating the average noise level. 
@@ -780,7 +780,7 @@ The lower panel of Figure~\ref{fig:timestream_and_psd} is the square root of the
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/b54w2c3_overbias.png}
-\caption{The raw bolometer timestream converted from \ac{ADC} counts to current and the square root of the PSD for wafer~150-01 bolometer 3-01 noise determination. The timestream was $\sim3$ minutes long. The white noise level was averaged from 0.5 to 5~Hz and for this bolometer had a value of 11.2 pA. 
+\caption{The raw bolometer timestream converted from \ac{ADC} counts to current and the square root of the PSD for wafer~150-01 bolometer 3-01 noise determination. The timestream was $\sim3$ minutes long. The white noise level was determined by averaging the \ac{PSD} from 0.5 to 5~Hz and taking the square root. This bolometer had a noise level of 11~$pA/\sqrt{Hz}$. 
 \label{fig:timestream_and_psd} }
 \end{center}
 \end{figure}
