@@ -982,15 +982,18 @@ Since the electronic and \ac{SQUID} noise prediction was adjusted to agree with 
 \label{sec:over_biased_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The measured noise overbiased agreed with the prediction. 
+The measured noise over-biased agreed with the prediction. 
 The contribution from the electronics is higher because there are carrier and nullers provided to the bolometer in this measurement. 
-
+From Equation~\ref{gbar}, the over-biased detector temperature is estimated to be
+\begin{equation}
+T_{bolometer} = T_{bath} + P_{overbias}* \overline{G}
+\end{equation}
 
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/overbias_noise.png}
-\caption{Overbias noise (blue dots) for one \ac{SQUID} in \ac{ETC} as a function of demodulation frequency at 340~mK. The prediction (blue line) includes electronic, \ac{SQUID}, and \textcolor{red}{XXX}~mK bolometer Johnson noise. 
+\caption{Overbias noise (blue dots) for one comb of detectors in \ac{ETC} as a function of demodulation frequency at 340~mK. The prediction (blue line) includes electronic, \ac{SQUID}, and overbiased bolometer Johnson noise. 
 \label{fig:overbias_noise} }
 \end{center}
 \end{figure}
