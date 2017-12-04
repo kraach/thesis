@@ -1012,14 +1012,15 @@ There were five bolometers on the comb and four were over-biased while the in-tr
 Between each measurement, we re-over-biased the bolometer so it was always dropped relative to the same initial resistance. 
 These measurements are referred to current through the \ac{SQUID}. 
 Thus, the phonon noise prediction, a power noise, needed to be multiplied by the current responsivity to convert from power to current. 
-The phonon noise contribution to the prediction here assumed the bolometer was deep in the transition. 
-When the bolometer was indeed deep in the transition, the loopgain, $\mathscr{L}$, was high and so responsivity was just a function of the voltage bias, $S_{I} = \frac{\sqrt{2}}{V_{bias}} \frac{\mathscr{L}}{\mathscr{L}+1} \approx \frac{\sqrt{2}}{V_{bias}} $. 
-When the bolometer was not deep in the transition, however, $\mathscr{L}$ was not large and so in this case, at high fractions of $R_{initial}$, the phonon noise contribution was UNDER/OVER-estimated. 
-If $\mathscr{L} = 1$, as is the case at the turnaround of the IV curve near $R = 0.98 \times R_{initial}$, by making this assumption, we overrestimate the phonon contribution by XXX, which decreases the total noise prediction by XXX. 
-
-Though this isn't correct near the top of the transition, it changes the prediction by XXX\%. 
-
-Even at $R = 0.9 \times R_{initial}$, the high loopgain assumption is not enough to explain the factor of two inconsistency between the measurement and the prediction. 
+\begin{equation}
+NEP_{phonon}^{I} = \sqrt{\gamma 4 k_{B} T^2 G} \frac{-\sqrt{2}}{V_{bias}}\frac{\mathscr{L}}{\mathscr{L}+1}
+\end{equation}
+The phonon noise prediction in the plot simply assumed the bolometer was deep in the transition so the loopgain, $\mathscr{L}$, was high and the responsivity was just a function of the voltage bias, $S_{I} = \frac{\sqrt{2}}{V_{bias}} \frac{\mathscr{L}}{\mathscr{L}+1} \approx \frac{\sqrt{2}}{V_{bias}} $. 
+When the bolometer was not deep in the transition, at high fractions of $R_{initial}$, $\mathscr{L}$ was not large.
+In this case, the phonon noise contribution was actually overestimated. 
+If $\mathscr{L} = 1$, as is the case at the turnaround of the IV curve near $R = 0.98 \times R_{initial}$, by making this assumption, we overestimate the phonon contribution by a factor of 2, which decreases the total noise prediction by XXX. 
+%At $R = 0.9 \times R_{initial}$, the high loopgain assumption is not enough to explain the factor of two inconsistency between the measurement and the prediction. 
+%SENTENCE ABOVE DOESN'T MAKE SENSE, RIGHT? THE HIGH LOOPGAIN ASSUMPTION BRINGS THE PREDICTION UP, CLOSER TO THE MEASUREMENT. 
  
 
 \begin{figure}[ht!]
