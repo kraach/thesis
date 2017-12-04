@@ -769,6 +769,11 @@ and the noise of the bolometers in-transition as a function of their transition 
 The dark \ac{ETC} had the exact same electronics boards, filters, and cables as \ac{EBEX}. 
 In \ac{ETC}, most of the measured noise agreed with the predictions until the bolometers were dropped below 90\% of their initial resistance. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Procedure}
+\label{sec:procedure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %attempting to explain method for measuring noise
 For each noise measurement, $\sim$3~minutes of data was taken. 
 We measured demodulated \ac{ADC} counts with the \ac{DfMUX} board and converted to physical units, typically nV, pA, or aW. 
@@ -780,56 +785,65 @@ The lower panel of Figure~\ref{fig:timestream_and_psd} is the square root of the
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/b54w2c3_overbias.png}
-\caption{The raw bolometer timestream converted from \ac{ADC} counts to current and the square root of the PSD for wafer~150-01 bolometer 3-01 noise determination. The timestream was $\sim3$ minutes long. The white noise level was determined by averaging the \ac{PSD} from 0.5 to 5~Hz and taking the square root. This bolometer had a noise level of 11~$pA/\sqrt{Hz}$. 
+\caption{The raw bolometer timestream converted from \ac{ADC} counts to current and the square root of the PSD for wafer~150-01 bolometer 3-01. The timestream was $\sim$3~minutes long. The white noise level was determined by averaging the \ac{PSD} from 0.5 to 5~Hz and taking the square root. This bolometer had a white noise level of 11~$pA/\sqrt{Hz}$. 
 \label{fig:timestream_and_psd} }
 \end{center}
 \end{figure}
 
 
+%COME BACK TO RESISTOR NOISE IF YOU HAVE TIME
+%\textcolor{red}{You haven't shown any resistor noise!! How much of an investment in time is it to go back and reanalyze this? Is it sufficient to compare to the resistor analysis you did on the ground in the high bay? Doesn't really flow with your ETC story :/}
 
-\textcolor{red}{You haven't shown any resistor noise!! How much of an investment in time is it to go back and reanalyze this? Is it sufficient to compare to the resistor analysis you did on the ground in the high bay? Doesn't really flow with your ETC story :/}
-
-\textcolor{red}{can you draw a circuit diagram of the warm electronic noise you're measuring?}
+%A NICE TO HAVE
+%\textcolor{red}{can you draw a circuit diagram of the warm electronic noise you're measuring?}
 
 %\textcolor{red}{Which electronic component is responsible for the roll off? It is the squid controller first stage amplifier. Can you get the specs to determine what roll off we expected? Can't find on wiki. Ask Franky. Then, answer, is it consistent with what we measured?}
 
-\textcolor{red}{do you understand why we don't have this roll off when it's operating under normal conditions and why we DO have this roll off when it's open loop?}
+%\textcolor{red}{do you understand why we don't have this roll off when it's operating under normal conditions and why we DO have this roll off when it's open loop?}
 
-\textcolor{red}{Is this $V_{rms}$ or $V_{p}$ ?}
+%\textcolor{red}{Is this $V_{rms}$ or $V_{p}$ ?}
 
-\textcolor{red}{As you talk about noise, you need to be clear somewhere that you're using NEP and noise and ASD and PSD interchangeably. OR. don't use them interchangeably!}
+%\textcolor{red}{As you talk about noise, you need to be clear somewhere that you're using NEP and noise and ASD and PSD interchangeably. OR. don't use them interchangeably!}
 
 %\textcolor{red}{Are you sure you have the contribution calculations correct? What are those $\sqrt{2}$s coming from??}
 
-\textcolor{red}{If you're going to mention the 20 ohm resistor noise as a main contributor, you need to be able to point to where this is. perhaps say it in words and refer to Franky's thesis??}
+%\textcolor{red}{If you're going to mention the 20 ohm resistor noise as a main contributor, you need to be able to point to where this is. perhaps say it in words and refer to Franky's thesis??}
 
 %\textcolor{red}{before you dive in to plots where you have the white noise level/asd plotted on the y-axis, you need to describe how you obtained those data points!}
 
-\textcolor{red}{Can you please be more specific about exactly which electronic components are included in this measurement?}
+%COME BACK TO THIS IF YOU HAVE TIME
+%\textcolor{red}{Can you please be more specific about exactly which electronic components are included in this measurement?}
 
-\textcolor{red}{Is there an apparent paradox here? You are measuring the warm electronic noise with the squids off, open loop. and you say the largest contributors are the 1st stage amplifier and the 20 ohm resistor. AND, you say those two noise contributions are the only reason you need the squid transimpedance. you're missing a key connection... when you close the feedback loop, then dv/di matters??? and when it's open, the noise prediction changes??}
+%\textcolor{red}{Is there an apparent paradox here? You are measuring the warm electronic noise with the squids off, open loop. and you say the largest contributors are the 1st stage amplifier and the 20 ohm resistor. AND, you say those two noise contributions are the only reason you need the squid transimpedance. you're missing a key connection... when you close the feedback loop, then dv/di matters??? and when it's open, the noise prediction changes??}
 
-\textcolor{red}{It's confusing to say the squids are off and then to say you've measured the noise for two squids ... word this better if you have time!}
+%\textcolor{red}{It's confusing to say the squids are off and then to say you've measured the noise for two squids ... word this better if you have time!}
 
-\textcolor{red}{link to data sheet for texas instruments op amp 847 has open loop gain plot: http://www.ti.com/lit/ds/symlink/opa847.pdf    how do we even reference this??}
+%\textcolor{red}{link to data sheet for texas instruments op amp 847 has open loop gain plot: http://www.ti.com/lit/ds/symlink/opa847.pdf    how do we even reference this??}
 
-\textcolor{red}{Do you want to mention that in EBEX the transimpedance of the SQUIDs was higher (because they were a little colder ?)?}
+%\textcolor{red}{Do you want to mention that in EBEX the transimpedance of the SQUIDs was higher (because they were a little colder ?)?}
 
-\textcolor{red}{Do you want to make it clear that we measured squid noise in EBEX with dark squids not attached to any bolometers but in ETC we used squids attached to bolometers and just looked off resonance?}
+%\textcolor{red}{Do you want to make it clear that we measured squid noise in EBEX with dark squids not attached to any bolometers but in ETC we used squids attached to bolometers and just looked off resonance?}
 
-\textcolor{red}{Figure out how to reference Franky's thesis and be sure you're doing it in all the right places. Also, is there some dfmux paper we should also be referencing?}
+%\textcolor{red}{Figure out how to reference Franky's thesis and be sure you're doing it in all the right places. Also, is there some dfmux paper we should also be referencing?}
 
-warm electronic noise open loop (with the squids off)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Warm Electronics Noise}
+\label{sec:warm_electronics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%warm electronic noise open loop (with the squids off)
 With the \ac{SQUID}s off, we measured the open loop noise.
 %(no current bias, no flux bias, and no voltage offset) % no need to define off ... also, that's the voltage offset of ... the firs stage amplifier???
 This was a measure of the noise of the warm electronics referred back to the input of the \ac{SQUID} controller first stage amplifier. 
-The theoretical open loop transfer function was 0.774 nV to 1 \ac{ADC} count. 
+The theoretical open loop transfer function was 0.774~nV to 1~\ac{ADC}~count. 
 The measured transfer function was a factor of 1.13 greater than the theoretical. 
-Figure~\ref{fig:dark_electronic_noise} is the measured open loop warm electronics noise for two \ac{SQUID}s in \ac{ETC} as a function of the demodulation frequency. 
+Figure~\ref{fig:dark_electronic_noise} is the measured open loop warm electronics noise for two combs in \ac{ETC} as a function of the demodulation frequency. 
 The total noise prediction was $1.33~nV/\sqrt{Hz}$, determined from the electronic specifications~\cite{Francois2012}. 
-The largest contributors were the first stage amplifier of the \ac{SQUID} controller board, $0.85~nV/\sqrt{Hz}$, and that amplifier's $20~\Omega$ gain defining resistor Johnson noise, $0.57~nV/\sqrt{Hz}$. 
-The measurement agrees with the prediction at low frequencies and then the signal rolls off, with a -3dB point around 1~MHz, because the first stage amplifier is being operated in the open-loop regime~\ref{data_sheet?}.  
-
+The largest contributors were the first stage amplifier, Texas Instrument Op Amp 847, of the \ac{SQUID} controller board, $0.85~nV/\sqrt{Hz}$, and that amplifier's $20~\Omega$ gain defining resistor Johnson noise, $0.57~nV/\sqrt{Hz}$. 
+The measurement agrees with the prediction at low frequencies and then the signal rolls off, with a -3dB point around 1~MHz, because the first stage amplifier is being operated in the open-loop regime.
+%COME BACK HERE IF YOU HAVE TIME
+%AND REFERENCE THE OP AMP ~\ref{data_sheet?}.  
 
 \begin{figure}[ht!]
 \begin{center}
@@ -840,21 +854,28 @@ The measurement agrees with the prediction at low frequencies and then the signa
 \end{figure}
 
 
-\textcolor{red}{Are you at all interested in recording, for posterity's sake?, how you converted from $V_{DAC}$ to physical units in \ac{ETC}?? i.e. for the \ac{ETC} \ac{SQUID} controller board, $1 V_{DAC} = 1 mV$ and $1 V_{DAC} = 20 \mu A$ and mention mutual inductance $\phi_{0}/26 \mu A$?}
 
-\textcolor{red}{do you want to mention what transimpedances we measured with the ebex squids?}
 
-\textcolor{red}{ do you want to say HOW the value of $Z_{t} = dV/dI$ affects the noise predictions for the first stage amp and the 20ohm R?}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SQUID Noise}
+\label{sec:procedure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{How/why on earth did we estimate $\mathscr{L}_{FLL}$ to be 13? How did we even generate the plot of squid 7 loop gain vs demodulation frequency? that plot tells us it's a pretty dramatic function of frequency? Is there any reason taking the lower limit would be ok? In EBEX, we used the 5K feedback resistors?}
+With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise as a function of demodulation frequency. 
+Away from the bolometer resonant frequencies, this is a measure of the noise due to the warm electronics and the \ac{SQUID}s. 
 
-squids (with their feedback loops closed)
-With the \ac{SQUID}s on and their feedback loops closed, the warm electronic components' noise predictions were referred to current noise at the \ac{SQUID} input coil.
+%squids (with their feedback loops closed)
+With the \ac{SQUID}s tuned and their feedback loops closed, the warm electronic components' noise predictions were referred to current noise at the \ac{SQUID} input coil.
 The \ac{SQUID} transimpedance, $dV/dI$, was used to reference the noise of the \ac{SQUID} controller first stage amplifier and its gain defining 20~$\Omega$ resistor. 
 We measured $dV/dI$ from the slope of the linear regime of the $V-\phi$ curve where we biased the squid, Figure~\ref{fig:squid_transimpedance}. 
 The fit to the line in the region where this particular \ac{SQUID} from \ac{ETC} was biased gives a transimpedance of $dV/dI=375~\Omega$. 
-The \ac{SQUID} flux-locked loop gain transfer function, $|\frac{(1-\mathscr{L}_{FLL})}{\mathscr{L}_{FLL}}|/R_{feedback}$ was used to reference the noise for those components after the first stage amplifier. 
-The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k\Omega$, and the flux-locked loop gain, $\mathscr{L}_{FLL}$, was estimated to be 13, Figure~\ref{fig:squid_flux_locked_loopgain}. 
+%To convert to physical units, for the \ac{ETC} \ac{SQUID} controller board, $1 V_{DAC} = 1 mV$ and $1 V_{DAC} = 20 \mu A$ and mention mutual inductance $\phi_{0}/26 \mu A$?
+Note, the \ac{SQUID}s in \ac{EBEX} were heat sunk to a colder temperature stage and so had a higher transimpedance on the order of $500~\Omega$. 
+The \ac{SQUID} flux-locked loop gain transfer function, $|\frac{(1-\mathscr{L}_{FLL})}{\mathscr{L}_{FLL}}|/R_{feedback}$ was used to reference the noise for those electronic components after the first stage amplifier. 
+The amplifier's feedback resistor value was known, typically $5~k\Omega$ for \ac{EBEX} and $10~k\Omega$ for \ac{ETC}, and the flux-locked loop gain, $\mathscr{L}_{FLL}$, was estimated to be 13~\cite{Hubmayr2009}.
+%Figure~\ref{fig:squid_flux_locked_loopgain}. 
+%IF YOU HAVE TIME, INCLUDE LOOPGAIN PLOT
+%BUT. FOR NOW. REFERENCE HANNES' THESIS
 
 \begin{figure}[ht!]
 \begin{center}
@@ -863,6 +884,31 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 \label{fig:squid_transimpedance} }
 \end{center}
 \end{figure}
+
+Measurements of the electronics noise up to and including the \ac{SQUID} are shown in Figure~\ref{fig:adjust_squid}.
+Earlier generations of this \ac{SQUID} design were reported to have a noise of 2.5~$pA/\sqrt{Hz}$ \cite{Huber2001}.
+Since the warm electronic noise agreed with predictions, Figure~\ref{fig:dark_electronic_noise}, the excess noise measured in \ac{ETC} was assumed to be due to the \ac{SQUID}. 
+The blue line assumed an intrinsic \ac{SQUID} noise of 2.5~$pA/\sqrt{Hz}$, while the orange line assumed 3.5~$pA/\sqrt{Hz}$.
+From here on out, we took the intrinsic \ac{SQUID} noise to be 3.5~$pA/\sqrt{Hz}$.
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/adjusting_squid_noise.png}
+\caption{The measured electronic and \ac{SQUID} noise (red and blue dots) as a function of demodulation frequency. The blue line is the noise prediction assuming the intrinsic \ac{SQUID} noise is 2.5~$pA/\sqrt{Hz}$ while the orange line is assuming 3.5~$pA/\sqrt{Hz}$.  
+\label{fig:adjust_squid} }
+\end{center}
+\end{figure}
+
+
+
+
+%\textcolor{red}{Are you at all interested in recording, for posterity's sake?, how you converted from $V_{DAC}$ to physical units in \ac{ETC}?? i.e. for the \ac{ETC} \ac{SQUID} controller board, $1 V_{DAC} = 1 mV$ and $1 V_{DAC} = 20 \mu A$ and mention mutual inductance $\phi_{0}/26 \mu A$?}
+
+%\textcolor{red}{do you want to mention what transimpedances we measured with the ebex squids?}
+
+%\textcolor{red}{ do you want to say HOW the value of $Z_{t} = dV/dI$ affects the noise predictions for the first stage amp and the 20ohm R?}
+
+%\textcolor{red}{How/why on earth did we estimate $\mathscr{L}_{FLL}$ to be 13? How did we even generate the plot of squid 7 loop gain vs demodulation frequency? that plot tells us it's a pretty dramatic function of frequency? Is there any reason taking the lower limit would be ok? In EBEX, we used the 5K feedback resistors?}
 
 %maybe better to just remove this plot? since you don't remember how you got it? 
 %and, just take the value from hannes' thesis of Lfluxlockedloop = 13 for 10K feedback, even though it's clearly a strong function of frequency...
@@ -875,14 +921,48 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 %\end{center}
 %\end{figure}
 
-\textcolor{red}{Include squid noise measured in EBEX at float in thesis? Later on in performance section? don't even mention here?}
+%\textcolor{red}{Include squid noise measured in EBEX at float in thesis? Later on in performance section? don't even mention here?}
 %\textcolor{red}{These predictions are from an era where the squid noise was 2.5 pA/rtHz. Later on in this 150-01 run is where we adjusted the prediction to measure the measurement and found the intrinsic squid noise was more like 4pA/rtHz (though franky used 3.5 pA/rtHz in the analysis code). So. You should: 
 %1. Include the plot of 2.5 and 4.0 pA/rtHz and explain why we changed the intrinsic noise "prediction" to match the measurement. 
 %2. Adjust the predictions of the squid noise to reflect this. Perhaps just remake them? but how do I know what the dfmux board settings were? find the date and hope the settings are there? or calculate the noise with 2.5 and subtract it (in quadrature) and add the noise with 4.0? }
 
-\textcolor{red}{Why is the on resonance noise higher than predicted? Do you want to find and include the 700mK squid noise data to say we don't know what's going on at 4.2~K, but meas/pred agree more at lower temperatures?}
+%\textcolor{red}{Is it appropriate to reference the conversation with the nist folks? you don't even remember when it was. should we simply not mention they thought that was reasonable? should we point to the paper where it said 2.5 pA/rtHz and say this was unreasonably low? from Huber et al the SQUID white noise level at 4.2K is 2.5 pArms/rtHz.}
 
-\textcolor{red}{Is it appropriate to reference the conversation with the nist folks? you don't even remember when it was. should we simply not mention they thought that was reasonable? should we point to the paper where it said 2.5 pA/rtHz and say this was unreasonably low? from Huber et al the SQUID white noise level at 4.2K is 2.5 pArms/rtHz.}
+
+%The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Johnson Noise}
+\label{sec:johnson_noise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Demodulating at the bolometer resonant frequencies gave a measure of the 4.2~K bolometers' Johnson noise in addition to the electronic and \ac{SQUID} noise, Figure~\ref{fig:johnson_and_squid_noise}. 
+The 4.2~K Johnson noise roughly doubled the noise.
+These particular combs showed unexplained, abnormally high Johnson noise at demodulation frequencies around 800~kHz. 
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/squid_plus_electronic_noise.png}
+\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency at 4.2~K. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 4.2~K bolometer Johnson noise. 
+\label{fig:johnson_and_squid_noise} }
+\end{center}
+\end{figure}
+
+At 770~mK, the low frequency off bolometer resonance noise measured agreed with the prediction but at the higher demodulation frequencies, whether it was on or off resonance, the noise was higher than predicted, Figure~\ref{fig:770mK_squid_noise}. 
+
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/squid_noise_770mK.png}
+\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency at 770~mK. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 770~mK bolometer Johnson noise. 
+\label{fig:770mK_squid_noise} }
+\end{center}
+\end{figure}
+
+
+\textcolor{red}{Why is the on resonance noise higher than predicted? Do you want to find and include the 700mK squid noise data to say we don't know what's going on at 4.2~K, but meas/pred agree more at lower temperatures?}
 
 \textcolor{red}{how can you say, at 4.2K, the predictions, for reasons we don't understand, seemed to put a lower limit on the measured Johnson noise. ?}
 
@@ -904,46 +984,11 @@ The ampifier's feedback resistor value was known, typically $5~k\Omega$ or $10~k
 
 \textcolor{red}{We can show a measure of the flux locked loopgain as a function of demodulation frequency. This informs some electronics noise terms (by Lfll - 1 / Lfll, or something like that).} 
 
-%The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
-With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise as a function of demodulation frequency, Figure~\ref{fig:dark_squid_noise}. 
-Away from the bolometer resonant frequencies, this is a measure of the noise due to the warm electronics and the \ac{SQUID}s, Figure~\ref{fig:adjust_squid}. 
-Earlier generations of this \ac{SQUID} design were reported to have a noise of 2.5~$pA/\sqrt{Hz}$, \cite{Huber2001}.
-Since the warm electronic noise agreed with predictions, Figure~\ref{fig:dark_electronic_noise}, the excess noise measured in \ac{ETC} was assumed to be due to the \ac{SQUID}. 
-The blue line assumed an intrinsic \ac{SQUID} noise of 2.5~$pA/\sqrt{Hz}$, while the orange line assumed 3.5~$pA/\sqrt{Hz}$.
-From here on out, we took the intrinsic \ac{SQUID} noise to be 3.5~$pA/\sqrt{Hz}$.
 
-
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[height=2.5in]{figures/adjusting_squid_noise.png}
-\caption{The measured electronic and \ac{SQUID} noise (red and blue dots) as a function of demodulation frequency. The blue line is the noise prediction assuming the intrinsic \ac{SQUID} noise is 2.5~$pA/\sqrt{Hz}$ while the orange line is assuming 3.5~$pA/\sqrt{Hz}$.  
-\label{fig:adjust_squid} }
-\end{center}
-\end{figure}
-
-
-
-Demodulating at the bolometer resonant frequencies gave a measure of the 4.2~K bolometers' Johnson noise in addition to the electronic and \ac{SQUID} noise, Figure~\ref{fig:dark_squid_noise}. 
-The 4.2~K Johnson noise roughly doubled the noise.
-At 770~mK, the low frequency off bolometer resonance noise measured agreed with the prediction but at the higher demodulation frequencies, whether it was on or off resonance, the noise was higher than predicted, Figure~\ref{fig:770mK_squid_noise}. 
-
-
-
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[height=2.5in]{figures/squid_plus_electronic_noise.png}
-\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency at 4.2~K. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 4.2~K bolometer Johnson noise. 
-\label{fig:dark_squid_noise} }
-\end{center}
-\end{figure}
-
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[height=2.5in]{figures/squid_noise_770mK.png}
-\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency at 770~mK. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 770~mK bolometer Johnson noise. 
-\label{fig:770mK_squid_noise} }
-\end{center}
-\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Over-biased Noise}
+\label{sec:over_biased_noise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The measured noise overbiased agreed with the prediction. 
 The contribution from the electronics is higher because there are carrier and nullers provided to the bolometer in this measurement. 
@@ -958,7 +1003,10 @@ The contribution from the electronics is higher because there are carrier and nu
 \end{center}
 \end{figure}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{In-transition Noise}
+\label{sec:in_transition_noise}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In order to ensure the system was as clean as possible, only \ac{SQUID}7 was tuned. 
 There were five bolometers on this comb and we left four overbiased for the in-transition noise measurements. 
