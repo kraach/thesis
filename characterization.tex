@@ -945,45 +945,36 @@ These particular combs showed unexplained, abnormally high Johnson noise at demo
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/squid_plus_electronic_noise.png}
-\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency at 4.2~K. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 4.2~K bolometer Johnson noise. 
+\caption{Electronic, \ac{SQUID}, and Johnson noise in \ac{ETC} as a function of demodulation frequency at 4.2~K. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 4.2~K bolometer Johnson noise. 
 \label{fig:johnson_and_squid_noise} }
 \end{center}
 \end{figure}
 
-At 770~mK, the predicted noise was the quadrature sum of the electronic noise, \ac{SQUID} noise, and the 770~mK bolometer Johnson noise. 
-The low frequency off-resonance noise measured agreed with the prediction but at the higher off-resonance demodulation frequencies, the noise was instead $\sim$30\% above the prediction, Figure~\ref{fig:770mK_squid_noise}. 
-
+At 770~mK, still with no carrier or nuller biases, the predicted noise was the quadrature sum of the electronic noise, \ac{SQUID} noise, and the 770~mK bolometer Johnson noise. 
+The low frequency off-resonance noise measured agreed with the prediction but at the higher off-resonance demodulation frequencies, the noise was 45\% above the prediction, Figure~\ref{fig:770mK_squid_noise}. 
+The on-resonance measurements were an average of 15\% above the prediction. 
+Since the electronic and \ac{SQUID} noise prediction was adjusted to agree with the measurement, this excess is attributed to Johnson noise but is not understood. 
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/squid_noise_770mK.png}
-\caption{Electronic and \ac{SQUID} noise in \ac{ETC} as a function of demodulation frequency at 770~mK. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 770~mK bolometer Johnson noise. 
+\caption{Electronic, \ac{SQUID}, and Johnson noise in \ac{ETC} as a function of demodulation frequency at 770~mK. Off resonance (dots) is just electronic and \ac{SQUID} noise, while on resonance (x's) includes the 770~mK bolometer Johnson noise. 
 \label{fig:770mK_squid_noise} }
 \end{center}
 \end{figure}
 
 
-\textcolor{red}{Why is the on resonance noise higher than predicted? Do you want to find and include the 700mK squid noise data to say we don't know what's going on at 4.2~K, but meas/pred agree more at lower temperatures?}
+%\textcolor{red}{Why is the on resonance noise higher than predicted? Do you want to find and include the 700mK squid noise data to say we don't know what's going on at 4.2~K, but meas/pred agree more at lower temperatures?}
 
-\textcolor{red}{how can you say, at 4.2K, the predictions, for reasons we don't understand, seemed to put a lower limit on the measured Johnson noise. ?}
+%\textcolor{red}{how can you say, at 4.2K, the predictions, for reasons we don't understand, seemed to put a lower limit on the measured Johnson noise. ?}
 
-\textcolor{red}{and at 770 mK, we don't understand at all why the higher frequency demodulated noise is too high. What is the point of including the 770mK squid noise graph? That we don't understand what happens when we get cold? are you certain there were no carriers or nullers on for this measurement?}
+%\textcolor{red}{and at 770 mK, we don't understand at all why the higher frequency demodulated noise is too high. What is the point of including the 770mK squid noise graph? That we don't understand what happens when we get cold? are you certain there were no carriers or nullers on for this measurement?}
 
-\textcolor{red}{Are you going to mention 1. that you are including two squids (one and seven) and 2. why you are only including two squids?}
+%\textcolor{red}{Are you going to mention 1. that you are including two squids (one and seven) and 2. why you are only including two squids?}
 
-\textcolor{red}{I wanted to put labels indicating the temperature of the two squid noise plots, but I'm having troubles. So. Move on for now.}
+%\textcolor{red}{I wanted to put labels indicating the temperature of the two squid noise plots, but I'm having troubles. So. Move on for now.}
 
-\textcolor{red}{Do you want to zoom in on the in-transition noise up to, say R=0.6Rinitial? So the information isn't completely washed out by the gigantic noise very deep in the transition? If so, do you want this to be a sub panel of the noise plot? And just delete the legend?}
 
-\textcolor{red}{Re: high noise in ETC for 150-01. You have the data for photon noise if you have a 4K blackbody (1.8 pW) and you could show how the prediction changes if ALL of this power is absorbed by the (dark) detectors. Still doesn't explain excess.}
-
-\textcolor{red}{I want to generate a plot with more data for fracRn between 1 and 0.7 ... Do we have such a thing?}
-
-\textcolor{red}{Do we have other noise data you can put together reasonably efficiently?}
-
-\textcolor{red}{If we want, we can re-make plots of electrothermal time constants. And say they're sufficiently long so the optical time constant can dominate.}
-
-\textcolor{red}{We can show a measure of the flux locked loopgain as a function of demodulation frequency. This informs some electronics noise terms (by Lfll - 1 / Lfll, or something like that).} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1045,7 +1036,17 @@ At $0.8 \times R_{initial}$, however, the measurement exceeds the prediction by 
 \end{figure}
 
 
+\textcolor{red}{Do you want to zoom in on the in-transition noise up to, say R=0.6Rinitial? So the information isn't completely washed out by the gigantic noise very deep in the transition? If so, do you want this to be a sub panel of the noise plot? And just delete the legend?}
 
+\textcolor{red}{Re: high noise in ETC for 150-01. You have the data for photon noise if you have a 4K blackbody (1.8 pW) and you could show how the prediction changes if ALL of this power is absorbed by the (dark) detectors. Still doesn't explain excess.}
+
+%\textcolor{red}{I want to generate a plot with more data for fracRn between 1 and 0.7 ... Do we have such a thing?}
+
+%\textcolor{red}{Do we have other noise data you can put together reasonably efficiently?}
+
+%\textcolor{red}{If we want, we can re-make plots of electrothermal time constants. And say they're sufficiently long so the optical time constant can dominate.}
+
+%\textcolor{red}{We can show a measure of the flux locked loopgain as a function of demodulation frequency. This informs some electronics noise terms (by Lfll - 1 / Lfll, or something like that).} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
