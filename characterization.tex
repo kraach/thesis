@@ -659,14 +659,14 @@ The average optical efficiency and standard deviation for the seven dark detecto
 %WE DON'T KNOW HOW TO EXPLAIN THIS. 
 The optical cross-talk from radiation leakage in the integration cavity was expected to be less than 1\% \cite{Dobbs2011}.
 %WHERE DID THEY GET THEIR NUMBER? I WANT TO CALCULATE/ESTIMATE IT. COME BACK HERE IF YOU HAVE TIME.
-The excess can not be explained by a change in bath temperature because it increased by only 2~mK between a blackbody temperature of 4.2~K and 9~K. 
+The excess can not be explained by a change in bath temperature because the bath increased by only 2~mK between a blackbody temperature of 4.2~K and 9~K. 
 The excess is indicative of radiation from the blackbody entering the wafer enclosure via a route other than through the optics stack.
 
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[width=0.65\columnwidth]{figures/SqCh7_Ch5_all_bb_curves.png}
 \includegraphics[width=0.33\columnwidth]{figures/SqCh7_Ch5_p_vs_p.png}
-\caption{Left: Wafer~150-01 bolometer~10-01 IV curves as a function of blackbody temperature. Center: The PV curves for this same bolometer. Right: Though this detector was two rows away from the detectors open to the blackbody, the electrical power to hold the bolometer in its transition as a function of the black body power has a non-zero slope of $-0.09$. 
+\caption{Left: Wafer~150-01 bolometer~10-01 IV curves as a function of blackbody temperature. Center: The PV curves for this same bolometer and same set of blackbody temperatures. Right: Though this detector was two rows away from the detectors open to the blackbody, the electrical power to hold the bolometer in its transition as a function of the black body power has a non-zero slope of $-0.09$. 
 \label{fig:dark_pelec_vs_popt} }
 \end{center}
 \end{figure}
@@ -689,22 +689,40 @@ The excess is indicative of radiation from the blackbody entering the wafer encl
 \label{sec:time_constants}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textcolor{red}{Does this section get to make it in? We have electrothermal taus and IR taus ... Karl's fits were much more sophisticated. Can I include my stupid "fits"?}
+%\textcolor{red}{Does this section get to make it in? We have electrothermal taus and IR taus ... Karl's fits were much more sophisticated. Can I include my stupid "fits"?}
 
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[width=0.48\columnwidth]{figures/Nb01_squid7_etau_morepts.png}
-\includegraphics[width=0.48\columnwidth]{figures/b53w0c1_etau.png}
-\caption{Left: Electrothermal time constants of two bolometers on 150-01. What does the fit to this data give? This is the time constant between the TES and the web? As expected, the for the web to thermalize is much faster than the optical time constant (time for light to couple to the web). Right: Electrothermal time constant for one bolometer on 150-02 at two depths in-transition ($0.9R_{initial}, 0.8R_{initial}$). 
-\label{fig:electrothermal_tau} }
-\end{center}
-\end{figure}
 
-\begin{figure}[ht!]
+%\begin{figure}[ht!]
+%\begin{center}
+%\includegraphics[width=0.48\columnwidth]{figures/Nb01_squid7_etau_morepts.png}
+%\includegraphics[width=0.48\columnwidth]{figures/b53w0c1_etau.png}
+%\caption{Left: Electrothermal time constants of two bolometers on 150-01. What does the fit to this data give? This is the time constant between the TES and the web? As expected, the for the web to thermalize is much faster than the optical time constant (time for light to couple to the web). Right: Electrothermal time constant for one bolometer on 150-02 at two depths in-transition ($0.9R_{initial}, 0.8R_{initial}$). 
+%\label{fig:electrothermal_tau} }
+%\end{center}
+%\end{figure}
+%
+%\begin{figure}[ht!]
+%\begin{center}
+%\includegraphics[height=2.5in]{figures/b53w0_ir_led_tau.png}
+%\caption{IR LED (Fairchild LED56) optical time constant measurement on 150-02. 
+%\label{fig:ir_led_tau} }
+%\end{center}
+%\end{figure}
+
+%WHAT IS THIS ANYHOW?? DON'T INCLUDE
+%The electrothermal time constant is the time constant for the web to thermalize with the \ac{TES}. 
+
+The \ac{ETC} had three Fairchild IR LED56's, with a wavelength of 940 nm, mounted to the lid of the wafer enclosure, directly above the detectors. 
+After dropping the detectors into their transitions, we pulsed the LED on and off with a square wave and measured the detector response. 
+The normalized response, as a function of the square wave frequency, for a comb of detectors on wafer~150-02 is shown in Figure~\ref{fig:led_tau}.
+We assume the response is a single pole roll off and the time constant is taken as the -3dB point, Table~\ref{tab:optical_tau}. 
+There is a more thorough measurement and analysis of optical time constants as a function of observation frequency band reported in Table~\ref{tab:Design_Params}} and discussed in \textcolor{red}{EBEX Paper 2}. 
+
+\begin{figure}[htp]
 \begin{center}
-\includegraphics[height=2.5in]{figures/b53w0_ir_led_tau.png}
-\caption{IR LED (Fairchild LED56) optical time constant measurement on 150-02. 
-\label{fig:ir_led_tau} }
+\includegraphics[width=0.48\columnwidth]{figures/b53w0_ir_led_tau.png}
+\caption{IR LED optical time constant measurement for a comb of six bolometers on wafer~150-02. 
+\label{fig:led_tau} }
 \end{center}
 \end{figure}
 
@@ -721,10 +739,9 @@ c5 & 10.5 & 15.2 \\
 c6 & 19 & 8.4 \\
 \end{tabular}
 \end{center}
-\caption{IR LED time constants for one comb of bolometers on 150-02, dark in \ac{ETC}. \textcolor{red}{What was the depth in transition?}
+\caption{IR LED time constants for one comb of bolometers on 150-02, dark in \ac{ETC}, dropped to 80\% of their initial resistance. 
 \label{tab:optical_tau} }
 \end{table}
-
 
 
 
