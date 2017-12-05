@@ -838,7 +838,7 @@ With the \ac{SQUID}s off, we measured the open loop noise.
 This was a measure of the noise of the warm electronics referred back to the input of the \ac{SQUID} controller first stage amplifier. 
 The theoretical open loop transfer function was 0.774~nV to 1~\ac{ADC}~count. 
 The measured transfer function was a factor of 1.13 greater than the theoretical. 
-Figure~\ref{fig:dark_electronic_noise} is the measured open loop warm electronics noise for two combs in \ac{ETC} during the wafer~150-01 run as a function of the demodulation frequency. 
+Figure~\ref{fig:dark_electronic_noise} is the measured open loop warm electronics noise, for two combs in \ac{ETC} during the wafer~150-01 run, as a function of the demodulation frequency. 
 The total noise prediction for the warm electronics components was $1.33~nV/\sqrt{Hz}$, determined from the electronic specifications~\cite{Francois2012}. 
 The largest contributors were the first stage amplifier of the \ac{SQUID} controller board, Texas Instruments Op Amp 847 with a noise specification of $0.85~nV/\sqrt{Hz}$, and that amplifier's $20~\Omega$ gain defining resistor Johnson noise, $0.57~nV/\sqrt{Hz}$. 
 The measurement agreed with the prediction at low frequencies and then the signal rolled off, with a -3dB point around 1~MHz, because the first stage amplifier was being operated in the open-loop regime.
@@ -939,7 +939,7 @@ From here on out, we took the intrinsic \ac{SQUID} noise to be 3.5~$pA/\sqrt{Hz}
 
 
 Figure~\ref{fig:johnson_and_squid_noise} is the 4.2~K measured and predicted noise both on and off bolometer resonant frequencies. 
-This data is from a single comb, \ac{SQUID}7, on wafer~150-01. 
+This data is from the same two combs, \ac{SQUID}s 1 and 7, on wafer~150-01 for which the warm electronics noise was measured. 
 Demodulating away from the bolometer resonant frequencies gave just the electronic and \ac{SQUID} noise discussed in Section~\ref{sec:squid_noise}.
 Demodulating at the bolometer resonant frequencies gave a measure of the 4.2~K bolometer Johnson noise in addition to the electronic and \ac{SQUID} noise. 
 The 4.2~K Johnson noise, for a bolometer at its normal resistance of 2~$\Omega$ was $\sim$ 11~$pA/\sqrt{Hz}$.
@@ -957,14 +957,15 @@ It is unlikely we overestimated the resistances because we assumed the bolometer
 \end{figure}
 
 Figure~\ref{fig:770mK_squid_noise} is the 770~mK measured and predicted noise both on and off bolometer resonant frequencies, still with no carrier or nuller biases.
-The data from
+This data is from a single comb, \ac{SQUID}7, on wafer~150-01. 
 The off-resonance noise included the electronic and \ac{SQUID} noise while the on-resonance noise also included the 770~mK bolometer Johnson noise, $\sim$5$pA/\sqrt{Hz}$ for a 2~$\Omega$ bolometer. 
 The two lowest frequency off-resonance noise measurements were near the prediction. 
-At the higher off-resonance demodulation frequencies, however, the measured noise was at the level of the on-resonance prediction, 45\% above the off-resonance prediction.
-Though we expected increased cross-talk given the larger detector resistance in this configuration, it didn't explain the level of excess noise we measured off-resonance. 
+At the higher off-resonance demodulation frequencies, however, the measured noise was at the level of the on-resonance prediction, $\sim$15\% above the off-resonance prediction.
+Though we expected the electrical cross-talk to increase to more than 1\% given the larger detector resistance in this configuration, that was not enough to explain the level of excess noise we measured off-resonance. 
 %COME BACK HERE IF YOU HAVE TIME TO BE SPECIFIC ABOUT HOW MUCH ADDITIONAL CROSS TALK YOU EXPECTED IN THIS CONFIGUATION
-The on-resonance measurements were an average of 15\% above the prediction. 
-Since the electronic and \ac{SQUID} noise prediction was adjusted to agree with the measurement, this slight excess was attributed to Johnson noise but was not understood. 
+The on-resonance noise measurements at 770~mK agree more closely with the prediction than they did at 4.2~K. 
+%Since the electronic and \ac{SQUID} noise prediction was adjusted to agree with the measurement, this slight excess was attributed to Johnson noise but was not understood. 
+The improved agreement at the lower temperature was not understood. 
 
 \begin{figure}[ht!]
 \begin{center}
@@ -974,6 +975,7 @@ Since the electronic and \ac{SQUID} noise prediction was adjusted to agree with 
 \end{center}
 \end{figure}
 
+%UM. WAIT!!! YOU HAVE A PROBLEM. THE OFF-RESONANCE PREDICTION IS LESS THAN THE 4.2 K CASE. BUT IT SHOULD BE THE SAME. UNLESS THE DEMODULATOR WAS AT A DIFFERENT VALUE??
 
 %\textcolor{red}{Why is the on resonance noise higher than predicted? Do you want to find and include the 700mK squid noise data to say we don't know what's going on at 4.2~K, but meas/pred agree more at lower temperatures?}
 
@@ -995,6 +997,7 @@ Since the electronic and \ac{SQUID} noise prediction was adjusted to agree with 
 
 The over-biased noise included the electronic, \ac{SQUID}, and bolometer Johnson noise. 
 The contribution from the electronics was higher than when we measured the Johnson noise in Section~\ref{sec:johnson_noise} because there were carriers and nullers provided in order to electrically over-bias the detectors. 
+Near a bias frequency of 600~kHz, without carriers and nullers on, the electronics noise was $\sim8.5$
 Also, the bolometer Johnson noise was higher because when over-biased, the bolometer temperature was higher. 
 From Equation~\ref{eq:gbar}, the over-biased detector temperature was estimated to be
 \begin{equation}
