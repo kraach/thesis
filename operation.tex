@@ -230,7 +230,7 @@ It was chosen because part of our signal of interest resided there, in one of th
 %This was a sideband safely away from the 4f signal. 
 %the half-wave plate synchronous signal at
 
-The following analysis looked at the bolometers wired to \ac{BRO}s 2, 3, and 4. 
+The following overbiased and in-transition noise analysis looked at the bolometers wired to \ac{BRO}s 2, 3, and 4. 
 With the exception of the very first time the bolometers were dropped into their transitions at float and the subsequent half hour of observation, \ac{BRO}1 was turned off. 
 This was in order to conserve bolometer crate power.
  Due to the overheating of the gondola motor controller, the solar panels, which charged the bolometer crate batteries, were not facing the sun as often as was planned. 
@@ -261,8 +261,11 @@ In \ac{EBEX}, however, the \ac{SQUID} noise performance was measured by dedicate
 The dark \ac{SQUID}s were not attached to any bolometers because there was an open on their microstrips leading from the \ac{SQUID} boards to the copper pigtails attached to the \ac{LC} boards. 
 Two \ac{SQUID}s were intentionally made dark. 
 Two more microstrip lines opened during the cryostat cooldown effectively creating two more dark \ac{SQUID}s. 
+The dark \ac{SQUID}s each had 16 demodulators set up from XXX to XXX~kHz.
 As was done for \ac{ETC}, the predicted electronic and \ac{SQUID} noise was calculated from the electronic specifications of each element of the readout chain and assumed an intrinsic \ac{SQUID} noise of 3.5~$pA/\sqrt{Hz}$. 
 The measurement in \ac{ADC} counts was converted to current via the \ac{DfMUX} transfer functions and compared to the prediction. 
+
+
 
 \textcolor{red}{
 Ideally you'd include
@@ -270,7 +273,7 @@ left. figure of squid noise psd (incl pred) and right. meas noise (and pred) as 
 median of each dark squid channel's meas/pred ratio.
 }
 
-\textcolor{red}{Then, you need to discuss results of analysis.}
+\textcolor{red}{Then, you need to discuss results of analysis. And say how they are used to inform the following analysis.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Resistors}
@@ -280,39 +283,48 @@ median of each dark squid channel's meas/pred ratio.
 Each \ac{LC} board had two bolometers replaced by 1~$\Omega$ resistors, one read out at the high end of the demodulation frequencies and the other at the low end. 
 %IF YOU HAVE TIME, SAY EXACTLY WHAT RESISTORS YOU USED.
 The resistors shared the read out chain all the way up to the wafer bond pads of the LC board. 
-Their purpose was to get a handle on the readout and Johnson noise by excluding the bolometer from the equation and replacing it with a known resistance. 
+Their purpose was to get a handle on the electronic, \ac{SQUID}, and Johnson noise by excluding the bolometer from the equation and replacing it with a known resistance. 
 %monitoring readout channels where the bolometers have been replaced by $\sim1\Omega$ resistors on the \ac{LC} boards. 
 The predicted electronic and \ac{SQUID} noise was calculated as it was for the dark \ac{SQUID}s. 
 %calculated from the electronic specifications of each element of the readout chain and still assumed an intrinsic \ac{SQUID} noise of 3.5~$pA/\sqrt{Hz}$.
 For the resistors, however, the electronic noise prediction was higher because the carriers and nullers were on in order to more closely mimic the configuration of a real bolometer. 
 The resistance values were taken from the network analysis and the Johnson noise calculated assuming the resistor was well heat sunk to the \ac{LC} board which was at the bath temperature. 
 
+\textcolor{red}{Include:
+noise vs time and histogram of median meas/pred for each resistor. }
 
-
+\textcolor{red}{Discuss results!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Overbias}
 \label{sec:overbias_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In order to isolate the Johnson and readout noise from the phonon and photon noise, we first look at the noise performance with the detectors overbiased. 
-A detector is overbiased when the voltage bias across the \ac{TES} provides enough Joule heating to keep the resistance of the \ac{TES} normal. 
-say when and why we overbias detectors?
-In the normal region of the resistance versus temperature curve, \ac{EBEX} wafer 410-18 detectors have an average slope $dR/dT$ of $0.29\pm0.05 \Omega/K$. 
-At the transition temperature, the average slope of the curve is found to be XXX $\Omega/K$, a factor of XXX greater. 
-The loopgain is proportional to $dR/dT$ and so it is a factor of $\sim XXX$ smaller when the detector is overbiased. 
-The factor $\mathcal{L}/(\mathcal{L}+1)$ is XXX when the detector is normal versus XXX when the detector is overbiased. 
-The dominant noise contributions are then from the Johnson and readout noise. 
-When the detector is overbiased, the current responsivity is low 
-CAN YOU INCLUDE AN UPPER LIMIT OR ESTIMATE?
-and so the dominant noise contributions are from the Johnson and readout noise. 
-But, wait. This quantity is not even \ac{NEP} (it's \ac{NEP}*$S_I$) because the timestream is in A, not W... So what do we call it??)
-These two noise terms are naturally in units of $A/\sqrt{Hz}$ so we can eliminate the uncertainty of the current to power responsivity by comparing the predictions to measurements made in units of $counts/\sqrt{Hz}$ and then converted to current via the demodulated count to Amps \ac{DfMUX} transfer function. 
-We get a handle on the \ac{NEP} contribution of these two terms by comparing the overbiased detector noise prediction to the measurement. 
-The comparison is done in units of $A/\sqrt{Hz}$ so neither the predicted nor the measured results are a function of the detector's current responsivity. 
+We predicted and measured the overbiased noise in units of $A/\sqrt{Hz}$.  
+Because of the small value of the loopgain when the detector was overbiased, the responsivity was tiny and so the noise performance was dominated by the electronic, \ac{SQUID}, and Johnson noise. 
+The electronic and \ac{SQUID} noise are calculated as before, using each detector's carrier and nuller settings. 
+The predicted Johnson noise assumes the detector resistance is $R_{normal}$ from the network analysis fit and estimates the detector temperature as $T_{critical}$ + $\Delta P / \overline{G}$ from the dark critical transition temperature measurement and the IV curve at float, where $\Delta P$ was the difference in power from overbiased to in the transition. 
+%Section~\ref{sec:parameter_measurements}. 
+The prediction was calculated for each detector and Table~\ref{overbias_noise_table} reports the median overbiased noise prediction for each wafer in $pA/\sqrt{Hz}$. %\comred{How is overbias (both Johnson and readout noise) predicted? How do \ac{SQUID} and resistor noise inform our conclusion about the excess noise overbiased??}
 
-The predicted Johnson noise assumes the detector resistance is $R_{normal}$ from the network analysis fit and estimates the detector temperature as $T_{critical}$ + $\Delta P / \overline{G}$ from the critical transition temperature and saturation power measurements, Section~\ref{sec:dark_measurements}. 
-The prediction is calculated for each detector and \TAB\ref{overbias_noise_table} provides the median overbiased noise prediction for each wafer in $pA/\sqrt{Hz}$. %\comred{How is overbias (both Johnson and readout noise) predicted? How do \ac{SQUID} and resistor noise inform our conclusion about the excess noise overbiased??}
+%THE FOLLOWING TEXT DOESN'T SEEM TO BE HELPFUL
+%In order to isolate the Johnson and readout noise from the phonon and photon noise, we first look at the noise performance with the detectors overbiased. 
+%A detector is overbiased when the voltage bias across the \ac{TES} provides enough Joule heating to keep the resistance of the \ac{TES} normal. 
+%say when and why we overbias detectors?
+%In the normal region of the resistance versus temperature curve, \ac{EBEX} wafer 410-18 detectors have an average slope $dR/dT$ of $0.29\pm0.05 \Omega/K$. 
+%At the transition temperature, the average slope of the curve is found to be XXX $\Omega/K$, a factor of XXX greater. 
+%The loopgain is proportional to $dR/dT$ and so it is a factor of $\sim XXX$ smaller when the detector is overbiased. 
+%The factor $\mathcal{L}/(\mathcal{L}+1)$ is XXX when the detector is normal versus XXX when the detector is overbiased. 
+%The dominant noise contributions are then from the Johnson and readout noise. 
+%When the detector is overbiased, the current responsivity is low 
+%CAN YOU INCLUDE AN UPPER LIMIT OR ESTIMATE?
+%and so the dominant noise contributions are from the Johnson and readout noise. 
+%But, wait. This quantity is not even \ac{NEP} (it's \ac{NEP}*$S_I$) because the timestream is in A, not W... So what do we call it??)
+%These two noise terms are naturally in units of $A/\sqrt{Hz}$ so we can eliminate the uncertainty of the current to power responsivity by comparing the predictions to measurements made in units of $counts/\sqrt{Hz}$ and then converted to current via the demodulated count to Amps \ac{DfMUX} transfer function. 
+%We get a handle on the \ac{NEP} contribution of these two terms by comparing the overbiased detector noise prediction to the measurement. 
+%The comparison is done in units of $A/\sqrt{Hz}$ so neither the predicted nor the measured results are a function of the detector's current responsivity. 
+
+
 
 The detectors are overbiased at float just after a fridge cycle while the focal planes are still cooling to their base temperatures. 
 The detector white noise level is measured 
@@ -384,7 +396,7 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 \hline
 \end{tabular}
 \end{center}
-\caption{The predicted combination of Johnson and readout noise given each wafer's characterization measurements of $R_{N}$ and XXX. These predictions have been boosted by a factor of XXX, the excess of noise measured by the resistors. For each wafer the ratio quoted is  the median of the distribution for the detectors on that wafer. 
+\caption[]{The predicted combination of Johnson and readout noise given each wafer's characterization measurements of $R_{N}$ and XXX. These predictions have been boosted by a factor of XXX, the excess of noise measured by the resistors. For each wafer the ratio quoted is  the median of the distribution for the detectors on that wafer. 
 \label{tab:overbias_noise_table} }
 \end{table}
 
