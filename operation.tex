@@ -77,14 +77,15 @@ The losses between row 7 and row 8 were due to detectors being saturated or fail
 %\textcolor{red}{Need to go write the thermal conductance measurement section. } 
 %\textcolor{red}{remove shoulds below. be quantitative (somewhere) about what it is and the effect this has on the powers we measure/report.}
 
-The steady state power flow from the bolometer to the bath is a combination of the electrical bias power and the power absorbed from the radiative load,
-\be
-P_{total} = P_{electrical} + P_{radiative}
-\label{eq:total_power}
-\ee
-The IV curve measurements, described in Section~\ref{sec:thermal_conductance}, provide the electrical power required to hold the detector in the negative electrothermal feedback regime. 
-In the dark test cryostats, ideally, the radiative load is negligible and so the only power on the detectors is the electrical bias power. 
-That is, for the dark test cryotsat IV curve measurements, Equation~\ref{eq:total_power} becomes
+%The following was already mentioned in bolo theory. 
+%The steady state power flow from the bolometer to the bath is a combination of the electrical bias power and the power absorbed from the radiative load,
+%\be
+%P_{total} = P_{electrical} + P_{radiative}
+%\label{eq:total_power}
+%\ee
+The IV curve measurements, described in Section~\ref{sec:thermal_conductance}, provided the electrical power required to hold the detector in the negative electrothermal feedback regime. 
+In the dark test cryostats, ideally, the radiative load was negligible and so the only power on the detectors was the electrical bias power. 
+That is, for the dark test cryostat IV curve measurements, Equation~\ref{eq:pin} becomes
 \be
 P_{total} = P_{electrical} + \cancel{P_{radiative}},
 \label{eq:total_power_dark}
@@ -93,7 +94,7 @@ We measure $P_{electrical}$ dark and that is $P_{total}$, the total power necess
 
 
 \textcolor{red}{Is it worth mentioning anywhere that we also did IV curves as a function of elevation and also after each fridge cycle?}
-\textcolor{red}{when you talk about the cryostat, you need to talk about the two windows and why we needed them and what was the radiative load expected from just the thin window and how did it compare to that of the thick window.}
+
 \textcolor{red}{Do you want to say anything about how and why we dropped to 85\%? Can you make a quantitative statement about the level of uncertainty or systematic this introduces in $P_{sat}^{light}$}
 \textcolor{red}{You need to be clear about what was done for differing bath temperatures. Perhaps this is best addressed in the IV curve section.}
 
