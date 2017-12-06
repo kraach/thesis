@@ -303,7 +303,7 @@ The bias voltage of each bolometer was dropped until the ratio of the voltage bi
 In the test cryostats, the fraction was typically 0.7. 
 For \ac{EBEX2013}, the fraction was 0.85 for the majority of flight.
 The value used in flight was higher than the nominal lab value because in the test cryostats the bolometer noise performance deeper in the transition diverged from the predictions, Section~\ref{sec:dark_noise}. 
-%Note, in Figure~\ref{fig:bolo_rv_curve}, in the over-biased, normal region, the resistance of the bolometer has a non-zero slope. 
+%Note, in Figure~\ref{fig:bolo_rv_curve}, in the overbiased, normal region, the resistance of the bolometer has a non-zero slope. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -765,8 +765,8 @@ In order to understand the noise performance of each part of the detector readou
 room temperature electronics noise, 
 electronics noise up to and including the 4~K \ac{SQUID}s, 
 %the noise of resistor channels (i.e. the entire electronics chain up to the bond pads on the \ac{LC} board), %leave these out for now?! time...
-the noise of the bolometers over-biased with the stage above the bolometers' $T_{c}$, 
-the noise of the bolometers over-biased with the stage at the refrigerator's base temperature, 
+the noise of the bolometers overbiased with the stage above the bolometers' $T_{c}$, 
+the noise of the bolometers overbiased with the stage at the refrigerator's base temperature, 
 and the noise of the bolometers in-transition as a function of their transition depth. 
 The dark \ac{ETC} had the exact same electronics boards, filters, and cables as \ac{EBEX}. 
 %In \ac{ETC}, most of the measured noise agreed with the predictions until the bolometers were dropped below 90\% of their initial resistance. 
@@ -992,27 +992,27 @@ The improved agreement at the lower temperature was not understood.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Over-biased Noise}
+\subsection{Overbiased Noise}
 \label{sec:over_biased_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The over-biased noise included the electronic, \ac{SQUID}, and bolometer Johnson noise. 
-The contribution from the electronics was higher than when we measured the Johnson noise in Section~\ref{sec:johnson_noise} because there were carriers and nullers provided in order to electrically over-bias the detectors. 
+The overbiased noise included the electronic, \ac{SQUID}, and bolometer Johnson noise. 
+The contribution from the electronics was higher than when we measured the Johnson noise in Section~\ref{sec:johnson_noise} because there were carriers and nullers provided in order to electrically overbias the detectors. 
 Near a bias frequency of 600~kHz, without carriers and nullers on, the electronics noise was $\sim8.5$
-Also, the bolometer Johnson noise was higher because when over-biased, the bolometer temperature was higher. 
-From Equation~\ref{eq:gbar}, the over-biased detector temperature was estimated to be
+Also, the bolometer Johnson noise was higher because when overbiased, the bolometer temperature was higher. 
+From Equation~\ref{eq:gbar}, the overbiased detector temperature was estimated to be
 \begin{equation}
 T_{bolometer} = T_{bath} + P_{overbias}* \overline{G}
 \end{equation}
-Figure~\ref{fig:overbias_noise} is the measured and predicted over-biased noise for the \ac{SQUID}7 comb of detectors on wafer~150-01 at a bath temperature of 340~mK. 
+Figure~\ref{fig:overbias_noise} is the measured and predicted overbiased noise for the \ac{SQUID}7 comb of detectors on wafer~150-01 at a bath temperature of 340~mK. 
 %Within the uncertainty of the measurement, the 
-The measured over-biased noise agreed with the prediction. 
+The measured overbiased noise agreed with the prediction. 
 
 
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/overbias_noise.png}
-\caption[Over-bias noise in the EBEX test cryostat]{Over-bias noise (blue dots) for one comb of detectors in \ac{ETC} as a function of demodulation frequency at 340~mK. The prediction (blue line) includes electronic, \ac{SQUID}, and over-biased bolometer Johnson noise. There are both carriers and nullers on for this measurement.
+\caption[Overbias noise in the EBEX test cryostat]{Overbias noise (blue dots) for one comb of detectors in \ac{ETC} as a function of demodulation frequency at 340~mK. The prediction (blue line) includes electronic, \ac{SQUID}, and overbiased bolometer Johnson noise. There are both carriers and nullers on for this measurement.
 \label{fig:overbias_noise} }
 \end{center}
 \end{figure}
@@ -1025,8 +1025,8 @@ The measured over-biased noise agreed with the prediction.
 The dark in-transition noise prediction included the electronic, \ac{SQUID}, bolometer Johnson, and phonon noise. 
 The left and right panels of Figure~\ref{fig:etc_it_noise} are the measured and predicted in-transition noise for two different bolometers on wafer~150-01. 
 In order to ensure the system was as clean as possible, only \ac{SQUID}7 was tuned. 
-There were five bolometers on the comb and four were over-biased while the in-transition noise measurements on the fifth bolometer were performed. 
-Between each measurement, we re-over-biased the bolometer so it was always dropped relative to the same initial resistance. 
+There were five bolometers on the comb and four were overbiased while the in-transition noise measurements on the fifth bolometer were performed. 
+Between each measurement, we re-overbiased the bolometer so it was always dropped relative to the same initial resistance. 
 The dark noise measurements were referred to current through the \ac{SQUID}. 
 The phonon \ac{NEP} prediction, a power noise, was multiplied by the current responsivity, $dI/dP$, to convert from power to current, 
 \begin{equation}
@@ -1036,7 +1036,7 @@ If the bolometer was deep in the transition, then the loopgain, $\mathscr{L}$, w
 The loopgain was difficult to properly estimate, 
 %estimate had error bars larger than the value of $\mathscr{L}$, %not sure this is true or relevant
 so the phonon noise prediction in the plot assumed the bolometer was deep in the transition once we had dropped it any amount. 
-That is, over-biased, at a fraction of $R_{initial}$~=~1, we did not include the phonon noise in the prediction, but for all of the other fractions of $R_{initial}$, we assumed the bolometer was in the high loopgain regime. 
+That is, overbiased, at a fraction of $R_{initial}$~=~1, we did not include the phonon noise in the prediction, but for all of the other fractions of $R_{initial}$, we assumed the bolometer was in the high loopgain regime. 
 Towards the top of the transition, at higher fractions of $R_{initial}$, the bolometer was not deep in the transition and $\mathscr{L}$ was not large.
 In this case, the phonon noise contribution to the prediction was overestimated. 
 If $\mathscr{L} = 1$, as was the case at the turnaround of the IV curve near $R = 0.98 \times R_{initial}$, by making this assumption, we overestimated the phonon contribution by a factor of 2, which decreased the total noise prediction from 13~$pA/\sqrt{Hz}$ to 12~$pA/\sqrt{Hz}$. 
@@ -1049,13 +1049,13 @@ If $\mathscr{L} = 1$, as was the case at the turnaround of the IV curve near $R 
 \begin{center}
 \includegraphics[width=0.48\columnwidth]{figures/b54w2c0_it_noise.png}
 \includegraphics[width=0.48\columnwidth]{figures/b54w2c3_it_noise.png}
-\caption[In-transition noise for two bolometer on wafer 150-01 in the EBEX test cryostat]{In-transition noise in \ac{ETC} for wafer~150-01 bolometer~3-01 (left) and bolometer~5-02 (right). The prediction (green line) includes electronic, \ac{SQUID}, Johnson, and phonon noise. The measurements were repeatable across multiple days (blue vs orange dots). The over-biased noise, at $R_{initial}$, agreed with predictions, but as the depth in transition increased, the discrepancy between the prediction and measurement increased. The noise performance was repeatable across different days, which meant different fridge cycles and different detector tunings. 
+\caption[In-transition noise for two bolometer on wafer 150-01 in the EBEX test cryostat]{In-transition noise in \ac{ETC} for wafer~150-01 bolometer~3-01 (left) and bolometer~5-02 (right). The prediction (green line) includes electronic, \ac{SQUID}, Johnson, and phonon noise. The measurements were repeatable across multiple days (blue vs orange dots). The overbiased noise, at $R_{initial}$, agreed with predictions, but as the depth in transition increased, the discrepancy between the prediction and measurement increased. The noise performance was repeatable across different days, which meant different fridge cycles and different detector tunings. 
 \label{fig:etc_it_noise} }
 \end{center}
 \end{figure}
 
-The data (blue and orange dots) lay atop the prediction (green dot) at $1.0 \times R_{initial}$, i.e. over-biased. 
-This agreement is consistent with the over-biased noise measurements and predictions performed on the entire comb. 
+The data (blue and orange dots) lay atop the prediction (green dot) at $1.0 \times R_{initial}$, i.e. overbiased. 
+This agreement is consistent with the overbiased noise measurements and predictions performed on the entire comb. 
 Already by the time the detector was at $0.9 \times R_{initial}$, the measured noise was a factor of two greater than the prediction. 
 The discrepancy between the measured and predicted noise increased as we dropped the detector to lower fractions of $R_{initial}$.
 The detector wasn't latched because we were able to successfully re-overbias between each measurement.
@@ -1069,7 +1069,7 @@ For comparison purposes, the in-band 4.2~K blackbody emission was predicted to b
 
 
 
-%Note, over-biased, we assume there is no phonon noise contribution. %ya dicimos
+%Note, overbiased, we assume there is no phonon noise contribution. %ya dicimos
 %Between 0.9 and 0.6 $R_{initial}$, the prediction (green line) assumes the loopgain is large and so there is not modification to the current responsivity, $S_{I}$, for converting the phonon noise from power at the bolometer to current through the \ac{SQUID}.
 %This assumption is more true at 0.6 and less true at 0.9. 
 
@@ -1077,7 +1077,7 @@ For comparison purposes, the in-band 4.2~K blackbody emission was predicted to b
 
 The excess noise in-transition was observed on several wafers. 
 Figure~\ref{fig:150-02_it_noise} shows a measurement performed as described above, except it was for a bolometer on wafer~150-02 and the wafer was enclosed in the nominal \ac{ETC} dark box instead of housed in the optical efficiency setup. 
-As with wafer~150-01, the over-biased noise
+As with wafer~150-01, the overbiased noise
 %, the data point at fraction of $R_{initial}$~=~1, %trying and failing to explain which data point it is
 agreed with the prediction. 
 The measurement at $0.9 \times R_{initial}$ was within 5\% of the prediction, which included \ac{SQUID}, electronic, Johnson, and phonon noise (assuming large $\mathscr{L}$). 
@@ -1088,7 +1088,7 @@ For the detectors at float, we chose, in part, to drop them to a fraction of 0.8
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/150-02_b53w0c0_it_noise.png}
-\caption[In-transition noise for one bolometer on wafer 150-02 in the EBEX test cryostat]{150-02 in-transition noise for bolometer~2-08. The prediction for the over-biased noise, at a fraction of $R_{initial}$~=~1, is a green dot and the measurement a blue dot. The over-biased noise prediction includes electronic, \ac{SQUID}, and Johnson noise, but not phonon. The in-transition noise prediction, which includes phonon noise, is the green line and the measurements are the blue dots. 
+\caption[In-transition noise for one bolometer on wafer 150-02 in the EBEX test cryostat]{150-02 in-transition noise for bolometer~2-08. The prediction for the overbiased noise, at a fraction of $R_{initial}$~=~1, is a green dot and the measurement a blue dot. The overbiased noise prediction includes electronic, \ac{SQUID}, and Johnson noise, but not phonon. The in-transition noise prediction, which includes phonon noise, is the green line and the measurements are the blue dots. 
 \label{fig:150-02_it_noise} }
 \end{center}
 \end{figure}
