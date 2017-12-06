@@ -175,7 +175,7 @@ The black dashed vertical lines are the pre-flight predicted loads of 1.4, 3.7, 
 %The predicted \ac{NEP} is calculated using measurements of detector parameters and radiative load. 
 %The measured \ac{NEP} is calculated from flight data. 
 The noise performance is assessed by comparing the predicted \ac{NEP} to the measured ac{NEP}. 
-We look at the noise of the dark \ac{SQUID}s, the resistor channels, the bolometers over-biased while the stage is cold, and the bolometers dropped into their superconducting transition state. 
+We look at the noise of the dark \ac{SQUID}s, the resistor channels, the bolometers overbiased while the stage is cold, and the bolometers dropped into their superconducting transition state. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{NEP unit conversions}
@@ -217,23 +217,30 @@ To convert to units of power on the sky, we can either use each detector's calib
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %attempting to explain method for measuring noise
-1. How did you get wnl?
-2. what does it mean to have valid data?
-3. how many detectors had valid data? what fraction of their total data was valid?
+%1. How did you get wnl?
+%2. what does it mean to have valid data?
+%3. how many detectors had valid data? what fraction of their total data was valid?
 
 
 As was done for the \ac{ETC} noise measurements reported in Section~\ref{sec:dark_noise}, the data was broken up into chunks of $\sim$3 minutes (172~seconds). 
 A gradient and offset were subtracted, a Hann window applied, and the \ac{PSD} was calculated. 
 The white noise level was defined as the square root of the average of the \ac{PSD} from 3.9 to 4.4~Hz. 
-%The \ac{HWP} was spinning at a frequency of 1.235~Hz and so the largest component of the half-wave plate synchronious signal was at 4*$f$ = 4.94 Hz. 
+This is a much narrower band than was used in the dark \ac{ETC} measurements. 
+It was chosen because part of our signal of interest resided there, in one of the polarization frequency sidebands of 4*$f_{HWP}$~=~4*1.235~Hz~=~4.94~Hz. 
 %This was a sideband safely away from the 4f signal. 
-%This particular frequency band was chosen because it is a polarization sideband. 
+%the half-wave plate synchronous signal at
 
-The following analysis looks at the bolometers wired to \ac{BRO}s 2, 3, and 4. 
+The following analysis looked at the bolometers wired to \ac{BRO}s 2, 3, and 4. 
 With the exception of the very first time the bolometers were dropped into their transitions at float and the subsequent half hour of observation, \ac{BRO}1 was turned off. 
-This was in order to conserve bolometer crate power because, due to the overheating of the motor controller, the solar panels, which charged the bolometer crate batteries, were not facing the sun as often as was planned. 
-The cost to the overall data acquisition was small because \ac{BRO}1 happened to be wired to wafers of bolometers which were largely saturated at float. 
-Of the 941 \ac{BRO}2-4 bolometers, XXX had data which passed the valid cuts. 
+This was in order to conserve bolometer crate power.
+ Due to the overheating of the gondola motor controller, the solar panels, which charged the bolometer crate batteries, were not facing the sun as often as was planned. 
+The cost to the overall data acquisition was small because \ac{BRO}1 happened to be wired to three wafers of bolometers which were largely saturated at float. 
+
+Bolometer data, for purposes of noise analysis, were flagged if the detector was saturated, there were signals from cosmic ray absorption, there were \ac{SQUID} DC level jumps, the bolometer went superconducting, the \ac{HWP} synchronous signal subtraction failed, the \ac{HWP} motor was ramping on or off, the cryostat was stepping elevation, or the internal-to-the-cryostat calibrator was on. 
+Flagged data was replaced by white noise realizations. 
+In order for a chunk of data to pass the valid criteria, we required no more than 10\% of it be flagged. 
+Of the 941 bolometers in \ac{BRO}2-4, 460 had data which passed the valid criteria. 
+%IF YOU HAVE TIME, COME BACK HERE AND EXPLAIN WHERE YOU LOST THE DATA. ESPECIALLY BE ABLE TO SAY WHERE THE MAJORITY OF IT WAS (ASSUMING THERE WAS A MAJORITY LOST TO SOMETHING, E.G. SATURATION)
 
 %SOME OF THIS SHOULD HAVE ALREADY BEEN MENTIONED IN BOLOMETER THEORY AND IN THE DARK NOISE MEASUREMENT SECTION. ALSO, IT'S OUT OF PLACE HERE.
 %THE FOLLOWING IS ALREADY SPELLED OUT IN THE BOLO THEORY SECTION
@@ -244,14 +251,16 @@ Of the 941 \ac{BRO}2-4 bolometers, XXX had data which passed the valid cuts.
 %\ee
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{SQUIDs}
 \label{sec:squid_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We get a handle on the measured readout noise relative to the predicted readout noise by monitoring a few \ac{SQUID}s with no bolometers attached.
-The predicted readout noise is calculated from the electronic specifications of each element of the readout chain and is converted to current via the \ac{DfMUX} transfer functions~\cite{Francois2012}. 
+In \ac{ETC}, the \ac{SQUID} noise performance was measured by looking at \ac{SQUID}s with live detectors wired to them but demodulating off-resonance. 
+In \ac{EBEX}, however, the \ac{SQUID} noise performance was measured by dedicated dark \ac{SQUID}s. 
+The dark \ac{SQUID}s were not attached to any bolometers because there was an open on their microstrips leading from the \ac{SQUID} boards to the copper pigtails attached to the \ac{LC} boards. 
+As was done for \ac{ETC}, the predicted electronic and \ac{SQUID} noise was calculated from the electronic specifications of each element of the readout chain and assumed an intrinsic \ac{SQUID} noise of 3.5~$pA/\sqrt{Hz}$. 
+The measurement in \ac{ADC} counts was converted to current via the \ac{DfMUX} transfer functions. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
