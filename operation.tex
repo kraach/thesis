@@ -96,7 +96,7 @@ Once \ac{EBEX} reached float altitude and the thick cryostat window was rolled b
 From these IV curves, we measured the electrical power required at float, with the radiative load present, to hold the detector in the negative electrothermal feedback regime. 
 The difference in the two powers measured, in the dark cryostat and open to light at float, gave each detector's measured radiative load,
 \be
-P_{radiative} = P_{electrical}^{dark} - P_{electrical}^{float},
+P_{rad} = P_{elec}^{dark} - P_{elec}^{float},
 \label{eq:radiative_load}
 \ee
 Figure~\ref{fig:dark_light_iv_curves} shows two PV curves for a 250~GHz detector dark in \ac{ETC} and open to light at float in \ac{EBEX}. 
@@ -104,19 +104,21 @@ Figure~\ref{fig:dark_light_iv_curves} shows two PV curves for a 250~GHz detector
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/board64_wire3_ch06_pv_dark_and_float.png}
-\caption{Power as a function of bias voltage for a detector from a 250~GHz wafer, dark in \ac{ETC} (blue) and at float (red). The measured radiative load was 4~pW.
+\caption{Electrical power as a function of bias voltage for a detector from a 250~GHz wafer, dark in \ac{ETC} (blue) and at float (red). At float, because of the radiative load, less electrical power was required to hold the detector in the negative electrothermal feedback regime. The difference in electrical powers, 4~pW, was the measured radiative load 
 %\textcolor{red}{Is this the bolometer you want to showcase? (the same one used in EP2.) NO. PICK ONE FROM ETC, 250-23 ?}
 \label{fig:dark_light_iv_curves} }
 \end{center}
 \end{figure}
 
-\textcolor{red}{Is it worth mentioning anywhere that we also did IV curves as a function of elevation and also after each fridge cycle?}
+%COME BACK HERE IF YOU HAVE TIME
+%\textcolor{red}{Is it worth mentioning anywhere that we also did IV curves as a function of elevation and also after each fridge cycle?}
 
-\textcolor{red}{Do you want to say anything about how and why we dropped to 85\%? Can you make a quantitative statement about the level of uncertainty or systematic this introduces in $P_{sat}^{light}$}
-\textcolor{red}{You need to be clear about what was done for differing bath temperatures. Perhaps this is best addressed in the IV curve section.}
+%KIND OF DID THIS IN CHARACTERIZATION SECTION
+%\textcolor{red}{Do you want to say anything about how and why we dropped to 85\%? Can you make a quantitative statement about the level of uncertainty or systematic this introduces in $P_{sat}^{light}$}
+
+%\textcolor{red}{You need to be clear about what was done for differing bath temperatures. Perhaps this is best addressed in the IV curve section.}
 
 
-\textcolor{red}{Do you want to mention the patterns of the wafers? Namely, calculate medians by wafer. Suspect you'll see the median measured by 250-23 is higher than that measured by 250-29 and 250-24 and 250-25 fall somewhere in between and the differences are non-negligible, i.e. more than one standard deviation away from each other?}
 
 Figure~\ref{fig:radiative_load_histograms} has the distributions of the measured radiative loads from the first set of IV curves performed at float, broken down by frequency band. 
 The measured radiative loads were Gaussian-shaped distributions. 
@@ -148,6 +150,9 @@ The black dashed vertical lines are the pre-flight predicted loads of 1.4, 3.7, 
 \end{center}
 \end{figure}
 
+
+
+\textcolor{red}{Do you want to mention the patterns of the wafers? Namely, calculate medians by wafer. Suspect you'll see the median measured by 250-23 is higher than that measured by 250-29 and 250-24 and 250-25 fall somewhere in between and the differences are non-negligible, i.e. more than one standard deviation away from each other?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
