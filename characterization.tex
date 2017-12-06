@@ -1047,18 +1047,25 @@ If $\mathscr{L} = 1$, as was the case at the turnaround of the IV curve near $R 
 \begin{center}
 \includegraphics[width=0.48\columnwidth]{figures/b54w2c0_it_noise.png}
 \includegraphics[width=0.48\columnwidth]{figures/b54w2c3_it_noise.png}
-\caption{In-transition noise in \ac{ETC} for 150-01 bolometer 3-01 (left) and bolometer 5-02 (right). The prediction (green line) includes electronic, \ac{SQUID}, Johnson, and phonon noise. The measurements were repeatable across multiple days (blue vs orange dots). The over-biased noise, at $R_{initial}$, agreed with predictions, but as the depth in transition increased, the discrepancy between the prediction and measurement increased. 
+\caption{In-transition noise in \ac{ETC} for wafer~150-01 bolometer~3-01 (left) and bolometer~5-02 (right). The prediction (green line) includes electronic, \ac{SQUID}, Johnson, and phonon noise. The measurements were repeatable across multiple days (blue vs orange dots). The over-biased noise, at $R_{initial}$, agreed with predictions, but as the depth in transition increased, the discrepancy between the prediction and measurement increased. The noise performance was repeatable across different days, which had different fridge cycles and different detector tunings. 
 \label{fig:etc_it_noise} }
 \end{center}
 \end{figure}
 
 The data (blue and orange dots) lay atop the prediction (green dot) at $1.0 \times R_{initial}$, i.e. over-biased. 
+This agreement is consistent with the over-biased noise measurements and predictions performed on the entire comb. 
+Already by the time the detector was at $0.9 \times R_{initial}$, the measured noise was a factor of two greater than the prediction. 
 %Note, over-biased, we assume there is no phonon noise contribution. %ya dicimos
 %Between 0.9 and 0.6 $R_{initial}$, the prediction (green line) assumes the loopgain is large and so there is not modification to the current responsivity, $S_{I}$, for converting the phonon noise from power at the bolometer to current through the \ac{SQUID}.
 %This assumption is more true at 0.6 and less true at 0.9. 
-The measurement at $0.9 \times R_{initial}$ is less than 5\% above the prediction, which includes \ac{SQUID}, electronic, Johnson, and phonon noise. 
-At $0.8 \times R_{initial}$, however, the measurement exceeds the prediction by 40\%. 
 
+%, but do not have further evidence to support or deny this idea. 
+
+The excess noise in-transition was not only observed on one wafer. 
+Figure~\ref{fig:150-02_it_noise} shows a measurement performed as described above, except it was for a bolometer on wafer~150-02. 
+The measurement at $0.9 \times R_{initial}$ is within 5\% of the prediction, which includes \ac{SQUID}, electronic, Johnson, and phonon noise (assuming large $\mathscr{L}$). 
+At $0.8 \times R_{initial}$, however, the measurement exceeded the prediction by 40\%. 
+We suspect as we dropped the bolometer deeper into the transition, the bolometer response was in the unstable regime and experienced exponentially growing oscillations. 
 
 \begin{figure}[ht!]
 \begin{center}
@@ -1069,7 +1076,8 @@ At $0.8 \times R_{initial}$, however, the measurement exceeds the prediction by 
 \end{figure}
 
 
-\textcolor{red}{Do you want to zoom in on the in-transition noise up to, say R=0.6Rinitial? So the information isn't completely washed out by the gigantic noise very deep in the transition? If so, do you want this to be a sub panel of the noise plot? And just delete the legend?}
+%\textcolor{red}{Do you want to zoom in on the in-transition noise up to, say R=0.6Rinitial? So the information isn't completely washed out by the gigantic noise very deep in the transition? If so, do you want this to be a sub panel of the noise plot? And just delete the legend?}
+% TRIED THIS. IT DOESN'T LOOK SO GOOD. ABANDON.
 
 \textcolor{red}{Re: high noise in ETC for 150-01. You have the data for photon noise if you have a 4K blackbody (1.8 pW) and you could show how the prediction changes if ALL of this power is absorbed by the (dark) detectors. Still doesn't explain excess.}
 
