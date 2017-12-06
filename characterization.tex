@@ -1026,14 +1026,19 @@ In order to ensure the system was as clean as possible, only \ac{SQUID}7 was tun
 There were five bolometers on the comb and four were over-biased while the in-transition noise measurements on the fifth bolometer were performed. 
 Between each measurement, we re-over-biased the bolometer so it was always dropped relative to the same initial resistance. 
 The dark noise measurements were referred to current through the \ac{SQUID}. 
-Thus, the phonon noise prediction, a power noise, needed to be multiplied by the current responsivity to convert from power to current. 
+The phonon \ac{NEP} prediction, a power noise, was multiplied by the current responsivity, $dI/dP$, to convert from power to current, 
 \begin{equation}
-NEP_{phonon}^{I} = \sqrt{\gamma 4 k_{B} T^2 G} \left( \frac{-\sqrt{2}}{V_{bias}} \right) \left( \frac{\mathscr{L}}{\mathscr{L}+1} \right)
+N_{phonon}^{I} = \sqrt{\gamma 4 k_{B} T^2 G} \left( \frac{\sqrt{2}}{V_{bias}} \right) \left( \frac{\mathscr{L}}{\mathscr{L}+1} \right)
 \end{equation}
-The phonon noise prediction in the plot simply assumed the bolometer was deep in the transition so the loopgain, $\mathscr{L}$, was high and the responsivity was just a function of the voltage bias, $S_{I} = \frac{\sqrt{2}}{V_{bias}} \frac{\mathscr{L}}{\mathscr{L}+1} \approx \frac{\sqrt{2}}{V_{bias}} $. 
-When the bolometer was not deep in the transition, at high fractions of $R_{initial}$, $\mathscr{L}$ was not large.
-In this case, the phonon noise contribution was actually overestimated. 
-If $\mathscr{L} = 1$, as is the case at the turnaround of the IV curve near $R = 0.98 \times R_{initial}$, by making this assumption, we overestimate the phonon contribution by a factor of 2, which decreases the total noise prediction by XXX. 
+If the bolometer was deep in the transition, then the loopgain, $\mathscr{L}$, was high and the responsivity was just a function of the voltage bias, $S_{I} = \frac{\sqrt{2}}{V_{bias}} \frac{\mathscr{L}}{\mathscr{L}+1} \approx \frac{\sqrt{2}}{V_{bias}} $. 
+The loopgain was difficult to properly estimate, 
+%estimate had error bars larger than the value of $\mathscr{L}$, %not sure this is true or relevant
+so the phonon noise prediction in the plot assumed the bolometer was deep in the transition once we had dropped it any amount. 
+That is, over-biased, at a fraction of $R_{initial}$~=~1, we did not include the phonon noise in the prediction, but for all of the other fractions of $R_{initial}$, we assumed the bolometer was in the high loopgain regime. 
+Towards the top of the transition, at higher fractions of $R_{initial}$, the bolometer was not deep in the transition and $\mathscr{L}$ was not large.
+In this case, the phonon noise contribution to the prediction was overestimated. 
+If $\mathscr{L} = 1$, as was the case at the turnaround of the IV curve near $R = 0.98 \times R_{initial}$, by making this assumption, we overestimated the phonon contribution by a factor of 2, which decreased the total noise prediction from 13~$pA/\sqrt{Hz}$ to 12~$pA/\sqrt{Hz}$. 
+%As the detector was dropped deeper, our error improved. %obvious?
 %At $R = 0.9 \times R_{initial}$, the high loopgain assumption is not enough to explain the factor of two inconsistency between the measurement and the prediction. 
 %SENTENCE ABOVE DOESN'T MAKE SENSE, RIGHT? THE HIGH LOOPGAIN ASSUMPTION BRINGS THE PREDICTION UP, CLOSER TO THE MEASUREMENT. 
  
@@ -1047,10 +1052,10 @@ If $\mathscr{L} = 1$, as is the case at the turnaround of the IV curve near $R =
 \end{center}
 \end{figure}
 
-The data (blue dot) and prediction (green dot) at $1.0 \times R_{initial}$, i.e. over-biased, agree. 
-Note, over-biased, we assume there is no phonon noise contribution. 
-Between 0.9 and 0.6 $R_{initial}$, the prediction (green line) assumes the loopgain is large and so there is not modification to the current responsivity, $S_{I}$, for converting the phonon noise from power at the bolometer to current through the \ac{SQUID}.
-This assumption is more true at 0.6 and less true at 0.9. 
+The data (blue and orange dots) lay atop the prediction (green dot) at $1.0 \times R_{initial}$, i.e. over-biased. 
+%Note, over-biased, we assume there is no phonon noise contribution. %ya dicimos
+%Between 0.9 and 0.6 $R_{initial}$, the prediction (green line) assumes the loopgain is large and so there is not modification to the current responsivity, $S_{I}$, for converting the phonon noise from power at the bolometer to current through the \ac{SQUID}.
+%This assumption is more true at 0.6 and less true at 0.9. 
 The measurement at $0.9 \times R_{initial}$ is less than 5\% above the prediction, which includes \ac{SQUID}, electronic, Johnson, and phonon noise. 
 At $0.8 \times R_{initial}$, however, the measurement exceeds the prediction by 40\%. 
 
