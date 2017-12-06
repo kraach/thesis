@@ -87,20 +87,13 @@ The IV curve measurements, described in Section~\ref{sec:thermal_conductance}, p
 In the dark test cryostats, ideally, the radiative load was negligible and so the only power on the detectors was the electrical bias power. 
 That is, for the dark test cryostat IV curve measurements, Equation~\ref{eq:pin} becomes
 \be
-P_{total} = P_{electrical} + \cancel{P_{radiative}},
+P_{total} = P_{elec} + \cancel{P_{rad}},
 \label{eq:total_power_dark}
 \ee
-We measure $P_{electrical}$ dark and that is $P_{total}$, the total power necessary to hold the detector in the negative electro-thermal feedback regime. 
-
-
-\textcolor{red}{Is it worth mentioning anywhere that we also did IV curves as a function of elevation and also after each fridge cycle?}
-
-\textcolor{red}{Do you want to say anything about how and why we dropped to 85\%? Can you make a quantitative statement about the level of uncertainty or systematic this introduces in $P_{sat}^{light}$}
-\textcolor{red}{You need to be clear about what was done for differing bath temperatures. Perhaps this is best addressed in the IV curve section.}
-
+We measured $P_{elec}$ dark and that was $P_{total}$, the total power necessary to hold the detector in the negative electrothermal feedback regime. 
 
 Once \ac{EBEX} reached float altitude and the thick cryostat window was rolled back, IV curves were performed for all detectors. 
-From these IV curves, we measured the electrical power required at float, with the radiative load present, to hold the detector in the negative electro-thermal feedback regime. 
+From these IV curves, we measured the electrical power required at float, with the radiative load present, to hold the detector in the negative electrothermal feedback regime. 
 The difference in the two powers measured, in the dark cryostat and open to light at float, gave each detector's measured radiative load,
 \be
 P_{radiative} = P_{electrical}^{dark} - P_{electrical}^{float},
@@ -116,6 +109,11 @@ Figure~\ref{fig:dark_light_iv_curves} shows two PV curves for a 250~GHz detector
 \label{fig:dark_light_iv_curves} }
 \end{center}
 \end{figure}
+
+\textcolor{red}{Is it worth mentioning anywhere that we also did IV curves as a function of elevation and also after each fridge cycle?}
+
+\textcolor{red}{Do you want to say anything about how and why we dropped to 85\%? Can you make a quantitative statement about the level of uncertainty or systematic this introduces in $P_{sat}^{light}$}
+\textcolor{red}{You need to be clear about what was done for differing bath temperatures. Perhaps this is best addressed in the IV curve section.}
 
 
 \textcolor{red}{Do you want to mention the patterns of the wafers? Namely, calculate medians by wafer. Suspect you'll see the median measured by 250-23 is higher than that measured by 250-29 and 250-24 and 250-25 fall somewhere in between and the differences are non-negligible, i.e. more than one standard deviation away from each other?}
