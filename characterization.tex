@@ -621,7 +621,9 @@ Table~\ref{tab:opt_eff} gives the slope for each of the functioning bolometers o
 \begin{center}
 \includegraphics[width=0.49\columnwidth]{figures/blackbody_intensity_plot.png}
 \includegraphics[width=0.48\columnwidth]{figures/SqCh2_Ch1_p_vs_p.png}
-\caption{Left: Blackbody radiation as a function of temperature. The \ac{EBEX} 150~GHz band is marked by the black vertical lines. Right: Wafer~150-01 bolometer 8-04 electrical power as function of blackbody power. The slope, $\sim0.8$, is the detector's optical efficiency. 
+\caption{Left: Blackbody radiation as a function of temperature. The \ac{EBEX} 150~GHz band
+%from 133 to 173~GHz
+is marked by the black vertical lines. Right: Wafer~150-01 bolometer 8-04 electrical power as function of blackbody power. The slope, $\sim0.8$, is the detector's optical efficiency. 
 %\textcolor{red}{remake this figure st the x-axis is labeled Prad not PBB!}
 \label{fig:pelec_vs_popt} }
 \end{center}
@@ -638,7 +640,7 @@ bolometer & efficiency \\
 9-03	& 74\% \\
 \end{tabular}
 \end{center}
-\caption{Measured optical efficiencies of wafer~150-01 bolometers open to blackbody in \ac{ETC}.
+\caption{Measured optical efficiencies of wafer~150-01 bolometers open to blackbody in \ac{ETC}. The average measured $\epsilon$ was 76\% with a standard deviation of 8\%. 
 \label{tab:opt_eff} }
 \end{table}
 
@@ -1047,7 +1049,7 @@ If $\mathscr{L} = 1$, as was the case at the turnaround of the IV curve near $R 
 \begin{center}
 \includegraphics[width=0.48\columnwidth]{figures/b54w2c0_it_noise.png}
 \includegraphics[width=0.48\columnwidth]{figures/b54w2c3_it_noise.png}
-\caption{In-transition noise in \ac{ETC} for wafer~150-01 bolometer~3-01 (left) and bolometer~5-02 (right). The prediction (green line) includes electronic, \ac{SQUID}, Johnson, and phonon noise. The measurements were repeatable across multiple days (blue vs orange dots). The over-biased noise, at $R_{initial}$, agreed with predictions, but as the depth in transition increased, the discrepancy between the prediction and measurement increased. The noise performance was repeatable across different days, which had different fridge cycles and different detector tunings. 
+\caption{In-transition noise in \ac{ETC} for wafer~150-01 bolometer~3-01 (left) and bolometer~5-02 (right). The prediction (green line) includes electronic, \ac{SQUID}, Johnson, and phonon noise. The measurements were repeatable across multiple days (blue vs orange dots). The over-biased noise, at $R_{initial}$, agreed with predictions, but as the depth in transition increased, the discrepancy between the prediction and measurement increased. The noise performance was repeatable across different days, which meant different fridge cycles and different detector tunings. 
 \label{fig:etc_it_noise} }
 \end{center}
 \end{figure}
@@ -1055,13 +1057,18 @@ If $\mathscr{L} = 1$, as was the case at the turnaround of the IV curve near $R 
 The data (blue and orange dots) lay atop the prediction (green dot) at $1.0 \times R_{initial}$, i.e. over-biased. 
 This agreement is consistent with the over-biased noise measurements and predictions performed on the entire comb. 
 Already by the time the detector was at $0.9 \times R_{initial}$, the measured noise was a factor of two greater than the prediction. 
+The detector wasn't latched because we were able to re-overbias between each measurement, but the discrepancy between the measured and predicted noise increased as we dropped the detector to lower fractions of $R_{initial}$.
+Since this measurement was dark (no photon noise) and we were working in current units, only the phonon noise was a function of the responsivity. 
+If, however, there had been an unfiltered 4.2~K radiative load incident on the detector, and the detector had an optical efficiency of 76\%, then there would have been an 
+
+
 %Note, over-biased, we assume there is no phonon noise contribution. %ya dicimos
 %Between 0.9 and 0.6 $R_{initial}$, the prediction (green line) assumes the loopgain is large and so there is not modification to the current responsivity, $S_{I}$, for converting the phonon noise from power at the bolometer to current through the \ac{SQUID}.
 %This assumption is more true at 0.6 and less true at 0.9. 
 
 %, but do not have further evidence to support or deny this idea. 
 
-The excess noise in-transition was not only observed on one wafer. 
+The excess noise in-transition was observed on several wafers. 
 Figure~\ref{fig:150-02_it_noise} shows a measurement performed as described above, except it was for a bolometer on wafer~150-02. 
 The measurement at $0.9 \times R_{initial}$ is within 5\% of the prediction, which includes \ac{SQUID}, electronic, Johnson, and phonon noise (assuming large $\mathscr{L}$). 
 At $0.8 \times R_{initial}$, however, the measurement exceeded the prediction by 40\%. 
