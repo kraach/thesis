@@ -171,9 +171,9 @@ The black dashed vertical lines are the pre-flight predicted loads of 1.4, 3.7, 
 \label{sec:flight_noise_performance}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-The predicted \ac{NEP} is calculated using measurements of detector parameters and radiative load. 
-The measured \ac{NEP} is calculated from flight data. 
+% you already said this at the beginning.
+%The predicted \ac{NEP} is calculated using measurements of detector parameters and radiative load. 
+%The measured \ac{NEP} is calculated from flight data. 
 The noise performance is assessed by comparing the predicted \ac{NEP} to the measured ac{NEP}. 
 We look at the noise of the dark \ac{SQUID}s, the resistor channels, the bolometers over-biased while the stage is cold, and the bolometers dropped into their superconducting transition state. 
 
@@ -182,7 +182,7 @@ We look at the noise of the dark \ac{SQUID}s, the resistor channels, the bolomet
 \label{sec:nep_units}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-There are four units we use when measuring the detector \ac{PSD}: \ac{DfMUX} \ac{ADC} counts, Amps, Watts at the detector, and Watts on the sky. 
+There are four units we use when measuring the detector \ac{NEP}: \ac{DfMUX} \ac{ADC} counts, Amps, Watts at the detector, and Watts on the sky. 
 The raw timestreams from the \ac{DfMUX} boards are recorded in \ac{ADC} counts. 
 The predictions for the current noise terms of the \ac{NEP}, Johnson and readout, are naturally in units of Amps.
 The predictions for the power noise terms of the \ac{NEP}, photon and phonon, are naturally in units of Watts at the detector. 
@@ -222,14 +222,18 @@ To convert to units of power on the sky, we can either use each detector's calib
 3. how many detectors had valid data? what fraction of their total data was valid?
 
 
-As was done for the \ac{ETC} noise measurements reported in Section~\ref{sec:dark_noise}, the data was broken down into chunks of $\sim$3 minutes (172~seconds). 
-A gradient and offset were subtracted and the \ac{PSD} was calculated. 
+As was done for the \ac{ETC} noise measurements reported in Section~\ref{sec:dark_noise}, the data was broken up into chunks of $\sim$3 minutes (172~seconds). 
+A gradient and offset were subtracted, a Hann window applied, and the \ac{PSD} was calculated. 
+The white noise level was defined as the square root of the average of the \ac{PSD} from 3.9 to 4.4~Hz. 
+%The \ac{HWP} was spinning at a frequency of 1.235~Hz and so the largest component of the half-wave plate synchronious signal was at 4*$f$ = 4.94 Hz. 
+%This was a sideband safely away from the 4f signal. 
+%This particular frequency band was chosen because it is a polarization sideband. 
 
-The following analysis looks at the 941 bolometers wired to \ac{BRO}s 2, 3, and 4. 
+The following analysis looks at the bolometers wired to \ac{BRO}s 2, 3, and 4. 
 With the exception of the very first time the bolometers were dropped into their transitions at float and the subsequent half hour of observation, \ac{BRO}1 was turned off. 
 This was in order to conserve bolometer crate power because, due to the overheating of the motor controller, the solar panels, which charged the bolometer crate batteries, were not facing the sun as often as was planned. 
 The cost to the overall data acquisition was small because \ac{BRO}1 happened to be wired to wafers of bolometers which were largely saturated at float. 
-Of the \ac{BRO}2-4 bolometers, XXX had data which passed the valid cuts. 
+Of the 941 \ac{BRO}2-4 bolometers, XXX had data which passed the valid cuts. 
 
 %SOME OF THIS SHOULD HAVE ALREADY BEEN MENTIONED IN BOLOMETER THEORY AND IN THE DARK NOISE MEASUREMENT SECTION. ALSO, IT'S OUT OF PLACE HERE.
 %THE FOLLOWING IS ALREADY SPELLED OUT IN THE BOLO THEORY SECTION
