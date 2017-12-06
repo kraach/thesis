@@ -780,7 +780,7 @@ The dark \ac{ETC} had the exact same electronics boards, filters, and cables as 
 For each noise measurement, $\sim$3~minutes of data was taken. 
 We measured demodulated \ac{ADC} counts with the \ac{DfMUX} board and converted to physical units, typically nV, pA, or aW. 
 The upper panel of Figure~\ref{fig:timestream_and_psd} is an example of a raw bolometer timestream converted to current for wafer~150-01 bolometer~3-01 as a function of sample number (there were 20~MHz/$2^{17}$ = 190.73 samples per second).
-The \ac{PSD} was calculated from the timestream. 
+From the timestream, a gradient and offset were subtracted, a Hann window was applied, and the \ac{PSD} was calculated. 
 For the dark measurements, the noise level reported is the square root of the average of the \ac{PSD} from 0.5 to 5.0~Hz. 
 The lower panel of Figure~\ref{fig:timestream_and_psd} is the square root of the PSD with the red line indicating the average noise level. 
 
