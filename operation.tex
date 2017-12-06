@@ -5,6 +5,11 @@
 \label{operation_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+We discuss the detector yield, Section~\ref{sec:yield}, and the detectors' measured radiative loads, Section~\ref{sec:radiative_load}.
+In section~\ref{sec:flight_noise_performance}, using the dark characterization measurements, the measured radiative load, the electrical bias parameters, and the \ac{DfMUX} transfer functions, we predict the instrument sensitivity in \ac{NEP}. 
+We report the noise performance of each detector by comparing its expected \ac{NEP} to the median of its measured \ac{NEP} over the portions of the \ac{EBEX} flight for which it had valid data. 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Detector Yield 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -166,6 +171,11 @@ The black dashed vertical lines are the pre-flight predicted loads of 1.4, 3.7, 
 \label{sec:flight_noise_performance}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{NEP unit conversions}
+\label{sec:nep_units}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 There are four units we use when measuring the detector \ac{PSD}: \ac{DfMUX} \ac{ADC} counts, Amps, Watts at the detector, and Watts on the sky. 
 The raw timestreams from the \ac{DfMUX} boards are recorded in \ac{ADC} counts. 
 The predictions for the current noise terms of the \ac{NEP}, Johnson and readout, are naturally in units of Amps.
@@ -177,7 +187,7 @@ To convert to units of power on the sky, we can either use each detector's calib
 \ee
 \TAB\ref{psd_table} provides the conversion applied to each noise term in order to report in the units of the leftmost column. 
 
-\begin{table}[ht!]
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline Units & Timestream & Photon and Phonon & Johnson and Readout \\ 
@@ -189,32 +199,39 @@ To convert to units of power on the sky, we can either use each detector's calib
 \hline
 \end{tabular}
 \end{center}
-\caption{\ac{PSD} unit conversions used to get all noise terms in the same units. ct is a \ac{DfMUX} \ac{ADC} count, $W_{bolo}$ is power absorbed by the detector, $S_{I}$ is the detector current responsivity, $A$ is current though the \ac{SQUID}, $W_{sky}$ is power incident from the sky, $\varepsilon$ is the end-to-end instrument optical efficiency. %incident upon the instrument?
+\caption[Unit conversions for noise equivalent power]{\ac{PSD} unit conversions used to get all noise terms in the same units. ct is a \ac{DfMUX} \ac{ADC} count, $W_{bolo}$ is power absorbed by the detector, $S_{I}$ is the detector current responsivity, $A$ is current though the \ac{SQUID}, $W_{sky}$ is power incident from the sky, and $\varepsilon$ is the end-to-end instrument optical efficiency. %incident upon the instrument? 
 }
 \label{psd_table}
 \end{table}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Procedure}
+\label{sec:procedure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Responsivity is
-\be
-S_I = \frac{-1}{V_{bias}} * \frac{\mathscr{L}}{\mathscr{L} + 1} * \frac{1}{1 + i\omega\tau}
-\label{eq:current_responsivity}
-\ee
+%attempting to explain method for measuring noise
+1. How did you get wnl?
+2. what does it mean to have valid data?
+3. how many detectors had valid data? what fraction of their total data was valid?
 
-THE FOLLOWING IS NO LONGER TRUE. BUT WHAT IS TRUE?
-The following analysis looks at the 941 bolometers wired to \ac{BRO}s 2, 3, and s4. 
-With the exception of the very first time the bolometers were dropped into their transitions at float and the subsequent half hour of observation, \ac{BRO}1 was turned off in order to conserve bolometer power. \ac{BRO}1 also happened to consist of wafers which were largely saturated at float. 
-Of the 941 bolometers included, 303 of them have zero valid samples throughout flight. 
-An additional 92 bolometers have no 172~second chunks without flags. 
-That should leave us with 546 detectors with some good data. 
-There are, however, only 398 detectors reported in the analysis. 
-We have 148 unaccounted for detector losses. 
 
-SOME OF THIS SHOULD HAVE ALREADY BEEN MENTIONED IN BOLOMETER THEORY AND IN THE DARK NOISE MEASUREMENT SECTION. ALSO, IT'S OUT OF PLACE HERE.
-We report the \ac{EBEX} noise performance by comparing the expected \ac{NEP} to the measured \ac{NEP} over several hours of the \ac{EBEX} flight for a subset of detectors which have no data flagged as bad. 
+As was done for the \ac{ETC} noise measurements reported in Section~\ref{sec:dark_noise}, the data was broken down into $\sim$3 minute chunks. 
+A gradient and offset were subtracted and the \ac{PSD} was calculated. 
 
-Using the dark characterization measurements, the measured radiative load, the electrical bias parameters, and the \ac{DfMUX} transfer functions, we predict the instrument sensitivity in \ac{NEP}. 
+The following analysis looks at the 941 bolometers wired to \ac{BRO}s 2, 3, and 4. 
+With the exception of the very first time the bolometers were dropped into their transitions at float and the subsequent half hour of observation, \ac{BRO}1 was turned off. 
+This was in order to conserve bolometer crate power because, due to the overheating of the motor controller, the solar panels, which charged the bolometer crate batteries, were not facing the sun as often as was planned. 
+The cost to the overall data acquisition was small because \ac{BRO}1 happened to be wired to wafers of bolometers which were largely saturated at float. 
+Of the \ac{BRO}2-4 bolometers, XXX had data which passed the valid cuts. 
+
+%SOME OF THIS SHOULD HAVE ALREADY BEEN MENTIONED IN BOLOMETER THEORY AND IN THE DARK NOISE MEASUREMENT SECTION. ALSO, IT'S OUT OF PLACE HERE.
+%THE FOLLOWING IS ALREADY SPELLED OUT IN THE BOLO THEORY SECTION
+%Responsivity is
+%\be
+%S_I = \frac{-1}{V_{bias}} * \frac{\mathscr{L}}{\mathscr{L} + 1} * \frac{1}{1 + i\omega\tau}
+%\label{eq:current_responsivity}
+%\ee
 
 
 
