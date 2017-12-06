@@ -1060,8 +1060,11 @@ Already by the time the detector was at $0.9 \times R_{initial}$, the measured n
 The discrepancy between the measured and predicted noise increased as we dropped the detector to lower fractions of $R_{initial}$.
 The detector wasn't latched because we were able to successfully re-overbias between each measurement.
 %Since this measurement was dark (no photon noise) and we were working in current units, only the phonon noise was a function of the responsivity. 
-Though these detectors were far from those open to the blackbody, there could have been an optical load during that cryostat run.
-The detector would have had to absorb 11~pW of radiation in order to bring the prediction in line with the measurement. 
+There could have been an unfiltered, unaccounted for radiative load during the wafer~150-01 cryostat run because it was performed with the optical efficiency setup in which there was a hexagon of seven detectors open to the blackbody. 
+The detectors shown in Figure~\ref{fig:etc_it_noise} were two (bolometer~5-02) and four (bolometer 3-01) bolometers away from detectors open to light, see Figure~\ref{fig:bb_wafer_layout}. 
+%want to say something like, we have evidence there was cross-talk on the level of $\sim$10\% in the dark detectors near to the black body. So we could have had up to that 10\% of the expected load of 1.7pW. Or we could have had some other sneaky photons.
+Assuming the loopgain at 0.9 $\times R_{initial}$ is high enough to approximate the current responsivity as $\sqrt{2}/V_{bias}$, then bolometer~3-01 would have had to absorb 11~pW of radiation in order to bring its prediction in line with its measurement.
+Bolometer~5-02 would have had to absorb 17~pW. 
 For comparison purposes, the in-band 4.2~K blackbody emission was predicted to be 1.7~pW.
 
 
@@ -1073,10 +1076,14 @@ For comparison purposes, the in-band 4.2~K blackbody emission was predicted to b
 %, but do not have further evidence to support or deny this idea. 
 
 The excess noise in-transition was observed on several wafers. 
-Figure~\ref{fig:150-02_it_noise} shows a measurement performed as described above, except it was for a bolometer on wafer~150-02. 
-The measurement at $0.9 \times R_{initial}$ is within 5\% of the prediction, which includes \ac{SQUID}, electronic, Johnson, and phonon noise (assuming large $\mathscr{L}$). 
+Figure~\ref{fig:150-02_it_noise} shows a measurement performed as described above, except it was for a bolometer on wafer~150-02 and the wafer was enclosed in the nominal \ac{ETC} dark box instead of housed in the optical efficiency setup. 
+As with wafer~150-01, the over-biased noise
+%, the data point at fraction of $R_{initial}$~=~1, %trying and failing to explain which data point it is
+agreed with the prediction. 
+The measurement at $0.9 \times R_{initial}$ was within 5\% of the prediction, which included \ac{SQUID}, electronic, Johnson, and phonon noise (assuming large $\mathscr{L}$). 
 At $0.8 \times R_{initial}$, however, the measurement exceeded the prediction by 40\%. 
 We suspect as we dropped the bolometer deeper into the transition, the bolometer response was in the unstable regime and experienced exponentially growing oscillations. 
+For the detectors at float, we chose, in part, to drop them to a fraction of 0.85 $\times R_{initial}$ because this was the boundary at which the noise performance deteriorated. 
 
 \begin{figure}[ht!]
 \begin{center}
@@ -1090,9 +1097,7 @@ We suspect as we dropped the bolometer deeper into the transition, the bolometer
 %\textcolor{red}{Do you want to zoom in on the in-transition noise up to, say R=0.6Rinitial? So the information isn't completely washed out by the gigantic noise very deep in the transition? If so, do you want this to be a sub panel of the noise plot? And just delete the legend?}
 % TRIED THIS. IT DOESN'T LOOK SO GOOD. ABANDON.
 
-\textcolor{red}{Re: high noise in ETC for 150-01. You have the data for photon noise if you have a 4K blackbody (1.7 pW) and you could show how the prediction changes if ALL of this power is absorbed by the (dark) detectors. Still doesn't explain excess.
-what if it wasn't filtered? then it was 22 pw!!! that would certainly give more noise ...
-}
+%\textcolor{red}{Re: high noise in ETC for 150-01. You have the data for photon noise if you have a 4K blackbody (1.7 pW) and you could show how the prediction changes if ALL of this power is absorbed by the (dark) detectors. Still doesn't explain excess. what if it wasn't filtered? then it was 22 pw!!! that would certainly give more noise ...}
 
 %\textcolor{red}{I want to generate a plot with more data for fracRn between 1 and 0.7 ... Do we have such a thing?}
 
