@@ -302,11 +302,11 @@ We hypothesize the excess noise was due to electromagnetic pickup in the microst
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 A detector was said to be overbiased when the voltage bias across the \ac{TES} provided enough Joule heating to keep the resistance of the \ac{TES} normal. 
-Because of the small value of the loopgain when the bolometer was overbiased, the responsivity was tiny and so the noise performance was dominated by the readout (electronic and \ac{SQUID}) and bolometer Johnson noise. 
+Because of the small value of the loopgain when the bolometer was overbiased, the responsivity was tiny and so the noise performance was dominated by the readout (electronic and \ac{SQUID}) and bolometer Johnson noise, Equation~\ref{eq:nep}. 
 We predicted and measured the bolometers' overbiased noise in units of $A/\sqrt{Hz}$ since both the readout and Johnson noise are naturally in units of current.  
 %IF YOU HAVE TIME, COME BACK AND BE PRECISE (NUMBERS) ABOUT WHAT TINY MEANS
 The readout noise was calculated as before, using each bolometer's carrier and nuller settings. 
-The predicted Johnson noise assumed the bolometer resistance was $R_{normal}$ from the network analysis fit and estimated the bolometer temperature as $T_{bolo} = T_{c}$ + $\Delta P / \overline{G}$ from the critical transition temperature measurement and the IV curves dark and at float, where $\Delta P$ was the difference in power from overbiased to in the transition. 
+The predicted Johnson noise assumed the bolometer resistance was $R_{normal}$ from the network analysis fit and estimated the bolometer temperature as $T_{bolo} = T_{c}$ + $\Delta P / \overline{G}$ from the critical transition temperature measurements and the IV curves dark and at float, where $\Delta P$ was the difference in power from overbiased to in the transition. 
 %Section~\ref{sec:parameter_measurements}. 
 Because the bolometers and resistors shared the readout chain all the way to just before the bolometer wafer, we assumed the excess noise present in the resistor channels would also be present in the bolometer channels. 
 The predicted overbias noise for each bolometer was multiplied by 1.8, the median factor of excess noise measured by the resistors. 
@@ -319,6 +319,7 @@ We took the median ratio of the measured to predicted overbiased noise over this
 Figure~\ref{fig:overbias_noise_hist} is the median measured to predicted overbiased noise ratio for each bolometer. 
 The median ratio of of all detectors was 1.2. 
 The median ratio per wafer is reported in Table~\ref{tab:overbias_noise_table}.
+Note, wafers 150-20, 150-24, 250-25, and 410-18 were not included in the table because they were either in \ac{BRO}1 (off) or saturated. 
 
 \begin{figure}[htp]
 \begin{center}
@@ -335,7 +336,8 @@ The median ratio per wafer is reported in Table~\ref{tab:overbias_noise_table}.
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/overbias_noise_ratios_histogram}
-\caption{Histogram of the median ratio of measured to corrected predicted readout and Johnson noise for all bolometers. 
+\caption{Histogram of the median ratio of measured to predicted readout and Johnson noise for all bolometers. 
+The prediction for each bolometer has been multiplied by 1.8, the median factor of excess noise measured by the resistor channels. 
 There are 34 bolometers with a ratio greater than 5.
 The median value (vertical cyan) is 1.2. 
 \label{fig:overbias_noise_hist} }
@@ -365,13 +367,16 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 \hline
 \end{tabular}
 \end{center}
-\caption[Median overbiased NEP predictions and measurements for each wafer]{The predicted combination of Johnson and readout noise given each wafer's characterization measurements of $R_{N}$ and XXX. These predictions have been boosted by a factor of XXX, the excess of noise measured by the resistors. For each wafer the ratio quoted is  the median of the distribution for the detectors on that wafer. 
+\caption[Median overbiased NEP predictions and measurements for each wafer]{The predicted combination of Johnson and readout noise for each wafer. The theoretical predictions have been boosted by a factor of 1.8, the excess of noise measured by the resistors. For each wafer the measaured to predicted ratio quoted is the median of the distribution for the detectors on that wafer. 
 \label{tab:overbias_noise_table} }
 \end{table}
 
-Excess overbias noise of roughly the same magnitude was measured when the instrument was on the ground in Antarctica, see \TAB\ref{overbias_noise_table}. 
-The source of the excess overbiased noise is suspected to be electronic. The subset of \ac{EBEX2013} detectors which were present for compatibility testing noise measurements in Palestine, TX, had a median excess overbiased noise a factor of 1.25 greater than predicted. While, at float, this particular subset of detectors have a median overbiased noise factor of 1.58 greater than predicted. Assuming the detectors are overbiased at roughly the same value, they will have comparable temperatures and resistances from run-to-run and there is no physical explanation for an increase in Johnson noise. 
-The majority of the detectors have a coherency value of $\sim$0.1, indicating the excess noise is not from a correlated noise source but rather is a broadband source. 
+%IF YOU HAVE TIME, COME BACK AND ADDRESS THIS!!!!
+%GROUND MEASUREMENTS IN TX AND MCMURDO
+% ALSO, CORRELATION
+%Excess overbias noise of roughly the same magnitude was measured when the instrument was on the ground in Antarctica, see \TAB\ref{overbias_noise_table}. 
+%The source of the excess overbiased noise is suspected to be electronic. The subset of \ac{EBEX2013} detectors which were present for compatibility testing noise measurements in Palestine, TX, had a median excess overbiased noise a factor of 1.25 greater than predicted. While, at float, this particular subset of detectors had a median overbiased noise factor of 1.58 greater than predicted. Assuming the detectors are overbiased at roughly the same value, they will have comparable temperatures and resistances from run-to-run and there is no physical explanation for an increase in Johnson noise. 
+%The majority of the detectors have a coherency value of $\sim$0.1, indicating the excess noise is not from a correlated noise source but rather is a broadband source. 
 
 
 
