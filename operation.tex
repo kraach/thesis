@@ -318,6 +318,7 @@ The right panel of Figure~\ref{fig:one_bolo_overbias_noise} is the measured and 
 We took the median ratio of the measured to predicted overbiased noise over this 6000~second interval as representative of the bolometer's overbiased noise performance.
 Figure~\ref{fig:overbias_noise_hist} is the median measured to predicted overbiased noise ratio for each bolometer. 
 The median ratio of of all detectors was 1.2. 
+The majority of the detectors have a coherency value of $\sim$0.1, indicating the excess noise is not from a correlated noise source but rather is a broadband source. 
 The median ratio per wafer is reported in Table~\ref{tab:overbias_noise_table}.
 Note, wafers 150-20, 150-24, 250-25, and 410-18 were not included in the table because they were either in \ac{BRO}1 (off) or saturated. 
 
@@ -391,8 +392,7 @@ This was not understood.
 % ALSO, CORRELATION
 %Excess overbias noise of roughly the same magnitude was measured when the instrument was on the ground in Antarctica, see \TAB\ref{overbias_noise_table}. 
 %The source of the excess overbiased noise is suspected to be electronic. The subset of \ac{EBEX2013} detectors which were present for compatibility testing noise measurements in Palestine, TX, had a median excess overbiased noise a factor of 1.25 greater than predicted. While, at float, this particular subset of detectors had a median overbiased noise factor of 1.58 greater than predicted. Assuming the detectors are overbiased at roughly the same value, they will have comparable temperatures and resistances from run-to-run and there is no physical explanation for an increase in Johnson noise. 
-%The majority of the detectors have a coherency value of $\sim$0.1, indicating the excess noise is not from a correlated noise source but rather is a broadband source. 
-
+%
 
 
 
@@ -453,8 +453,8 @@ The center and width of the observation frequency bands, $\nu$ (153, 244, and 39
 We did not have a measure of the photon correlation noise factor, so we assumed it was completely correlated, $\xi=1$.
 This put an upper bound on the noise prediction and had the greatest effect on the 150~GHz \ac{NEP} prediction. 
 %Table~\ref{tab:photon_noise} gives the relative contributions of the correlation and shot noise for the average measured radiative load per observation frequency band.
-For the 150~GHz band, if the photons were completely uncorrelated, $\xi=0$, then the photon \ac{NEP} in $W^2/Hz$ would have decreased by a factor of $\sim$0.6, decreasing the total \ac{NEP} prediction by a factor of $\sim$0.8. 
-For the 410~GHz band, the decrease in photon \ac{NEP} would have been a factor of $\sim$0.9, decreasing the total \ac{NEP} prediction by a factor of $\sim$0.95. 
+For the 150~GHz band, if the photons were completely uncorrelated, $\xi=0$, then the photon \ac{NEP} in $W/\sqrt{Hz}$ would have decreased by a factor of $\sim$0.80, decreasing the total \ac{NEP} prediction by a factor of $\sim$0.90. 
+For the 410~GHz band, the decrease in photon \ac{NEP} would have been a factor of $\sim$0.95, decreasing the total \ac{NEP} prediction by a factor of $\sim$0.98. 
 %In reality, the photon noise correlation factor is probably somewhere in between 0 and 1 \cite{}. 
 
 
