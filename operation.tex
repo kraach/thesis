@@ -422,6 +422,16 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 \label{sec:in_trans_pred}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+We predicted the in-transition \ac{NEP} in aW/$\sqrt{\mathrm{Hz}}$ at the detector. 
+The in-transition noise prediction included the readout and Johnson noise, the phonon noise, and the photon noise, Equation~\ref{eq:nep}. 
+Figure~\ref{fig:prediction_bar_chart} is a stacked bar chart of the \ac{EBEX} in-transition noise prediction in units of aW/$\sqrt{Hz}$ at the detector. 
+Each wafer's bar was the mean for that wafer and the error bars were one standard deviation. 
+The dark blue bar was the predicted \ac{NEP} assuming the expected radiative load, Table~\ref{tab:target_gbar}, to calculate the photon noise contribution and each detector's carrier and nuller settings as well as its dark characterization measurements to calculate the readout, Johnson, and phonon noise contributions. 
+The cyan bar included the additional \ac{NEP} given the measured radiative load of each detector. 
+The golden bar included the excess factor of 1.8 measured by the resistor applied to the bolometer readout and Johnson noise. 
+
+% you have to say you assumed xi=1 and how much the prediction is smaller if you assume xi=0
+
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/ebex_noise_level_predictions_barchart_per_wafer}
@@ -443,13 +453,6 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
   \end{center}
 \end{figure}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{In-Transition Measurement}
-\label{sec:in_trans_meas}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-We predict the in-transition \ac{NEP} in $aW/\sqrt{Hz}$ at the detector. 
 We calculate the theoretical Johnson and readout current noise as described above except we also take into account the factor of excess noise measured with the detector overbiased. 
 We assume the factor of excess remains constant when the detector is in its transition, and for each detector on a wafer, we multiply that detector's theoretical Johnson and readout noise by its wafer's median ratio of overbiased to predicted noise reported in \TAB\ref{overbias_noise_table}. 
 In order to convert from current noise to \ac{NEP} at the detector, we divide the Johnson and readout noise terms by the current responsivity. 
@@ -490,6 +493,15 @@ We take n to be 2 since thermal conductivity measurements of \ac{EBEX} test flig
 
 The median predicted in transition \ac{NEP} level for each wafer is reported in \TAB\ref{in_transition_noise_table}. 
 There is a piechart breakdown of each contributor to the predicted \ac{NEP} for one 150~GHz detector towards the beginning of flight in Fig.~\ref{fig:in_transition_psd}. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{In-Transition Measurement}
+\label{sec:in_trans_meas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 The white noise level is measured exactly as is done in the case of overbiased noise, except the timestream has had the \ac{HWP} template subtracted. 
 Fig.~\ref{fig:in_transition_psd} is the square root of the \ac{PSD} of a 172~second chunk of time with the \ac{HWP} template present (red) and the \ac{HWP} template subtracted (yellow) for detector 150-09-XX-XX. 
 The measured white noise level is the square root of the average of the \ac{PSD} between 3.9 and 4.4~Hz, indicated by the short thick black line, and the \ac{NEP} prediction is calculated as described above, indicated by the thin black dashed line. 
