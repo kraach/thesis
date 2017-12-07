@@ -784,13 +784,16 @@ From the timestream, a gradient and offset were subtracted, a Hann window was ap
 For the dark measurements, the noise level reported is the square root of the average of the \ac{PSD} from 0.5 to 5.0~Hz. 
 The lower panel of Figure~\ref{fig:timestream_and_psd} is the square root of the PSD with the red line indicating the average noise level. 
 
-\begin{figure}[ht!]
+\begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/b54w2c3_overbias.png}
 \caption[Bolometer timestream in current and amplitude spectral density]{The raw bolometer timestream converted from \ac{ADC} counts to current and the square root of the PSD for wafer~150-01 bolometer 3-01. The timestream was $\sim$3~minutes long. The white noise level was determined by averaging the \ac{PSD} from 0.5 to 5~Hz and taking the square root. This bolometer had a white noise level of 11~$pA/\sqrt{Hz}$. 
 \label{fig:timestream_and_psd} }
 \end{center}
 \end{figure}
+
+%COME BACK AND REMAKE THIS FIGURE IF YOU HAVE TIME!
+%LABEL Y-AXIS AS 'SPECTRAL DENSITY'
 
 
 %COME BACK TO RESISTOR NOISE IF YOU HAVE TIME
@@ -829,7 +832,7 @@ The lower panel of Figure~\ref{fig:timestream_and_psd} is the square root of the
 %\textcolor{red}{Figure out how to reference Franky's thesis and be sure you're doing it in all the right places. Also, is there some dfmux paper we should also be referencing?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Warm Electronics Noise}
+\subsection{Test Cryostat Warm Electronics}
 \label{sec:warm_electronics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -859,8 +862,8 @@ The measurement agreed with the prediction at low frequencies and then the signa
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{SQUID Noise}
-\label{sec:squid_noise}
+\subsection{Test Cryostat SQUIDs}
+\label{sec:dark_squid_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise as a function of demodulation frequency. 
@@ -935,7 +938,7 @@ From here on out, we took the intrinsic \ac{SQUID} noise to be 3.5~$pA/\sqrt{Hz}
 %The \ac{SQUID} noise could be measured, as was done in \ac{EBEX}, on a \ac{SQUID} not attached to a comb of bolometers (typically because of an open on one end of the microstrip) or it could be measured, as was done in \ac{ETC}, on a \ac{SQUID} with bolometers attached, but demodulating away from their resonant frequencies. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Johnson Noise}
+\subsection{Test Cryostat Johnson Noise}
 \label{sec:johnson_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -992,7 +995,7 @@ The improved agreement at the lower temperature was not understood.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Overbiased Noise}
+\subsection{Test Cryostat Bolometer Overbiased Noise}
 \label{sec:over_biased_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1002,8 +1005,9 @@ Near a bias frequency of 600~kHz, without carriers and nullers on, the electroni
 Also, the bolometer Johnson noise was higher because when overbiased, the bolometer temperature was higher. 
 From Equation~\ref{eq:gbar}, the overbiased detector temperature was estimated to be
 \begin{equation}
-T_{bolometer} = T_{bath} + P_{overbias}* \overline{G}
+T_{bolometer} = T_{bath} + \Delta P * \overline{G}
 \end{equation}
+where $\Delta P$ is obtained from the PV curve, $\Delta P = P_{overbias} - P_{transition}$.
 Figure~\ref{fig:overbias_noise} is the measured and predicted overbiased noise for the \ac{SQUID}7 comb of detectors on wafer~150-01 at a bath temperature of 340~mK. 
 %Within the uncertainty of the measurement, the 
 The measured overbiased noise agreed with the prediction. 
@@ -1018,7 +1022,7 @@ The measured overbiased noise agreed with the prediction.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{In-transition Noise}
+\subsection{Test Cryostat In-transition Noise}
 \label{sec:in_transition_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -7,7 +7,7 @@
 
 We discuss the detector yield, Section~\ref{sec:yield}, and the detectors' measured radiative loads, Section~\ref{sec:radiative_load}.
 In section~\ref{sec:flight_noise_performance}, using the dark characterization measurements, the measured radiative load, the electrical bias parameters, and the \ac{DfMUX} transfer functions, we predict the instrument sensitivity in \ac{NEP}. 
-We report the noise performance of each detector by comparing its expected \ac{NEP} to the median of its measured \ac{NEP} over the portions of the \ac{EBEX} flight for which it had valid data. 
+We report the noise performance of each detector by comparing its expected \ac{NEP} to the median of its measured \ac{NEP} over all portions of the \ac{EBEX} flight for which it had valid data. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -191,7 +191,7 @@ To convert to units of power on the sky, we can either use each detector's calib
 \varepsilon = \frac{\text{power absorbed by detector}}{\text{incident sky power}}
 \label{eq:eff_ratio}
 \ee
-\TAB\ref{psd_table} provides the conversion applied to each noise term in order to report in the units of the leftmost column. 
+Table~\ref{tab:psd_table} provides the conversion applied to each noise term in order to report in the units of the leftmost column. 
 
 \begin{table}[htp]
 \begin{center}
@@ -207,13 +207,13 @@ To convert to units of power on the sky, we can either use each detector's calib
 \end{center}
 \caption[Unit conversions for noise equivalent power]{\ac{PSD} unit conversions used to get all noise terms in the same units. ct is a \ac{DfMUX} \ac{ADC} count, $W_{bolo}$ is power absorbed by the detector, $S_{I}$ is the detector current responsivity, $A$ is current though the \ac{SQUID}, $W_{sky}$ is power incident from the sky, and $\varepsilon$ is the end-to-end instrument optical efficiency. %incident upon the instrument? 
 }
-\label{psd_table}
+\label{tab:psd_table}
 \end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Procedure}
-\label{sec:procedure}
+\label{sec:flight_procedure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %attempting to explain method for measuring noise
@@ -252,8 +252,8 @@ Of the 941 bolometers in \ac{BRO}2-4, 460 had data which passed the valid criter
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{SQUIDs}
-\label{sec:squid_noise}
+\subsection{In-Flight SQUID Noise}
+\label{sec:flight_squid_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In \ac{ETC}, the \ac{SQUID} noise performance was measured for \ac{SQUID}s with live detectors wired to them but demodulating away from their resonant frequencies. 
@@ -276,8 +276,8 @@ median of each dark squid channel's meas/pred ratio.
 \textcolor{red}{Then, you need to discuss results of analysis. And say how they are used to inform the following analysis.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Resistors}
-\label{sec:resistor_noise}
+\subsection{In-Flight Resistor Noise}
+\label{sec:flight_resistor_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Each \ac{LC} board had two bolometers replaced by 1~$\Omega$ resistors, one read out at the high end of the demodulation frequencies and the other at the low end. 
@@ -297,8 +297,8 @@ noise vs time and histogram of median meas/pred for each resistor. }
 We hypothesize the excess noise was due to electromagnetic pickup in the microstrips between the \ac{SQUID}s and \ac{LC} boards.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Overbias}
-\label{sec:overbias_noise}
+\subsection{In-Flight Bolometer Overbiased Noise}
+\label{sec:flight_overbias_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 A detector was said to be overbiased when the voltage bias across the \ac{TES} provided enough Joule heating to keep the resistance of the \ac{TES} normal. 
@@ -418,60 +418,16 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 %The combination of measured Johnson and readout noise is higher than predicted, where the median value of the excess for all detectors across all observation frequency bands is a factor of 1.7.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{In-Transition Prediction}
+\subsection{In-Flight In-Transition Noise Prediction}
 \label{sec:in_trans_pred}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We predicted the in-transition \ac{NEP} in aW/$\sqrt{\mathrm{Hz}}$ at the detector. 
-The in-transition noise prediction included the readout and Johnson noise, the phonon noise, and the photon noise, Equation~\ref{eq:nep}. 
-Figure~\ref{fig:prediction_bar_chart} is a stacked bar chart of the \ac{EBEX} in-transition noise prediction in units of aW/$\sqrt{Hz}$ at the detector. 
-Each wafer's bar was the mean for that wafer and the error bars were one standard deviation. 
-The dark blue bar was the predicted \ac{NEP} assuming the expected radiative load, Table~\ref{tab:target_gbar}, to calculate the photon noise contribution and each detector's carrier and nuller settings as well as its dark characterization measurements to calculate the readout, Johnson, and phonon noise contributions. 
-The cyan bar included the additional \ac{NEP} given the measured radiative load of each detector. 
-The golden bar included the excess factor of 1.8 measured by the resistor applied to the bolometer readout and Johnson noise. 
+We predicted the in-transition \ac{NEP} in aW/$\sqrt{Hz}$ at the detector. 
+The in-transition noise included the readout and Johnson noise, the phonon noise, and the photon noise, Equation~\ref{eq:nep}. 
+In order to report the data in units of power at the detector, the Johnson and readout noise, as well as the measured counts from the detector timestream, were divided by the bolometer current responsivity, Table~\ref{tab:psd_table}. 
+We assumed we were in the high loopgain regime so $S_I \sim \sqrt{2}/V_{bias}$. 
 
-% you have to say you assumed xi=1 and how much the prediction is smaller if you assume xi=0
-
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[height=2.5in]{figures/ebex_noise_level_predictions_barchart_per_wafer}
-\caption{The \ac{EBEX} pre-flight \ac{NEP} prediction (blue), including the measured radiative load (cyan), and including the boost to readout and Johnson noise (gold).
-\label{fig:prediction_bar_chart} }
-\end{center}
-\end{figure}
-
-\begin{figure}[ht!]
-  \begin{center}
-    \includegraphics[width=0.29\columnwidth]{figures/150_average_noise_contribution_pie_chart.png}
-    \includegraphics[width=0.29\columnwidth]{figures/250_average_noise_contribution_pie_chart.png}
-    \includegraphics[width=0.29\columnwidth]{figures/410_average_noise_contribution_pie_chart.png}
-    \includegraphics[width=0.1\columnwidth]{figures/piechart_legend.png}
-    \caption{Individual components of the \ac{NEP} prediction in aW$^{2}$/Hz per band.
-      The readout and Johnson \ac{NEP} terms include the excess factors measured with the resistors alone and with the bolometers biased above their superconducting transition.
-      % We hypothesize that the excess readout noise is due to electromagnetic pickup.
-      \label{fig:in_transition_pie} }
-  \end{center}
-\end{figure}
-
-We calculate the theoretical Johnson and readout current noise as described above except we also take into account the factor of excess noise measured with the detector overbiased. 
-We assume the factor of excess remains constant when the detector is in its transition, and for each detector on a wafer, we multiply that detector's theoretical Johnson and readout noise by its wafer's median ratio of overbiased to predicted noise reported in \TAB\ref{overbias_noise_table}. 
-In order to convert from current noise to \ac{NEP} at the detector, we divide the Johnson and readout noise terms by the current responsivity. 
-%In order to report the data in units of power at the detector, the Johnson and readout noise as well as the measured counts from the detector timestream need to be divided by the bolometer current responsivity. 
-The current responsivity is the current response of the bolometer to incident power,
-\begin{equation}
-S_I = -\frac{dI}{dP} = \frac{-\sqrt{2}}{V_{bias}} * \frac{\mathcal{L}}{\mathcal{L} + 1} * \frac{1}{1 + i\omega\tau}
-\label{eq:current_responsivity}
-\end{equation}
-where $V_{bias}$ is the voltage bias across the bolometer, $\mathcal{L}$ is the bolometer loopgain, $\omega$ is the angular frequency of the signal modulation, and $\tau$ is the bolometer time constant~\cite{Francois2012}. we need to explain and/or reference why dfmux puts a $\sqrt{2}$ in the responsivity.
-Assuming the loopgain, $\mathcal{L}$, is high and the time constant factor can be neglected, the current responsivity simplifies to $-\sqrt{2}/V_{bias}$, where $V_{bias}$ is calculated from the \ac{DfMUX} board settings and the transfer function from bias amplitude to voltage across the \ac{TES}. 
-This analysis assumes the loopgain for each detector is high and we address this assumption in Section XXX. 
-
-In order to estimate the photon \ac{NEP} contribution, we take $P_{rad}$ to be the radiative load measured by each detector, Section~\ref{sec:optical_load}. 
-The center and width of the observation frequency bands, $\nu$ and $\Delta \nu$, are from calibration measurements of the \ac{EBEX} spectral response on the ground \cite{Zilic2014}. 
-We do not have a measure of the photon correlation noise factor, so we assume it is completely correlated, $\xi=1$, and completely uncorrelated, $\xi=0$, and use these two cases to bracket the noise prediction. 
-In reality, the photon noise correlation factor is probably somewhere in between \cite{}. 
-
-In order to estimate the phonon \ac{NEP} contribution, we get both the bolometer temperature and the thermal conductance from the dark characterization measurements. 
+In order to estimate the phonon \ac{NEP} contribution, we got both the bolometer temperature and the thermal conductance from the dark characterization measurements. 
 We take the bolometer temperature to be $T_{critical}$ from the critical transition temperature measurements. 
 %The average thermal conductance has less uncertainty than the dynamic thermal conductance because the measurement of the average thermal conductance does not require knowledge of the power of the thermal conductivity. 
 Though the phonon \ac{NEP} calculation requires knowledge of the dynamic thermal conductance, the dark characterization measurements performed provide only a measure of the average thermal conductance. 
@@ -491,12 +447,68 @@ where $T_{bath}$ is the temperature of the bath, $T_{critical}$ is the detector'
 $T_{bath}$ is measured by a temperature sensor mounted to the stage and $T_{critical}$ is found during the critical transition temperature measurements.
 We take n to be 2 since thermal conductivity measurements of \ac{EBEX} test flight wafers gave values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410 GHz bands respectively \cite{Hubmayr2009}.
 
+In order to estimate the photon \ac{NEP} contribution, we take $P_{rad}$ to be the radiative load measured by each detector, Section~\ref{sec:optical_load}. 
+The center and width of the observation frequency bands, $\nu$ and $\Delta \nu$, are from calibration measurements of the \ac{EBEX} spectral response on the ground \cite{Zilic2014}. 
+We do not have a measure of the photon correlation noise factor, so we assume it is completely correlated, $\xi=1$, and completely uncorrelated, $\xi=0$, and use these two cases to bracket the noise prediction. 
+In reality, the photon noise correlation factor is probably somewhere in between \cite{}. 
+
+
+
+
+Figure~\ref{fig:prediction_bar_chart} is a stacked bar chart of the \ac{EBEX} in-transition noise prediction per wafer in units of aW/$\sqrt{Hz}$ at the detector. 
+Each wafer's bar was the mean for that wafer and the error bars were one standard deviation. 
+The dark blue bar was the predicted \ac{NEP} assuming the expected radiative load, Table~\ref{tab:target_gbar}, to calculate the photon noise contribution and each detector's carrier and nuller settings as well as its dark characterization measurements to calculate the readout, Johnson, and phonon noise contributions. 
+The cyan bar included the additional \ac{NEP} given the measured radiative load of each detector. 
+The golden bar included the excess factor of 1.8 measured by the resistor applied to the bolometer readout and Johnson noise. 
+
+% you have to say you assumed xi=1 and how much the prediction is smaller if you assume xi=0
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[height=2.5in]{figures/ebex_noise_level_predictions_barchart_per_wafer}
+\caption{The \ac{EBEX} pre-flight \ac{NEP} prediction (blue), including the measured radiative load (cyan), and including the boost to readout and Johnson noise (gold).
+\label{fig:prediction_bar_chart} }
+\end{center}
+\end{figure}
+
+Figure~\ref{fig:in_transition_pie} gives the breakdown of the noise components per observation frequency band as pie charts in units of $aW^2/Hz$.
+
+\begin{figure}[ht!]
+  \begin{center}
+    \includegraphics[width=0.29\columnwidth]{figures/150_average_noise_contribution_pie_chart.png}
+    \includegraphics[width=0.29\columnwidth]{figures/250_average_noise_contribution_pie_chart.png}
+    \includegraphics[width=0.29\columnwidth]{figures/410_average_noise_contribution_pie_chart.png}
+    \includegraphics[width=0.1\columnwidth]{figures/piechart_legend.png}
+    \caption{Individual components of the \ac{NEP} prediction in aW$^{2}$/Hz per band.
+      The readout and Johnson \ac{NEP} terms include the excess factors measured with the resistors alone and with the bolometers biased above their superconducting transition.
+      % We hypothesize that the excess readout noise is due to electromagnetic pickup.
+      \label{fig:in_transition_pie} }
+  \end{center}
+\end{figure}
+
+
+
+%We calculate the theoretical Johnson and readout current noise as described above except we also take into account the factor of excess noise measured with the detector overbiased. 
+%We assume the factor of excess remains constant when the detector is in its transition, and for each detector on a wafer, we multiply that detector's theoretical Johnson and readout noise by its wafer's median ratio of overbiased to predicted noise reported in \TAB\ref{overbias_noise_table}. 
+%In order to convert from current noise to \ac{NEP} at the detector, we divide the Johnson and readout noise terms by the current responsivity. 
+%
+%The current responsivity is the current response of the bolometer to incident power,
+%\begin{equation}
+%S_I = -\frac{dI}{dP} = \frac{-\sqrt{2}}{V_{bias}} * \frac{\mathcal{L}}{\mathcal{L} + 1} * \frac{1}{1 + i\omega\tau}
+%\label{eq:current_responsivity}
+%\end{equation}
+%where $V_{bias}$ is the voltage bias across the bolometer, $\mathcal{L}$ is the bolometer loopgain, $\omega$ is the angular frequency of the signal modulation, and $\tau$ is the bolometer time constant~\cite{Francois2012}. we need to explain and/or reference why dfmux puts a $\sqrt{2}$ in the responsivity.
+%Assuming the loopgain, $\mathcal{L}$, is high and the time constant factor can be neglected, the current responsivity simplifies to $-\sqrt{2}/V_{bias}$, where $V_{bias}$ is calculated from the \ac{DfMUX} board settings and the transfer function from bias amplitude to voltage across the \ac{TES}. 
+%This analysis assumes the loopgain for each detector is high and we address this assumption in Section XXX. 
+
+
+
 The median predicted in transition \ac{NEP} level for each wafer is reported in \TAB\ref{in_transition_noise_table}. 
 There is a piechart breakdown of each contributor to the predicted \ac{NEP} for one 150~GHz detector towards the beginning of flight in Fig.~\ref{fig:in_transition_psd}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{In-Transition Measurement}
+\subsection{In-Flight In-Transition Noise Measurement}
 \label{sec:in_trans_meas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
