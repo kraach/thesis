@@ -325,7 +325,7 @@ Note, wafers 150-20, 150-24, 250-25, and 410-18 were not included in the table b
 \begin{center}
 \includegraphics[width=0.48\columnwidth]{figures/board66_wire1_ch03_1356968507s_overbias}
 \includegraphics[width=0.48\columnwidth]{figures/board66_wire1_ch03_overbias}
-\caption{Left: the current spectral density of one 150 GHz detector during one 172 s section of the flight when it was overbiased (solid red) and the predicted quadrature sum of the Johnson and readout noise (dashed black). We quote noise levels averaged over a narrow band from 3.9 to 4.4 Hz (thick solid black). Right: the measured to predicted readout and Johnson noise ratio as a function of time for the same detector.
+\caption[Spectral density and noise as a function of time for one overbiased bolometer in flight]{Left: the current spectral density of one 150 GHz detector during one 172 s section of the flight when it was overbiased (solid red) and the predicted quadrature sum of the Johnson and readout noise (dashed black). We quote noise levels averaged over a narrow band from 3.9 to 4.4 Hz (thick solid black). Right: the measured to predicted readout and Johnson noise ratio as a function of time for the same detector.
 \label{fig:one_bolo_overbias_noise} }
 \end{center}
 \end{figure}
@@ -336,7 +336,7 @@ Note, wafers 150-20, 150-24, 250-25, and 410-18 were not included in the table b
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/overbias_noise_ratios_histogram}
-\caption{Histogram of the median ratio of measured to predicted readout and Johnson noise for all bolometers. 
+\caption[In-flight overbiased noise histograms]{Histogram of the median ratio of measured to predicted readout and Johnson noise for all bolometers. 
 The prediction for each bolometer has been multiplied by 1.8, the median factor of excess noise measured by the resistor channels. 
 There are 34 bolometers with a ratio greater than 5.
 The median value (vertical cyan) is 1.2. 
@@ -371,12 +371,29 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 \label{tab:overbias_noise_table} }
 \end{table}
 
+%IF YOU HAVE TIME, COME BACK HERE AND INCLUDE OVERBIAS NOISE AS A FUNCTION OF BIAS FREQUENCY!!!!
+%IF YOU DON'T UNDERSTAND THIS, WHY ARE YOU INCLUDING IT????
+
+Figure~\ref{fig:overbias_noise_vs_freq} is a plot of the ratio of the overbiased noise prediction to the measurement as a function of the bias frequency. 
+Around 1~MHz, we saw a slight but systematic increase in the measured noise. 
+This was not understood. 
+
+\begin{figure}[htp]
+\begin{center}
+\includegraphics[height=2.5in]{figures/overbias_noise_vs_freq}
+\caption[Measured/predicted overbias noise as a function of bias frequency]{Overbias measured to predicted noise ratio as a function of bolometer bias frequency. There is a slight increase in the noise measured for bolometers around a bias frequency of 1~MHz. 
+\label{fig:overbias_noise_vs_freq} }
+\end{center}
+\end{figure}
+
 %IF YOU HAVE TIME, COME BACK AND ADDRESS THIS!!!!
 %GROUND MEASUREMENTS IN TX AND MCMURDO
 % ALSO, CORRELATION
 %Excess overbias noise of roughly the same magnitude was measured when the instrument was on the ground in Antarctica, see \TAB\ref{overbias_noise_table}. 
 %The source of the excess overbiased noise is suspected to be electronic. The subset of \ac{EBEX2013} detectors which were present for compatibility testing noise measurements in Palestine, TX, had a median excess overbiased noise a factor of 1.25 greater than predicted. While, at float, this particular subset of detectors had a median overbiased noise factor of 1.58 greater than predicted. Assuming the detectors are overbiased at roughly the same value, they will have comparable temperatures and resistances from run-to-run and there is no physical explanation for an increase in Johnson noise. 
 %The majority of the detectors have a coherency value of $\sim$0.1, indicating the excess noise is not from a correlated noise source but rather is a broadband source. 
+
+
 
 
 
@@ -422,37 +439,46 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 \label{sec:in_trans_pred}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We predicted the in-transition \ac{NEP} in aW/$\sqrt{Hz}$ at the detector. 
-The in-transition noise included the readout and Johnson noise, the phonon noise, and the photon noise, Equation~\ref{eq:nep}. 
-In order to report the data in units of power at the detector, the Johnson and readout noise, as well as the measured counts from the detector timestream, were divided by the bolometer current responsivity, Table~\ref{tab:psd_table}. 
+We predicted the in-transition \ac{NEP} in $aW/\sqrt{Hz}$ at the detector. 
+The in-transition noise included the readout, Johnson, phonon, and photon noise, Equation~\ref{eq:nep}. 
+In order to report the data in units of power at the detector, the readout and Johnson noise, as well as the measured counts from the detector timestream, were divided by the bolometer current responsivity, see Table~\ref{tab:psd_table} for unit conversions. 
 We assumed we were in the high loopgain regime so $S_I \sim \sqrt{2}/V_{bias}$. 
 
-In order to estimate the phonon \ac{NEP} contribution, we got both the bolometer temperature and the thermal conductance from the dark characterization measurements. 
-We take the bolometer temperature to be $T_{critical}$ from the critical transition temperature measurements. 
-%The average thermal conductance has less uncertainty than the dynamic thermal conductance because the measurement of the average thermal conductance does not require knowledge of the power of the thermal conductivity. 
-Though the phonon \ac{NEP} calculation requires knowledge of the dynamic thermal conductance, the dark characterization measurements performed provide only a measure of the average thermal conductance. 
-In order to get from average to dynamic thermal conductance, we assume the thermal conductivity can be described by a power law of power n, $\kappa = \kappa_{0} T^{n}$.
-We then find the dynamic thermal conductance via the following relation between average and dynamic thermal conductance
-\begin{equation}
-G_{dynamic} = (n+1) \frac{1 - T_{bath}/T_{critical}}{1 - T_{bath}^{n+1}/T_{critical}^{n+1}} \times \overline{G}
-\end{equation}
-where $T_{bath}$ is the temperature of the bath, $T_{critical}$ is the detector's measured critical temperature, and n is the power of the thermal conductivity \cite{Mather1982}. 
-In order to calculate $\gamma$, the factor accounting for the temperature gradient along the weak link from the TES to the bath, we again need to assume the thermal conductivity takes the form of a power law of power n. 
-Gamma is then
-\begin{equation}
-\gamma = \frac{(n+1)}{(n+2)} \frac{1 - (T_{bath}/T_{critical})^{n+2}}{1 - (T_{bath}/T_{critical})^{n+1}}
-\end{equation}
-where $T_{bath}$ is the temperature of the bath, $T_{critical}$ is the detector's measured critical temperature, and n is the power of the thermal conductivity \cite{Mather1982}. 
-%\comred{I used the derivations/equations from Hannes' thesis, but he says he follows Mather. Should I cite both of them?}
-$T_{bath}$ is measured by a temperature sensor mounted to the stage and $T_{critical}$ is found during the critical transition temperature measurements.
-We take n to be 2 since thermal conductivity measurements of \ac{EBEX} test flight wafers gave values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410 GHz bands respectively \cite{Hubmayr2009}.
+The phonon \ac{NEP} contribution was estimated assuming the detector temperature was $T_{c}$ and calculating the thermal conductance as described in Equation~\ref{eq:gbar_to_g}. 
+In order to estimate the photon \ac{NEP} contribution at float, we took $P_{rad}$ to be the radiative load measured by each detector, Section~\ref{sec:radiative_load}. 
+The center and width of the observation frequency bands, $\nu$ (155, 256, and 395~GHz) and $\Delta \nu$ (30, 44, and 58~GHz), were from calibration measurements of the \ac{EBEX} spectral response on the ground \cite{Zilic2014}. 
 
-In order to estimate the photon \ac{NEP} contribution, we take $P_{rad}$ to be the radiative load measured by each detector, Section~\ref{sec:optical_load}. 
-The center and width of the observation frequency bands, $\nu$ and $\Delta \nu$, are from calibration measurements of the \ac{EBEX} spectral response on the ground \cite{Zilic2014}. 
-We do not have a measure of the photon correlation noise factor, so we assume it is completely correlated, $\xi=1$, and completely uncorrelated, $\xi=0$, and use these two cases to bracket the noise prediction. 
-In reality, the photon noise correlation factor is probably somewhere in between \cite{}. 
+We did not have a measure of the photon correlation noise factor, so we assumed it was completely correlated, $\xi=1$.
+This put an upper bound on the noise prediction and had the greatest effect on the 150~GHz \ac{NEP} prediction. 
+%Table~\ref{tab:photon_noise} gives the relative contributions of the correlation and shot noise for the average measured radiative load per observation frequency band.
+For the 150~GHz band, if the photons were completely uncorrelated, $\xi=0$, then the photon \ac{NEP} in $W^2/Hz$ would have decreased by a factor of $\sim$0.6. 
+For the 410~GHz band, the decrease in photon noise would have only been a factor of $\sim$0.9. 
+%In reality, the photon noise correlation factor is probably somewhere in between 0 and 1 \cite{}. 
 
 
+%THESE NUMBERS ARE, SADLY, NOT MAKING SENSE RIGHT NOW. 
+%MUST MOVE ON.
+%COME BACK IF YOU HAVE TIME.
+%\begin{table}[htp]
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|}
+%\hline  
+%Band Center & Band Width & Shot NEP & Correlation NEP \\
+%(GHz) & (GHz) & (aW^2/Hz$) & (aW^2/Hz$) \\
+%\hline 155 & 30 & 740 & 430 \\
+%\hline 256 & 57 & 1800 & 490 \\
+%\hline 395 & 58 & 2600 & 410 \\
+%\hline
+%\end{tabular}
+%\end{center}
+%\caption[Photon shot and correlation noise contributions]{The photon shot and correlation noise contributions as a function of observation frequency band.
+%\label{tab:photon_noise} }
+%\end{table}
+%
+%except kyle had 
+%nu=153 and dnu = 25
+%244, 28
+%393, 45
 
 
 Figure~\ref{fig:prediction_bar_chart} is a stacked bar chart of the \ac{EBEX} in-transition noise prediction per wafer in units of aW/$\sqrt{Hz}$ at the detector. 
@@ -461,7 +487,6 @@ The dark blue bar was the predicted \ac{NEP} assuming the expected radiative loa
 The cyan bar included the additional \ac{NEP} given the measured radiative load of each detector. 
 The golden bar included the excess factor of 1.8 measured by the resistor applied to the bolometer readout and Johnson noise. 
 
-% you have to say you assumed xi=1 and how much the prediction is smaller if you assume xi=0
 
 \begin{figure}[ht!]
 \begin{center}
@@ -486,7 +511,8 @@ Figure~\ref{fig:in_transition_pie} gives the breakdown of the noise components p
   \end{center}
 \end{figure}
 
-
+The median predicted in transition \ac{NEP} level for each wafer is reported in \TAB\ref{in_transition_noise_table}. 
+There is a piechart breakdown of each contributor to the predicted \ac{NEP} for one 150~GHz detector towards the beginning of flight in Fig.~\ref{fig:in_transition_psd}. 
 
 %We calculate the theoretical Johnson and readout current noise as described above except we also take into account the factor of excess noise measured with the detector overbiased. 
 %We assume the factor of excess remains constant when the detector is in its transition, and for each detector on a wafer, we multiply that detector's theoretical Johnson and readout noise by its wafer's median ratio of overbiased to predicted noise reported in \TAB\ref{overbias_noise_table}. 
@@ -503,8 +529,28 @@ Figure~\ref{fig:in_transition_pie} gives the breakdown of the noise components p
 
 
 
-The median predicted in transition \ac{NEP} level for each wafer is reported in \TAB\ref{in_transition_noise_table}. 
-There is a piechart breakdown of each contributor to the predicted \ac{NEP} for one 150~GHz detector towards the beginning of flight in Fig.~\ref{fig:in_transition_psd}. 
+
+%The average thermal conductance has less uncertainty than the dynamic thermal conductance because the measurement of the average thermal conductance does not require knowledge of the power of the thermal conductivity. 
+%THIS IS ALREADY DESCRIBED IN THE SECTION ON G
+%Though the phonon \ac{NEP} calculation requires knowledge of the dynamic thermal conductance, the dark characterization measurements performed provide only a measure of the average thermal conductance. 
+%In order to get from average to dynamic thermal conductance, we assume the thermal conductivity can be described by a power law of power n, $\kappa = \kappa_{0} T^{n}$.
+%We then find the dynamic thermal conductance via the following relation between average and dynamic thermal conductance
+%\begin{equation}
+%G_{dynamic} = (n+1) \frac{1 - T_{bath}/T_{critical}}{1 - T_{bath}^{n+1}/T_{critical}^{n+1}} \times \overline{G}
+%\end{equation}
+%where $T_{bath}$ is the temperature of the bath, $T_{critical}$ is the detector's measured critical temperature, and n is the power of the thermal conductivity \cite{Mather1982}. 
+%In order to calculate $\gamma$, the factor accounting for the temperature gradient along the weak link from the TES to the bath, we again need to assume the thermal conductivity takes the form of a power law of power n. 
+%Gamma is then
+%\begin{equation}
+%\gamma = \frac{(n+1)}{(n+2)} \frac{1 - (T_{bath}/T_{critical})^{n+2}}{1 - (T_{bath}/T_{critical})^{n+1}}
+%\end{equation}
+%where $T_{bath}$ is the temperature of the bath, $T_{critical}$ is the detector's measured critical temperature, and n is the power of the thermal conductivity \cite{Mather1982}. 
+%%\comred{I used the derivations/equations from Hannes' thesis, but he says he follows Mather. Should I cite both of them?}
+%$T_{bath}$ is measured by a temperature sensor mounted to the stage and $T_{critical}$ is found during the critical transition temperature measurements.
+%We take n to be 2 since thermal conductivity measurements of \ac{EBEX} test flight wafers gave values of 2.2 $\pm$ 0.3, 1.9 $\pm$ 0.2, and 2.1 $\pm$ 0.2 for the 150, 250, and 410 GHz bands respectively \cite{Hubmayr2009}.
+%
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
