@@ -301,11 +301,11 @@ noise vs time and histogram of median meas/pred for each resistor. }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We predicted and measured the overbiased noise in units of $A/\sqrt{Hz}$.  
-Because of the small value of the loopgain when the detector was overbiased, the responsivity was tiny and so the noise performance was dominated by the electronic, \ac{SQUID}, and Johnson noise. 
-The electronic and \ac{SQUID} noise are calculated as before, using each detector's carrier and nuller settings. 
-The predicted Johnson noise assumes the detector resistance is $R_{normal}$ from the network analysis fit and estimates the detector temperature as $T_{critical}$ + $\Delta P / \overline{G}$ from the dark critical transition temperature measurement and the IV curve at float, where $\Delta P$ was the difference in power from overbiased to in the transition. 
+Because of the small value of the loopgain when the detector was overbiased, the responsivity was tiny and so the noise performance was dominated by the electronic, \ac{SQUID}, and bolometer Johnson noise. 
+The electronic and \ac{SQUID} noise were calculated as before, using each detector's carrier and nuller settings. 
+The predicted Johnson noise assumed the detector resistance was $R_{normal}$ from the network analysis fit and estimated the detector temperature as $T_{bolo} = T_{c}$ + $\Delta P / \overline{G}$ from the dark critical transition temperature measurement and the IV curve at float, where $\Delta P$ was the difference in power from overbiased to in the transition. 
 %Section~\ref{sec:parameter_measurements}. 
-The prediction was calculated for each detector and Table~\ref{overbias_noise_table} reports the median overbiased noise prediction for each wafer in $pA/\sqrt{Hz}$. %\comred{How is overbias (both Johnson and readout noise) predicted? How do \ac{SQUID} and resistor noise inform our conclusion about the excess noise overbiased??}
+The prediction was calculated for each detector and Table~\ref{tab:overbias_noise_table} reports the median overbiased noise prediction for each wafer in $pA/\sqrt{Hz}$. %\comred{How is overbias (both Johnson and readout noise) predicted? How do \ac{SQUID} and resistor noise inform our conclusion about the excess noise overbiased??}
 
 %THE FOLLOWING TEXT DOESN'T SEEM TO BE HELPFUL
 %In order to isolate the Johnson and readout noise from the phonon and photon noise, we first look at the noise performance with the detectors overbiased. 
@@ -396,7 +396,7 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 \hline
 \end{tabular}
 \end{center}
-\caption[]{The predicted combination of Johnson and readout noise given each wafer's characterization measurements of $R_{N}$ and XXX. These predictions have been boosted by a factor of XXX, the excess of noise measured by the resistors. For each wafer the ratio quoted is  the median of the distribution for the detectors on that wafer. 
+\caption[Median overbiased NEP predictions and measurements for each wafer]{The predicted combination of Johnson and readout noise given each wafer's characterization measurements of $R_{N}$ and XXX. These predictions have been boosted by a factor of XXX, the excess of noise measured by the resistors. For each wafer the ratio quoted is  the median of the distribution for the detectors on that wafer. 
 \label{tab:overbias_noise_table} }
 \end{table}
 
