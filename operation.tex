@@ -308,53 +308,15 @@ The predicted Johnson noise assumed the bolometer resistance was $R_{normal}$ fr
 %Section~\ref{sec:parameter_measurements}. 
 The prediction was calculated for each bolometer and Table~\ref{tab:overbias_noise_table} reports the median overbiased noise prediction for each wafer in $pA/\sqrt{Hz}$. %\comred{How is overbias (both Johnson and readout noise) predicted? How do \ac{SQUID} and resistor noise inform our conclusion about the excess noise overbiased??}
 
-%THE FOLLOWING TEXT DOESN'T SEEM TO BE HELPFUL
-%In order to isolate the Johnson and readout noise from the phonon and photon noise, we first look at the noise performance with the detectors overbiased. 
-%A detector is overbiased when the voltage bias across the \ac{TES} provides enough Joule heating to keep the resistance of the \ac{TES} normal. 
-%say when and why we overbias detectors?
-%In the normal region of the resistance versus temperature curve, \ac{EBEX} wafer 410-18 detectors have an average slope $dR/dT$ of $0.29\pm0.05 \Omega/K$. 
-%At the transition temperature, the average slope of the curve is found to be XXX $\Omega/K$, a factor of XXX greater. 
-%The loopgain is proportional to $dR/dT$ and so it is a factor of $\sim XXX$ smaller when the detector is overbiased. 
-%The factor $\mathcal{L}/(\mathcal{L}+1)$ is XXX when the detector is normal versus XXX when the detector is overbiased. 
-%The dominant noise contributions are then from the Johnson and readout noise. 
-%When the detector is overbiased, the current responsivity is low 
-%CAN YOU INCLUDE AN UPPER LIMIT OR ESTIMATE?
-%and so the dominant noise contributions are from the Johnson and readout noise. 
-%But, wait. This quantity is not even \ac{NEP} (it's \ac{NEP}*$S_I$) because the timestream is in A, not W... So what do we call it??)
-%These two noise terms are naturally in units of $A/\sqrt{Hz}$ so we can eliminate the uncertainty of the current to power responsivity by comparing the predictions to measurements made in units of $counts/\sqrt{Hz}$ and then converted to current via the demodulated count to Amps \ac{DfMUX} transfer function. 
-%We get a handle on the \ac{NEP} contribution of these two terms by comparing the overbiased detector noise prediction to the measurement. 
-%The comparison is done in units of $A/\sqrt{Hz}$ so neither the predicted nor the measured results are a function of the detector's current responsivity. 
+The left panel of Figure~\ref{fig:one_bolo_overbias_noise_vs_time} shows the measured and predicted overbiased noise for one 250~GHz bolometer. 
+At float, the bolometers were in their overbiased state after the fridge cycles while the focal planes were cooling to their base temperatures. 
+The right panel of Figure~\ref{fig:one_bolo_overbias_noise_vs_time} is the measured and predicted noise every 172~seconds over a $\sim$6000~second time period while the focal planes were cooling the last 50~mK to their base temperatures.
+We took the median ratio of the measured to predicted overbiased noise over this 6000~second interval as representative of the bolometer's overbiased noise performance.
+Figure~\ref{fig:overbias_noise_hist} is the median measured to predicted overbiased noise ratio for each bolometer. 
+The median ratio of of all detectors was 1.2. 
+The median ratio per wafer is reported in Table~\ref{tab:overbias_noise_table}.
 
-
-
-The detectors are overbiased at float just after a fridge cycle while the focal planes are still cooling to their base temperatures. 
-The detector white noise level is measured 
-(or is it actually approximated?) 
-by computing the square root of the average value of the \ac{PSD} from 3.9 to 4.4~Hz for a 172~second 
-by computing the average value of the \ac{ASD} from 3.9 to 4.4~Hz for a 172~second 
-(do we write s or second?) 
-timestream, Fig.~\ref{fig:one_bolo_overbias_noise}. 
-Though the \ac{HWP} is not spinning during these overbiased noise measurements, this particular frequency range is chosen to fall in the polarization band, between \ac{HWP} harmonics. 
-to ensure there is no residual \ac{HWP} template biasing the noise measurement. 
-
-We measure and predict the overbiased noise
-\ac{NEP}(except it is not actually NEP since the bolo is overbiased) 
- noise equivalent current ???
-every 200~seconds during a $\sim$6000~second time period while the focal planes are cooling the last 50~mK to their base temperatures.
-Fig.~\ref{fig:one_bolo_overbias_noise_vs_time} shows the measured and predicted overbiased noise of one 250~GHz bolometer throughout this time range.  
-We take the median ratio of the measured to predicted overbiased noise as representative of the detector's noise performance.
-We then histogram the median measured to predicted overbiased noise ratio of each detector on a wafer in order to quantify the noise performance by wafer, see Fig.~\ref{fig:250-23_overbias_hist} for the histogram of wafer 250-23. 
-are you going to comment on why it's reasonable to take the median ratio? is it actually reasonable?? also, why do this on a wafer-by-wafer basis? do you have evidence that different wafers ought to be treated differently??
-We do this process for each bolometer and then histogram each detector's median ratio of measured to predicted noise, see Fig.~\ref{fig:250-23_overbias_hist} for the results of wafer 250-23. 
-We report each wafer's median measured to predicted overbiased noise in \TAB\ref{overbias_noise_table}. 
-The combination of measured Johnson and readout noise is higher than predicted, where the median value of the excess for all detectors across all observation frequency bands is a factor of 1.7.  
-Excess overbias noise of roughly the same magnitude was measured when the instrument was on the ground in Antarctica, see \TAB\ref{overbias_noise_table}. 
-The source of the excess overbiased noise is suspected to be electronic. The subset of \ac{EBEX2013} detectors which were present for compatibility testing noise measurements in Palestine, TX, had a median excess overbiased noise a factor of 1.25 greater than predicted. While, at float, this particular subset of detectors have a median overbiased noise factor of 1.58 greater than predicted. Assuming the detectors are overbiased at roughly the same value, they will have comparable temperatures and resistances from run-to-run and there is no physical explanation for an increase in Johnson noise. 
-The majority of the detectors have a coherency value of $\sim$0.1, indicating the excess noise is not from a correlated noise source but rather is a broadband source. 
-
-
-
-\begin{figure}[ht!]
+\begin{figure}[htp]
 \begin{center}
 \includegraphics[width=0.48\columnwidth]{figures/board66_wire1_ch03_1356968507s_overbias}
 \includegraphics[width=0.48\columnwidth]{figures/board66_wire1_ch03_overbias}
@@ -364,7 +326,7 @@ Right: .
 \end{center}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/overbias_noise_ratios_histogram}
 \caption{Histogram of the median ratio of measured to corrected predicted readout and Johnson noise for all bolometers. 
@@ -374,7 +336,7 @@ The median value (vertical cyan) is 1.2.
 \end{center}
 \end{figure}
 
-\begin{table}[ht!]
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{| c | c | c |}
 \hline  
@@ -400,6 +362,50 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 \caption[Median overbiased NEP predictions and measurements for each wafer]{The predicted combination of Johnson and readout noise given each wafer's characterization measurements of $R_{N}$ and XXX. These predictions have been boosted by a factor of XXX, the excess of noise measured by the resistors. For each wafer the ratio quoted is  the median of the distribution for the detectors on that wafer. 
 \label{tab:overbias_noise_table} }
 \end{table}
+
+Excess overbias noise of roughly the same magnitude was measured when the instrument was on the ground in Antarctica, see \TAB\ref{overbias_noise_table}. 
+The source of the excess overbiased noise is suspected to be electronic. The subset of \ac{EBEX2013} detectors which were present for compatibility testing noise measurements in Palestine, TX, had a median excess overbiased noise a factor of 1.25 greater than predicted. While, at float, this particular subset of detectors have a median overbiased noise factor of 1.58 greater than predicted. Assuming the detectors are overbiased at roughly the same value, they will have comparable temperatures and resistances from run-to-run and there is no physical explanation for an increase in Johnson noise. 
+The majority of the detectors have a coherency value of $\sim$0.1, indicating the excess noise is not from a correlated noise source but rather is a broadband source. 
+
+
+
+
+
+
+%THE FOLLOWING TEXT DOESN'T SEEM TO BE HELPFUL
+%In order to isolate the Johnson and readout noise from the phonon and photon noise, we first look at the noise performance with the detectors overbiased. 
+%A detector is overbiased when the voltage bias across the \ac{TES} provides enough Joule heating to keep the resistance of the \ac{TES} normal. 
+%say when and why we overbias detectors?
+%In the normal region of the resistance versus temperature curve, \ac{EBEX} wafer 410-18 detectors have an average slope $dR/dT$ of $0.29\pm0.05 \Omega/K$. 
+%At the transition temperature, the average slope of the curve is found to be XXX $\Omega/K$, a factor of XXX greater. 
+%The loopgain is proportional to $dR/dT$ and so it is a factor of $\sim XXX$ smaller when the detector is overbiased. 
+%The factor $\mathcal{L}/(\mathcal{L}+1)$ is XXX when the detector is normal versus XXX when the detector is overbiased. 
+%The dominant noise contributions are then from the Johnson and readout noise. 
+%When the detector is overbiased, the current responsivity is low 
+%CAN YOU INCLUDE AN UPPER LIMIT OR ESTIMATE?
+%and so the dominant noise contributions are from the Johnson and readout noise. 
+%But, wait. This quantity is not even \ac{NEP} (it's \ac{NEP}*$S_I$) because the timestream is in A, not W... So what do we call it??)
+%These two noise terms are naturally in units of $A/\sqrt{Hz}$ so we can eliminate the uncertainty of the current to power responsivity by comparing the predictions to measurements made in units of $counts/\sqrt{Hz}$ and then converted to current via the demodulated count to Amps \ac{DfMUX} transfer function. 
+%We get a handle on the \ac{NEP} contribution of these two terms by comparing the overbiased detector noise prediction to the measurement. 
+%The comparison is done in units of $A/\sqrt{Hz}$ so neither the predicted nor the measured results are a function of the detector's current responsivity. 
+
+%The detector white noise level is measured 
+%(or is it actually approximated?) 
+%by computing the square root of the average value of the \ac{PSD} from 3.9 to 4.4~Hz for a 172~second 
+%by computing the average value of the \ac{ASD} from 3.9 to 4.4~Hz for a 172~second 
+%(do we write s or second?) 
+%timestream, Fig.~\ref{fig:one_bolo_overbias_noise}. 
+%Though the \ac{HWP} is not spinning during these overbiased noise measurements, this particular frequency range is chosen to fall in the polarization band, between \ac{HWP} harmonics. 
+%to ensure there is no residual \ac{HWP} template biasing the noise measurement. 
+%We measure and predict the overbiased noise
+%\ac{NEP}(except it is not actually NEP since the bolo is overbiased) 
+% noise equivalent current ???
+
+%We then histogram the median measured to predicted overbiased noise ratio of each detector on a wafer in order to quantify the noise performance by wafer, see Fig.~\ref{fig:250-23_overbias_hist} for the histogram of wafer 250-23. 
+%are you going to comment on why it's reasonable to take the median ratio? is it actually reasonable?? also, why do this on a wafer-by-wafer basis? do you have evidence that different wafers ought to be treated differently??
+%We do this process for each bolometer and then histogram each detector's median ratio of measured to predicted noise, see Fig.~\ref{fig:250-23_overbias_hist} for the results of wafer 250-23. 
+%We report each wafer's median measured to predicted overbiased noise in \TAB\ref{overbias_noise_table}. 
+%The combination of measured Johnson and readout noise is higher than predicted, where the median value of the excess for all detectors across all observation frequency bands is a factor of 1.7.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{In-Transition Prediction}
