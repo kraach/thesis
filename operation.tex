@@ -446,13 +446,15 @@ We assumed we were in the high loopgain regime so $S_I \sim \sqrt{2}/V_{bias}$.
 
 The phonon \ac{NEP} contribution was estimated assuming the detector temperature was $T_{c}$ and calculating the thermal conductance as described in Equation~\ref{eq:gbar_to_g}. 
 In order to estimate the photon \ac{NEP} contribution at float, we took $P_{rad}$ to be the radiative load measured by each detector, Section~\ref{sec:radiative_load}. 
-The center and width of the observation frequency bands, $\nu$ (155, 256, and 395~GHz) and $\Delta \nu$ (30, 44, and 58~GHz), were from calibration measurements of the \ac{EBEX} spectral response on the ground \cite{Zilic2014}. 
-
+%These numbers were from franky's code
+%The center and width of the observation frequency bands, $\nu$ (155, 256, and 395~GHz) and $\Delta \nu$ (30, 44, and 58~GHz), were from calibration measurements of the \ac{EBEX} spectral response on the ground \cite{Zilic2014}. 
+%there numbers were from kyle's thesis
+The center and width of the observation frequency bands, $\nu$ (153, 244, and 393~GHz) and $\Delta \nu$ (25, 28, and 45~GHz), were from calibration measurements of the \ac{EBEX} spectral response on the ground \cite{Zilic2014}. 
 We did not have a measure of the photon correlation noise factor, so we assumed it was completely correlated, $\xi=1$.
 This put an upper bound on the noise prediction and had the greatest effect on the 150~GHz \ac{NEP} prediction. 
 %Table~\ref{tab:photon_noise} gives the relative contributions of the correlation and shot noise for the average measured radiative load per observation frequency band.
-For the 150~GHz band, if the photons were completely uncorrelated, $\xi=0$, then the photon \ac{NEP} in $W^2/Hz$ would have decreased by a factor of $\sim$0.6. 
-For the 410~GHz band, the decrease in photon noise would have only been a factor of $\sim$0.9. 
+For the 150~GHz band, if the photons were completely uncorrelated, $\xi=0$, then the photon \ac{NEP} in $W^2/Hz$ would have decreased by a factor of $\sim$0.6, decreasing the total \ac{NEP} prediction by a factor of $\sim$0.8. 
+For the 410~GHz band, the decrease in photon \ac{NEP} would have been a factor of $\sim$0.9, decreasing the total \ac{NEP} prediction by a factor of $\sim$0.95. 
 %In reality, the photon noise correlation factor is probably somewhere in between 0 and 1 \cite{}. 
 
 
