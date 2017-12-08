@@ -589,17 +589,18 @@ The \ac{NEP} prediction, indicated by the thin black dashed line, was calculated
 %YOU DON'T SAY WHAT OBSERVATIONS ARE!
 %For approximately ten minutes after the detectors were tuned for Observation C, the \ac{HWP} was off. 
 For approximately ten minutes towards the beginning of flight, the detectors were tuned and the \ac{HWP} was off. 
-The left panel of Figure~\ref{fig:hwp_on_vs_off} compares the median \ac{WNL} during the ten minutes with the \ac{HWP} stationary to the median \ac{WNL} during the ten minutes after the \ac{HWP} was turned on. 
+Figure~\ref{fig:hwp_on_vs_off} compares the median \ac{WNL} during the ten minutes with the \ac{HWP} stationary to the median \ac{WNL} during the ten minutes after the \ac{HWP} was turned on. 
 %The only difference should have been the subtraction of the HWPSS from the raw timestream while the hwp was spinning. oh, and that the hwp was spinning.   time, with the \ac{HWP} spinning and the template subtracted timestream data, . 
 %We expected there to be no difference. 
-There was an increase of XXX when measuring the \ac{NEP} of the template subtracted data versus that measured from the "raw" timestream when the \ac{HWP} is still. 
+There was an average increase of XXX when measuring the \ac{NEP} of the template subtracted data versus that measured from the "raw" timestream when the \ac{HWP} is still. 
+The subtraction of the \ac{HWP} synchronous signal should not have increased the noise level of the timestream, so we suspect something about the \ac{HWP} increased the measured \ac{NEP}. 
 
 \begin{figure}[ht!]
 \begin{center}
-\includegraphics[width=0.4\columnwidth]{figures/hwp_on_and_off_cutoff_at_300aW.png}
-\includegraphics[width=0.4\columnwidth]{figures/hwp_on_and_off_median_diff_histogram.png}
-\caption[Noise measured with the HWP on and off]{Left: The median \ac{NEP} measured with the \ac{HWP} on (red) and the median \ac{NEP} measured with the \ac{HWP} off (blue). The error bars are the standard deviation of the measurements over the ten minutes with the \ac{HWP} off/on. If there was only one chunk of time meeting the criteria to perform a \ac{PSD}, there are no error bars. Right: A histogram of the differences of the median \ac{NEP} measured with the \ac{HWP} on versus off.}
-\label{fig:hwp_on_vs_off}
+%\includegraphics[width=0.4\columnwidth]{figures/hwp_on_and_off_cutoff_at_300aW.png}
+\includegraphics[height=2.5in]{figures/hwp_on_and_off_median_diff_histogram.png}
+\caption[Histogram of difference between noise measured with the HWP on and off]{Histogram of the difference between the median \ac{NEP} measured with the \ac{HWP} on and off. 
+\label{fig:hwp_on_vs_off} }
 \end{center}
 \end{figure}
 
