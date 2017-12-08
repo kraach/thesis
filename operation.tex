@@ -499,22 +499,31 @@ The golden bar included the excess factor of 1.8, measured on the resistor chann
 \end{figure}
 
 Figure~\ref{fig:in_transition_pie} gives the breakdown of the noise components per observation frequency band as pie charts in units of $aW^2/Hz$.
+\textcolor{red}{Describe pie charts.}
+\textcolor{red}{Remake pie charts as in EP2. make excess a different slice. understand why numbers don't agree!!!}
+The median predicted in transition \ac{NEP} level broken down by wafer is reported in \TAB\ref{in_transition_noise_table}. 
 
+% THESE ARE SO DIFFERENT THAN THE PAPER ONES. EVEN/ESPECIALLY PHOTON NOISE. WHY?? 
+% REMAKE????
 \begin{figure}[ht!]
   \begin{center}
     \includegraphics[width=0.29\columnwidth]{figures/150_average_noise_contribution_pie_chart.png}
     \includegraphics[width=0.29\columnwidth]{figures/250_average_noise_contribution_pie_chart.png}
     \includegraphics[width=0.29\columnwidth]{figures/410_average_noise_contribution_pie_chart.png}
     \includegraphics[width=0.1\columnwidth]{figures/piechart_legend.png}
-    \caption{Individual components of the \ac{NEP} prediction in aW$^{2}$/Hz per band.
-      The readout and Johnson \ac{NEP} terms include the excess factors measured with the resistors alone and with the bolometers biased above their superconducting transition.
+    \caption[In transition noise contributors for each observation frequency band]{Individual components of the \ac{NEP} prediction in aW$^{2}$/Hz per band.
+      The readout and Johnson \ac{NEP} terms include the excess factor of 1.8 measured with the resistor channels and with the detectors overbiased.
       % We hypothesize that the excess readout noise is due to electromagnetic pickup.
       \label{fig:in_transition_pie} }
   \end{center}
 \end{figure}
 
-The median predicted in transition \ac{NEP} level for each wafer is reported in \TAB\ref{in_transition_noise_table}. 
-There is a piechart breakdown of each contributor to the predicted \ac{NEP} for one 150~GHz detector towards the beginning of flight in Fig.~\ref{fig:in_transition_psd}. 
+
+
+
+
+
+%There is a piechart breakdown of each contributor to the predicted \ac{NEP} for one 150~GHz detector towards the beginning of flight in Fig.~\ref{fig:in_transition_psd}. 
 
 %We calculate the theoretical Johnson and readout current noise as described above except we also take into account the factor of excess noise measured with the detector overbiased. 
 %We assume the factor of excess remains constant when the detector is in its transition, and for each detector on a wafer, we multiply that detector's theoretical Johnson and readout noise by its wafer's median ratio of overbiased to predicted noise reported in \TAB\ref{overbias_noise_table}. 
