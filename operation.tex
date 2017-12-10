@@ -622,7 +622,7 @@ The top panel of Figure~\ref{fig:in_transition_noise_vs_time} is the measured an
 The prediction changed as a function of time because the measured radiative load changed and also the detector bias parameters (carrier and nuller settings) changed with each tuning. 
 The bottom panel of Figure~\ref{fig:in_transition_noise_vs_time} is a histogram of the ratio of the measured to predicted noise at each point. 
 Though there sometimes seemed to be systematic noise differences from observation to observation, the median value of the histogram was taken as representative of each bolometer's noise performance throughout flight. 
-Each wafer's median measured to predicted \ac{NEP} ratio is reported \TAB\ref{in_transition_noise_table}. 
+Each wafer's median measured to predicted \ac{NEP} ratio is reported \TAB\ref{tab:in_transition_noise_table}. 
 
 \begin{figure}[htp]
 \begin{center}
@@ -637,10 +637,13 @@ of measured-to-predicted ratio for this detector throughout flight, and the medi
 
 A histogram of the median of each detector's measured to predicted in-transition noise throughout flight is shown in Figure~\ref{fig:in_transition_noise_hist}.
 Taking into account the excess overbiased noise factor of 1.8 in the readout and Johnson noise terms and using each detector's measured radiative load, the measured \ac{NEP} agreed with the predictions to within one standard deviation. 
+The breakdown by wafer is reported in Table~\ref{tab:in_transition_noise_table}
+
+%COME BACK HERE IF YOU HAVE TIME TO SAY HOW MANY WERE > 5
 
 \begin{figure}[hp]
 \begin{center}
-\includegraphics[hieght=2.5in]{figures/in_transition_histogram.png}
+\includegraphics[height=2.5in]{figures/in_transition_histogram.png}
 \caption[In-transition measured/predicted noise histogram]{The distribution of the median ratio of measured to predicted in-transition noise throughout flight for all bolometers. The predicted noise included the boost factor of 1.8 to the readout and Johnson nosie terms measured by the resistor channels. 
 The median ratio (vertical cyan) is 1.2. 
 \label{fig:in_transition_noise_hist} }
