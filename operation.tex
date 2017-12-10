@@ -578,7 +578,7 @@ The \ac{NEP} prediction, indicated by the thin black dashed line, was calculated
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=4in]{figures/board68_wire2_ch04_1356979731s_transition.png}
-\caption[In-transition spectral density with and without HWP synchronous signal]{In-transition noise with the \ac{HWP} template present (red) and subtracted (gold).
+\caption[In-transition spectral density with and without HWP synchronous signal]{In-transition noise for a $\sim$3 minute chunk of time from a 150~GHz bolometer with the \ac{HWP} template present (red) and subtracted (gold). 
 \label{fig:in_transition_psd} }
 \end{center}
 \end{figure}
@@ -589,12 +589,16 @@ The \ac{NEP} prediction, indicated by the thin black dashed line, was calculated
 
 %YOU DON'T SAY WHAT OBSERVATIONS ARE!
 %For approximately ten minutes after the detectors were tuned for Observation C, the \ac{HWP} was off. 
-For approximately ten minutes towards the beginning of flight, the detectors were tuned and the \ac{HWP} was off. 
-Figure~\ref{fig:hwp_on_vs_off} compares the median \ac{WNL} during the ten minutes with the \ac{HWP} stationary to the median \ac{WNL} during the ten minutes after the \ac{HWP} was turned on. 
+For approximately ten minutes at float, the bolometers were biased into their transitions and the \ac{HWP} was \textit{not} spinning. 
+Figure~\ref{fig:hwp_on_vs_off} compares the median \ac{WNL} from the ten minutes with the \ac{HWP} stationary to the median \ac{WNL} from the ten minutes after the \ac{HWP} was turned back on. 
 %The only difference should have been the subtraction of the HWPSS from the raw timestream while the hwp was spinning. oh, and that the hwp was spinning.   time, with the \ac{HWP} spinning and the template subtracted timestream data, . 
 %We expected there to be no difference. 
-There was an average increase of XXX when measuring the \ac{NEP} of the template subtracted data versus that measured from the "raw" timestream when the \ac{HWP} is still. 
-The subtraction of the \ac{HWP} synchronous signal should not have increased the noise level of the timestream, so we suspect something about the \ac{HWP} increased the measured \ac{NEP}. 
+There was an median increase of 8 $aW/\sqrt{Hz}$ in the \ac{NEP} when the \ac{HWP} was on compared to when it was off. 
+%of the \ac{HWP} synchronous signal subtracted data compared to the \ac{NEP} measured when the \ac{HWP} is still. 
+%the "raw" timestream when the \ac{HWP} is still. 
+The subtraction of the \ac{HWP} synchronous signal did not increase the \ac{WNL} of the \ac{PSD}, so we suspect something about the \ac{HWP} rotation increased the measured \ac{NEP}. 
+
+%IF YOU HAVE TIME, REDO THIS ANALYSIS FOR MORE DETECTORS!!!!
 
 \begin{figure}[ht!]
 \begin{center}
@@ -607,31 +611,41 @@ The subtraction of the \ac{HWP} synchronous signal should not have increased the
 
 
 
-For those detectors which have all of the dark measurements available, throughout flight the noise is calculated and predicted every 172 seconds, provided none of the bolometer timestream data in that chunk has been flagged as bad. 
-The noise, measured and predicted, as a function of time is shown for 150-09-XX-XX in Fig.~\ref{fig:in_transition_noise_vs_time}. 
+%For those bolometers which had all of their dark characterization measurements, throughout flight the noise is calculated and predicted every 172 seconds, provided none of the bolometer timestream data in that chunk has been flagged as bad. 
+%The noise, measured and predicted, as a function of time is shown for 150-09-XX-XX in Fig.~\ref{fig:in_transition_noise_vs_time}. 
 %The median value of the ratio of measured to predicted \ac{NEP} for each detector throughout flight is found. 
-The histogram of the median measured to predicted \ac{NEP} for each detector on wafer 150-09 is shown in Fig.~\ref{fig:150-09_median_histogram}.
+%The histogram of the median measured to predicted \ac{NEP} for each detector on wafer 150-09 is shown in Fig.~\ref{fig:150-09_median_histogram}.
+
+
+
+The top panel of Figure~\ref{fig:in_transition_noise_vs_time} is the measured and predicted \ac{NEP} for one 150~GHz bolometer throughout flight. 
+The prediction changed as a function of time because the measured radiative load changed and also the detector bias parameters (carrier and nuller settings) changed with each tuning. 
+The bottom panel of Figure~\ref{fig:in_transition_noise_vs_time} is a histogram of the ratio of the measured to predicted noise at each point. 
+Though there sometimes seemed to be systematic noise differences from observation to observation, the median value of the histogram was taken as representative of each bolometer's noise performance throughout flight. 
 Each wafer's median measured to predicted \ac{NEP} ratio is reported \TAB\ref{in_transition_noise_table}. 
-Taking into account the excess overbiased noise and using each detector's measured radiative load, the measured \ac{NEP} agrees with the predictions to within one standard deviation. 
 
-
-
-
-
-\begin{figure}[ht!]
+\begin{figure}[htp]
 \begin{center}
-\includegraphics[width=0.48\columnwidth]{figures/board68_wire2_ch06_transition.png}
-\includegraphics[width=0.48\columnwidth]{figures/in_transition_histogram.png}
-\caption{Left top: in-transition measured (blue dots) and predicted corrected for excess noise above the transition (red crosses) \ac{NEP} for one 150~GHz detector 
-throughout flight. Gaps indicate times that data is absent or rejected. 
-Left bottom: distribution 
+\includegraphics[height=2.5in]{figures/board68_wire2_ch06_transition.png}
+\caption[In-transition measured noise as function of time]{Top: in-transition measured (blue dots) and predicted corrected for excess noise above the transition (red crosses) \ac{NEP} for one 150~GHz detector 
+throughout flight. Gaps indicate times data is absent or has been rejected. 
+Bottom: distribution 
 of measured-to-predicted ratio for this detector throughout flight, and the median (vertical cyan) ratio of 1.1.
-Right: the distribution of the median ratio of measured to predicted in-transition noise corrected for excess noise above the transition throughout flight for all bolometers.
-The median ratio (vertical cyan) is 1.2. 
-\label{fig:in_transition_noise} }
+\label{fig:in_transition_noise_vs_time} }
 \end{center}
 \end{figure}
 
+A histogram of the median of each detector's measured to predicted in-transition noise throughout flight is shown in Figure~\ref{fig:in_transition_noise_hist}.
+Taking into account the excess overbiased noise factor of 1.8 in the readout and Johnson noise terms and using each detector's measured radiative load, the measured \ac{NEP} agreed with the predictions to within one standard deviation. 
+
+\begin{figure}[hp]
+\begin{center}
+\includegraphics[hieght=2.5in]{figures/in_transition_histogram.png}
+\caption[In-transition measured/predicted noise histogram]{The distribution of the median ratio of measured to predicted in-transition noise throughout flight for all bolometers. The predicted noise included the boost factor of 1.8 to the readout and Johnson nosie terms measured by the resistor channels. 
+The median ratio (vertical cyan) is 1.2. 
+\label{fig:in_transition_noise_hist} }
+\end{center}
+\end{figure}
 
 
 \begin{table}[ht!]
@@ -664,6 +678,20 @@ all detectors.
 \label{tab:in_transition_noise_table}
 \end{table}
 
+% splitting this figure up...
+%\begin{figure}[ht!]
+%\begin{center}
+%\includegraphics[width=0.48\columnwidth]{figures/board68_wire2_ch06_transition.png}
+%\includegraphics[width=0.48\columnwidth]{figures/in_transition_histogram.png}
+%\caption[In-transition measured noise ]{Left top: in-transition measured (blue dots) and predicted corrected for excess noise above the transition (red crosses) \ac{NEP} for one 150~GHz detector 
+%throughout flight. Gaps indicate times data is absent or has been rejected. 
+%Left bottom: distribution 
+%of measured-to-predicted ratio for this detector throughout flight, and the median (vertical cyan) ratio of 1.1.
+%Right: the distribution of the median ratio of measured to predicted in-transition noise corrected for excess noise above the transition throughout flight for all bolometers.
+%The median ratio (vertical cyan) is 1.2. 
+%\label{fig:in_transition_noise} }
+%\end{center}
+%\end{figure}
 
 
 
