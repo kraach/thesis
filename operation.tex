@@ -368,7 +368,7 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 \hline
 \end{tabular}
 \end{center}
-\caption[Median overbiased NEP predictions and measurements for each wafer]{The predicted combination of Johnson and readout noise for each wafer. The theoretical predictions have been boosted by a factor of 1.8, the excess of noise measured by the resistors. For each wafer the measaured to predicted ratio quoted is the median of the distribution for the detectors on that wafer. 
+\caption[Median overbiased NEP predictions and ratio of measurement to prediction for each wafer]{The predicted combination of Johnson and readout noise for each wafer. The theoretical predictions have been boosted by a factor of 1.8, the excess of noise measured by the resistors. For each wafer the measaured to predicted ratio quoted is the median of the distribution for the detectors on that wafer. 
 \label{tab:overbias_noise_table} }
 \end{table}
 
@@ -493,7 +493,7 @@ The golden bar included the excess factor of 1.8, measured on the resistor chann
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[height=2.5in]{figures/ebex_noise_level_predictions_barchart_per_wafer}
-\caption{The \ac{EBEX} pre-flight \ac{NEP} prediction (blue), including the measured radiative load (cyan), and including the boost to readout and Johnson noise (gold).
+\caption[In-transition noise prediction per wafer]{The \ac{EBEX} pre-flight \ac{NEP} prediction (blue), including the measured radiative load (cyan), and including the boost to readout and Johnson noise (gold).
 \label{fig:prediction_bar_chart} }
 \end{center}
 \end{figure}
@@ -501,7 +501,7 @@ The golden bar included the excess factor of 1.8, measured on the resistor chann
 Figure~\ref{fig:in_transition_pie} gives the breakdown of the noise components per observation frequency band as pie charts in units of $aW^2/Hz$.
 \textcolor{red}{Describe pie charts.}
 \textcolor{red}{Remake pie charts as in EP2. make excess a different slice. understand why numbers don't agree!!!}
-The median predicted in transition \ac{NEP} level broken down by wafer is reported in \TAB\ref{in_transition_noise_table}. 
+The median predicted in transition \ac{NEP} level broken down by wafer is reported in \TAB\ref{tab:in_transition_noise_table}. 
 
 % THESE ARE SO DIFFERENT THAN THE PAPER ONES. EVEN/ESPECIALLY PHOTON NOISE. WHY?? 
 % REMAKE????
@@ -627,8 +627,7 @@ Each wafer's median measured to predicted \ac{NEP} ratio is reported \TAB\ref{ta
 \begin{figure}[htp]
 \begin{center}
 \includegraphics[height=2.5in]{figures/board68_wire2_ch06_transition.png}
-\caption[In-transition measured noise as function of time]{Top: In-transition measured (blue dots) and predicted (red crosses) \ac{NEP} for one 150~GHz detector 
-throughout flight. 
+\caption[In-transition measured noise as function of time for one bolometer on wafer~150-09 ]{Top: In-transition measured (blue dots) and predicted (red crosses) \ac{NEP} for one bolometer on wafer~150-09 throughout flight. 
 The readout and Johnson noise terms of the prediction have been boosted by the excess noise factor of 1.8 measured by resistor channels. 
 Gaps in time indicate times data is absent or has been rejected. 
 Bottom: The distribution 
@@ -677,7 +676,7 @@ All Detectors &  & 1.2 \\
 \hline
 \end{tabular}
 \end{center}
-\caption{The median predicted \ac{NEP} and measured-to-predicted \ac{NEP} ratio for each wafer and combined for 
+\caption[Each wafer's median in-transition NEP prediction and ratio of measured-to-predicted NEP]{The median predicted \ac{NEP} and measured-to-predicted \ac{NEP} ratio for each wafer and combined for 
 all detectors.
 The readout and Johnson noise terms of the prediction include the excess factor of 1.8 measured by the resistor channels.  
 }
@@ -702,83 +701,85 @@ The readout and Johnson noise terms of the prediction include the excess factor 
 
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Loopgain}
-\label{sec:loopgain}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-In order to convert from units of current to power at the detector, these results assume the detectors are operating deep in their transitions. 
-A detector well into its transition has a high loopgain and so $\mathcal{L}/(\mathcal{L} + 1) \sim 1$, and the current responsivity can be approximated as $-\sqrt{2}/V_{bias}$. 
-If, however, the detector is not dropped deep into its transition, then it is not safe to assume the loopgain is high and the factor of  $\mathcal{L}/(\mathcal{L} + 1)$ in the responsivity should not be neglected. 
-%The \ac{EBEX} detectors are dropped to 85\% of their normal resistance for the majority of flight. 
-We can estimate the loopgain at any depth in the transition via the definition of loopgain, 
-\begin{equation}
-\mathcal{L} \equiv \frac{P\alpha}{GT}
-\end{equation}
-where $P$ is the Joule power dissipated in the bolometer, alpha is a unitless number quantifying the temperature sensitivity, $G$ is the dynamic thermal conductance, and $T$ is the bolometer temperature \cite{Enss2005}. 
-The largest uncertainty is in the value of $\alpha$, 
- \begin{equation}
- \alpha \equiv \frac{\partial \log R}{\partial \log T}=\frac{T}{R} \frac{dR}{dT}
- \end{equation}
- where R is the detector resistance and T is the detector temperature \cite{Enss2005}. 
-The \ac{EBEX} detector resistances are known to 10\%, but near the transition, $dR/dT$ changes steeply given small changes in detector resistance. 
-If we take a typical resistance versus temperature curve and overestimate the average value of R by 10\%, then $\mathcal{L}$ decreases by a factor of 2.
-If we underestimate R by 10\%, then $\mathcal{L}$ increases by a factor of 7. 
-%\comred{Provide a quantitative uncertainty on $\alpha$ given the uncertainty on R \& dR/dT.}
-Given this, can we even report on/conclude anything from the loopgain measurements??
-
-In order to provide an estimate of the effect of operating the detectors at 85\%, near the top of their transitions, we calculate the loopgain for the detectors on wafer 250-23. 
-The left panel of Fig.~\ref{fig:loopgain_histogram} is a histogram of the calculated loopgains for one tuning of these detectors during flight. 
-When we perform the analysis of the noise performance using the measured loopgains instead of assuming the loopgain is 10000, we find the ratios of measured to predicted noise in the right panel of Fig.~\ref{fig:loopgain_histogram}. 
-The median ratio increases from 1.05 to 1.15. 
-Our final results reported in \TAB\ref{in_transition_noise_table} are a lower limit on the noise performance, and if all wafers behave similarly to wafer~250-23, taking into account the measured loopgain increases the ratio of measured to predicted noise by $\sim$10\%. 
+%NO LOOPGAIN DISCUSSION FOR NOW...
 
 
- %\comred{is referencing the irwin/hilton chapter the right thing to do?}
-%If the resistance values are systematically 10\% too low, then the median loopgain changes from 9 to 7. 
-%If instead the resistance values are systematically 10\% too high, then the median loopgain changes from 9 to 20. 
-
-% would like to include iv curve loopgains as well, BUT I still don't understand how the equation follows from the referenced paper in ziggy's thesis.
-%The loopgain can also be estimated from the iv measurement. 
-%\comred{You need to comment on how safe (or un-safe) it is to make those sweeping assumptions that loopgain is huge and time constant correction factor is neglect-able}
-% do we say in transition or in-transition ? 
-
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[width=0.4\columnwidth]{figures/250-23_calculated_loopgains_histogram.png}
-\includegraphics[width=0.4\columnwidth]{figures/250-23_meas_pred_ratios_obsc_calculated_loopgain.png}
-\caption{{\it Left:} The calculated loopgains for wafer 250-23 using Joule power measured from flight iv curves, alpha and temperature from dark resistance versus temperature measurements, and thermal conductance from dark iv curves and assuming the power of thermal conductivity is 2. {\it Right:} The median ratio of measured to predicted \ac{NEP} for each detector on wafer 250-23 using the calculated loopgains instead of assuming the detector is deep in its transition and the loopgain is 10000.}
-\label{fig:loopgain_histogram}
-\end{center}
-\end{figure}
-
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=1.0 \textwidth]{figures/loopgain_flowchart.pdf}
-\caption{Loop gain calculation flow chart}
-\label{fig:loopgain_flow}
-\end{center}
-\end{figure}
-
-The slope of the Resistance vs Temperature curve for 410-18 between .550 and .800~K was $0.29\pm0.05 \Omega/K$. 
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.5 \textwidth]{figures/250-23_loopgains_calculated_tuning3.png}
-\caption{Loop gains calculated for 250-23 for tuning3.}
-\label{fig:loopgain_calc_hist}
-\end{center}
-\end{figure}
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.5 \textwidth]{figures/250-23_loopgains_from_iv_tuning3.png}
-\caption{Loop gains estimated from each 250-23 bolometer's flight IV curve for tuning3.}
-\label{fig:loopgain_from_iv_hist}
-\end{center}
-\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Loopgain}
+%\label{sec:loopgain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%In order to convert from units of current to power at the detector, these results assume the detectors are operating deep in their transitions. 
+%A detector well into its transition has a high loopgain and so $\mathcal{L}/(\mathcal{L} + 1) \sim 1$, and the current responsivity can be approximated as $-\sqrt{2}/V_{bias}$. 
+%If, however, the detector is not dropped deep into its transition, then it is not safe to assume the loopgain is high and the factor of  $\mathcal{L}/(\mathcal{L} + 1)$ in the responsivity should not be neglected. 
+%%The \ac{EBEX} detectors are dropped to 85\% of their normal resistance for the majority of flight. 
+%We can estimate the loopgain at any depth in the transition via the definition of loopgain, 
+%\begin{equation}
+%\mathcal{L} \equiv \frac{P\alpha}{GT}
+%\end{equation}
+%where $P$ is the Joule power dissipated in the bolometer, alpha is a unitless number quantifying the temperature sensitivity, $G$ is the dynamic thermal conductance, and $T$ is the bolometer temperature \cite{Enss2005}. 
+%The largest uncertainty is in the value of $\alpha$, 
+% \begin{equation}
+% \alpha \equiv \frac{\partial \log R}{\partial \log T}=\frac{T}{R} \frac{dR}{dT}
+% \end{equation}
+% where R is the detector resistance and T is the detector temperature \cite{Enss2005}. 
+%The \ac{EBEX} detector resistances are known to 10\%, but near the transition, $dR/dT$ changes steeply given small changes in detector resistance. 
+%If we take a typical resistance versus temperature curve and overestimate the average value of R by 10\%, then $\mathcal{L}$ decreases by a factor of 2.
+%If we underestimate R by 10\%, then $\mathcal{L}$ increases by a factor of 7. 
+%%\comred{Provide a quantitative uncertainty on $\alpha$ given the uncertainty on R \& dR/dT.}
+%Given this, can we even report on/conclude anything from the loopgain measurements??
+%
+%In order to provide an estimate of the effect of operating the detectors at 85\%, near the top of their transitions, we calculate the loopgain for the detectors on wafer 250-23. 
+%The left panel of Fig.~\ref{fig:loopgain_histogram} is a histogram of the calculated loopgains for one tuning of these detectors during flight. 
+%When we perform the analysis of the noise performance using the measured loopgains instead of assuming the loopgain is 10000, we find the ratios of measured to predicted noise in the right panel of Fig.~\ref{fig:loopgain_histogram}. 
+%The median ratio increases from 1.05 to 1.15. 
+%Our final results reported in \TAB\ref{in_transition_noise_table} are a lower limit on the noise performance, and if all wafers behave similarly to wafer~250-23, taking into account the measured loopgain increases the ratio of measured to predicted noise by $\sim$10\%. 
+%
+%
+% %\comred{is referencing the irwin/hilton chapter the right thing to do?}
+%%If the resistance values are systematically 10\% too low, then the median loopgain changes from 9 to 7. 
+%%If instead the resistance values are systematically 10\% too high, then the median loopgain changes from 9 to 20. 
+%
+%% would like to include iv curve loopgains as well, BUT I still don't understand how the equation follows from the referenced paper in ziggy's thesis.
+%%The loopgain can also be estimated from the iv measurement. 
+%%\comred{You need to comment on how safe (or un-safe) it is to make those sweeping assumptions that loopgain is huge and time constant correction factor is neglect-able}
+%% do we say in transition or in-transition ? 
+%
+%\begin{figure}[ht!]
+%\begin{center}
+%\includegraphics[width=0.4\columnwidth]{figures/250-23_calculated_loopgains_histogram.png}
+%\includegraphics[width=0.4\columnwidth]{figures/250-23_meas_pred_ratios_obsc_calculated_loopgain.png}
+%\caption{{\it Left:} The calculated loopgains for wafer 250-23 using Joule power measured from flight iv curves, alpha and temperature from dark resistance versus temperature measurements, and thermal conductance from dark iv curves and assuming the power of thermal conductivity is 2. {\it Right:} The median ratio of measured to predicted \ac{NEP} for each detector on wafer 250-23 using the calculated loopgains instead of assuming the detector is deep in its transition and the loopgain is 10000.}
+%\label{fig:loopgain_histogram}
+%\end{center}
+%\end{figure}
+%
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=1.0 \textwidth]{figures/loopgain_flowchart.pdf}
+%\caption{Loop gain calculation flow chart}
+%\label{fig:loopgain_flow}
+%\end{center}
+%\end{figure}
+%
+%The slope of the Resistance vs Temperature curve for 410-18 between .550 and .800~K was $0.29\pm0.05 \Omega/K$. 
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=0.5 \textwidth]{figures/250-23_loopgains_calculated_tuning3.png}
+%\caption{Loop gains calculated for 250-23 for tuning3.}
+%\label{fig:loopgain_calc_hist}
+%\end{center}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=0.5 \textwidth]{figures/250-23_loopgains_from_iv_tuning3.png}
+%\caption{Loop gains estimated from each 250-23 bolometer's flight IV curve for tuning3.}
+%\label{fig:loopgain_from_iv_hist}
+%\end{center}
+%\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
