@@ -239,7 +239,7 @@ The cost to the overall data acquisition was small because \ac{BRO}1 happened to
 Bolometer data, for purposes of noise analysis, were flagged if the detector was saturated, there were signals from cosmic ray absorption, there were \ac{SQUID} DC level jumps, the bolometer went superconducting, the \ac{HWP} synchronous signal subtraction failed, the \ac{HWP} motor was ramping on or off, the cryostat was stepping elevation, or the internal-to-the-cryostat calibrator was on. 
 Flagged data was replaced by white noise realizations. 
 In order for a chunk of data to be included in the noise analysis, we required no more than 10\% of the data be flagged. 
-Of the 941 bolometers in \ac{BRO}2-4, 460 had data which passed the valid criteria. 
+Of the 941 bolometers wired up in \ac{BRO}2-4, 460 had data which passed the valid criteria. 
 %IF YOU HAVE TIME, COME BACK HERE AND EXPLAIN WHERE YOU LOST THE DATA. ESPECIALLY BE ABLE TO SAY WHERE THE MAJORITY OF IT WAS (ASSUMING THERE WAS A MAJORITY LOST TO SOMETHING, E.G. SATURATION)
 
 %SOME OF THIS SHOULD HAVE ALREADY BEEN MENTIONED IN BOLOMETER THEORY AND IN THE DARK NOISE MEASUREMENT SECTION. ALSO, IT'S OUT OF PLACE HERE.
@@ -256,7 +256,7 @@ Of the 941 bolometers in \ac{BRO}2-4, 460 had data which passed the valid criter
 \label{sec:flight_squid_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In \ac{ETC}, the \ac{SQUID} noise performance was measured for \ac{SQUID}s with live detectors wired to them but demodulating away from their resonant frequencies. 
+In \ac{ETC}, the \ac{SQUID} noise performance was measured for \ac{SQUID}s with live detectors wired to them but demodulating away from the detector resonant frequencies. 
 In \ac{EBEX}, however, the \ac{SQUID} noise performance was measured by dedicated dark \ac{SQUID}s. 
 The dark \ac{SQUID}s were not attached to any bolometers because there was an open on their microstrips leading from the \ac{SQUID} boards to the copper pigtails attached to the \ac{LC} boards. 
 Two \ac{SQUID}s were intentionally made dark. 
@@ -264,26 +264,25 @@ Two more microstrip lines opened during the cryostat cooldown effectively creati
 The dark \ac{SQUID}s each had 16 demodulators set up from 200 to 1200~kHz.
 As was done for \ac{ETC}, the predicted electronic and \ac{SQUID} noise was calculated from the electronic specifications of each element of the readout chain and assumed an intrinsic \ac{SQUID} noise of 3.5~$pA/\sqrt{Hz}$. 
 The measurement in \ac{ADC} counts was converted to current via the \ac{DfMUX} transfer functions and compared to the prediction. 
-
-
-
-\textcolor{red}{
-Ideally you'd include
-left. figure of squid noise psd (incl pred) and right. meas noise (and pred) as a function of time.
-median of each dark squid channel's meas/pred ratio.
-}
+The left panel of Figure~\ref{fig:squid_in_flight_noise} shows the noise as a function of time for a single dark \ac{SQUID} channel. 
+The right panel of Figure~\ref{fig:squid_in_flight_noise} is the distribution of the median measured-to-predicted noise ratio for all of the dark \ac{SQUID} channels. 
+The median measured-to-predicted ratio of the mode on the left was 1.2. 
 
 \begin{figure}[htp]
 \begin{center}
-\includegraphics[width=0.48\columnwidth]{figures/board59_wire3_ch13_noise_vs_time}
-\includegraphics[width=0.48\columnwidth]{figures/resistor_noise_histogram.png}
-\caption[Resistor noise versus time and histogram of all resistors' median noise]{Left: the resistor noise measured (red) and predicted (black) for one resistor channel throughout flight. Right: the distribution of the median measured to predicted noise for all resistor channels. The median (vertical cyan) of the distribution is 1.8. 
-\label{fig:resistor_in_flight_noise} }
+%\includegraphics[width=0.48\columnwidth]{figures/board59_wire3_ch13_noise_vs_time}
+%\includegraphics[width=0.48\columnwidth]{figures/squid_noise_histogram.png}
+\caption[SQUID noise versus time and histogram of all dark squids' median noise]{Left: the \ac{SQUID} noise measured (red) and predicted (black) for one dark \ac{SQUID} channel throughout flight. Right: the distribution of the median measured to predicted noise for all \ac{SQUID} channels. The median (vertical cyan) of the distribution is 1.2. 
+\label{fig:squid_in_flight_nosie} }
 \end{center}
 \end{figure}
 
-
-\textcolor{red}{Then, you need to discuss results of analysis. And say how they are used to inform the following analysis.}
+%\textcolor{red}{
+%Ideally you'd include
+%left. figure of squid noise psd (incl pred) and right. meas noise (and pred) as a function of time.
+%median of each dark squid channel's meas/pred ratio.
+%}
+%\textcolor{red}{Then, you need to discuss results of analysis. And say how they are used to inform the following analysis.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{In-Flight Resistor Noise}
@@ -299,6 +298,11 @@ The predicted readout noise was calculated as it was for the dark \ac{SQUID}s.
 %calculated from the electronic specifications of each element of the readout chain and still assumed an intrinsic \ac{SQUID} noise of 3.5~$pA/\sqrt{Hz}$.
 For the resistors, however, the electronic noise prediction was higher because the carriers and nullers were on in order to more closely mimic the configuration of a real bolometer. 
 The resistance values were taken from the network analysis and the Johnson noise calculated assuming the resistor was well heat sunk to the \ac{LC} board which was at the bath temperature. 
+The left panel of Figure~\ref{fig:resistor_in_flight_noise} is the measured and predicted noise for one resistor throughout flight. 
+The right panel of Figure~\ref{fig:resistor_in_flight_noise} is the median ratio of measured to predicted noise for 16 of the 21 resistor channels.
+The median of this distributions was 1.8.  
+The 5 resistors channels with a median measured to predicted noise ratio greater than 6 were excluded from this analysis. 
+We hypothesize the excess noise was due to electromagnetic pickup in the microstrips between the \ac{SQUID}s and \ac{LC} boards.
 
 %\textcolor{red}{Include:
 %noise vs time and histogram of median meas/pred for each resistor. }
@@ -312,10 +316,10 @@ The resistance values were taken from the network analysis and the Johnson noise
 \end{center}
 \end{figure}
 
-Figure~\ref{fig:resistor_in_flight_noise} XXX
 
-\textcolor{red}{Discuss results!}
-We hypothesize the excess noise was due to electromagnetic pickup in the microstrips between the \ac{SQUID}s and \ac{LC} boards.
+%\textcolor{red}{Discuss results!}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{In-Flight Bolometer Overbiased Noise}
