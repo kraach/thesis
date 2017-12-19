@@ -331,7 +331,7 @@ Because of the small value of the loopgain when the bolometer was overbiased, th
 We predicted and measured the bolometers' overbiased noise in units of $A/\sqrt{Hz}$ since both the readout and Johnson noise are naturally in units of current.  
 %IF YOU HAVE TIME, COME BACK AND BE PRECISE (NUMBERS) ABOUT WHAT TINY MEANS
 The readout noise was calculated as before, using each bolometer's carrier and nuller settings. 
-The predicted Johnson noise assumed the bolometer resistance was $R_{normal}$ from the network analysis fit and estimated the bolometer temperature as $T_{bolo} = T_{c}$ + $\Delta P / \overline{G}$ from the critical transition temperature measurements and the IV curves dark and at float, where $\Delta P$ was the difference in power from overbiased to in the transition. 
+The predicted Johnson noise assumed the bolometer resistance was $R_{normal}$ from the network analysis fit and estimated the bolometer temperature as $T_{bolo} = T_{c}$ + $\Delta P / \overline{G}$, where $T_c$ was measured dark, $\Delta P$ was the difference in power overbiased to in the transition from the flight pv curve, and $\overline{G}$ was measured dark and corrected for the \ac{EBEX} bath temperature. 
 %Section~\ref{sec:parameter_measurements}. 
 Because the bolometers and resistors shared the readout chain all the way to just before the bolometer wafer, we assumed the excess noise present in the resistor channels would also be present in the bolometer channels. 
 The predicted overbias noise for each bolometer was multiplied by 1.8, the median factor of excess noise measured by the resistors. 
