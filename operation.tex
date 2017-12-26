@@ -304,7 +304,8 @@ The left panel of Figure~\ref{fig:resistor_in_flight_noise} is the measured and 
 The right panel of Figure~\ref{fig:resistor_in_flight_noise} is the median ratio of measured to predicted noise for 16 of the 21 resistor channels.
 The median of this distributions was 1.8.  
 The 5 resistors channels with a median measured to predicted noise ratio greater than 6 were excluded from this analysis. 
-We hypothesize the excess noise was due to electromagnetic pickup in the microstrips between the \ac{SQUID}s and \ac{LC} boards.
+Though the bolometer cavity was designed to be RF-tight, we hypothesize the excess noise was due to electromagnetic pickup in the microstrips between the \ac{SQUID}s and \ac{LC} boards. 
+
 
 %\textcolor{red}{Include:
 %noise vs time and histogram of median meas/pred for each resistor. }
@@ -526,8 +527,13 @@ The golden bar included the excess factor of 1.8, measured on the resistor chann
 \end{figure}
 
 Figure~\ref{fig:in_transition_pie} gives the breakdown of the noise components per observation frequency band as pie charts in units of $aW^2/Hz$.
-\textcolor{red}{Describe pie charts.}
-\textcolor{red}{Remake pie charts as in EP2. make excess a different slice. understand why numbers don't agree!!!}
+Both the readout and Johnson noise have been multiplied by the excess factor of 1.8 measured by the resistors. 
+The bolometer sensitivity floor was designed to be dominated by the photon noise. 
+The excess measured in the electronic, readout, and Johnson noise terms, however, brought the readout noise to a level comparable to that of the photon noise. 
+
+
+%\textcolor{red}{Describe pie charts.}
+%\textcolor{red}{Remake pie charts as in EP2. make excess a different slice. understand why numbers don't agree!!!}
 The median predicted in-transition \ac{NEP} level broken down by wafer is reported in \TAB\ref{tab:in_transition_noise_table}. 
 
 % THESE ARE SO DIFFERENT THAN THE PAPER ONES. EVEN/ESPECIALLY PHOTON NOISE. WHY?? 
