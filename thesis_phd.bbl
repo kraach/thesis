@@ -20,7 +20,7 @@ P.J.E. Peebles.
 \bibitem{Spergel2007}
 D.N. Spergel et~al.
 \newblock Three-year wilkinson microwave anisotropy probe (wmap) observations:
-  Im- plications for cosmology.
+  Implications for cosmology.
 \newblock {\em Astrophysical Journal Supplement}, 170:377--408, jun 2007.
 
 \bibitem{Tegmark2006}
@@ -61,7 +61,7 @@ J.~L. Sievers et~al.
 
 \bibitem{nolta2009}
 M.~R. Nolta et~al.
-\newblock Five year wilkinson microwave anisotropy probe observations: Angular
+\newblock Five-year wilkinson microwave anisotropy probe observations: Angular
   power spectra.
 \newblock {\em Astrophysical Journal Supplement}, 180:296--305, feb 2009.
 
@@ -73,7 +73,8 @@ The~POLARBEAR Collaboration.
 
 \bibitem{naess2014}
 S.~Naess et~al.
-\newblock The atacama cosmology telescope: Cmb polarization at 200 < l < 9000.
+\newblock The atacama cosmology telescope: Cmb polarization at 200 \textless l
+  \textless 9000.
 \newblock {\em Journal of Cosmology and Astroparticle Physics}, oct 2014.
 
 \bibitem{keisler2015}
@@ -163,15 +164,7 @@ K.~D. Irwin, G.~C. Hilton, D.~A. Wollman, and J.~M. Martinis.
 \newblock {\em J. Appl. Phys.}, 83:3978, 1998.
 
 \bibitem{Dobbs2011}
-M.~A. Dobbs, M.~Lueker, K.~A. Aird, A.~N. Bender, B.~A. Benson, L.~E. Bleem,
-  J.~E. Carlstrom, C.~L. Chang, H.~M. Cho, J.~Clarke, T.~M. Crawford, A.~T.
-  Crites, D.~I. Flanigan, T.~de~Haan, E.~M. George, N.~W. Halverson, W.~L.
-  Holzapfel, J.~D. Hrubes, B.~R. Johnson, J.~Joseph, R.~Keisler, J.~Kennedy,
-  Z.~Kermish, T.~M. Lanting, A.~T. Lee, E.~M. Leitch, D.~Luong-Van, J.~J.
-  McMahon, J.~Mehl, S.~S. Meyer, T.~E. Montroy, S.~Padin, T.~Plagge, C.~Pryke,
-  P.~L. Richards, J.~E. Ruhl, K.~K. Schaffer, D.~Schwan, E.~Shirokoff, H.~G.
-  Spieler, Z.~Staniszewski, A.~A. Stark, K.~Vanderlinde, J.~D. Vieira, C.~Vu,
-  B.~Westbrook, and R.~Williamson.
+M.~A. Dobbs et~al.
 \newblock {Frequency Multiplexed SQUID Readout of Large Bolometer Arrays for
   Cosmic Microwave Background Measurements}.
 \newblock {\em Review of Scientific Instruments}, page~28, December 2011.
