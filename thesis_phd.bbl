@@ -6,6 +6,12 @@ Chaoyun Bao.
   in the Presence of Instrumental Effects}.
 \newblock PhD thesis, University of Minnesota, 2015.
 
+\bibitem{Zilic2014}
+Kyle Zilic.
+\newblock {\em Calibration and Design of the E and B EXperiment (EBEX)
+  Cryogenic Receiver}.
+\newblock PhD thesis, University of Minnesota, 2014.
+
 \bibitem{Ruhl2004}
 John~E. Ruhl et~al.
 \newblock The south pole telescope.
@@ -112,11 +118,5 @@ Martin~E Huber, Patricia~A Neil, Robert~G Benson, Deborah~A Burns, Alan~M
   John~M Martinis.
 \newblock {DC SQUID Series Array Amplifiers with 120 MHz Bandwidth}.
 \newblock {\em IEEE Transactions on Applied Superconductivity}, I(I), 2001.
-
-\bibitem{Zilic2014}
-Kyle Zilic.
-\newblock {\em Calibration and Design of the E and B EXperiment (EBEX)
-  Cryogenic Receiver}.
-\newblock PhD thesis, University of Minnesota, 2014.
 
 \end{thebibliography}
