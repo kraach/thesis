@@ -24,7 +24,7 @@ These \ac{CMB} photons, at a temperature of only 2.72~K, are a uniform backgroun
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[height=3.2in]{figures/predicted_power_spectra.png}
-\caption[CMB power spectra]{E- and B-mode power spectra of the \ac{CMB}. The E-mode polarization has been measured to high accuracy. The B-mode power spectra is expected to have a component due to lensing, which has been measured, and a component due to primordial gravity waves, which hasn't yet been detected with high confidence. This plot shows the level of the B-mode polarization assuming a tensor-to-scalar ratio of r=0.1, near the current upper limit set by Planck and Keck Array. 
+\caption[CMB power spectra]{The theoretical prediction of the E- and B-mode power spectra of the \ac{CMB}. The E-mode polarization has been measured to high accuracy. The B-mode power spectra is expected to have a component due to lensing, which has been measured, and a component due to primordial gravity waves, which hasn't yet been detected with high confidence. This plot shows the level of the B-mode polarization assuming a tensor-to-scalar ratio of r=0.05, near the current upper limit set by Planck and Keck Array. 
 \label{fig:cmb_spectra} }
 \end{center}
 \end{figure}
@@ -50,23 +50,32 @@ High-altitude balloons are powerful platforms for achieving low budget and fast,
 The high altitude observation environment also enables measurement of frequencies inaccessible on the ground ($>$ 350~GHz). The high frequency data are critical to determine the spectra of dust so the dust foreground can be subtracted from the signal. 
 
 One challenge in ballooning is the length of observation. 
+Figure~\ref{fig:flight_trajectory} shows the \ac{EBEX} flight path. 
 The average \ac{LDB} flight duration from McMurdo, Antarctica is 10-15~days, and the longest flights have lasted more than 40~days.  
 While this is much shorter than the operation time of a ground-based telescope, the additional detector sensitivity achievable above the majority of the atmosphere can make it worth it. 
-Section~\ref{sec:detector_design} discusses the detector design modifications we performed to optimize the detector sensitivity for the space-like environment. 
+Section~\ref{sec:detector_design} discusses the detector design modifications we performed to optimize the detector sensitivity for a space-like environment. 
 The typical flight altitude is around 36~km, above approximately 98\% of the atmosphere. 
-At this altitude, and an elevation of 45$^\circ$, the radiative load from the atmosphere decreases to less than 0.04~pW for the 150 and 250~GHz observation bands and to around 2~pW for the 410~GHz observation band \cite{Bao2015}. 
+At this altitude, and at an elevation of 45$^\circ$, the radiative load from the atmosphere decreases to less than 0.04~pW for the 150 and 250~GHz observation bands and to around 2~pW for the 410~GHz observation band \cite{Bao2015}. 
 %sure would be nice if you could say what it is on the ground and say what is assumed about precipital water vapor
 
 Another challenge in ballooning is the limited bandwidth available for transmitting data to and from the payload. 
 This makes sending compact commands to operate the entire detector array essential and  recovering the payload of critical importance. 
 
 There are several advantages to Antarctic balloon flights. 
-One, favorable wind patterns set up in the austral summer to bring the balloon around in a circle, usually staying over the continent, and coming back to roughly where it began. 
+One, favorable wind patterns set up in the austral summer to bring the balloon around in a circle, usually staying over the continent, and coming back to roughly where it began, see Figure~\ref{fig:flight_trajectory}. 
 Two, the continent is sparsely populated so there is little danger of injuring anyone or anything. 
 Three, during the austral summer in Antarctica, the payloads are exposed to the sun around the clock. 
 The batteries need to provide just enough power to make it through launch and ascent and then the sun exposure allows for constant charging of the solar panels to power the experiment. 
 This is important for minimizing the weight of the payload. 
 %can you say why you want to minimize the weight of the payload?
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{figures/ebex_trajectory.jpg}
+\caption[EBEX flight trajectory]{The flight path \ac{EBEX} followed over Antarctica. On January 9, the trajectory line goes from solid to dashed because, exactly as predicted, the liquid helium ran out after twelve days and so \ac{EBEX} stopped taking data. 
+\label{fig:flight_trajectory} }
+\end{center}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
@@ -80,8 +89,11 @@ This is important for minimizing the weight of the payload.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ac{EBEX} was a balloon-borne telescope designed to measure the polarization of the \ac{CMB}.
-
-
+It had three observation frequency bands, designed to be centered around 150, 250, and 410~GHz. 
+%There were the highest number of channels in the \ac{CMB} peak channels, the low frequency band.
+The lowest frequency band was to XXX.
+The highest frequency band was to measure the spectral content of dust. 
+The middle frequency band was XXX. 
 
 
 
@@ -148,7 +160,7 @@ So.
 Here. You need to describe the wafer mounting procedure and how the signal is read out. 
 Perhaps you will make a subsection and reference that subsection when referencing how the wafer was mounted and coupled to readout?}
 
-\textcolor{red}{Do you want/need to include the 410 wafer mount stuff?}
+%\textcolor{red}{Do you want/need to include the 410 wafer mount stuff?}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}}}
 
