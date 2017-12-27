@@ -42,13 +42,20 @@ Measurements of B-mode polarization due to other stuff tells us about that other
 High-altitude balloons are powerful platforms for achieving low budget and fast, relative to satellites, astrophysical studies. 
 The high altitude observation environment also enables measurement of frequencies inaccessible on the ground ($>$ 350~GHz). The high frequency data are critical to determine the spectra of dust so the dust foreground can be subtracted from the signal. 
 
+One challenge in ballooning is the length of observation. 
 The average \ac{LDB} flight duration from McMurdo, Antarctica is 10-15~days, and the longest flights have lasted more than 40~days.  
 While this is much shorter than the operation time of a ground-based telescope, the additional detector sensitivity achievable above the majority of the atmosphere can make it worth it. 
 The typical flight altitude is around 36~km, above approximately 98\% of the atmosphere. 
 At this altitude, and an elevation of 45$^\circ$, the radiative load from the atmosphere decreases to less than 0.04~pW for the 150 and 250~GHz observation bands and to around 2~pW for the 410~GHz observation band \cite{Bao2015}. 
 %sure would be nice if you could say what it is on the ground and say what is assumed about precipital water vapor
 
-During the austral summer in Antarctica, the payloads are exposed to the sun around the clock. 
+Another challenge in ballooning is the limited bandwidth available for transmitting data to and from the payload. 
+This makes sending compact commands to operate the entire detector array essential and  recovering the payload of critical importance. 
+
+There are several advantages to Antarctic balloon flights. 
+One, favorable wind patterns set up in the austral summer to bring the balloon around in a circle, usually staying over the continent, and coming back to roughly where it began. 
+Two, the continent is sparsely populated so there is little danger of injuring anyone or anything. 
+Three, during the austral summer in Antarctica, the payloads are exposed to the sun around the clock. 
 The batteries need to provide just enough power to make it through launch and ascent and then the sun exposure allows for constant charging of the solar panels to power the experiment. 
 This is important for minimizing the weight of the payload. 
 %can you say why you want to minimize the weight of the payload?
@@ -69,7 +76,17 @@ It was an off-axis Gregorian
 %dragone ???
  telescope flown on an Antarctic long duration balloon flight supported by \ac{NASA}'s \ac{CSBF}. 
 The \ac{EBEX} gondola supported a 1.5~m primary mirror and a 1~m secondary mirror. 
+The \ac{EBEX} cryostat ....
 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.48\columnwidth]{figures/dfmux_schematic.png}
+\includegraphics[width=0.48\columnwidth]{figures/dfmux_schematic.png}
+\caption[Outer frame, model and photograph]{Left: Model of \ac{EBEX} outer frame. Right: Photograph of \ac{EBEX} outer frame. \textcolor{red}{describe what we see}
+\label{fig:gondola} }
+\end{center}
+\end{figure}
 
  \textcolor{red}{Do you want to include the spectra we thought we could get observing the patch we thought we were going to observe?}
  
@@ -88,7 +105,7 @@ Perhaps you will make a subsection and reference that subsection when referencin
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.6\columnwidth]{figures/dfmux_schematic.png}
-\caption{Schematic of readout electronics. 
+\caption[DFMUX schematic]{Schematic of readout electronics. 
 \label{fig:dfmux} }
 \end{center}
 \end{figure}
