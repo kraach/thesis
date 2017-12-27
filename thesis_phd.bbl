@@ -38,6 +38,50 @@ Planck Collaboration.
 \newblock Planck 2015 results. xx. constraints on inflation.
 \newblock {\em Astronomy \& Astrophysics}, 594:A20, sep 2016.
 
+\bibitem{leitch2005}
+E.~M. Leitch et~al.
+\newblock Degree angular scale interferometer 3 year cosmic microwave
+  background polarization results.
+\newblock {\em Astrophysical Journal}, 624:10--20, may 2005.
+
+\bibitem{montroy2006}
+T.~E. Montroy et~al.
+\newblock Measurement of the cmb ee spectrum from the 2003 flight of boomerang.
+\newblock {\em Astrophysical Journal}, 647:813--822, aug 2006.
+
+\bibitem{wu2007}
+J.~H.~P. Wu et~al.
+\newblock Maxipol: Data analysis and results.
+\newblock {\em Astrophysical Journal}, 665:55--66, aug 2007.
+
+\bibitem{sievers2007}
+J.~L. Sievers et~al.
+\newblock Implications of the cosmic background imager polarization data.
+\newblock {\em Astrophysical Journal}, 660:976--987, may 2007.
+
+\bibitem{nolta2009}
+M.~R. Nolta et~al.
+\newblock Five year wilkinson microwave anisotropy probe observations: Angular
+  power spectra.
+\newblock {\em Astrophysical Journal Supplement}, 180:296--305, feb 2009.
+
+\bibitem{polarbear2014}
+The~POLARBEAR Collaboration.
+\newblock A measurement of the cosmic microwave background b- mode polarization
+  power spectrum at sub-degree scales with polarbear.
+\newblock {\em Astrophysical Journal}, 794:171, 2014.
+
+\bibitem{naess2014}
+S.~Naess et~al.
+\newblock The atacama cosmology telescope: Cmb polarization at 200 < l < 9000.
+\newblock {\em Journal of Cosmology and Astroparticle Physics}, oct 2014.
+
+\bibitem{keisler2015}
+R.~Keisler et~al.
+\newblock Measurements of sub-degree b-mode polarization in the cosmic
+  microwave background from 100 square degrees of sptpol data.
+\newblock {\em Astrophysical Journal}, 807, jul 2015.
+
 \bibitem{Bao2015}
 Chaoyun Bao.
 \newblock {\em Foreground Cleaning for Cosmic Microwave Background Polarimeters
