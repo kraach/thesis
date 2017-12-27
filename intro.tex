@@ -130,10 +130,10 @@ The path of light through the telescope is shown in Figure~\ref{fig:optical_path
 Light bounced off the primary mirror and was reflected into the cryostat by the secondary mirror. 
 The light entered the cryostat via an \ac{UHMWPE} 1.0~mm window, transparent to mm-wave light. 
 On the ground, this window under vacuum would have deflected enough to damage the filters beneath it. 
-The telescope had a double window mechanism mounted to the top of the cryostat, Figure~\ref{fig:double_window}. 
-On the ground, there was an additional \ac{UHMWPE} window of thickness 12.7~mm above the thin window. 
+To prevent that from happening, the telescope had a double window mechanism mounted to the top of the cryostat, Figure~\ref{fig:double_window}. 
+On the ground, there was an additional \ac{UHMWPE} window of thickness 12.7~mm under vacuum above the thin window. 
 At float, the thick window was rolled back. 
-Once the light entered the cryostat, it was filtered and passed through a half-wave plate continuously rotating at 1.235~Hz. 
+Once the light entered the cryostat, it was filtered and passed through a half-wave plate continuously rotating at 1.2~Hz. %1.235~Hz
 There was a polarizing grid through which half of the light passed and was focused onto the horizontal focal plane.
 The other half of the light reflected off of the polarizing grid and was focused onto the vertical focal plane. 
 Figure~\ref{fig:cryo_innards} shows a model of the interior of the cryostat and a photograph of the optical elements housed inside the optics box. 
@@ -163,9 +163,15 @@ Figure~\ref{fig:cryo_innards} shows a model of the interior of the cryostat and 
 \end{center}
 \end{figure}
 
+%PROVIDING TOO MANY DETAILS????
 
-There were two focal planes and each focal plane consisted of seven wafers of detectors, four at 150~GHz, two at 250~GHz, and one at 410~GHz, see Figure~\ref{fig:focal_plane}.
-
+There were two focal planes and each focal plane consisted of seven silicon wafers of detectors, four at 150~GHz, two at 250~GHz, and one at 410~GHz, see Figure~\ref{fig:focal_plane}.
+Each wafer had 140~detectors fabricated via thin metal deposition and optical lithography. 
+See section~\ref{sec:yield} for a discussion of the detector yield achieved.  
+Each wafer was mounted to an invar plate with a thin layer of warmed Apiezon N grease. 
+The invar plate was screwed to an aluminum wafer/LC board mount and an alignment jig was used to to position the wafer relative to dowel pin holes on the waveguide array. 
+%The dowel pin holes aligned the wafer with the waveguide array. 
+The invar plates were heat sunk to a Simon Chase helium adsorption fridge which cooled the wafers to $\sim$250~mK.  
 
 \begin{figure}[htbp]
 \begin{center}
@@ -176,18 +182,16 @@ There were two focal planes and each focal plane consisted of seven wafers of de
 \end{center}
 \end{figure}
 
-Within each focal plane, \textcolor{red}{talk about 
-\begin{itemize}
-\item the wafer mounting procedure. 
-\item the readout procedure
-\item somewhere, don't you need to say how things get cold? and why?
-\end{itemize}
-}
+The detector signals were read out using \ac{DFMUX} electronics, Figure~\ref{fig:dfmux}.
+The detectors were nominally grouped into combs of sixteen detectors per pair of wires leading from the focal plane. 
+Each detector was wired in series with a 24~uH inductor and ceramic capacitor between $\sim$0.9 and 30~nF on the \ac{LC} board. 
+This gave a comb of sixteen resonant frequencies from 200 to 1200~kHz, with spacing of roughly 65~kHz. 
+The signal from each comb was amplified by a NIST 100 series array \ac{SQUID}. 
+The \ac{DFMUX} carriers, and a 0.03~$\Omega$ resistor, provided each detector's voltage bias at its resonant frequency and the \ac{DFMUX} nullers canceled the bias signal at the input of the \ac{SQUID}. 
+To bring the signal from the 250~mK \ac{LC} boards to the 4~K \ac{SQUID}s, there was a short pair of kapton encased flattened copper wires attached to a pair of low-inductance parallel kapton encased flattened niobium titanium wires.
+150~mm manganin wire exited the cryostat carrying the signal from the 4~K squids to the room temperature \ac{SQUID} controller board. 
+The \ac{DFMUX} board demodulated the signal and the flight control computer recorded all of the data. 
 
-%\textcolor{red}{in Section~\ref{sec:detector_characterization} you say "the wafer was mounted and coupled to the readout electronics as was done for flight, Section~\ref{sec:ebex}". 
-%So. 
-%Here. You need to describe the wafer mounting procedure and how the signal is read out. 
-%Perhaps you will make a subsection and reference that subsection when referencing how the wafer was mounted and coupled to readout?}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -196,6 +200,21 @@ Within each focal plane, \textcolor{red}{talk about
 \label{fig:dfmux} }
 \end{center}
 \end{figure}
+
+%Within each focal plane, \textcolor{red}{talk about 
+%\begin{itemize}
+%\item the wafer mounting procedure. 
+%\item the readout procedure
+%\item somewhere, don't you need to say how things get cold? and why?
+%\end{itemize}
+%}
+
+%\textcolor{red}{in Section~\ref{sec:detector_characterization} you say "the wafer was mounted and coupled to the readout electronics as was done for flight, Section~\ref{sec:ebex}". 
+%So. 
+%Here. You need to describe the wafer mounting procedure and how the signal is read out. 
+%Perhaps you will make a subsection and reference that subsection when referencing how the wafer was mounted and coupled to readout?}
+
+
 
 
 % \textcolor{red}{Do you want to include the spectra we thought we could get observing the patch we thought we were going to observe?}
