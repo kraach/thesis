@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{Bao2015}
+Chaoyun Bao.
+\newblock {\em Foreground Cleaning for Cosmic Microwave Background Polarimeters
+  in the Presence of Instrumental Effects}.
+\newblock PhD thesis, University of Minnesota, 2015.
+
 \bibitem{Ruhl2004}
 John~E. Ruhl et~al.
 \newblock The south pole telescope.
@@ -48,7 +54,7 @@ J.~B. Johnson.
 J.~M. Lamarre.
 \newblock Photon noise in photometric instruments at far-infrared and
   submillimeter wavelengths.
-\newblock {\em Applied Optics}, 25(6), mar 1986.
+\newblock {\em Applied Optics}, 25(6), Mar 1986.
 
 \bibitem{Westbrook2014}
 Benjamin~G. Westbrook.
@@ -81,12 +87,6 @@ M.~A. Dobbs, M.~Lueker, K.~A. Aird, A.~N. Bender, B.~A. Benson, L.~E. Bleem,
 \newblock {Frequency Multiplexed SQUID Readout of Large Bolometer Arrays for
   Cosmic Microwave Background Measurements}.
 \newblock {\em Review of Scientific Instruments}, page~28, December 2011.
-
-\bibitem{Lanting2006}
-Trevor~Michael Lanting.
-\newblock {\em {Multiplexed Readout of Superconducting Bolometers for
-  Cosmological Observations}}.
-\newblock PhD thesis, Berkeley, 2006.
 
 \bibitem{Hubmayr2009}
 Johannes Hubmayr.
