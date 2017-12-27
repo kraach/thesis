@@ -89,37 +89,48 @@ This is important for minimizing the weight of the payload.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ac{EBEX} was a balloon-borne telescope designed to measure the polarization of the \ac{CMB}.
+The goals of the project were to:
+\begin{itemize}
+\item measure or put an upper limit on the B-mode polarization signal due to primordial gravitational waves%, a tensor-to-scalar ratio 
+\item measure the polarization of the galactic foregrounds, in particular galactic dust
+\item measure the B-mode polarization signal due to lensing and effectively separate it from the signal due to gravity waves
+\item provide an important milestone in the implementation and testing of detectors, detector readout, optics, and polarimetry techniques being considered for a future NASA CMB polarization satellite
+\end{itemize}
+This thesis contributes to the final item, in particular, the implementation and testing of the detectors and their readout. 
+
 \ac{EBEX} was an off-axis Gregorian
 %dragone ???
  telescope flown on an Antarctic long duration balloon flight supported by \ac{NASA}'s \ac{CSBF}. 
-The outerframe carried the pointing control, the experiment power, and the flight control computer. 
+The outer frame carried the pointing control, the experiment power, and the flight control computer. 
 The inner frame carried the 1.5~m primary mirror, the 1~m secondary mirror, the cryostat, and the readout electronics. 
-Figure~\ref{fig:outer_frame} shows the telescope when it is ready for launch.
-The majority of the telescope is surrounded by mylar-covered baffling. 
-
-
-
-
-There were three observation frequency bands, designed to be centered around 150, 250, and 410~GHz. 
-%There were the highest number of channels in the \ac{CMB} peak channels, the low frequency band.
-The lowest frequency band was the \ac{CMB} observation band. 
-The higher frequency bands were included to measure the polarization of the galactic dust so it could be accurately subtracted from the \ac{CMB} observation band. 
-Foreground subtraction was predicted to be necessary because, even in the clean planned observation sky patch of $\sim$400 deg$^2$, the dust was predicted to dominate the primordial gravitational B-mode signal. 
-The motor controller overheated during flight, so the scan pattern was actually determined by the rotation of the gondola hanging from the balloon. 
-The final observation patch was a $\sim$6000 deg$^2$ strip of constant declination.%between -66$^\circ$ and -40$^\circ$
-
+The left panel of Figure~\ref{fig:outer_frame} is a model of the outer frame. 
+The right panel of Figure~\ref{fig:outer_frame} is the instrument in a similar configuration to the model, but is a photograph of it hanging on the launch pad. 
+The majority of the telescope is surrounded by shiny mylar-covered baffling meant to protect it from the light of the sun. 
+The solar panels were mounted to the back of the telescope to be constantly charging while the telescope front was set to point anti-sun. 
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[height=3.2in]{figures/ebex_model.png}
 \includegraphics[height=3.2in]{figures/ebex_hanging.png}
-\caption[Outer frame, model and photograph]{Left: Model of \ac{EBEX} outer frame. There is a green cylinder showing the path of light entering the telescope via the teal scoop. Neon green radiation panels surround the scoop. The solid grey panels are the mylar-covered baffling. Attached to the rear, a single solar panel is visible as a black grid on a grey rectangle. Figure courtesy of Kyle Zilic. Right: Photograph of \ac{EBEX} hanging on launch vehicle. Photograph courtesy of Asad Aboobaker. 
+\caption[Outer frame, model and photograph]{Left: Model of \ac{EBEX} outer frame \cite{Zilic2014}. There is a green cylinder showing the path of light entering the telescope via the teal scoop. Neon green radiation panels surround the scoop. The solid grey panels are the mylar-covered baffling. Attached to the rear, a single solar panel is visible as a black grid on a grey rectangle. Right: Photograph of \ac{EBEX} hanging on launch vehicle. Photograph courtesy of Asad Aboobaker. 
 \label{fig:outer_frame} }
 \end{center}
 \end{figure}
 
+The path of light through the telescope is shown in Figure~\ref{fig:optical_path}. 
+Light bounces off the primary mirror, is reflected into the cryostat by the secondary mirror. 
+\textcolor{red}{when you talk about the cryostat, you need to talk about the two windows and why we needed them and what was the radiative load expected from just the thin window and how did it compare to that of the thick window. (you need this in part because you mention the two windows in Section~\ref{sec:radiative_load}}
+It is filtered and sent through a continuously rotating half-wave plate. 
+Half of the light passes through the polarizing grid to the horizontal focal plane and half of the light is reflected onto the vertical focal plane. 
 Figure~\ref{fig:cryo_innards} shows a model of the interior of the cryostat and a photograph of the optical elements housed inside the optics box. 
 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[height=3.2in]{figures/ebex_optical_path.png}
+\caption[EBEX optical path]{Path of light, the multicolored bundle of rays, through \ac{EBEX}. It first strikes the primary mirror, is reflected onto the secondary mirror, passes through the cryostat window, and is focused onto the cold aperture stop where the half-wave plate is mounted. From there it is imaged onto the two focal planes. 
+\label{fig:optical_path} }
+\end{center}
+\end{figure}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -130,15 +141,35 @@ Figure~\ref{fig:cryo_innards} shows a model of the interior of the cryostat and 
 \end{center}
 \end{figure}
 
+There were three observation frequency bands, designed to be centered around 150, 250, and 410~GHz. 
+There were two focal planes and each consisted of seven wafers of detectors, four at 150~GHz, two at 250~GHz, and one at 410~GHz, see Figure~\ref{fig:focal_plane}.
+%There were the highest number of channels in the \ac{CMB} peak channels, the low frequency band.
+The lowest frequency band was the \ac{CMB} observation band. 
+The higher frequency bands were included to measure the polarization of the galactic dust so it could be accurately subtracted from the \ac{CMB} observation band. 
+Foreground subtraction was predicted to be necessary because, even in the clean planned observation sky patch of $\sim$400 deg$^2$, the dust was predicted to dominate the primordial gravitational B-mode signal. 
+The motor controller overheated during flight, so the scan pattern was actually determined by the rotation of the gondola hanging from the balloon. 
+The final observation patch was a $\sim$6000 deg$^2$ strip of constant declination.%between -66$^\circ$ and -40$^\circ$
+
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[height=2.0in]{figures/focal_plane_outline_central_labeled.png}
 \includegraphics[height=2.0in]{figures/focal_plane_photo.png}
-\caption[EBEX focal plane]{Top: An exploded model of the focal plane. Light passes through low pass filters (not pictured), to the feedhorns and waveguides, to the bolometers in their integrating cavities below. Each wafer is mounted to an invar plate which is attached to an aluminum wafer/\ac{LC} mount. The wafer is wirebonded to an \ac{LC} board. Note the central \ac{LC} board is offset into the space behind the wafer/\ac{LC} mounts. There is a copper heat sink ring around the perimeter and attaching to each invar plate. The entire assembly is enclosed with an RF cover. Bottom: The silicon detector wafers wirebonded to their \ac{LC} boards. The wafer assemblies are sitting atop the gold-plated waveguide and horn array. The copper pigtails are leading off the edge of the photograph, but when fully assembled are routed through the wiring towers. The 410~GHz wafer with its offset \ac{LC} board is not included in the photograph. 
+\caption[EBEX focal plane]{Top: An exploded model of the focal plane. Light passes through low pass filters (not pictured), to the feedhorns and waveguides, to the bolometers in their integrating cavities below. Each wafer is mounted to an invar plate which is attached to an aluminum wafer/\ac{LC} mount. The wafer is wirebonded to an \ac{LC} board. Note, the central \ac{LC} board is offset into the space behind the wafer/\ac{LC} mounts. There is a copper heat sink ring around the perimeter and attaching to each invar plate. The entire assembly is enclosed by an RF cover. Bottom: The silicon detector wafers wirebonded to their \ac{LC} boards. The wafer assemblies are sitting atop the gold-plated waveguide and horn array. The copper pigtails are leading off the edge of the photograph, but when fully assembled are routed through the wiring towers. The 410~GHz wafer with its offset \ac{LC} board is not included in the photograph. 
 \label{fig:focal_plane} }
 \end{center}
 \end{figure}
 
+Within each focal plane, \textcolor{red}{talk about 
+\begin{itemize}
+\item the wafer mounting procedure. 
+\item the readout procedure
+\end{itemize}
+}
+
+%\textcolor{red}{in Section~\ref{sec:detector_characterization} you say "the wafer was mounted and coupled to the readout electronics as was done for flight, Section~\ref{sec:ebex}". 
+%So. 
+%Here. You need to describe the wafer mounting procedure and how the signal is read out. 
+%Perhaps you will make a subsection and reference that subsection when referencing how the wafer was mounted and coupled to readout?}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -149,19 +180,16 @@ Figure~\ref{fig:cryo_innards} shows a model of the interior of the cryostat and 
 \end{figure}
 
 
- \textcolor{red}{Do you want to include the spectra we thought we could get observing the patch we thought we were going to observe?}
+% \textcolor{red}{Do you want to include the spectra we thought we could get observing the patch we thought we were going to observe?}
  
- \textcolor{red}{Do you want to include the patch we thought we were going to observe? And the swath of sky we did observe?}
+ %\textcolor{red}{Do you want to include the patch we thought we were going to observe? And the swath of sky we did observe?}
 
 %The launching, tracking, and recovering were done by ...
 %Describe cryostat, gondola. 
 
-\textcolor{red}{when you talk about the cryostat, you need to talk about the two windows and why we needed them and what was the radiative load expected from just the thin window and how did it compare to that of the thick window. (you need this in part because you mention the two windows in Section~\ref{sec:radiative_load}}
 
-\textcolor{red}{in Section~\ref{sec:detector_characterization} you say "the wafer was mounted and coupled to the readout electronics as was done for flight, Section~\ref{sec:ebex}". 
-So. 
-Here. You need to describe the wafer mounting procedure and how the signal is read out. 
-Perhaps you will make a subsection and reference that subsection when referencing how the wafer was mounted and coupled to readout?}
+
+
 
 %\textcolor{red}{Do you want/need to include the 410 wafer mount stuff?}
  
