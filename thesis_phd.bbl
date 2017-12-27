@@ -1,5 +1,23 @@
 \begin{thebibliography}{10}
 
+\bibitem{Guth1981}
+A.~H. Guth.
+\newblock Inflationary universe: a possible solution to the horizon and
+  flatness problems.
+\newblock {\em Physical Review D}, 23:347--356, jan 1981.
+
+\bibitem{Linde1982}
+A.~Linde.
+\newblock A new inflationary universe scenario: A possible solution of the
+  hori- zon, flatness, homogeneity, isotropy and primordial monopole problems.
+\newblock {\em Phys Lett B}, 108:389, 1982.
+
+\bibitem{Spergel2007}
+D.N. Spergel et~al.
+\newblock Three-year wilkinson microwave anisotropy probe (wmap) observations:
+  Im- plications for cosmology.
+\newblock {\em Astrophysical Journal Supplement}, 170:377--408, jun 2007.
+
 \bibitem{Bao2015}
 Chaoyun Bao.
 \newblock {\em Foreground Cleaning for Cosmic Microwave Background Polarimeters
@@ -106,6 +124,11 @@ J.~B. Peterson and P.~L. Richards.
 \newblock {\em International Journal of Infrared and Millimeter Waves},
   5(12):1507--1515, December 1984.
 
+\bibitem{EBEXPaper2}
+{The EBEX Collaboration}.
+\newblock {EBEX Paper 2}.
+\newblock {\em ApJ}, 2017.
+
 \bibitem{Francois2012}
 Aubin Francois.
 \newblock {\em {Detector readout electronics for EBEX : a balloon-borne cosmic
@@ -118,10 +141,5 @@ Martin~E Huber, Patricia~A Neil, Robert~G Benson, Deborah~A Burns, Alan~M
   John~M Martinis.
 \newblock {DC SQUID Series Array Amplifiers with 120 MHz Bandwidth}.
 \newblock {\em IEEE Transactions on Applied Superconductivity}, I(I), 2001.
-
-\bibitem{EBEXPaper2}
-{The EBEX Collaboration}.
-\newblock {EBEX Paper 2}.
-\newblock {\em ApJ}, 2017.
 
 \end{thebibliography}
