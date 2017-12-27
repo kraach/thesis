@@ -55,7 +55,7 @@ The average \ac{LDB} flight duration from McMurdo, Antarctica is 10-15~days, and
 While this is much shorter than the operation time of a ground-based telescope, the additional detector sensitivity achievable above the majority of the atmosphere can make it worth it. 
 Section~\ref{sec:detector_design} discusses the detector design modifications we performed to optimize the detector sensitivity for a space-like environment. 
 The typical flight altitude is around 36~km, above approximately 98\% of the atmosphere. 
-At this altitude, and at an elevation of 45$^\circ$, the radiative load from the atmosphere decreases to less than 0.04~pW for the 150 and 250~GHz observation bands and to around 2~pW for the 410~GHz observation band \cite{Bao2015}. 
+At this altitude, and at an elevation of 45$^\circ$, the radiative load from the atmosphere is less than 0.04~pW for the 150 and 250~GHz observation bands and to around 2~pW for the 410~GHz observation band \cite{Bao2015}. 
 %sure would be nice if you could say what it is on the ground and say what is assumed about precipital water vapor
 
 Another challenge in ballooning is the limited bandwidth available for transmitting data to and from the payload. 
@@ -94,9 +94,18 @@ The goals of the project were to:
 \item measure or put an upper limit on the B-mode polarization signal due to primordial gravitational waves%, a tensor-to-scalar ratio 
 \item measure the polarization of the galactic foregrounds, in particular galactic dust
 \item measure the B-mode polarization signal due to lensing and effectively separate it from the signal due to gravity waves
+\item measure the E-mode polarization signal
 \item provide an important milestone in the implementation and testing of detectors, detector readout, optics, and polarimetry techniques being considered for a future NASA CMB polarization satellite
 \end{itemize}
 This thesis contributes to the final item, in particular, the implementation and testing of the detectors and their readout. 
+
+\ac{EBEX} had three observation frequency bands, designed to be centered around 150, 250, and 410~GHz. 
+%There were the highest number of channels in the \ac{CMB} peak channels, the low frequency band.
+The lowest frequency band was the \ac{CMB} observation band. 
+The higher frequency bands were included to measure the polarization of the galactic dust so it could be accurately subtracted from the \ac{CMB} observation band. 
+Foreground subtraction was predicted to be necessary because, even in the planned observation clean sky patch of $\sim$400 deg$^2$, the dust was predicted to dominate the primordial gravitational B-mode signal \cite{Bao2015}. 
+The motor controller overheated during flight, so the scan pattern was actually determined by the rotation of the gondola hanging from the balloon. 
+The final observation patch was a $\sim$6000 deg$^2$ strip of constant declination.%between -66$^\circ$ and -40$^\circ$
 
 \ac{EBEX} was an off-axis Gregorian
 %dragone ???
@@ -105,7 +114,7 @@ The outer frame carried the pointing control, the experiment power, and the flig
 The inner frame carried the 1.5~m primary mirror, the 1~m secondary mirror, the cryostat, and the readout electronics. 
 The left panel of Figure~\ref{fig:outer_frame} is a model of the outer frame. 
 The right panel of Figure~\ref{fig:outer_frame} is the instrument in a similar configuration to the model, but is a photograph of it hanging on the launch pad. 
-The majority of the telescope is surrounded by shiny mylar-covered baffling meant to protect it from the light of the sun. 
+The majority of the telescope was surrounded by mylar-covered baffling protecting it from the light of the sun. 
 The solar panels were mounted to the back of the telescope to be constantly charging while the telescope front was set to point anti-sun. 
 
 \begin{figure}[htbp]
@@ -118,10 +127,15 @@ The solar panels were mounted to the back of the telescope to be constantly char
 \end{figure}
 
 The path of light through the telescope is shown in Figure~\ref{fig:optical_path}. 
-Light bounces off the primary mirror, is reflected into the cryostat by the secondary mirror. 
-\textcolor{red}{when you talk about the cryostat, you need to talk about the two windows and why we needed them and what was the radiative load expected from just the thin window and how did it compare to that of the thick window. (you need this in part because you mention the two windows in Section~\ref{sec:radiative_load}}
-It is filtered and sent through a continuously rotating half-wave plate. 
-Half of the light passes through the polarizing grid to the horizontal focal plane and half of the light is reflected onto the vertical focal plane. 
+Light bounced off the primary mirror and was reflected into the cryostat by the secondary mirror. 
+The light entered the cryostat via an \ac{UHMWPE} 1.0~mm window, transparent to mm-wave light. 
+On the ground, this window under vacuum would have deflected enough to damage the filters beneath it. 
+The telescope had a double window mechanism mounted to the top of the cryostat, Figure~\ref{fig:double_window}. 
+On the ground, there was an additional \ac{UHMWPE} window of thickness 12.7~mm above the thin window. 
+At float, the thick window was rolled back. 
+Once the light entered the cryostat, it was filtered and passed through a half-wave plate continuously rotating at 1.235~Hz. 
+There was a polarizing grid through which half of the light passed and was focused onto the horizontal focal plane.
+The other half of the light reflected off of the polarizing grid and was focused onto the vertical focal plane. 
 Figure~\ref{fig:cryo_innards} shows a model of the interior of the cryostat and a photograph of the optical elements housed inside the optics box. 
 
 \begin{figure}[htbp]
@@ -134,6 +148,14 @@ Figure~\ref{fig:cryo_innards} shows a model of the interior of the cryostat and 
 
 \begin{figure}[htbp]
 \begin{center}
+\includegraphics[height=3.2in]{figures/double_window.png}
+\caption[EBEX double window]{The \ac{EBEX} double window design. On the ground, there were two windows under vacuum. At float, the thick 12.7~mm window was rolled back and only the thin 1.0~mm window remained in the light path. \cite{Zilic2014}
+\label{fig:double_window} }
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
 \includegraphics[width=0.48\columnwidth]{figures/ebex_cryostat_cross_section.png}
 \includegraphics[width=0.48\columnwidth]{figures/cryo_innards.png}
 \caption[EBEX cryostat cross section and interior optics elements]{Left: Cross-section of \ac{EBEX} cryostat model. The grey shells are the toroidal cryogen tanks and vapor cooled shells. Light is represented as neon green rays. The light passes through the window, the filter stack, the continuously rotating half-wave plate, lenses, and is split at the polarizing grid. Half of the photons continue to the horizontally mounted focal plane below and the other half are reflected to the vertically mounted focal plane to the side. Right: Photograph of \ac{EBEX} cold plate and optics elements beneath the half-wave plate. The half-wave plate sits above the stop at the top of the stack shown. The orange circle at a 45$^\circ$ angle is the polarizing grid. The focal planes are the gold plated enclosures with the wiring towers beneath them. The structures are supported by thin walled vespel legs. One of the Simon Chase helium adsorption refrigerators is visible mounted to the cold plate on the lower left of the photograph. 
@@ -141,14 +163,9 @@ Figure~\ref{fig:cryo_innards} shows a model of the interior of the cryostat and 
 \end{center}
 \end{figure}
 
-There were three observation frequency bands, designed to be centered around 150, 250, and 410~GHz. 
-There were two focal planes and each consisted of seven wafers of detectors, four at 150~GHz, two at 250~GHz, and one at 410~GHz, see Figure~\ref{fig:focal_plane}.
-%There were the highest number of channels in the \ac{CMB} peak channels, the low frequency band.
-The lowest frequency band was the \ac{CMB} observation band. 
-The higher frequency bands were included to measure the polarization of the galactic dust so it could be accurately subtracted from the \ac{CMB} observation band. 
-Foreground subtraction was predicted to be necessary because, even in the planned observation clean sky patch of $\sim$400 deg$^2$, the dust was predicted to dominate the primordial gravitational B-mode signal \cite{Bao2015}. 
-The motor controller overheated during flight, so the scan pattern was actually determined by the rotation of the gondola hanging from the balloon. 
-The final observation patch was a $\sim$6000 deg$^2$ strip of constant declination.%between -66$^\circ$ and -40$^\circ$
+
+There were two focal planes and each focal plane consisted of seven wafers of detectors, four at 150~GHz, two at 250~GHz, and one at 410~GHz, see Figure~\ref{fig:focal_plane}.
+
 
 \begin{figure}[htbp]
 \begin{center}
