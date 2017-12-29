@@ -24,8 +24,7 @@
 %Measurements of B-mode polarization due to primordial gravity waves would tell us about the earliest moments in the history of the universe. (and interesting things like the energy scale of inflation and may confirm or rule out expansion models).
 %Measurements of B-mode polarization due to other stuff tells us about that other stuff. 
 We seek to answer a fundamental question in cosmology:  how did the universe we know today (the galaxies, the stars, and the planets) come about?  
-Shortly after the big bang, the universe underwent a period of exponentially accelerated expansion, an epoch called inflation \cite{Guth1981} \cite{Linde1982} \cite{peebles}. 
-There is much evidence to suggest inflation is the correct model for the early universe \cite{Spergel2007} \cite{Tegmark2006} \cite{PlanckXIII} \cite{PlanckXX}. 
+Shortly after the big bang, the universe underwent a period of exponentially accelerated expansion, an epoch called inflation \cite{Guth1981} \cite{Linde1982} \cite{peebles} \cite{Spergel2007} \cite{Tegmark2006} \cite{PlanckXIII} \cite{PlanckXX}.  
 The \ac{CMB}, the oldest light in the universe, has a curl-free, or 'E-mode', polarization pattern produced by primordial energy density perturbations.
 The E-mode polarization is at a level of 1~$\mu K$ and has been measured by several groups \cite{leitch2005} \cite{montroy2006} \cite{wu2007} \cite{sievers2007} \cite{nolta2009}. 
 Inflation predicts the existence of a stochastic background of gravitational waves which also left a curl component, or 'B-mode', in the polarization of the \ac{CMB}.  
@@ -37,6 +36,12 @@ where $V$ is the inflaton potential and r is the tensor to scalar ratio.
 The tensor to scalar ratio, r, quantifies the strength of gravity waves during inflation.  
 There is also a B-mode polarization pattern due to gravitational lensing of the E-mode polarization \cite{polarbear2014} \cite{naess2014} \cite{keisler2015}.
 Figure~\ref{fig:cmb_spectra} shows the predicted E- and B-mode polarization power spectra of the \ac{CMB}.
+\textcolor{red}{assuming a lamba-cdm cosmology 
+what is r? r = 0.05 (should I talk more about what this means?? what cosmological models are ruled out? which are favored and why are they favored (because they're simple)?)
+what is tau?
+also. ends too abruptly. continue motivating.
+e.g. you must mention the polarized galactic dust foregrounds which contaminate signal
+}
 
 %Such a limit would have significant consequences because it rules out the simplest, most favorable models of inflation.  
 %The theory of inflation posits the universe underwent exponential expansion in only 
@@ -67,24 +72,29 @@ Figure~\ref{fig:cmb_spectra} shows the predicted E- and B-mode polarization powe
 %The advantages. 
 %The disadvantages. 
 
-High-altitude balloons are powerful platforms for achieving low budget and fast, relative to satellites, astrophysical studies. 
-The high altitude observation environment also enables measurement of frequencies inaccessible on the ground ($>$ 350~GHz). The high frequency data are critical to determine the spectra of dust so the dust foreground can be subtracted from the signal. 
+High-altitude balloons, relative to satellites, are powerful platforms for achieving low budget and fast astrophysical studies. 
+The high altitude observation environment also enables measurement of frequencies inaccessible on the ground. 
+%why shouldn't I say which frequencies these are?
+The high frequency data are critical to determine the spectra of dust so the dust foreground can be subtracted from the signal. 
 
 One challenge in ballooning is the length of observation. 
 Figure~\ref{fig:flight_trajectory} shows the \ac{EBEX} flight path. 
-The average \ac{LDB} flight duration from McMurdo, Antarctica is 10-15~days, and the longest flights have lasted more than 40~days.  
-While this is much shorter than the operation time of a ground-based telescope, the additional detector sensitivity achievable above the majority of the atmosphere can make it worth it. 
+The average \ac{LDB} flight duration from McMurdo, Antarctica is 18~days, and the longest flights have lasted more than 40~days.  
+While this is much shorter than the operation time of a ground-based telescope, the factor of \textcolor{red}{$\sim$XXX} increase in instantaneous detector sensitivity in the space-like environment can make a high-altitude balloon experiment worthwhile. 
+%can you be quantitative? can you just approximate? if apexsz-150 load was 15pW (target 30pW) and ebex load was 2.5pW(target 7.5pW) and sensitivity is dominated by photon nep and photon nep is proportional to square root of Popt ... then nep_apex/nep_ebex = sqrt(15/2.5) or sqrt(30/7.5)
 Section~\ref{sec:detector_design} discusses the detector design modifications we performed to optimize the detector sensitivity for a space-like environment. 
 The typical flight altitude is around 36~km, above approximately 98\% of the atmosphere. 
 At this altitude, and at an elevation of 45$^\circ$, the radiative load from the atmosphere is less than 0.04~pW for the 150 and 250~GHz observation bands and to around 2~pW for the 410~GHz observation band \cite{Bao2015}. 
 %sure would be nice if you could say what it is on the ground and say what is assumed about precipital water vapor
 
-Another challenge in ballooning is the limited bandwidth available for transmitting data to and from the payload. 
-This makes sending compact commands to operate the entire detector array essential and  recovering the payload of critical importance. 
+%Shaul says this doesn't go anywhere. he's right. I don't want to make it go anywhere for now. just remove...
+%Another challenge in ballooning is the limited bandwidth available for transmitting data to and from the payload. 
+%This makes sending compact commands to operate the entire detector array essential and  recovering the payload of critical importance. 
 
 There are several advantages to Antarctic balloon flights. 
-One, favorable wind patterns set up in the austral summer to bring the balloon around in a circle, usually staying over the continent, and coming back to roughly where it began, see Figure~\ref{fig:flight_trajectory}. 
-Two, the continent is sparsely populated so there is little danger of injuring anyone or anything. 
+Favorable wind patterns set up in the austral summer to bring the balloon around in a circle, usually staying over the continent, and coming back to roughly where it began, see Figure~\ref{fig:flight_trajectory}. 
+The continent is sparsely populated so there is little danger of injuring anyone or anything. 
+Antarctic flights offer the longest flights on the planet with the highest probability of data recovery. 
 Three, during the austral summer in Antarctica, the payloads are exposed to the sun around the clock. 
 The batteries need to provide just enough power to make it through launch and ascent and then the sun exposure allows for constant charging of the solar panels to power the experiment. 
 This is important for minimizing the weight of the payload. 
