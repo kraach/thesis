@@ -221,11 +221,11 @@ Note, for the \ac{DfMUX} system, there is an additional factor of $\sqrt{2}$ in 
 
 The sensitivity of the detectors is quantified by their \ac{NEP}. 
 %should I instead say sensitivity of the instrument?
-\ac{NEP} is defined as the absorbed power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz. 
+\ac{NEP} is defined as the absorbed power required to produce a signal-to-noise ratio of one in a  bandwidth of one~Hz. 
 For purposes of brevity, we will also refer to the \ac{NEP} simply as noise. 
 % \ac{NEP} is a measure of signal-to-noise, we will use the terms noise and \ac{NEP} interchangeably. 
 %\textcolor{red}{That sounds like a stupid idea.}
-There are four main contributors to the \ac{TES} bolometer \ac{NEP}: electronic readout noise, Johnson noise, phonon noise, and photon noise. 
+There are four contributors to the \ac{TES} bolometer \ac{NEP}: electronic readout noise, Johnson noise, phonon noise, and photon noise. 
 %not important?
 %Note, sometimes \ac{NEP} is instead defined as the \textit{incident} power required to produce a signal-to-noise ratio of one in an electrical bandwidth of one~Hz, \textcolor{red}{cite who??}.
 The total predicted detector \ac{NEP}, $N$, is given by 
@@ -389,7 +389,7 @@ The left edge of the bilayer overlapped the bling, right panel of Figure~\ref{fi
 
 %Discuss target detector parameters. Be very clear about which changes were made to fabrication process in order to optimize the detector sensitivity for a space-like environment and for EBEX.
 
-\subsubsection{Ideal Normal Resistance} 
+\subsubsection{Normal Resistance} 
 
 The \ac{TES} bolometer response would be unstable if it were underdamped or had exponentially increasing oscillations \cite{Enss2005}. 
 The goal was to ensure the detector, when biased in the transition, remained in the stable regime.  
@@ -431,7 +431,7 @@ For a detector dropped to 85\% in the transition, a normal resistance of 1.5~$\O
 
 
 
-\subsubsection{Ideal Transition Temperature} 
+\subsubsection{Transition Temperature} 
 
 %\textcolor{red}{Need to generate: plot of phonon noise as a function of critical temperature, given a fixed ebex bath temperature of 260~mK.}
 
@@ -471,7 +471,7 @@ This put the target critical temperature for all \ac{EBEX} observation frequency
 \end{center}
 \end{figure}
 
-\subsubsection{Ideal Thermal Conductance}
+\subsubsection{Thermal Conductance}
 
 %\textcolor{red}{It's not obvious that/why a decrease in radiative load can equate to an increase in detector sensitivity. This needs to be spelled out clearly somewhere. Here?}
 
@@ -506,9 +506,13 @@ This design goal provided a safety factor of 2.5, for all observation frequency 
 \centering
 \begin{tabular}{| c | c | c | c | c | c  |}\hline
 Freq (GHz) & $P_{input}$ (pW) & $\epsilon$ & $P_{absorbed}$ (pW) & $\times$ Safety Factor & Target $\overline{G}$ \\ \hline
-150 & 2.4 & 0.6 & 1.4  & 3.6 & 20  \\
-250 & 7.3 & 0.5 & 3.7 & 9.1 & 50  \\
-410 & 12 & 0.4 & 4.7 & 11.6 & 60  \\ \hline
+%150 & 2.4 & 0.6 & 1.4  & 3.6 & 19  \\
+%250 & 7.3 & 0.5 & 3.7 & 9.1 & 48  \\  %this predicted Gbar doesn't agree with paper (48 vs 45)
+%410 & 12 & 0.4 & 4.7 & 11.6 & 61  \\ \hline  %this predicted Gbar doesn't agree with paper (61 vs 63) 
+%rounding errors???
+150 & 2.4 & 0.6 & 1.4  & 4 & 19  \\
+250 & 7.3 & 0.5 & 3.7 & 9 & 45  \\
+410 & 12 & 0.4 & 4.7 & 12 & 63  \\ \hline
 \end{tabular}
 \caption[Target average thermal conductance calculations]{For each observation frequency, the path to the target average thermal conductance. $P_{input}$ was calculated given all of the predicted transmissions and reflections of all of the optical elements. $\epsilon$ is the detector absorption efficiency assumed. $P_{absorbed}$ is the predicted absorbed power, $P_{input} \cdot \epsilon$. All frequency bands were multiplied by a safety factor of 2.5. The target $\overline{G}$ was $P_{absorbed}/\Delta T$, where $\Delta T$ was the target $T_{crit}$=0.44~K minus the expected $T_{ebex}$=0.25~K.
 \label{tab:target_gbar} }
@@ -516,7 +520,7 @@ Freq (GHz) & $P_{input}$ (pW) & $\epsilon$ & $P_{absorbed}$ (pW) & $\times$ Safe
 
 
 
-\subsubsection{Ideal Time Constant}
+\subsubsection{Time Constant}
 
 %\textcolor{red}{You should talk about time constants... BUT. Your analysis was super simple. And what they did for the paper was much better. So... What do you do? Are you able to write anything intelligent (and correct) about time constants in a small amount of time?}
 %
