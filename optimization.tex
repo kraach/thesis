@@ -93,20 +93,21 @@ where we define $\alpha$ to be a unitless measure of the slope of the resistance
 \alpha \equiv \frac{d\log{R}}{d\log{T}} = \frac{T}{R} \frac{dR}{dT}
 \end{equation}
 Since the slope of the resistance versus temperature curve is positive for a \ac{TES}, the change in power is opposite in sign to the change of temperature. 
-This negative electrothermal feedback holds the detector at the edge of its transition. 
+This negative electrothermal feedback holds the detector between normal and superconducting, at the edge of its transition. 
 
 Qualitatively, the voltage bias is chosen such that the detector is heated just enough to hold the \ac{TES} between normal and superconducting. 
 When the radiative load changes, the \ac{TES} warms (cools). 
 This change in temperature moves the detector up (down) its R vs T curve. 
 %That is, the resistance of the \ac{TES} increases (decreases) in response to an increase (decrease) in radiative load. 
 In response to the increase (decrease) in resistance, the Joule heating decreases (increases) and the detector cools (warms). 
-For small changes in temperature, this feedback holds the detector on the edge of the transition. 
+For small changes in temperature, this feedback holds the detector at the transition between normal and superconducting. 
 The voltage bias is constant and so the excursions in resistance change the current through the detector and this is what we measure. 
 %For flight, we calibrated on a known source in the sky to determine how much the current measured changed given a known amount of power from the sky.   %NOT RELEVANT
 
 \subsubsection{Responsivity}
 
-To derive the detector responsivity we follow Richards~\cite{Richards} and Lee~\cite{Lee1998}.
+%To derive the detector responsivity we follow Richards~\cite{Richards} and Lee~\cite{Lee1998}.
+To derive the detector responsivity we follow \cite{Richards} and \cite{Lee1998}.
 The radiative signal absorbed by the detector consists of a steady state power~$P_{0}$ and a time varying signal of amplitude~$\delta P$ and frequency~$\omega$
 \begin{equation}
 P_{rad} = P_{0} + \delta P e^{i\omega t}
@@ -126,7 +127,9 @@ The total output power is the steady state power flow to the bath, Equation~\ref
 P_{out} = \overline{G}\Delta T + G \delta T e^{i\omega t} + i\omega C \delta T e^{i\omega t}
 \label{eq:pout}
 \end{equation}
-Conservation of power equates Equation~\ref{eq:pin} and Equation~\ref{eq:pout}. 
+%shaul didn't like the following, but I think it was fine...
+%Conservation of power equates Equation~\ref{eq:pin} and Equation~\ref{eq:pout}. 
+Power is conserved, so Equation~\ref{eq:pin} equals Equation~\ref{eq:pout}.
 The time-independent portion is 
 \begin{equation}
 P_{0} + \frac{V^{2}_{bias}}{R} = \overline{G}\Delta T 
