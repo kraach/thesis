@@ -119,14 +119,15 @@ This is important for minimizing the weight of the payload.
 \label{sec:ebex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ac{EBEX} was a balloon-borne telescope designed to measure the polarization of the \ac{CMB}.
+\ac{EBEX} was a balloon-borne telescope flown on an Antarctic long duration balloon flight supported by \ac{NASA}'s \ac{CSBF}. 
+\ac{EBEX} was designed to measure the polarization of the \ac{CMB}.
 The goals of the project were to:
 \begin{itemize}
 \item measure or put an upper limit on the B-mode polarization signal due to primordial gravitational waves%, a tensor-to-scalar ratio 
 \item measure the polarization of the galactic foregrounds, in particular galactic dust
 \item measure the B-mode polarization signal due to lensing and effectively separate it from the signal due to gravity waves
 \item measure the E-mode polarization signal
-\item provide an important milestone in the implementation and testing of detectors, detector readout, optics, and polarimetry techniques being considered for a future NASA CMB polarization satellite
+\item provide a milestone in the implementation and testing of detectors, detector readout, optics, and polarimetry techniques being considered for a future NASA CMB polarization satellite
 \end{itemize}
 This thesis contributes to the final item, in particular, the implementation and testing of the detectors and their readout. 
 
@@ -135,15 +136,16 @@ This thesis contributes to the final item, in particular, the implementation and
 The lowest frequency band was the \ac{CMB} observation band. 
 The higher frequency bands were included to measure the polarization of the galactic dust so it could be accurately subtracted from the \ac{CMB} observation band. 
 Foreground subtraction was predicted to be necessary because, even in the planned observation clean sky patch of $\sim$400 deg$^2$, the dust was predicted to dominate the primordial gravitational B-mode signal \cite{Bao2015}. 
-The motor controller overheated during flight, so the scan pattern was actually determined by the rotation of the gondola hanging from the balloon. 
-The final observation patch was a $\sim$6000 deg$^2$ strip of constant declination.%between -66$^\circ$ and -40$^\circ$
+%Don't talk about this here? Don't talk about it at all?
+%The motor controller overheated during flight, so the scan pattern was actually determined by the rotation of the gondola hanging from the balloon. 
+%The final observation patch was a $\sim$6000 deg$^2$ strip of constant declination.%between -66$^\circ$ and -40$^\circ$
 
 \ac{EBEX} was an off-axis Gregorian
 %dragone ???
- telescope flown on an Antarctic long duration balloon flight supported by \ac{NASA}'s \ac{CSBF}. 
+ telescope.
 The outer frame carried the pointing control, the experiment power, and the flight control computer. 
 The inner frame carried the 1.5~m primary mirror, the 1~m secondary mirror, the cryostat, and the readout electronics. 
-The left panel of Figure~\ref{fig:outer_frame} is a model of the outer frame. 
+The left panel of Figure~\ref{fig:outer_frame} is a model of \ac{EBEX}. 
 The right panel of Figure~\ref{fig:outer_frame} is the instrument in a similar configuration to the model, but is a photograph of it hanging on the launch pad. 
 The majority of the telescope was surrounded by mylar-covered baffling protecting it from the light of the sun. 
 The solar panels were mounted to the back of the telescope to be constantly charging while the telescope front was set to point anti-sun. 
@@ -152,7 +154,7 @@ The solar panels were mounted to the back of the telescope to be constantly char
 \begin{center}
 \includegraphics[height=3.2in]{figures/ebex_model.png}
 \includegraphics[height=3.2in]{figures/ebex_hanging.png}
-\caption[Outer frame, model and photograph]{Left: Model of \ac{EBEX} outer frame \cite{Zilic2014}. There is a green cylinder showing the path of light entering the telescope via the teal scoop. Neon green radiation panels surround the scoop. The solid grey panels are the mylar-covered baffling. Attached to the rear, a single solar panel is visible as a black grid on a grey rectangle. Right: Photograph of \ac{EBEX} hanging on launch vehicle. Photograph courtesy of Asad Aboobaker. 
+\caption[EBEX model and photograph]{Left: Model of \ac{EBEX} \cite{Zilic2014}. There is a green cylinder showing the path of light entering the telescope via the teal scoop. Neon green radiation panels, to dissipate power from the readout electronics at float, surround the scoop. The solid grey panels are the mylar-covered baffling. Attached to the rear, a single solar panel is visible as a black grid on a grey rectangle. Right: Photograph of \ac{EBEX} hanging on the launch vehicle in Antarctica. Photograph courtesy of Asad Aboobaker. 
 \label{fig:outer_frame} }
 \end{center}
 \end{figure}
