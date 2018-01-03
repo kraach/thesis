@@ -89,11 +89,23 @@ Chaoyun Bao.
   in the Presence of Instrumental Effects}.
 \newblock PhD thesis, University of Minnesota, 2015.
 
+\bibitem{EBEXPaper3}
+{The EBEX Collaboration}.
+\newblock {EBEX Paper 3}.
+\newblock {\em Astrophysical Journal}, 2016.
+
 \bibitem{Zilic2014}
 Kyle Zilic.
 \newblock {\em Calibration and Design of the E and B EXperiment (EBEX)
   Cryogenic Receiver}.
 \newblock PhD thesis, University of Minnesota, 2014.
+
+\bibitem{Zilic2017}
+K.~{Zilic}, A.~{Aboobaker}, F.~{Aubin}, C.~{Geach}, S.~{Hanany}, N.~{Jarosik},
+  M.~{Milligan}, and I.~{Sagiv}.
+\newblock {A Double Vacuum Window Mechanism for Space-borne Applications}.
+\newblock {\em Review of Scientific Instruments}, 88(4):045112, April 2017,
+  1702.01861.
 
 \bibitem{Ruhl2004}
 John~E. Ruhl et~al.
@@ -184,7 +196,7 @@ J.~B. Peterson and P.~L. Richards.
 \bibitem{EBEXPaper2}
 {The EBEX Collaboration}.
 \newblock {EBEX Paper 2}.
-\newblock {\em ApJ}, 2017.
+\newblock {\em Astrophysical Journal}, 2017.
 
 \bibitem{Francois2012}
 Aubin Francois.
