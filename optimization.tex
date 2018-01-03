@@ -158,21 +158,21 @@ It describes the change in power due to a small change in temperature
 %This negative electrothermal feedback holds the detector at the edge of its transition. 
 The electrothermal feedback loopgain is the change in electrical power in response to the small absorbed radiative signal relative to the signal amplitude
 \begin{equation}
-\mathscr{L} \left( \omega \right) = - \frac{\delta P_{elec}}{\delta P} = \frac{P_{elec} \alpha}{GT(1+i\omega \tau)} = \frac{\mathscr{L}}{1 + i \omega \tau}
+\mathscr{L} \left( \omega \right) = - \frac{\delta P_{elec}}{\delta P} = \frac{P_{elec} \alpha}{GT(1+i\omega \tau_{0})} = \frac{\mathscr{L}}{1 + i \omega \tau_{0}}
 \end{equation}
 The DC value of the loopgain is 
 \begin{equation}
 \mathscr{L} = \frac{P_{elec}\alpha}{GT}
 \label{eq:dc_loopgain}
 \end{equation}
-and it rolls off with a time constant of $\tau = C/G$.
+and it rolls off with a time constant of $\tau_{0} = C/G$.
 The current responsivity of the detector is the change in current we measure for a given amount of radiative power absorbed
 \begin{equation}
 S_{I} \equiv \frac{\delta I}{\delta P} %= - \frac{1}{V_{bias}} \frac{\delta P_{elec}}{\delta P} 
 = - \frac{1}{V_{bias}} \left( \frac{\mathscr{L}}{\mathscr{L}+1} \right) \left( \frac{1}{1+i\omega \tau_{eff}} \right)
 \label{eq:responsivity}
 \end{equation}
-where $\tau_{eff} = \tau/ ( 1 + \mathscr{L})$ is the effective time constant, sped up by electrothermal feedback. 
+where $\tau_{eff} = \tau_{0}/ ( 1 + \mathscr{L})$ is the effective time constant, sped up by electrothermal feedback. 
 Note, for the \ac{DfMUX} system, there is an additional factor of $\sqrt{2}$ in the current responsivity due to demodulation.
 %IF YOU HAVE TIME, COME BACK HERE AND EXPLAIN MORE
 
