@@ -65,6 +65,12 @@ M.~R. Nolta et~al.
   power spectra.
 \newblock {\em Astrophysical Journal Supplement}, 180:296--305, feb 2009.
 
+\bibitem{Abazajian2015}
+K.~N. Abazajian et~al.
+\newblock {Inflation physics from the cosmic microwave background and large
+  scale structure}.
+\newblock {\em Astroparticle Physics}, 63:55Ð65, March 2015.
+
 \bibitem{polarbear2014}
 The~POLARBEAR Collaboration.
 \newblock A measurement of the cosmic microwave background b- mode polarization
@@ -106,6 +112,16 @@ K.~{Zilic}, A.~{Aboobaker}, F.~{Aubin}, C.~{Geach}, S.~{Hanany}, N.~{Jarosik},
 \newblock {A Double Vacuum Window Mechanism for Space-borne Applications}.
 \newblock {\em Review of Scientific Instruments}, 88(4):045112, April 2017,
   1702.01861.
+
+\bibitem{EBEXPaper1}
+{The EBEX Collaboration}.
+\newblock {EBEX Paper 1}.
+\newblock {\em Astrophysical Journal}, 2016.
+
+\bibitem{EBEXPaper2}
+{The EBEX Collaboration}.
+\newblock {EBEX Paper 2}.
+\newblock {\em Astrophysical Journal}, 2017.
 
 \bibitem{Ruhl2004}
 John~E. Ruhl et~al.
@@ -192,11 +208,6 @@ J.~B. Peterson and P.~L. Richards.
 \newblock {A Cryogenic Blackbody for Millimeter Wavelengths}.
 \newblock {\em International Journal of Infrared and Millimeter Waves},
   5(12):1507--1515, December 1984.
-
-\bibitem{EBEXPaper2}
-{The EBEX Collaboration}.
-\newblock {EBEX Paper 2}.
-\newblock {\em Astrophysical Journal}, 2017.
 
 \bibitem{Francois2012}
 Aubin Francois.
