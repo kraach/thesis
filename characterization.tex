@@ -12,16 +12,17 @@
 
 There were more than four dozen detector wafers fabricated and characterized for \ac{EBEX}. 
 The wafer naming convention was \textit{frequency band - position in fabrication sequence}, e.g. 250-04 was the fourth 250~GHz wafer to be fabricated.
-The characterization measurements were performed in testbeds designed to be as similar to the final flight configuration as possible. 
+I performed the characterization measurements in testbeds designed to be as similar to the final flight configuration as possible. 
 The three testbeds used were: 
 a dedicated \ac{ETC}  at the University of Minnesota, %\ac{EBEX} test cryostat at the University of Minnesota, 
 a test cryostat at McGill University, and the \ac{EBEX} cryostat itself, made dark. 
-In the measurements reported here, the wafer was mounted and coupled to the readout electronics as was done for flight, Section~\ref{sec:ebex}. 
+%In the measurements reported here, the wafer was mounted and coupled to the readout electronics as was done for flight, Section~\ref{sec:ebex}. 
+In the characterization measurements I report here, I mounted the wafer and coupled it to the readout electronics as I did for flight, Section~\ref{sec:ebex}. 
 The wafers were cooled to 250-320~mK, where the exact temperature depended on the testbed. 
 %highlight the difference between the light and dark configuration (and that you were attempting to minimize such that they were tested under conditions as similar to operation as possible.
 
-As the fabrication procedure was modified to build detectors optimized for a space-like environment, we measured the detector parameters in the dark cryostats to provide feedback to fabrication. 
-The detector parameter measurements also enabled us to estimate the sensitivity the detectors would be able to achieve. 
+As the fabrication procedure was modified to build detectors optimized for a space-like environment, I measured the detector parameters in the dark cryostats to provide feedback to fabrication. 
+The detector parameter measurements also enabled me to estimate the sensitivity the detectors would be able to achieve. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Parameter Measurements {{{
@@ -30,9 +31,9 @@ The detector parameter measurements also enabled us to estimate the sensitivity 
 \label{sec:parameter_measurements}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The main detector parameters measured for each detector were normal resistance, critical temperature, and thermal conductance. 
-For a subset of wafers, we also measured time constants, both electrothermal and optical. 
-There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of some 150~GHz detectors. 
+The main detector parameters I measured for each detector were normal resistance, critical temperature, and thermal conductance. 
+For a subset of wafers, I also measured time constants, both electrothermal and optical. 
+There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of a subset of 150~GHz detectors. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Normal Resistance}
@@ -71,7 +72,7 @@ There was a dedicated cooldown in \ac{ETC} to measure the optical efficiency of 
 %The inter-detector spacing was set by XXX. 
 %We could wire up to 16 detectors per comb. 
 
-In order to get the bolometer resonant frequencies and their normal resistances, we performed a network analysis on each comb with the bath held a couple hundred millikelvin above the critical temperatures.
+In order to get the bolometer resonant frequencies and their normal resistances, I performed a network analysis on each comb with the bath held a couple hundred millikelvin above the critical temperatures.
 The network analysis swept a voltage across the comb in frequency and measured the current response of the circuit, Figure~\ref{fig:network_analysis}. 
 At each bolometer's LC resonant frequency, the multiplexed LCR circuit peaked in current. 
 
@@ -114,8 +115,12 @@ The 150 and 410~GHz bimodal distributions were due to detector parameters being 
 The measured value of $R_{n}$ for the 250~GHz band closely matched the design (see 
 Table~\ref{tab:Design_Params}). 
 For the other two frequency bands, one mode of the distribution closely matched while the other mode was higher (lower) than design for the 150 (410)~GHz band. 
-The 150~GHz detectors with a measured $R_{n}$ of 1.9~$\Omega$, instead of the nominal 1.5~$\Omega$, were calculated to have increased electrical cross-talk from a value of 0.5\% to 0.9\% and decreased loopgain by 30\%. 
-The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the design value, were calculated to have increased Johnson noise by 20\% relative to the nominal expected value of 4.0 pA$/\sqrt{\mathrm{Hz}}$ (9.4~aW$/\sqrt{\mathrm{Hz}}$); see Equation~\ref{eq:johnson}.
+The 150~GHz detectors with a measured $R_{n}$ of 1.9~$\Omega$, instead of the nominal 1.5~$\Omega$, I calculated to have increased electrical cross-talk from a value of 0.5\% to 0.9\% and decreased loopgain by 30\%. 
+The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the design value, I calculated to have increased Johnson noise by 20\% relative to the nominal expected value of 4.0 pA$/\sqrt{\mathrm{Hz}}$ (9.4~aW$/\sqrt{\mathrm{Hz}}$); see Equation~\ref{eq:johnson}.
+%The 150~GHz detectors with a measured $R_{n}$ of 1.9~$\Omega$, instead of the nominal 1.5~$\Omega$, were calculated to have increased electrical cross-talk from a value of 0.5\% to 0.9\% and decreased loopgain by 30\%. 
+%The 410~GHz detectors with a measured $R_{n}$ of 1~$\Omega$, two-thirds of the design value, were calculated to have increased Johnson noise by 20\% relative to the nominal expected value of 4.0 pA$/\sqrt{\mathrm{Hz}}$ (9.4~aW$/\sqrt{\mathrm{Hz}}$); see Equation~\ref{eq:johnson}.
+
+
 
 \begin{figure}[htp]
 \centering
@@ -174,18 +179,19 @@ and design (vertical gold dashed) values.
 %
 %\textcolor{red}{Can you explain exactly how $T_{c}$ was extracted from the data, i.e. what temperature did you call Tc? Also, what defined/determined the transition width?}
 
-For the measurement of the critical temperature in \ac{ETC}, we placed a voltage bias of 5~$nV_{rms}$ across the detector such that the Joule heating of $\frac{V^2}{R} = 1.5~fW$ was negligible but there was still a measurable current signal. 
-The temperature was slowly, less than 3~mK/min, dialed up and down to move the bolometers through their superconducting transitions. 
+For the measurement of the critical temperature in \ac{ETC}, I placed a voltage bias of 5~$nV_{rms}$ across the detector such that the Joule heating of $\frac{V^2}{R} = 1.5~fW$ was negligible but there was still a measurable current signal. 
+I slowly, less than 3~mK/min, dialed the temperature up and down to move the bolometers through their superconducting transitions.
+%The temperature was slowly, less than 3~mK/min, dialed up and down to move the bolometers through their superconducting transitions. 
 Changing the temperature slowly was important because the temperature was read out from a sensor attached to the underside of the invar plate onto which the wafer was mounted 
 %2. the wafer heater was mounted to the underside of the invar. 
 and the bolometers were only weakly coupled to the bath via their spiderweb legs. 
-We used the bath temperature as a proxy for the bolometer temperature. 
+I used the bath temperature as a proxy for the bolometer temperature. 
 %I WANT YOU TO SAY WHY IT WAS IMPORTANT TO DO THIS MEASUREMENT DARK (COME BACK IF YOU HAVE TIME)
 Without time to thermalize, there would have been significant hysteresis. 
 This measurement also relied on the cryostat being dark because radiative power would have increased the temperature of the detector but not the bath where the temperature sensor was mounted. 
 %So the wafer temperature sensor would not have been a good proxy for the bolometer temperature. 
 Fig.~\ref{fig:tc_measurement} is an example of a critical temperature measurement for a bolometer on wafer~150-02. 
-We measured demodulated \ac{ADC} counts with the \ac{DfMUX} boards and converted to resistance using the measured current and voltage transfer functions and Ohm's law, $R=V_{bias}/I_{measured}$.
+I measured demodulated \ac{ADC} counts with the \ac{DfMUX} boards and converted to resistance using the measured current and voltage transfer functions and Ohm's law, $R=V_{bias}/I_{measured}$.
 When the \ac{TES} was superconducting, there was an offset in the resistance measured because there was still current due to the non-zero stray impedance. 
 %When the \ac{TES} is normal, there is more noise because .... why would the current be noisier when the \ac{tES} was normal ??? current was smaller. so we saw digitization noise?
 
