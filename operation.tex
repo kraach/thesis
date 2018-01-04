@@ -55,7 +55,7 @@ The warm visual and electrical inspection provided an upper limit of the wafer's
 
 For flight, each wafer had two bolometers replaced by one ohm resistors near the \ac{LC} board bond pads. 
 These two channels were dedicated to monitoring read out electronic noise up to the \ac{LC} board, one channel at a low bias frequency and the other channel at a high bias frequency. 
-Three \ac{SQUID}s were not attached to bolometer combs due to opens in the microstrips. These combs were modified to monitor read out electronic noise up to the \ac{SQUID}, \TAB\ref{yield_table} row 4. 
+Four \ac{SQUID}s were not attached to bolometer combs due to opens in the microstrips. These combs were modified to monitor read out electronic noise up to the \ac{SQUID}, \TAB\ref{yield_table} row 4. 
 
 Upon cooling the wafer, there were wired detector channels which had shown a reasonable room temperature resistance but did not appear in the network analysis, \TAB\ref{yield_table} row~5. 
 Five \ac{SQUID}s failed to operate during flight, \TAB\ref{yield_table} row~6. 
@@ -174,19 +174,19 @@ The black dashed vertical lines are the pre-flight predicted loads of 1.4, 3.7, 
 % you already said this at the beginning.
 %The predicted \ac{NEP} is calculated using measurements of detector parameters and radiative load. 
 %The measured \ac{NEP} is calculated from flight data. 
-The noise performance is assessed by comparing the predicted \ac{NEP} to the measured ac{NEP}. 
-We look at the noise of the dark \ac{SQUID}s, the resistor channels, the bolometers overbiased while the stage is cold, and the bolometers dropped into their superconducting transition state. 
+The noise performance is assessed by comparing the predicted \ac{NEP} to the measured \ac{NEP}. 
+I look at the noise of the dark \ac{SQUID}s, the resistor channels, the bolometers overbiased while the stage is cold, and the bolometers dropped into their superconducting transition state. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{NEP unit conversions}
 \label{sec:nep_units}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-There are four units we use when measuring the detector \ac{NEP}: \ac{DfMUX} \ac{ADC} counts, Amps, Watts at the detector, and Watts on the sky. 
+There are four units I use when measuring the detector \ac{NEP}: \ac{DfMUX} \ac{ADC} counts, Amps, Watts at the detector, and Watts on the sky. 
 The raw timestreams from the \ac{DfMUX} boards are recorded in \ac{ADC} counts. 
 The predictions for the current noise terms of the \ac{NEP}, Johnson and readout, are naturally in units of Amps.
 The predictions for the power noise terms of the \ac{NEP}, photon and phonon, are naturally in units of Watts at the detector. 
-To convert to units of power on the sky, we can either use each detector's calibration map of RCW38 or the measured end-to-end instrument efficiency, 
+To convert to units of power on the sky, I can either use each detector's calibration map of RCW38 or the measured end-to-end instrument efficiency, 
 \be
 \varepsilon = \frac{\text{power absorbed by detector}}{\text{incident sky power}}
 \label{eq:eff_ratio}
@@ -238,7 +238,7 @@ The cost to the overall data acquisition was small because \ac{BRO}1 happened to
 
 Bolometer data, for purposes of noise analysis, were flagged if the detector was saturated, there were signals from cosmic ray absorption, there were \ac{SQUID} DC level jumps, the bolometer went superconducting, the \ac{HWP} synchronous signal subtraction failed, the \ac{HWP} motor was ramping on or off, the cryostat was stepping elevation, or the internal-to-the-cryostat calibrator was on. 
 Flagged data was replaced by white noise realizations. 
-In order for a chunk of data to be included in the noise analysis, we required no more than 10\% of the data be flagged. 
+In order for a chunk of data to be included in the noise analysis, I required no more than 10\% of the data be flagged. 
 Of the 941 bolometers wired up in \ac{BRO}2-4, 460 had data which passed the valid criteria. 
 %IF YOU HAVE TIME, COME BACK HERE AND EXPLAIN WHERE YOU LOST THE DATA. ESPECIALLY BE ABLE TO SAY WHERE THE MAJORITY OF IT WAS (ASSUMING THERE WAS A MAJORITY LOST TO SOMETHING, E.G. SATURATION)
 
@@ -305,7 +305,7 @@ The right panel of Figure~\ref{fig:resistor_in_flight_noise} is the median ratio
 The median of this distributions was 1.8.  
 The 5 resistors channels with a median measured to predicted noise ratio greater than 6 were excluded from this analysis. 
 Though the bolometer and readout cavity was designed to be RF-tight, we hypothesize the excess noise was due to electromagnetic pickup in the microstrips which were connecting the \ac{SQUID} boards to the \ac{LC} boards. 
-The parallel flattened niobium titanium traces, 0.76~mm by 700-950~mm (depending on wire routing restrictions), may have been acting as antennae. 
+The parallel flattened niobium titanium traces, 0.76~mm by 700-950~mm (depending on wire routing restrictions), could have been acting as antennae. 
 
 %\textcolor{red}{Include:
 %noise vs time and histogram of median meas/pred for each resistor. }
@@ -331,19 +331,19 @@ The parallel flattened niobium titanium traces, 0.76~mm by 700-950~mm (depending
 
 A detector was said to be overbiased when the voltage bias across the \ac{TES} provided enough Joule heating to keep the resistance of the \ac{TES} normal. 
 Because of the small value of the loopgain when the bolometer was overbiased, the responsivity was tiny and so the noise performance was dominated by the readout (electronic and \ac{SQUID}) and bolometer Johnson noise, Equation~\ref{eq:nep}. 
-We predicted and measured the bolometers' overbiased noise in units of $A/\sqrt{Hz}$ since both the readout and Johnson noise are naturally in units of current.  
+I predicted and measured the bolometers' overbiased noise in units of $A/\sqrt{Hz}$ since both the readout and Johnson noise are naturally in units of current.  
 %IF YOU HAVE TIME, COME BACK AND BE PRECISE (NUMBERS) ABOUT WHAT TINY MEANS
 The readout noise was calculated as before, using each bolometer's carrier and nuller settings. 
 The predicted Johnson noise assumed the bolometer resistance was $R_{normal}$ from the network analysis fit and estimated the bolometer temperature as $T_{bolo} = T_{c}$ + $\Delta P / \overline{G}$, where $T_c$ was measured dark, $\Delta P$ was the difference in power overbiased to in the transition from the flight pv curve, and $\overline{G}$ was measured dark and corrected for the \ac{EBEX} bath temperature. 
 %Section~\ref{sec:parameter_measurements}. 
-Because the bolometers and resistors shared the readout chain all the way to just before the bolometer wafer, we assumed the excess noise present in the resistor channels would also be present in the bolometer channels. 
+Because the bolometers and resistors shared the readout chain all the way to just before the bolometer wafer, I assumed the excess noise present in the resistor channels would also be present in the bolometer channels. 
 The predicted overbias noise for each bolometer was multiplied by 1.8, the median factor of excess noise measured by the resistors. 
 The prediction, including the excess factor from the resistor measurements, was calculated for each bolometer and Table~\ref{tab:overbias_noise_table} reports the median overbiased noise prediction for each wafer in $pA/\sqrt{Hz}$. %\comred{How is overbias (both Johnson and readout noise) predicted? How do \ac{SQUID} and resistor noise inform our conclusion about the excess noise overbiased??}
 
 The left panel of Figure~\ref{fig:one_bolo_overbias_noise} shows the measured and predicted overbiased noise for one 150~GHz bolometer. 
-At float, the bolometers were in their overbiased state after the fridge cycles while the focal planes were cooling to their base temperatures. 
+At float, the bolometers were in their overbiased state after the fridge cycle, but while the focal planes were still cooling to their base temperatures. 
 The right panel of Figure~\ref{fig:one_bolo_overbias_noise} is the measured and predicted noise every 172~seconds over a $\sim$6000~second time period while the focal planes were cooling the last 50~mK to their base temperatures.
-We took the median ratio of the measured to predicted overbiased noise over this 6000~second interval as representative of the bolometer's overbiased noise performance.
+I took the median ratio of the measured to predicted overbiased noise over this 6000~second interval as representative of the bolometer's overbiased noise performance.
 Figure~\ref{fig:overbias_noise_hist} is the median measured to predicted overbiased noise ratio for each bolometer. 
 The median ratio of of all detectors was 1.2. 
 The majority of the detectors have a coherency value of $\sim$0.1, indicating the excess noise is not from a correlated noise source but rather is a broadband source. 
@@ -404,7 +404,7 @@ Wafer & (pA/$\sqrt{\mathrm{Hz}}$) & Ratio  \\
 %IF YOU DON'T UNDERSTAND THIS, WHY ARE YOU INCLUDING IT????
 
 Figure~\ref{fig:overbias_noise_vs_freq} is a plot of the ratio of the overbiased noise prediction to the measurement as a function of the bias frequency. 
-Around 1~MHz, we saw a slight but systematic increase in the measured noise. 
+Around 1~MHz, there is a slight but systematic increase in the measured noise. 
 This was not understood. 
 
 \begin{figure}[htp]
@@ -467,18 +467,18 @@ This was not understood.
 \label{sec:in_trans_pred}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We predicted the in-transition \ac{NEP} in $aW/\sqrt{Hz}$ at the detector. 
+I predicted the in-transition \ac{NEP} in $aW/\sqrt{Hz}$ at the detector. 
 The in-transition noise included the readout, Johnson, phonon, and photon noise, Equation~\ref{eq:nep}. 
 In order to report the data in units of power at the detector, the readout and Johnson noise, as well as the measured counts from the detector timestream, were divided by the bolometer current responsivity, see Table~\ref{tab:psd_table} for unit conversions. 
-We assumed we were in the high loopgain regime so $S_I \sim \sqrt{2}/V_{bias}$. 
+I assumed we were in the high loopgain regime so $S_I \sim \sqrt{2}/V_{bias}$. 
 
 The phonon \ac{NEP} contribution was estimated assuming the detector temperature was $T_{c}$ and calculating the thermal conductance as described in Equation~\ref{eq:gbar_to_g}. 
-In order to estimate the photon \ac{NEP} contribution at float, we took $P_{rad}$ to be the radiative load measured by each detector, Section~\ref{sec:radiative_load}. 
+In order to estimate the photon \ac{NEP} contribution at float, I took $P_{rad}$ to be the radiative load measured by each detector, Section~\ref{sec:radiative_load}. 
 %These numbers were from franky's code
 %The center and width of the observation frequency bands, $\nu$ (155, 256, and 395~GHz) and $\Delta \nu$ (30, 44, and 58~GHz), were from calibration measurements of the \ac{EBEX} spectral response on the ground \cite{Zilic2014}. 
 %there numbers were from kyle's thesis
 The center and width of the observation frequency bands, $\nu$ (153, 244, and 393~GHz) and $\Delta \nu$ (25, 28, and 45~GHz), were from calibration measurements of the \ac{EBEX} spectral response on the ground \cite{Zilic2014}. 
-We did not have a measure of the photon correlation noise factor, so we assumed it was completely correlated, $\xi=1$.
+I did not have a measure of the photon correlation noise factor, so I assumed it was completely correlated, $\xi=1$.
 This put an upper bound on the noise prediction and had the greatest effect on the 150~GHz \ac{NEP} prediction. 
 %Table~\ref{tab:photon_noise} gives the relative contributions of the correlation and shot noise for the average measured radiative load per observation frequency band.
 For the 150~GHz band, if the photons were completely uncorrelated, $\xi=0$, then the photon \ac{NEP} in $W/\sqrt{Hz}$ would have decreased by a factor of 0.80, decreasing the total \ac{NEP} prediction by a factor of 0.90. 
@@ -513,7 +513,7 @@ For the 410~GHz band, the decrease in photon \ac{NEP} would have been a factor o
 
 Figure~\ref{fig:prediction_bar_chart} is a stacked bar chart of the \ac{EBEX} in-transition noise prediction per wafer in units of aW/$\sqrt{Hz}$ at the detector. 
 Each wafer's bar was the mean for that wafer and the error bars were one standard deviation. 
-The blue bar was the predicted \ac{NEP} using the expected radiative load, Table~\ref{tab:target_gbar}, to calculate the photon noise contribution and each detector's carrier and nuller settings as well as its dark characterization measurements to calculate the readout, Johnson, and phonon noise contributions. 
+The dark blue bar was the predicted \ac{NEP} using the preflight expected radiative load, Table~\ref{tab:target_gbar}, to calculate the photon noise contribution and using each detector's carrier and nuller settings as well as its dark characterization measurements to calculate the readout, Johnson, and phonon noise contributions. 
 The cyan bar included the additional \ac{NEP} given the \textit{measured} radiative load of each detector. 
 The golden bar included the excess factor of 1.8, measured on the resistor channels, applied to the bolometer readout and Johnson noise. 
 
@@ -601,7 +601,7 @@ The median predicted in-transition \ac{NEP} level broken down by wafer is report
 
 
 The \ac{HWP} was spinning during the in-transition noise measurements. 
-There was a large \ac{HWP} synchronous signal in the raw timestream which had to be subtracted in order to extract the \ac{WNL}. 
+There was a large \ac{HWP} synchronous signal in the raw timestream I subtracted in order to be able to extract the \ac{WNL}. 
 Figure~\ref{fig:in_transition_psd} is the square root of the \ac{PSD} of a 172~second chunk of time with the \ac{HWP} synchronous signal present (red) and subtracted (gold) for a detector on wafer~150-09. 
 %there was an additional step in the noise analysis pipeline. 
  %of removing the \ac{HWP} synchronous signal from the timestream. 
@@ -629,8 +629,8 @@ Figure~\ref{fig:hwp_on_vs_off} compares the median \ac{WNL} from the ten minutes
 There was a median increase of 8 $aW/\sqrt{Hz}$ in the \ac{NEP} when the \ac{HWP} was on compared to when it was off. 
 %of the \ac{HWP} synchronous signal subtracted data compared to the \ac{NEP} measured when the \ac{HWP} is still. 
 %the "raw" timestream when the \ac{HWP} is still. 
-Incomplete subtraction of the \ac{HWP} synchronous signal would have increased the measured \ac{WNL} of the \ac{PSD}. 
-Also, coupling of the \ac{HWP} rotation mechanism noise to the readout electronics would have increased the \ac{NEP}. 
+%Incomplete subtraction of the \ac{HWP} synchronous signal would have increased the measured \ac{WNL} of the \ac{PSD}. 
+Coupling of the \ac{HWP} rotation mechanism noise to the readout electronics could be the source of the increase in measured \ac{NEP} when the \ac{HWP} was on. 
 
 %IF YOU HAVE TIME, REDO THIS ANALYSIS FOR MORE DETECTORS!!!!
 
