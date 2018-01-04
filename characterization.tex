@@ -873,13 +873,13 @@ The measurement agreed with the prediction at low frequencies and then the signa
 \label{sec:dark_squid_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, we measured the noise as a function of demodulation frequency. 
+With the detectors at a temperature of 4.2~K, and without providing carrier or nuller biases, I measured the noise as a function of demodulation frequency. 
 Away from the bolometer resonant frequencies, this is a measure of the noise due to the warm electronics and the \ac{SQUID}s. 
 
 %squids (with their feedback loops closed)
 With the \ac{SQUID}s tuned and their feedback loops closed, the warm electronic components' noise predictions were referred to current noise at the \ac{SQUID} input coil.
 The \ac{SQUID} transimpedance, $dV/dI$, was used to reference the noise of the \ac{SQUID} controller first stage amplifier and its gain defining 20~$\Omega$ resistor. 
-We measured $dV/dI$ from the slope of the linear regime of the $V-\phi$ curve where we biased the squid, Figure~\ref{fig:squid_transimpedance}. 
+I measured $dV/dI$ from the slope of the linear regime of the $V-\phi$ curve where we biased the \ac{SQUID}, Figure~\ref{fig:squid_transimpedance}. 
 The fit to the line in the region where this particular \ac{SQUID} from \ac{ETC} was biased gives a transimpedance of $dV/dI=375~\Omega$. 
 %To convert to physical units, for the \ac{ETC} \ac{SQUID} controller board, $1 V_{DAC} = 1 mV$ and $1 V_{DAC} = 20 \mu A$ and mention mutual inductance $\phi_{0}/26 \mu A$?
 Note, the \ac{SQUID}s in \ac{EBEX} were heat sunk to a colder temperature stage and so had a higher transimpedance on the order of $500~\Omega$. 
@@ -902,7 +902,7 @@ These data are from the same two combs shown for the warm electronics noise.
 Earlier generations of this \ac{SQUID} design were reported to have a noise of 2.5~$pA/\sqrt{Hz}$ \cite{Huber2001}.
 Since the warm electronic noise agreed with predictions, Figure~\ref{fig:dark_electronic_noise}, the excess noise measured in \ac{ETC} was assumed to be due to the \ac{SQUID}. 
 The blue line assumed an intrinsic \ac{SQUID} noise of 2.5~$pA/\sqrt{Hz}$, while the orange line assumed 3.5~$pA/\sqrt{Hz}$.
-From here on out, we took the intrinsic \ac{SQUID} noise to be 3.5~$pA/\sqrt{Hz}$.
+From here on out, I took the intrinsic \ac{SQUID} noise to be 3.5~$pA/\sqrt{Hz}$.
 
 \begin{figure}[ht!]
 \begin{center}
@@ -957,7 +957,7 @@ Demodulating at the bolometer resonant frequencies gave a measure of the 4.2~K b
 The 4.2~K Johnson noise, for a bolometer at its normal resistance of 2~$\Omega$ was $\sim$ 11~$pA/\sqrt{Hz}$.
 These particular combs showed unexplained, abnormally high Johnson noise at demodulation frequencies around 800~kHz. 
 Those bolometers would have had to have a resistance of 1.3~$\Omega$ at 4.2~K in order to give a total noise level of 16~$pA/\sqrt{Hz}$. 
-It is unlikely we overestimated the resistances because we assumed the bolometer normal resistances from the $\sim$800~mK network analysis and the bolometer resistance actually increased, albeit with a shallow slope when normal, as the temperature increased. 
+It is unlikely I overestimated the resistances because I assumed the bolometer normal resistances from the $\sim$800~mK network analysis and the bolometer resistance actually increased, albeit with a shallow slope when normal, as the temperature increased. 
 
 \begin{figure}[htp]
 \begin{center}
@@ -972,7 +972,7 @@ This data is from a single comb, \ac{SQUID}7, on wafer~150-01.
 The off-resonance noise included the electronic and \ac{SQUID} noise while the on-resonance noise also included the 770~mK bolometer Johnson noise, $\sim$5$pA/\sqrt{Hz}$ for a 2~$\Omega$ bolometer. 
 The two lowest frequency off-resonance noise measurements were near the prediction. 
 At the higher off-resonance demodulation frequencies, however, the measured noise was at the level of the on-resonance prediction, $\sim$15\% above the off-resonance prediction.
-Though we expected the electrical cross-talk to increase to more than 1\% given the larger detector resistance in this configuration, that was not enough to explain the level of excess noise we measured off-resonance. 
+Though I expected the electrical cross-talk to increase to more than 1\% given the larger detector resistance in this configuration, that was not enough to explain the level of excess noise we measured off-resonance. 
 %COME BACK HERE IF YOU HAVE TIME TO BE SPECIFIC ABOUT HOW MUCH ADDITIONAL CROSS TALK YOU EXPECTED IN THIS CONFIGUATION
 The on-resonance noise measurements at 770~mK agree more closely with the prediction than they did at 4.2~K. 
 %Since the electronic and \ac{SQUID} noise prediction was adjusted to agree with the measurement, this slight excess was attributed to Johnson noise but was not understood. 
@@ -1007,10 +1007,10 @@ The improved agreement at the lower temperature was not understood.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The overbiased noise included the electronic, \ac{SQUID}, and bolometer Johnson noise. 
-The contribution from the electronics was higher than when we measured the Johnson noise in Section~\ref{sec:johnson_noise} because there were carriers and nullers provided in order to electrically overbias the detectors. 
+The contribution from the electronics was higher than when I measured the Johnson noise in Section~\ref{sec:johnson_noise} because there were carriers and nullers provided in order to electrically overbias the detectors. 
 Near a bias frequency of 600~kHz, without carriers and nullers on, the electronics noise was $\sim8.5$
 Also, the bolometer Johnson noise was higher because when overbiased, the bolometer temperature was higher. 
-From Equation~\ref{eq:gbar}, the overbiased bolometer temperature was estimated to be
+From Equation~\ref{eq:gbar}, I estimated the overbiased bolometer temperature to be
 \begin{equation}
 T_{bolo} = T_{bath} + \Delta P * \overline{G}
 \end{equation}
@@ -1037,7 +1037,7 @@ The dark in-transition noise prediction included the electronic, \ac{SQUID}, bol
 The left and right panels of Figure~\ref{fig:etc_it_noise} are the measured and predicted in-transition noise for two different bolometers on wafer~150-01. 
 In order to ensure the system was as clean as possible, only \ac{SQUID}7 was tuned. 
 There were five bolometers on the comb and four were overbiased while the in-transition noise measurements on the fifth bolometer were performed. 
-Between each measurement, we re-overbiased the bolometer so it was always dropped relative to the same initial resistance. 
+Between each measurement, I re-overbiased the bolometer so it was always dropped relative to the same initial resistance. 
 The dark noise measurements were referred to current through the \ac{SQUID}. 
 The phonon \ac{NEP} prediction, a power noise, was multiplied by the current responsivity, $dI/dP$, to convert from power to current, 
 \begin{equation}
@@ -1047,10 +1047,10 @@ If the bolometer was deep in the transition, then the loopgain, $\mathscr{L}$, w
 The loopgain was difficult to properly estimate, 
 %estimate had error bars larger than the value of $\mathscr{L}$, %not sure this is true or relevant
 so the phonon noise prediction in the plot assumed the bolometer was deep in the transition once we had dropped it any amount. 
-That is, overbiased, at a fraction of $R_{initial}$~=~1, we did not include the phonon noise in the prediction, but for all of the other fractions of $R_{initial}$, we assumed the bolometer was in the high loopgain regime. 
+That is, overbiased, at a fraction of $R_{initial}$~=~1, I did not include the phonon noise in the prediction, but for all of the other fractions of $R_{initial}$, I assumed the bolometer was in the high loopgain regime. 
 Towards the top of the transition, at higher fractions of $R_{initial}$, the bolometer was not deep in the transition and $\mathscr{L}$ was not large.
 In this case, the phonon noise contribution to the prediction was overestimated. 
-If $\mathscr{L} = 1$, as was the case at the turnaround of the IV curve near $R = 0.98 \times R_{initial}$, by making this assumption, we overestimated the phonon contribution by a factor of 2, which decreased the total noise prediction from 13~$pA/\sqrt{Hz}$ to 12~$pA/\sqrt{Hz}$. 
+If $\mathscr{L} = 1$, as was the case at the turnaround of the IV curve near $R = 0.98 \times R_{initial}$, by making this assumption, I overestimated the phonon contribution by a factor of 2, which decreased the total noise prediction from 13~$pA/\sqrt{Hz}$ to 12~$pA/\sqrt{Hz}$. 
 %As the detector was dropped deeper, our error improved. %obvious?
 %At $R = 0.9 \times R_{initial}$, the high loopgain assumption is not enough to explain the factor of two inconsistency between the measurement and the prediction. 
 %SENTENCE ABOVE DOESN'T MAKE SENSE, RIGHT? THE HIGH LOOPGAIN ASSUMPTION BRINGS THE PREDICTION UP, CLOSER TO THE MEASUREMENT. 
@@ -1068,8 +1068,8 @@ If $\mathscr{L} = 1$, as was the case at the turnaround of the IV curve near $R 
 The data (blue and orange dots) lay atop the prediction (green dot) at $1.0 \times R_{initial}$, i.e. overbiased. 
 This agreement is consistent with the overbiased noise measurements and predictions performed on the entire comb. 
 Already by the time the detector was at $0.9 \times R_{initial}$, the measured noise was a factor of two greater than the prediction. 
-The discrepancy between the measured and predicted noise increased as we dropped the detector to lower fractions of $R_{initial}$.
-The detector wasn't latched because we were able to successfully re-overbias between each measurement.
+The discrepancy between the measured and predicted noise increased as I dropped the detector to lower fractions of $R_{initial}$.
+The detector wasn't latched because I was able to successfully re-overbias between each measurement.
 %Since this measurement was dark (no photon noise) and we were working in current units, only the phonon noise was a function of the responsivity. 
 There could have been an unfiltered, unaccounted for radiative load during the wafer~150-01 cryostat run because it was performed with the optical efficiency setup in which there was a hexagon of seven detectors open to the blackbody. 
 The detectors shown in Figure~\ref{fig:etc_it_noise} were two (bolometer~5-02) and four (bolometer 3-01) bolometers away from detectors open to light, see Figure~\ref{fig:bb_wafer_layout}. 
@@ -1093,8 +1093,8 @@ As with wafer~150-01, the overbiased noise
 agreed with the prediction. 
 The measurement at $0.9 \times R_{initial}$ was within 5\% of the prediction, which included \ac{SQUID}, electronic, Johnson, and phonon noise (assuming large $\mathscr{L}$). 
 At $0.8 \times R_{initial}$, however, the measurement exceeded the prediction by 40\%. 
-We suspect as we dropped the bolometer deeper into the transition, the bolometer response was in the unstable regime and experienced exponentially growing oscillations. 
-For the detectors at float, we chose, in part, to drop them to a fraction of 0.85 $\times R_{initial}$ because this was the boundary at which the noise performance deteriorated. 
+I suspect as I dropped the bolometer deeper into the transition, the bolometer response was in the unstable regime and experienced exponentially growing oscillations. 
+For the detectors at float, I chose, in part, to drop them to a fraction of 0.85 $\times R_{initial}$ because this was the boundary at which the noise performance deteriorated. 
 
 \begin{figure}[ht!]
 \begin{center}
