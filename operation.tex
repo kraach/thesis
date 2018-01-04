@@ -5,9 +5,9 @@
 \label{operation_chapter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We discuss the detector yield, Section~\ref{sec:yield}, and the detectors' measured radiative loads, Section~\ref{sec:radiative_load}.
-In section~\ref{sec:flight_noise_performance}, using the dark characterization measurements, the measured radiative load, the electrical bias parameters, and the \ac{DfMUX} transfer functions, we predict the instrument sensitivity in \ac{NEP}. 
-We report the noise performance of each detector by comparing its expected \ac{NEP} to the median of its measured \ac{NEP} over all portions of the \ac{EBEX} flight for which it had valid data. 
+I discuss the detector yield, Section~\ref{sec:yield}, and the detectors' measured radiative loads, Section~\ref{sec:radiative_load}.
+In section~\ref{sec:flight_noise_performance}, using the dark characterization measurements, the measured radiative load, the electrical bias parameters, and the \ac{DfMUX} transfer functions, I predict the instrument sensitivity in \ac{NEP}. 
+I report on the noise performance of each detector by comparing its expected \ac{NEP} to the median of its measured \ac{NEP} over all portions of the \ac{EBEX} flight for which it had valid data. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,7 +46,7 @@ The first two rows of \TAB\ref{yield_table} give the total number of bolometers 
 At room temperature, the wafers were inspected visually and each bolometer was tested for electrical continuity. 
 The visual inspection was done under a microscope and, for example, sometimes revealed incomplete etching evidenced by a column of silicon from the spiderweb to the silicon backing wafer. 
 This was noted as a thermal short and such a detector was not electrically biased. 
-For the electrical inspection, we measured the resistance by either probing directly across the wafer bond pads or by probing the leads on the \ac{LC} boards. 
+For the electrical inspection, I measured the resistance by either probing directly across the wafer bond pads or by probing the leads on the \ac{LC} boards. 
 The first method was done in the fabrication clean room and the second method was done after the wafer had been shipped, mounted, and wirebonded to its \ac{LC} board. 
 The resistance reading was dominated by the room temperature resistance of the niobium leads. 
 The electrical inspection could not identify a short across the \ac{TES} because the typical room temperature resistance of the \ac{TES} was a few ohms, much less than the tens of kiloohms of the niobium leads. 
@@ -57,12 +57,12 @@ For flight, each wafer had two bolometers replaced by one ohm resistors near the
 These two channels were dedicated to monitoring read out electronic noise up to the \ac{LC} board, one channel at a low bias frequency and the other channel at a high bias frequency. 
 Three \ac{SQUID}s were not attached to bolometer combs due to opens in the microstrips. These combs were modified to monitor read out electronic noise up to the \ac{SQUID}, \TAB\ref{yield_table} row 4. 
 
-Upon cooling the wafer, there were wired detector channels which had shown a reasonable room temperature resistance but did not appear in the network analysis, \TAB\ref{yield_table} row 5. 
-Five \ac{SQUID}s failed to operate during flight, \TAB\ref{yield_table} row 6. 
-Once a wafer was characterized in a dark cryostat, the detectors which degraded the noise performance of their entire comb were identified and their wirebonds were removed, \TAB\ref{yield_table}, row 7. 
+Upon cooling the wafer, there were wired detector channels which had shown a reasonable room temperature resistance but did not appear in the network analysis, \TAB\ref{yield_table} row~5. 
+Five \ac{SQUID}s failed to operate during flight, \TAB\ref{yield_table} row~6. 
+Once a wafer was characterized in a dark cryostat, the detectors which degraded the noise performance of their entire comb were identified and their wirebonds were removed, \TAB\ref{yield_table}, row~7. 
 %%Occasionally, upon cooling a wafer a second time, additional detectors go missing from the network analysis. (And some detectors re-appear ... presumably due to poor quality wirebond connections.) See \TAB\ref{yield_table}, line "Survived \ac{EBEX} cooldown and plucking." \comred{remove word plucking and remove bad actor, replace with more clear description. no need to mention reappearances since they seldom happen and we only have conjectures as to why?}
 
-After \ac{EBEX} was launched and reached its float altitude, IV curves were performed and the total number of successful curves is reported in \TAB\ref{yield_table}, line 8. 
+After \ac{EBEX} was launched and reached its float altitude, I performed IV curves for all bolometers and the total number of successful curves is reported in \TAB\ref{yield_table}, row~8. 
 The losses between row 7 and row 8 were due to detectors being saturated or failing to transition. 
 
 %(though typically they also failed to turn around during the characterization measurements, the loss isn't counted until flight because there was some hope they might work) or the IV curve exhibiting strange behaviour (e.g. a jump in the current reading). \comred{ben showed pv curve, but not iv curve. maybe just call it a pv curve and refer to detector fab section? NO. with reorganization, first mention of iv/pv curve comes after this table ??}
@@ -95,10 +95,10 @@ That is, for the dark test cryostat IV curve measurements, Equation~\ref{eq:pin}
 P_{total} = P_{elec} + \cancel{P_{rad}},
 \label{eq:total_power_dark}
 \ee
-We measured $P_{elec}$ dark and that was $P_{total}$, the total power necessary to hold the detector in the negative electrothermal feedback regime. 
+I measured $P_{elec}$ dark and that was $P_{total}$, the total power necessary to hold the detector in the negative electrothermal feedback regime. 
 
 Once \ac{EBEX} reached float altitude and the thick cryostat window was rolled back, IV curves were performed for all detectors. 
-From these IV curves, we measured the electrical power required at float, with the radiative load present, to hold the detector in the negative electrothermal feedback regime. 
+From these IV curves, I measured the electrical power required at float, with the radiative load present, to hold the detector in the negative electrothermal feedback regime. 
 The difference in the two powers measured, in the dark cryostat and open to light at float, gave each detector's measured radiative load,
 \be
 P_{rad} = P_{elec}^{dark} - P_{elec}^{float},
