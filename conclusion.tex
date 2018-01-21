@@ -8,15 +8,23 @@
 To measure the tiny polarization signal of the \ac{CMB}, \ac{EBEX} employed a kilopixel array of \ac{TES} bolometers. 
 In order to realize the benefits of the space-like environment in which \ac{EBEX} flew, I worked with our collaborators at Berkeley to optimize the detectors for the lower, more stable radiative load at float.  
 That meant modifying detector parameters such as their normal resistances, transition temperatures, thermal conductances, and time constants. 
-I measured these values for each of the flight wafers, as well as several dozen wafers which didn't fly. 
-Table~\ref{tab:design_params} summarizes the design and median measured values of the detector parameters for the flight wafers. 
+I measured detector parameters for each of the flight wafers, as well as several dozen wafers which didn't fly. 
+Table~\ref{tab:Design_Params} summarizes the design and median measured values of the detector parameters for the flight wafers. 
 Chapter~\ref{sec:detector_characterization} discusses the measurements. 
+The results of the measurements tended to be grouped by fabrication run, i.e. by wafer. 
+For some wafers, we were able to achieve our design parameters. 
 
 The sensitivity of the detectors was quantified by their \ac{NEP}. 
 I used the characterization measurements to predict the \ac{NEP}.
 In the dark \ac{ETC}, I was able to achieve the predicted \ac{NEP} for the readout electronics and for the detectors in an overbiased state.
-Once the detectors were dropped deep into their transitions, however, the measured noise diverged from the prediction.  
-For flight, 
-
+Biased at 90\% of their normal resistance, I was able to get measured noise within 5\% of the prediction. 
+Once the detectors were dropped deep into their transitions, however, the measured noise diverged from the prediction. 
+I suspect the detectors started to become unstable and oscillate, increasing the measured noise. 
+For flight, I operated the detectors at 85\% of their normal resistances. 
+The \ac{SQUID} noise at float was 20\% higher than predicted, and the electronic and Johnson noise measured by 1~$\Omega$ resistors was 80\% higher than predicted. 
+When predicting the \ac{NEP} for the detectors, I assumed the detectors' electronic and Johnson noise was also a factor of 1.8 greater than the original prediction. 
+With this assumption, the median ratio of measured to predicted overbiased \ac{NEP} for all detectors open to light was 1.2. 
+The median ratio of measured to predicted in-transition \ac{NEP} for all detectors open to light was also 1.2. 
+The source of the excess noise is not understood. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
