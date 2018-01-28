@@ -772,8 +772,8 @@ In order to understand the noise performance of each part of the detector readou
 room temperature electronics noise, 
 electronics noise up to and including the 4~K \ac{SQUID}s, 
 %the noise of resistor channels (i.e. the entire electronics chain up to the bond pads on the \ac{LC} board), %leave these out for now?! time...
-the noise of the bolometers overbiased with the stage above the bolometers' $T_{c}$, 
-the noise of the bolometers overbiased with the stage at the refrigerator's base temperature, 
+the noise of the bolometers normal with the stage above the bolometers' $T_{c}$, 
+the noise of the bolometers held normal with the stage at the refrigerator's base temperature, 
 and the noise of the bolometers in-transition as a function of their transition depth. 
 The dark \ac{ETC} had the exact same electronics boards, filters, and cables as \ac{EBEX}. 
 %In \ac{ETC}, most of the measured noise agreed with the predictions until the bolometers were dropped below 90\% of their initial resistance. 
@@ -1006,9 +1006,10 @@ The improved agreement at the lower temperature was not understood.
 \label{sec:over_biased_noise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+When the detector was held above its transition, either via a warm bath or via an electrical bias, it was said to be overbiased. 
 The overbiased noise included the electronic, \ac{SQUID}, and bolometer Johnson noise. 
 The contribution from the electronics was higher than when I measured the Johnson noise in Section~\ref{sec:johnson_noise} because there were carriers and nullers provided in order to electrically overbias the detectors. 
-Near a bias frequency of 600~kHz, without carriers and nullers on, the electronics noise was $\sim8.5$
+Near a bias frequency of 600~kHz, without carriers and nullers on, the electronics noise was $\sim8.5~pA/\sqrt{Hz}$.
 Also, the bolometer Johnson noise was higher because when overbiased, the bolometer temperature was higher. 
 From Equation~\ref{eq:gbar}, I estimated the overbiased bolometer temperature to be
 \begin{equation}
